@@ -1,0 +1,110 @@
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[print link]}" title="{[print title]}" target="_blank">
+                                        <img src="images/icon.printer.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[xls link]}" title="{[print title]}" target="_blank">
+                                        <img src="images/xls.import.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>   
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+				<tr>
+				    <td height="20px">
+				    </td>
+				</tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="25%" class="td">
+                                    <b>{[testing date]}:</b>
+                                </td>
+                                <td width="75%" class="td">
+                                    {[date value]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td">
+                                    <b>{[tutor]}:</b>
+                                </td>
+                                <td class="td">
+                                    {[tutor value]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+				<tr>
+				    <td height="20px">
+				    </td>
+				</tr>
+                <tr>
+                    <td>
+                        <table border=1 width="100%" class="table" bordercolor="#000000">
+                              <tr>
+                                    <td width="*" rowspan=2 align=center class="coloredheader">
+                                          {[student name]}
+                                    </td>
+                                    <td width="20%" rowspan=2 align=center class="coloredheader">
+                                          {[class name]}
+                                    </td>
+                                    <td width="21%" colspan=3 align=center class="coloredheader">
+                                          {[right answers]}
+                                    </td>
+                                    <td width="5%" rowspan=2 align=center class="coloredheader">
+                                          {[mark]}
+                                    </td>
+                                    <td width="5%" rowspan=2 align=center class="coloredheader">
+                                          {[test language]}
+                                    </td>
+                                    <td width="8%" rowspan=2 align=center class="coloredheader">
+                                          {[testing result]}
+                                    </td>
+                                    <td width="5%" rowspan=2 class="coloredheader">
+                                        {[more]}
+                                    </td>
+                                    <td width="5%" rowspan=2 class="coloredheader">
+                                        {[more]}
+                                    </td>
+                              </tr>
+                              <tr>
+                                    <td width="7%" align=center class="coloredheader">
+                                          {[easy]}
+                                    </td>
+                                    <td width="7%" align=center class="coloredheader">
+                                          {[middle]}
+                                    </td>
+                                    <td width="7%" align=center class="coloredheader">
+                                          {[difficult]}
+                                    </td>
+                              </tr>
+                              {[students]}
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

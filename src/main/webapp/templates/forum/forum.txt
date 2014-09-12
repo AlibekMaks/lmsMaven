@@ -1,0 +1,96 @@
+<form action="forum" method="POST">
+<table border="0" width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border="0" width="100%">
+                <tr>
+                    <td class="pageHeader">
+                        {[parts list]}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <table border="0" width="80%">
+                            <tr>
+                                <td width="100%">
+                                    <input type="text" name="search" class="input" value="{[search value]}" style="width:100%">
+                                </td>
+                                <td width="100px">
+                                    <input type="submit" value="{[search]}" class="button">
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+                 {[message]}
+                <tr>
+                    <td>
+                        <table border=0 cellspacing=0 cellpadding=0>
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0/>
+                                    </a>
+                                </td>
+                               {[add part link]}
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {[add part]}
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="50%" class="td">
+                                    {[found]} : {[number of found records]}
+                                </td>
+
+                                <td align='right'>
+                                    {[parts]}
+                                </td>
+                               
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <input type="hidden" name="roleID" value="{[roleID]}" />
+                <input type="hidden" name="userID" value="{[userID]}" />
+                
+                <tr>
+                    <td>
+                        <table class="table" width="100%" border=1 bordercolor="#000000" cols=4>
+                            <tr>
+                                <td width='16px' class="coloredheader">{[new msg]}</td>
+                             
+                                <td width=* align="center" class="coloredheader">
+                                    {[part title]}
+                                </td>
+                                <td width="20%" align="center" class="coloredheader">
+                                    {[author]}
+                                </td>
+                                <td width="20%" align="center" class="coloredheader">
+                                    {[created date]}
+                                </td>
+                              
+                                {[delete column]}
+                            </tr>
+                         {[records]}
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <input type="text" style="visibility:hidden" value="{[option value]}" name="option name">
+                        
+                    </td>
+                </tr>
+                
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

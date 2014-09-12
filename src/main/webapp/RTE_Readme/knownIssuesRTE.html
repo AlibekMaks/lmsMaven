@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+<a name="knownIssuesRTE"></a>
+<table width="100%" cellpadding="3">
+   <tr>
+      <td class="stagebar">Additional Information</td>
+   </tr>
+</table>
+
+<p>
+	<table>
+	   <tr>
+	      <td valign="TOP">
+	         <h5 class="title">Known Issues</h5>
+	         </p>
+	            <ol style="margin-bottom: 0;">
+	               <li>
+	               	If a package manifest contains references to Sharable Content 
+	               	Objects (SCOs) that are located at an external Web site, 
+	               	a cross-domain JavaScript security error will occur.  
+	               	This may prevent the SCOs from 
+	               	communicating with the Sample RTE provided API.
+	               </li>
+	               <br />
+	               <br />
+	               <li>
+	               	The Internet Explorer browser must be set to 
+	               	check for a new page every visit to the page.  
+	               	To configure the browser:
+	                  <ol>
+	                     <li>
+	                     	Open a Microsoft Internet Explorer Browser
+	                     </li>
+	                     <li>
+	                     	Click on "Tools" -> "Internet Options"
+	                     </li>
+	                     <li>
+	                     	On the "General" tab, "temporary internet files"
+	                        sub-section, click "Settings"
+	                     </li>
+	                     <li>
+	                     	Ensure that the "Every visit to the page" radio
+	                        button is selected
+	                     </li>
+	                     <li>
+	                     	Click "OK" and then "OK" again.
+	                     </li>
+	                  </ol>
+	               </li>	               	               
+	               <br />
+	               <li>
+	                  It is possible that switching between different
+	                  versions of the Sample RTE could cause an Applet Error
+	                  if Applet Caching is enabled.  If this occurs,
+	                  the following steps can be taken to correct the issue:
+	               
+	            <ul>
+	               <li>   
+	                  For J2SE 1.4.2_XX				      
+				            <ol>
+					            <li>Open the Windows "Control Panel"</li>
+										  <li>Double click on the "Java Plug-in" icon</li>
+						          <li>Click on the "Cache" tab</li>
+						          <li>
+					               Click the "Clear" button in the upper right-hand corner
+						          </li>
+						          <li>
+						             Click Yes when prompted to confirm
+						          </li>
+						          <li>
+						             Uncheck the Enable Caching check box in the upper
+						             left-hand corner
+						          </li>
+						          <li>
+						             Click the Apply button.<br><br>
+						          </li>
+						         </ol>
+						      </li>	
+	                <li>               
+                    For J2SE 5.0				      
+				            <ol>
+				      	       <li>Open the Windows "Control Panel"</li>
+					             <li>Double click on the "Java Plug-in" icon</li>
+	                     <li>
+                          Click on the "General" tab at the top of the 
+                          dialog box
+                       </li>
+	                     <li> 
+                          Under the "Temporary Internet Files" section, 
+                          click the "Settings" button
+                       </li>                     
+                       <li>
+                          Click the "View Applets" button
+                       </li>                     
+                       <li>
+                          Ensure that the check box labeled "Enable Caching" 
+                          is unchecked (for the ADL applets).<br><br>
+                       </li>
+	                  </ol>
+	                </li>
+	                <li>
+	                  For Java SE 6				      
+				            <ol>
+				               <li>Open the Windows "Control Panel"</li>
+					             <li>Double click on the "Java" icon</li>
+	                     <li>
+                          Click on the "General" tab at the top of the 
+                          dialog box
+                       </li>
+	                     <li> 
+                          Under the "Temporary Internet Files" section, 
+                          click the "Settings" button
+                       </li>                                                                 
+                       <li>
+                          Ensure that the check box labeled "Keep temporary files on my computer" is unchecked.<br>
+                       </li>
+	                  </ol>
+	                  </li>
+	                </ul>
+	                </li>               
+	            </ol>
+	      	<p>
+	   	</td>
+	   </tr> 	      
+    </table>
+</p>
+
+</body>
+</html>

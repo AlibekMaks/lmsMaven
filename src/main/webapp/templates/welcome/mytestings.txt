@@ -1,0 +1,40 @@
+<script language="javascript">
+            setInterval('check()', 60000);
+            var timeLeft = {[min left]};
+            var hour = "{[hour]}";
+            var minute="{[min]}";
+            function putMessage(){
+                var m = timeLeft%60;
+                var h = (timeLeft-m)/60;
+                var msg = "";
+                if (h>0) msg = h+" "+hour+" ";
+                msg += m+" "+minute;
+                document.getElementById("message").innerHTML = '<font class="td"><b>'+ msg+'</font>';
+            }
+            function putLink(){
+                top.location.href = "studenttesting?main_frame=true&testingID={[testingID]}&nocache={[rand]}";
+            }
+            function check(){
+                timeLeft-=1;
+                if (timeLeft>0){
+                    putMessage();
+                } else{
+                    putLink();
+                }
+            }
+</script>
+
+<table border=0 width="100%" cellpadding="0" cellspacing="0" class="table">
+    <tr>
+        <td height="70px" colspan=4>
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="30px" colspan=4>
+            <table border=1 width="100%" cellpadding="0" cellspacing="0" class="table">
+                {[items]}
+            </table>
+        </td>
+    </tr>
+</table>

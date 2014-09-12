@@ -1,0 +1,14 @@
+<tr>
+    <td>
+        {[name]}
+    </td>
+    <td>
+        {[additional field]}
+    </td>
+    <td>
+        {[subgroup number]}
+    </td>
+    <td>
+        {[in room]}
+    </td>
+</tr>

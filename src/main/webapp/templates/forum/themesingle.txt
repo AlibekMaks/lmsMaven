@@ -1,0 +1,22 @@
+<tr>
+    <td>
+        {[isNew]}
+    </td>
+    <td>
+        <a class="href" href="{[href]}">{[theme title]}</a>
+    </td>
+    <td align="center">
+        {[author]}
+    </td>
+    <td align="center">
+        {[answers count]}
+    </td>
+    <td align="center">
+        {[last date]}
+        <br>
+        {[last author]}
+    </td>
+
+    {[delete]}
+
+</tr>

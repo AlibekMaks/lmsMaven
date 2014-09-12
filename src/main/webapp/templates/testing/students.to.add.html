@@ -1,0 +1,120 @@
+<script language="JavaScript">
+    function changeAllStatus(status){
+        for (i = 0; i < document.getElementById("frm").elements.length; i ++){
+            if (document.getElementById("frm").elements[i].name.length > 4 &&
+                    document.getElementById("frm").elements[i].name.substring(0, 4) == "std_"){
+                document.getElementById("frm").elements[i].checked = status;
+            }
+        }
+    }
+</script>
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {[options]}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <form action="testingstudents" method="POST" name="form" id="form">
+                        <input type="hidden" name="option" value="{[search option]}">
+                        <table border=0 width="100%">
+                            <tr>
+                                <td class="td" width="20%">
+                                </td>
+                                <td width="80%">
+                                    <table border=0 width="100%">
+                                        <tr>
+                                            <td width="100%">
+                                                <input type="text" name="search" value="{[search value]}" class="input" style="width:100%">
+                                            </td>
+                                            <td width="100px">
+                                                <input type="submit" class="button" value="{[search]}">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" width="20%">
+                                    {[select class]}
+                                </td>
+                                <td width="80%">
+                                    {[class select]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" width="20%">
+                                    {[select subject]}
+                                </td>
+                                <td width="80%">
+                                    {[subject select]}
+                                </td>
+                            </tr>
+                        </table>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="50%" class="td">
+                                    {[found]}: {[number of found records]}
+                                </td>
+                                <td width="50%" align="right">
+                                    {[parts]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form action="testingstudents" method="post" id="frm">
+                        <input type="hidden" name="option" value="{[add option]}">
+                        <input type="hidden" name="classID" value="{[classID]}">
+                        <input type="hidden" name="subjectID" value="{[subjectID]}">
+                        <table border=0 width="100%">
+                            <tr>
+                                <td>
+                                    <table border=1 width="100%" class="table" bordercolor="#000000">
+                                        <tr>
+                                            <td width="16px" class="coloredheader">
+                                                <input type="checkbox" onclick="changeAllStatus(this.checked)">
+                                            </td>
+                                            <td class="coloredheader" width=*>
+                                                {[name]}
+                                            </td>
+                                            <td class="coloredheader" width="150px">
+                                                {[class]}
+                                            </td>
+                                            <td class="coloredheader" width="250px">
+                                                {[subject]}
+                                            </td>
+                                        </tr>
+                                        {[records]}
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="{[add]}" class="button">
+                                </td>
+                            </tr>
+                        </table>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

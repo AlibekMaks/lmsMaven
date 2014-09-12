@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+<body class="bg">
+<a name="rteInstallation"></a>
+<table width="100%" cellpadding="3">
+   <tr>
+      <td class="stagebar">Installation</td>
+   </tr>
+</table>
+<p>
+   <table>
+	   <tr>
+	      <td valign="TOP">
+	         <a name="prereqs"></a>
+	         <p>
+		         <h5 class="title">Prerequisites</h5>
+	         </p>
+	         <p>
+		          <strong>It is recommended that you read through all of the Installation
+		          Instructions prior to beginning installation.</strong><br /><br />
+	         
+            This release of the Sample RTE requires the Java Development Kit (JDK)
+        from any one of the following Java versions:
+        <ul>
+          <li>Java SE 6, any update level
+          <li>J2SE 5.0, Update 10 or later
+          <li>J2SE 1.4.2_13 or later 
+        </ul>
+        The latest version of this software is available for download free of charge at
+        <a href="http://java.sun.com/javase/downloads/index.jsp"
+        onclick="window.open(this.href);return false">
+        http://java.sun.com/javase/downloads/index.jsp</a>.
+        Archived versions are available at 
+         <a href="http://java.sun.com/products/archive"
+         onclick="window.open(this.href);return false">
+         http://java.sun.com/products/archive/</a>.   
+         Refer to this site for a list of specific Java versions verified.
+	         </p>
+	         
+	         <a name="notes"></a>
+	         <p>
+	            <b>Notes:</b>
+               <ul>
+                  <li>
+                     <strong>
+                        The Sample RTE requires the full Java Development Kit.  The 
+                        Java Runtime Environment (JRE) alone is NOT sufficient for this software.
+                     </strong>
+                  </li>
+                  <li>
+                     <strong>
+                        The Sample RTE client may be accessed from a machine 
+                        other than the one on which it is installed using 
+                        Microsoft<sup>&reg;</sup> Internet Explorer<sup>&reg;</sup>.  In this case, the Java 
+                        Runtime Environment must be installed on the second machine. 
+                     </strong>
+                  </li>
+                  
+               </ul>
+	         </p>
+	         <p>
+	            After installing the Java Development Kit, you must do the following:
+	            <ol style="margin-bottom: 0;">
+	               <li>
+	                  Create an environment variable named "JAVA_HOME" and set 
+	                  its value to the root directory of the Java Development Kit.
+	                  <ul style="margin-bottom: 0;">
+	                     <li>
+	                        For Windows XP: Right click on "My Computer",
+	                        select "Properties", select the "Advanced" tab and then
+	                        click on "Environment Variables". Add a JAVA_HOME entry
+	                        in the User or System Variables that points to the
+	                        location where the Java Development Kit was installed
+	                        (e.g., C:\j2sdk1.4.2_05).
+	                     </li>
+	                     <li>
+	                        For Windows Vista: Open the “Start" menu and right click on 
+	                        "Computer", select "Properties", select the "Advanced 
+	                        System Settings" link on the left navigation menu, and 
+	                        then click on "Environment Variables". Add a JAVA_HOME 
+	                        entry in the User or System Variables that points to the 
+	                        location where the Java Development Kit was installed 
+	                        (e.g., C:\j2sdk1.4.2_05).<br><br>
+	                     </li>
+	                  </ul>
+	               </li>
+	               <li>
+	                  Add the full path of the Java Development Kit bin directory (where the
+	                  java.exe is located) to the PATH environment variable.
+	                  <ul style="margin-bottom: 0;">
+	                     <li>
+	                        For Windows XP: Right click on "My Computer",
+	                        select "Properties", select the "Advanced" tab and then
+	                        click on "Environment Variables". Add the Java Development Kit bin
+	                        directory to the Path by adding a semicolon followed by
+	                        a reference to the JAVA_HOME environment variable
+	                        followed by "\bin" (i.e., %JAVA_HOME%\bin).
+	                     </li>
+	                     <li>
+	                        For Windows Vista: Open the “Start” menu and right click 
+	                        on "Computer", select "Properties", select the "Advanced 
+	                        System Settings" link on the left navigation menu, and 
+	                        then click on "Environment Variables".  Add the Java Development Kit 
+	                        bin directory to the Path by adding a semicolon followed 
+	                        by a reference to the JAVA_HOME environment variable 
+	                        followed by "\bin" (i.e., %JAVA_HOME%\bin).
+	                     </li>
+	                  </ul>
+	               </li>
+	            </ol>
+	         </p>
+	         
+	         <a name="constraints"></a>
+	         <p>
+	            <h5 class="title">Constraints</h5>
+	         </p>
+	         <p>
+	            As of this release, the Sample RTE has been 
+	            tested on Microsoft<sup>&reg;</sup> Windows<sup>&reg;</sup> XP Professional (SP2), 
+	            and Vista all on the Intel<sup>&reg;</sup> Pentium<sup>&reg;</sup> PC 
+	            platform.  Testing was also performed with Microsoft Internet Explorer 6.0 and Internet Explorer 7.0.<br><br>
+	            The Sample RTE has not been formally tested with any other browsers 
+	            on any other platforms than those indicated above.
+	         </p>
+		         
+	         <a name="installation"></a>
+	         <p>
+	            <h5 class="title">Installation</h5>
+	         </p>
+	         <p>
+	            <strong>
+	               Installation of the Sample RTE is
+	               to be done only after installing the Java Development Kit as described in
+	               the Prerequisites.
+	            </strong>
+	         </p>
+	         <p>
+	            The Sample RTE is available for download as a self-extracting
+	            executable install file. Once you have completed 
+	            downloading the file, perform the following steps:
+	            <ol>
+	               <li>
+	                  Double-click on the downloaded self-extracting executable 
+	                  file to begin the installation process.
+	               </li>
+	               <li>
+	                  Click the &quot;Next&quot; button to continue 
+	                  from the &quot;Welcome&quot; page.
+	               </li>
+	               <li>
+	                  Read the &quot;License Agreement&quot;
+	                  <ul>
+	                     <li>
+	                        Click the &quot;Yes&quot; button to agree 
+	                        and continue with the install.
+	                     </li>
+	                     <li>
+	                        Click the &quot;No&quot; button if you do 
+	                        not agree with the terms of the license and wish to 
+	                        exit the install.
+	                     </li>
+	                  </ul>
+	               </li>
+	               <li>
+	                  Choose whether you would like the Sample RTE to be installed
+	                  for <i>Anyone who uses this computer (all users)</i> or <i>Only me</i>.
+	               </li>
+	               <li>
+	                  The recommended root installation directory
+	                  is &quot;C:\ADL&quot;. You may choose
+	                  another root installation directory, but the Sample RTE
+	                  install will always append the 
+	                  &quot;\ADL\SCORM_2004_3rd_Ed_Sample_RTE_V1.0.2&quot; sub-directory to the
+	                  specified root installation directory.  The remainder 
+	                  of this Readme document assumes that the Sample RTE will be
+	                  installed to &quot;C:\ADL\SCORM_2004_3rd_Ed_Sample_RTE_V1.0.2&quot;.  
+	                  This is referred to as 
+	                  &quot;&lt;drive&gt;:\&lt;install_directory&gt;&quot;. If 
+	                  you override the default to use a different root 
+	                  installation directory, please take that into consideration 
+	                  when reading the remainder of this Readme.
+	               </li>
+	               <li>Click the &quot;Next&quot; button</li>
+	               <li>Click the &quot;Install&quot; button to begin the installation</li>
+	               <li>
+	                  You will have the option to view a copy of this Readme document.
+	                  <ul>
+	                     <li>
+	                        Check the &quot;Show the Readme file&quot; checkbox 
+                            to view the Readme.
+	                     </li>
+	                     <li>
+	                        Uncheck the &quot;Show the Readme file&quot; 
+                            checkbox to skip viewing the Readme.
+	                     </li>
+	                  </ul>
+	               </li>
+	               <li>
+	                  Click on the &quot;Finish&quot; button to 
+	                  complete the installation.
+	               </li>
+	            </ol>
+	            <strong>Note:</strong> The installation will not remove/un-install 
+	            previous versions of the Sample RTE.
+	            <br /><br />
+	         </p>
+	         <p>
+	            <strong>Note:</strong> The apache-tomcat-5.5.20 Servlet Engine and Web server
+	            will be installed and pre-configured to bind to port 8080.
+	         </p>
+	         
+	         <a name="config"></a>
+	         <p>
+	            <h5 class="title">Configuration</h5>
+	         </p>
+	         After installation, the following actions are necessary to ensure 
+             that the Sample RTE will run properly:
+	         <ul>
+	           	<li>
+	              	The Internet Explorer browser must be set to check
+	              	for a new page every visit to the page.  To configure the
+	              	browser:
+	              	<ul>
+		              	<li>
+		              	Using Microsoft Internet Explorer 6.0
+		              	<ol>	              		
+		                 	<li>Open a Microsoft Internet Explorer browser</li>
+		                 	<li>Click on "Tools" -> "Internet Options"</li>
+		                 	<li>
+		                 		On the "General" tab, "Temporary Internet files"
+		                  	sub-section, click "Settings"
+		                 	</li>
+		                 	<li>
+		                 		Ensure that the "Every visit to the page" radio button
+		                  	is selected
+		                 	</li>
+		                 	<li>
+		                  	Click "OK" and then "OK" again.
+		                 	<br><br>
+		              	</ol>
+		              	</li>		              	
+		              	<li>
+		              	Using Microsoft Internet Explorer 7.0
+		              	<ol>	              		
+		                 	<li>Open a Microsoft Internet Explorer browser</li>
+		                 	<li>Click on "Tools" -> "Internet Options"</li>
+		                 	<li>
+		                 		On the "General" tab, "Browsing History"
+		                  	sub-section, click "Settings"
+		                 	</li>
+		                 	<li>
+		                 		Ensure that the "Every visit to the page" radio button
+		                  	is selected
+		                 	</li>
+		                 	<li>
+		                  	Click "OK" and then "OK" again.<br><br>
+		                 	</li>
+		              	</ol>
+		              	</li>
+	              	</ul>
+	            </li>                
+	            <li>
+	               The Java Plug-in must be configured to disable caching.  To
+	               disable the Java Plug-in cache:
+	               <ul>
+				      <li>For J2SE 1.4.2_XX
+				      <ol>
+					     <li>Open the Windows "Control Panel"
+					     <li>Double click on the "Java Plug-in" icon
+					     <li>Select the "Cache" tab
+					     <li>Un-check the "Enable Caching" option
+					     <li>Click "Apply"
+					     <li>Close Window.
+					     <li style="LIST-STYLE-TYPE: none">				     
+					     </li>
+				      </ol>
+				      <li>For J2SE 5.0				     
+				      <ol>
+					     <li>Open the Windows "Control Panel"
+					     <li>Double click on the "Java Plug-in" icon
+					     <li>Select the "General" tab
+					     <li>Under the "Temporary Internet Files" section, click the
+					     "Settings" button
+					     <li>In the "Temporary Files Settings" dialog box, click the "View
+					     Applets... " button
+					     <li>In the "Java Applet Cache Viewer" dialog box, ensure the
+					     "Enable Caching" check box is unchecked for the Sample Run-Time 
+					     Environment Applet(s).
+					     <li style="LIST-STYLE-TYPE: none">
+					     </li>
+				      </ol>
+				      </li>
+				      <li>For Java SE 6				      
+				      <ol>
+					     <li>Open the Windows "Control Panel"
+					     <li>Double click on the "Java" icon
+					     <li>Select the "General" tab
+					     <li>Under the "Temporary Internet Files" section click "Settings"
+					     <li>Ensure the "Keep Temporary Files on my computer." check box is unchecked.
+					     <li style="LIST-STYLE-TYPE: none">					     
+					     </li>
+				      </ol>
+			       </ul>
+            	</li>
+	            <li>
+	               Ensure that the Sun Java Plug-in is selected as the default
+	               Java Environment for the Microsoft Internet Explorer browser.
+	               To set the default browser Java Environment:
+	               <ul>
+		               <li>For J2SE 1.4.2_XX and J2SE 5.0</li>
+		               <ol>	               
+		                  <li>Open the "Java Plug-in" applet in the Control Panel</li>
+		                  <li>Select the "Browser" tab</li>
+		                  <li>
+		                  	Select the checkbox next to the browser that you are
+		                     using to run the Sample RTE</li>
+		                  <li>Click "Apply".
+		                  <li style="LIST-STYLE-TYPE: none">	
+		                  </li>
+	               	   </ol>
+	               	   <li>For Java SE 6</li>
+		               <ol>	               
+		                  <li>Open the Windows "Control Panel"
+					      <li>Double click on the "Java" icon
+		                  <li>Select the "Advanced" tab
+		                  <li>Expand the "Default Java for Browsers" section
+		                  <li>
+		                  	Select the checkbox next to the browser that you are
+		                     using to run the Sample RTE</li>
+		                  <li>Click "Apply".
+		                  <li style="LIST-STYLE-TYPE: none">	
+		                  </li>
+	               	   </ol>
+               	   </ul>
+	            </li>	                            
+	            <li>
+	               If you are using Windows XP SP2 or Vista these additional actions are
+	               required:
+	               <ul>
+	                  <li>
+	                     Allow JavaScript to run by:
+	                     <ol>
+	                        <li>Open a Microsoft Internet Explorer browser</li>
+	                        <li>Click on "Tools" -> "Internet Options"</li>
+	                        <li>
+	                           On the "Advanced" tab, check the box that states,
+	                           "Allow active content to run in files on My
+	                           Computer" under the "Security" section.
+	                        </li>
+	                     </ol>
+	                  </li>
+	                  <li>
+	                     Allow the Sample RTE to pop-up windows by either
+	                     disabling pop-up blocking or exclude the Sample RTE
+	                     from pop-up blocking.
+	                  </li>
+	               </ul>
+	            </li>
+	         </ul>
+	         <p>
+	            This completes the installation of the Sample RTE.
+	         </p>
+	         
+	         <a name="uninstalling"></a>
+	         <p>
+	            <h5 class="title">Uninstalling The Sample RTE</h5>
+	         </p>
+	         There are two methods that can be used for uninstalling the Sample RTE:<br>
+           <ul>
+           	  <li>Uninstall the Sample RTE using the Windows Control Panel.</li>
+           	  <ul>
+	              <li> For Windows XP, the Windows Control Panel "Add/Remove 
+	              Programs" feature can be used.
+	                 <ol>	                    
+	                    <li>Open the Windows "Control Panel"
+	                    <li>Double-Click on "Add or Remove Programs" icon
+	                    <li>Highlight the  "ADL SCORM 2004 3rd Ed. Sample Run-Time 
+	                    Environment Version 1.0.2"
+	                    <li>Click "Remove" and follow the instructions
+	                    <li style="LIST-STYLE-TYPE: none">
+	                    </li>
+	                 </ol>
+	              </li>
+	              <li>For Windows Vista, the Windows Control Panel "Programs and 
+	              Features" feature can be used.
+	                 <ol>	                    
+	                    <li>Open the Windows "Control Panel"
+	                    <li>Double-Click on "Programs and Features" icon
+	                    <li>Highlight the "ADL SCORM 2004 3rd Ed. Sample Run-Time 
+	                    Environment Version 1.0.2"
+	                    <li>Click "Uninstall" on the toolbar above the list and follow the instructions
+	                    <li style="LIST-STYLE-TYPE: none">
+	                    </li>
+	                 </ol>
+	              </li>
+	          </ul>
+              <li>If this version of the Sample RTE is already installed, running the install 
+                 again will uninstall the software. This method will not re-install 
+                 the Sample RTE. You will need to run the install a third
+                 time to accomplish a re-installation.</li>
+              </ul>
+           <strong>Note:</strong> The Sample Run-Time Environment may not appear 
+           in the "Add/Remove Programs" menu. If it does not appear, use the 
+           second method for uninstalling.
+           <br /><br />
+           
+           These methods of uninstalling will not remove files or directories that
+           have been altered in the course of running the Sample RTE.  In order to 
+           complete the process of uninstalling the Sample RTE, the following steps
+           will need to be completed:
+           
+           <ol>
+              <li>Delete the directory that the Sample RTE was installed to
+                  (&lt;drive&gt;:\&lt;Install Directory&gt;\SCORM_2004_3rd_Ed_Sample_RTE_V1.0.2 by default) along with any
+                  files or directories contained within it</li>
+              <li>Delete the &lt;drive&gt;:\SCORM3EDSampleRTE102Files directory</li>
+           </ol>
+           
+	     </td>
+	  </tr>
+   </table>
+</p>
+</body>
+</html>

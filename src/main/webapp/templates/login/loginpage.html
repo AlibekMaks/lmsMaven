@@ -1,0 +1,124 @@
+<html>
+    <HEAD>
+        <LINK TYPE="text/css" REL="stylesheet" HREF="css/login.css">        
+        <title>Testing System</title>
+        <style type="text/css">
+            .enter_button {
+                background: url('/images/index/button.jpg') no-repeat;
+                cursor:pointer;
+                border: none;
+                font-family:arial, tahoma,sans-serif;
+                color:#ffffff;
+                font-size:13pt;
+                width: 68px;
+                height: 33px;
+                vertical-align: middle;
+                text-align: center;
+            }
+        </style>
+        <script type="text/javascript" src="jscripts/common.js"></script>
+        <script language="javascript">
+            function check(){
+                document.getElementById("login").value = trim(document.getElementById("login").value);
+
+                if (document.getElementById("login").value.length == 0){
+                    document.getElementById("login").focus();
+                    return false;
+                }
+
+                if (document.getElementById("password").value.length == 0){
+                    document.getElementById("password").focus();
+                    return false;
+                }
+
+                return true;
+            }
+
+            function SetFocus(){
+                document.getElementById("login").focus();
+            }
+        </script>
+    </HEAD>
+    <body style="FONT-SIZE:10px; FONT-FAMILY:arial; padding:0; margin:0;" onload="SetFocus()" >
+        <form action="authorize" method="post" ID="form" onsubmit="return check();">
+        <input type="hidden" name="{[random]}" value="0"/>        
+        <table width="100%" height="100%" border="0" colcount="3" ID="Table1" cellpadding="0" cellspacing="0">
+            <tr height="33%">
+                <td colspan="3" valign="top">
+                    <table border=0 width="100%" height="200px"
+                        cellpadding="0" cellspacing="0"
+                        background="images/index/cloud_left.jpg" style="background-repeat:repeat-x;">
+                        <tr>
+                            <td background="images/index/cloud.jpg" style="background-position:right;background-repeat:no-repeat;" >
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr height="34%">
+                <td width="33%">
+                    &nbsp;
+                </td>
+                <td width="33%">
+                    <table border="0" height="400px" width="100%" ID="Table2">
+                        <tr height="10%">
+                            <td width="100%" valign="center" align="center">
+                                <table width="410px" height="322px" style="border-collapse:collapse;border-style:none;
+                                        background-repeat:no-repeat;" background="images/index/login.jpg">
+                                    <tr>
+                                        <td style="padding-top:10px" valign="top" align="center">
+                                            <table height="180px" width="365px" border=0>
+                                                <tr>
+                                                    <td colspan="2" CLASS="loginHeader">
+                                                        {[Enter system]}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="loginItem" width="25%">
+                                                        {[Role]}
+                                                    </td>
+                                                    <td>
+                                                        {[Roles list]}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="loginItem" width="25%">
+                                                        {[Login]}
+                                                    </td>
+                                                    <td>
+                                                        <input class="loginInput" type="text" style="WIDTH:100%" name="login" ID="login" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="loginItem" width="25%">
+                                                        {[Password]}
+                                                    </td>
+                                                    <td>
+                                                        <input class="loginInput" type="password" style="WIDTH:100%" name="password" ID="password" value="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" align="center" valign="middle" >
+                                                        <input type="submit" class="enter_button" ID="Submit1" NAME="Submit1" value="{[Enter]}" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="33%">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr height="33%">
+                <td align="middle" valign="bottom" colspan="3" class="Copyrights">
+                </td>
+            </tr>
+        </table>
+    </form>
+	</body>
+</html>

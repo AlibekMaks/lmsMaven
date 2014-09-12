@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <META HTTP-Equiv="Cache-Control" Content="no-cache">
+        <META HTTP-Equiv="Pragma" Content="no-cache">
+        <META HTTP-Equiv="Expires" Content="0">
+        <META http-equiv=Content-Type content="text/html; charset=utf-8">
+        <LINK TYPE="text/css" REL="stylesheet" 
+              HREF="css/common.css">
+        <script language="javascript">
+            setInterval('check()', 60000);
+            var timeLeft = {[min left]};
+            var hour = "{[hour]}";
+            var minute="{[min]}";
+            function putMessage(){
+                var m = timeLeft%60;
+                var h = (timeLeft-m)/60;
+                var msg = "";
+                if (h>0)
+                    msg = h+" "+hour+" ";
+                msg += m+" "+minute;
+                document.getElementById("message").innerHTML = '<font class="td"><b>'+ msg+'</font>';
+            }
+            function putLink(){
+                top.location.href = "studenttesting?main_frame=true&testingID={[testingID]}&nocache={[rand]}";
+            }
+            function check(){
+                timeLeft-=1;
+                if (timeLeft>0){
+                    putMessage();
+                } else{
+                    putLink();
+                }
+            }
+        </script> 
+    </head>
+    <body onload="putMessage();">
+        <table border=0 width="100%" cellpadding="20px">
+            <tr>  
+                <td>
+
+<table border=0 width="100%" cellpadding="20px">
+    <tr height="33%">
+        <td colspan=3>
+            &nbsp;
+        </td>
+    </tr>
+    <tr height="34%">
+        <td width="33%">
+            &nbsp;
+        </td>
+        <td width="34%" align="center" class="td">
+            <b>{[before start left]}</b>
+            <div id="message">
+            </div>
+        </td>
+        <td width="*">
+            &nbsp;
+        </td>
+    </tr>
+    <tr height="33%">
+        <td colspan=3 align="center">
+            <a class="filecabinetLink" href="#" onClick='top.location="studentStudyRoom"; return false;'>{[to rooms]}</a>
+        </td>
+    </tr>
+</table>
+
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

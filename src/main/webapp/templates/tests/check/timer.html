@@ -1,0 +1,104 @@
+<html>
+    <head>
+
+    <META HTTP-Equiv="Cache-Control" Content="no-cache">
+    <META HTTP-Equiv="Pragma" Content="no-cache">
+    <META HTTP-Equiv="Expires" Content="0">
+    <META http-equiv=Content-Type content="text/html; charset=utf-8">
+    <script type="text/javascript" language="JavaScript" 
+	src="jscripts/JsHttpRequest/lib/JsHttpRequest/JsHttpRequest.js"></script>
+    <LINK TYPE="text/css" REL="stylesheet" HREF="css/common.css">
+        <script language="javascript">
+            var errorCount = 0;
+            var start={[start]};      
+            var all={[all]};      
+            setInterval('increase()', 60000);
+
+            function init(){
+                all = all-start;
+                document.getElementById("timer").innerHTML= '<font face="tahoma" size="2">'+'{[passed time]} '+start+' {[minutes]} '+
+                    '<br><font face="tahoma" size="2">{[time remaining]} '+all+' {[minutes]}';
+            }
+
+            function increase(){
+                all -= 1;
+                start += 1;
+                errorCount += 1;
+
+                saveTime(all, start);
+
+                document.getElementById("timer").innerHTML= '<font face="tahoma" size="2">'+'{[passed time]} '+start+' {[minutes]} '+
+                                                            '<br><font face="tahoma" size="2">{[time remaining]} '+all+' {[minutes]}';
+                if (all<=0) send();
+
+
+            }
+
+            function send(){
+                var d = top.frames[0].frames.testing.document;
+                d.getElementById("option").value="send";
+                d.getElementById("frm").target = "main_frame";
+                d.getElementById("frm").submit();
+            }
+        </script>
+
+        <script type="text/javascript">
+
+            function getXmlHttp() {
+                var xmlhttp;
+                try {
+                    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (E) {
+                        xmlhttp = false;
+                    }
+                }
+                if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+                    xmlhttp = new XMLHttpRequest();
+                }
+                return xmlhttp;
+            }
+
+            function saveTime(all, start) {
+
+                var xmlhttp = getXmlHttp();
+
+                xmlhttp.open('POST', 'savetimer', true);
+                xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xmlhttp.send("all=" + encodeURIComponent(all) + "&start=" + encodeURIComponent(start));
+                xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4) {
+                    if(xmlhttp.status == 200)
+                        if(xmlhttp.responseText == "OK"){
+                            this.errorCount = 0;
+                        }
+                    }
+                }
+            }
+
+        </script>
+    </head>
+    <body onload='init();' style="background-color: LightSkyBlue;">
+    <table border=0 width="100%">
+        <tr>
+            <td width="15px">
+            </td>
+
+            <td width="32px" height="32px">
+                 <img src="images/icon.testing.gif" width="32px" height="32px" border=0>
+            </td>
+
+            <td width="5px">
+            </td>
+
+            <td>
+                <font face="tahoma" size="2">{[testing time]} {[time]} {[minutes]}
+                <div id="timer"></div>
+            </td>
+        </tr>
+    </table>
+
+    </body>
+</html>

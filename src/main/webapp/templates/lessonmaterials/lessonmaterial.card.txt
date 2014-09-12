@@ -1,0 +1,82 @@
+<script language="JavaScript">
+    function isFormValid(){
+        document.getElementById("name").value = trim(document.getElementById("name").value);
+        if (document.getElementById("name").value.length == 0){
+            alert("{[fill in all of the fields]}");
+            document.getElementById("name").focus();
+            return false;
+        }
+        if (document.getElementById("bookID").value <= 0 &&
+                document.getElementById("file").value.length == 0){
+            alert("{[fill in all of the fields]}");
+            document.getElementById("file").focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<form action="tutorbook" method="POST" enctype="multipart/form-data" onsubmit="return isFormValid()">
+<input type="hidden" id="bookID" name="bookID" value="{[bookID]}">
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 />
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0 width="100%" class="table">
+                            <tr>
+                                <td width="20%">
+                                    {[file]}
+                                </td>
+                                <td width=*>
+                                    <input type="file" id="file" name="file" class="input" style="width:100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {[name]}
+                                </td>
+                                <td>
+                                    <input name="name" id="name" value="{[name value]}" class="input" style="width:100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {[language]}
+                                </td>
+                                <td>
+                                    {[lang select]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="{[save]}" class="button" >
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

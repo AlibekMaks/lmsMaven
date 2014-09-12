@@ -1,0 +1,91 @@
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                                
+                                   
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                        	<tr>
+                                <td width="25%" class="td">
+                                    <b>{[pretendent.msg]}:</b>
+                                </td>
+                                <td width="75%" class="td">
+                                    {[pretendent]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td">
+                                    <b>{[post.msg]}:</b>
+                                </td>
+                                <td class="td">
+                                    {[post]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td">
+                                    <b>{[testing.date.msg]}:</b>
+                                </td>
+                                <td class="td">
+                                    {[testing.date]}
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=1 width="100%" class="table" bordercolor="#000000">
+                              <tr>
+                                    <td width="*" align=center class="coloredheader">
+                                          {[subject]}
+                                    </td>
+                                    <td width="21%" align=center class="coloredheader">
+                                          {[questions.count]}
+                                    </td>
+                                    <td width="5%" align=center class="coloredheader">
+                                          {[right.answers.count]}
+                                    </td>
+                                    <td width="5%" class="coloredheader">
+                                        %
+                                    </td>
+                              </tr>
+                              {[subjects]}
+                              <tr>
+								<td class="nameTD">
+									{[summary]}
+								</td>
+								<td align="center">
+									{[sum.questions.count]}
+								</td>
+								<td colspan=2 align="center">
+									{[sum.right.answers.count]}
+								</td>
+							</tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

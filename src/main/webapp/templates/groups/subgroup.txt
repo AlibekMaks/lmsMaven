@@ -1,0 +1,43 @@
+<table border=0 width="100%">
+    <tr>
+        <td>
+            <table border=0 width="100%" class="table">
+                <tr>
+                    <td width="32px">
+                        {[delete]}
+                    </td>
+                    <td width="45%">
+                        {[subgroup name]}
+                    </td>
+                    <td width="20px">&nbsp;</td>
+                    <td width=200px>
+                        <b>{[tut]}:</b>
+                    </td>
+                    <td id="tut{[subgroupID]}" width=*>
+                        {[tutor]}
+                    </td>
+                    <td width="30px" align="right">
+                        {[change tutor]}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table border=1 width="100%" class="table">
+                <tr>
+                    <td width="5px">
+                    </td>
+                    <td width="80%">
+                        {[name]}
+                    </td>
+                    <td width="20%">
+                        {[move to]}
+                    </td>
+                </tr>
+                {[records]}
+            </table>
+        </td>
+    </tr>
+</table>

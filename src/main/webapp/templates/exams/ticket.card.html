@@ -1,0 +1,109 @@
+<script language="JavaScript">
+    function isFormValid(){
+        document.getElementById("ticketNumber").value = trim(document.getElementById("ticketNumber").value);
+        if (document.getElementById("ticketNumber").value.length == 0){
+            alert("{[fill in all of the fields]}");
+            document.getElementById("ticketNumber").focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<form action="ticket" method="POST" onsubmit="return isFormValid()">
+{[hidden inputs]}
+<input type="hidden" name="nocache" value="{[rand]}">
+<input type="hidden" name="ticketID" value="{[ticketID]}">
+<table border=0 width="100%">
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[add link]}" title="{[add title]}">
+                                        <img src="images/buttons.plus.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height="10px">
+                    </td>
+                </tr>
+
+                {[message]}
+                <tr>
+                    <td height="10px">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table border=0 width="100%" class="table">
+                            <tr>
+                                <td width="10%" align="center">
+                                    Билет №
+                                </td>
+                                <td width=* align="left">
+                                    <input name="ticketNumber" id="ticketNumber" style="width:100%" class="input" value="{[ticketNumber value]}" maxlength="3"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height="60px">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table border=1 width="100%" class="table" bordercolor="#000000">
+                            <tr>
+                                <td width="6%" class="coloredheader" align="center">
+                                    №
+                                </td>
+                                <td width="47%" class="coloredheader" align="center">
+                                    {[questionkz label]}
+                                </td>
+                                <td width="47%" class="coloredheader" align="center">
+                                    {[questionru label]}
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height="20px">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" name="save" value="{[save]}" class="button">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

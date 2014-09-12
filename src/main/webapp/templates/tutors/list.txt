@@ -1,0 +1,122 @@
+<script language="javascript">
+    function warning(){
+        if (confirm("{[warn1]}")){
+            return confirm("{[warn2]}");
+        }
+        return false;
+    }
+</script>
+
+<table border=0 width="100%" >
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageHeader">
+                        {[tutors list]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border="0" width="100%">
+                            <tr>
+                                <td width="20%">
+                                </td>
+                                <td width="80%">
+                                    <table border=0 width="100%">
+                                        <form name="tutors" id="tutors" action="tutors" method="POST">
+                                        <tr>
+                                            <td width="100%">
+                                                <input type="text" name="search" value="{[search value]}" class="input" style="width:100%">
+                                            </td>
+                                            <td width="100px">
+                                                <input type="submit" value="{[search]}" class="button">
+                                            </td>
+                                        </tr>
+                                        </form>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+               </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0 cellspacing=0 cellpadding=0>
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>                                
+                                <td class="imgtd">
+                                    <a href="{[add link]}" title="{[add title]}">
+                                        <img src="images/buttons.plus.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border="0" width="100%">
+                            <tr>
+                                <td width="100%" class="td">
+                                    {[found]} : {[number of found records]}
+                                </td>
+                                <td align="right">
+                                    {[parts]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <form name="generate" id="generate" action="generate" method="post" target="_blank" onsubmit="return warning()">
+                <tr>
+                    <td>
+                        <table class="table" width="100%" border=1 bordercolor="#000000" cols=3>
+                            <tr>
+                                <td style="width:5px" class="coloredheader">
+                                    <input type="checkbox" name="all" id="all" onClick="change_a(this)"/>
+                                </td>
+                                <td width="100%" class="coloredheader" align="center">
+                                    {[name]}
+                                </td>
+                                <td width="16px" align="center" class="coloredheader">
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="hidden" name="roleID" value="{[roleID]}">
+                        {[params]}
+                        <table border=0 class="table">
+                            <tr>
+                                <td >
+                                    <input type="submit" value="{[generate]}" name="generate" class="button"/>
+                                </td>
+                                <td onClick='document.getElementById("t0").checked=true;'>
+                                    {[all selected]}
+                                </td>
+                                <td>
+                                    <input type="radio" name="generateType" value="0" id="t0">
+                                </td>
+                                <td onClick='document.getElementById("t1").checked=true;'>
+                                    {[all extracted]}
+                                <td>
+                                <input type="radio" name="generateType" value="1" id="t1">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                </form>
+            </table>
+        </td>
+    </tr>
+</table>

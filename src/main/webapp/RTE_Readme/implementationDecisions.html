@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+<a name="implementationDecisions"></a>
+<p>
+	<table>
+	   <tr>
+	      <td valign="TOP">
+	      	 <h5 class="title">Implementation Decisions</h5>	      	 
+	         <strong>Case Sensitive URLs</strong>
+	         </p>
+	            <ul style="margin-bottom: 0;">
+	               <li>
+	               	    URLs that are located in the imsmanifest.xml file and that 
+                        identify launch locations and other hrefs are case sensitive in 
+                        the Sample Run-Time Environment.
+                        For example, sco.html is different from SCO.HTML and from Sco.html.
+                        If the case used to specify a file name does not match the case 
+                        of the actual file, an error will result while running the course.
+	               </li>
+	               <br />
+	               <br />
+	            </ul>
+	      	<p>
+	      	<strong>Maximum Allowable Course Size</strong>
+	         </p>
+	            <ul style="margin-bottom: 0;">
+	               <li>
+	               	    The maximum allowable size for a course imported into the Sample 
+	               	    Run-Time Environment is approximately 2.0 gigabytes.  Courses 
+	               	    exceeding 2.0 gigabytes may not import correctly.
+	               </li>
+	               <br />
+	               <br />
+	            </ul>
+	      	<p>
+	      	<strong>Manifest Encodings</strong>
+	         </p>
+	            <ul style="margin-bottom: 0;">
+	               <li>
+	               	    Any course imported into the Sample Run-Time Environment which
+	               	    contains foreign characters in the manifest, must have the
+	               	    imsmanifest.xml file encoded in either UTF-8 or UTF-16 (Big Endian
+	               	    or Little Endian). 
+	               </li>
+	               <br />
+	               <br />
+	            </ul>
+	      	<p>
+	   	</td>
+	   </tr>
+   	<tr>
+	      <td valign="TOP">
+	         <strong>Supported Java Versions</strong>
+	         <ul style="margin-bottom: 0;">
+	         	<li>
+                  The following list describes Java Development Kit versions that have been 
+	               tested with the Sample RTE as of the date of this release:
+                  <ul>
+                     <li>Java SE 6, any update level
+                     <li>J2SE 5.0, Update 10 or later
+                     <li>J2SE 1.4.2_13 or later 
+                  </ul>
+                  <br />
+                  <br />
+               </li>
+	         </ul>
+	   	</td>
+   	</tr>
+	</table>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<table border=1 class="table" width="100%" >
+    <tr>
+        <td class="coloredheader">
+            {[day name]}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table border=0 width="100%" class="table">
+                <tr>
+                    <td style="width:5px">
+                        {[number]}
+                    </td>
+                    <td width=*>
+                        {[subject]}
+                    </td>
+                    <td>
+                        {[tutor]}
+                    </td>
+                    <td width="">
+                        {[class room]}
+                    </td>
+                    <td width="10%">
+                    </td>
+                </tr>
+                {[records]}
+            </table>
+        </td>
+    </tr>
+</table>

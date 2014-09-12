@@ -1,0 +1,18 @@
+<!-- mime-map-dic DTD Version1.1 -->
+<!-- ALL CONTENTS COPYRIGHT 2005, OOP-Research Corporation. -->
+<!-- All rights reserved. -->
+<!-- Any questions and comments are welcome to -->
+<!-- tech@oop-research.com -->
+
+<!ELEMENT mime-map-dic (default-mime, mime-mapping*, mime2ext*)>
+
+<!ELEMENT default-mime (#PCDATA)>
+
+<!ELEMENT mime-mapping (extension, mime-type)>
+
+<!ELEMENT mime2ext (mime-type, extension)>
+
+<!ELEMENT extension (#PCDATA)>
+
+<!ELEMENT mime-type (#PCDATA)>
+

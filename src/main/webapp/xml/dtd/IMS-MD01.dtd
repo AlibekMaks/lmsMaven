@@ -1,0 +1,200 @@
+<!-- IMS-MD01.dtd -->
+<!-- IMS Version of the IEEE LTSC LOM DTD -->
+<!-- The standard version of this document is located at:
+		 http://www.imsproject.org/XML/ -->
+	<!-- 1999-08-20 Thomas .D. Wason, IMS Project: Completed for release. -->
+<!-- 2000-03-06 LLM, IMS Project: This document is for archival purposes only. Visit the site above for the newest, corrected version. -->
+
+
+<!-- Nothing is mandatory. -->
+
+<!-- HHHHHHHHHHHHH Simple elements HHHHHHHHHHH -->
+
+<!ELEMENT EXTENSION ANY>
+<!-- The EXTENSION element is used to create extensions at anyplace in the XML instantiation.  If the extension contains only elements from this DTD, maintaining those content models, then additional elements do not need to be declared.  It is encouraged that extensions be created from the exisiting library of elements whenever possible.  -->	
+
+<!ELEMENT LANGUAGE (#PCDATA|EXTENSION)*>
+	<!-- Human Language -->
+
+<!ELEMENT AGGREGATIONLEVEL (#PCDATA|EXTENSION)*>
+	<!-- 0..3, 0 = raw media-->
+
+<!ELEMENT LANGSTRING (#PCDATA|EXTENSION)*>
+<!ATTLIST LANGSTRING
+ 	lang CDATA #IMPLIED>
+		<!-- A string in a particular language -->
+
+<!ELEMENT STRING (#PCDATA|EXTENSION)*>
+	<!-- String with no defined language.  -->
+
+<!ELEMENT CATALOGUE (#PCDATA|EXTENSION)*>
+
+<!ELEMENT DATETIME (#PCDATA|EXTENSION)*>
+	<!-- Per  W3C, e.g., 1999-08-07 -->
+
+<!ELEMENT DIFFICULTY (#PCDATA|EXTENSION)*>
+	<!-- 0..4, 0 = Very Easy -->
+
+<!ELEMENT METADATASCHEME (#PCDATA|EXTENSION)*>
+	<!-- The metadatascheme value should include version. -->
+
+<!ELEMENT SIZE (#PCDATA|EXTENSION)*>
+	<!-- Integer, in bytes -->
+
+<!ELEMENT LOCATION (#PCDATA|EXTENSION)*>
+<!ATTLIST LOCATION 
+    type (URI|TEXT) "URI">
+<!-- Ordered list -->
+
+<!ELEMENT MINIMUMVERSION (#PCDATA|EXTENSION)*>
+
+<!ELEMENT MAXIMUMVERSION (#PCDATA|EXTENSION)*>
+
+<!ELEMENT INTERACTIVITYLEVEL (#PCDATA|EXTENSION)*>
+<!-- 0..4, 0 = Very Low -->
+
+<!ELEMENT SEMANTICDENSITY (#PCDATA|EXTENSION)*>
+<!-- 0..4, 0 = Low -->
+
+<!ELEMENT SOURCE (#PCDATA|EXTENSION)*>
+
+<!ELEMENT ID (#PCDATA|EXTENSION)*>
+	<!-- Alphanumeric identifier -->
+
+<!ELEMENT VCARD (#PCDATA|EXTENSION)*>
+<!-- STRING per vCard specification -->
+
+<!-- HHHHHHHHHHHHHH Elements with content models of elements HHHHHHHHHHH -->
+
+<!ELEMENT COST (LANGSTRING*, EXTENSION?)>
+	<!-- Boolean, yes|no -->
+
+<!ELEMENT COPYRIGHTOROTHERRESTRICTIONS (LANGSTRING*, EXTENSION?)>
+	<!-- Boolean, yes|no -->
+
+<!ELEMENT INTENDEDENDUSERROLE (LANGSTRING*, EXTENSION?)>
+<!-- Teacher, Author, Learner, Manager -->
+<!-- Ordered list -->
+
+<!ELEMENT INTERACTIVITYTYPE (LANGSTRING*, EXTENSION?)>
+	<!-- Direction of information flow between user and resource -->
+
+<!ELEMENT FORMAT (LANGSTRING*, EXTENSION?)>
+	<!-- MIME or non-digital -->
+
+<!ELEMENT STATUS (LANGSTRING*, EXTENSION?)>
+
+<!ELEMENT STRUCTURE (LANGSTRING*, EXTENSION?)>
+
+<!ELEMENT CENTITY (VCARD?,EXTENSION?)>
+	<!-- The is the ENTITY element.  The word ENTITY is reserved within XML, so the name has been changed to CENTITY to stand for "Contributing Entity".   -->
+<!-- Ordered list -->
+
+<!ELEMENT ENTRY (LANGSTRING*, EXTENSION?)>
+
+<!ELEMENT PURPOSE (LANGSTRING?, EXTENSION?)>
+
+<!ELEMENT LANGSTRINGTYPE (LANGSTRING*, EXTENSION?)>
+<!-- TDW: No longer used. -->
+
+<!ELEMENT TITLE (LANGSTRING*, EXTENSION?)>
+
+<!ELEMENT DESCRIPTION (LANGSTRING*, EXTENSION?)>
+
+<!ELEMENT KEYWORDS (LANGSTRING*, EXTENSION?)>
+	<!-- One keyword or keyphrase per langstring -->
+
+<!ELEMENT COVERAGE (LANGSTRING*, EXTENSION?)>
+	<!-- Spatial, temporal, cultural -->
+
+<!ELEMENT VERSION (LANGSTRING?, EXTENSION?)>
+
+<!ELEMENT TYPE (LANGSTRING?, EXTENSION?)>
+
+<!ELEMENT NAME (LANGSTRING?, EXTENSION?)>
+
+<!ELEMENT INSTALLATIONREMARKS (LANGSTRING?, EXTENSION?)>
+
+<!ELEMENT OTHERPLATFORMREQUIREMENTS (LANGSTRING?, EXTENSION?)>
+
+<!ELEMENT ROLE (LANGSTRING?, EXTENSION?)>
+
+<!ELEMENT LEARNINGRESOURCETYPE (LANGSTRING?, EXTENSION?)>
+<!-- Ordered list -->
+
+<!ELEMENT LEARNINGCONTEXT (LANGSTRING?, EXTENSION?)>
+<!-- Primary Education, Secondary Education, Higher Education, University First Cycle, University Second Cycle, University Postgrade, Technical School First Cycle, Technical School Second Cycle, Professional Formation, Continuous Formation, Vocational Training, Other -->
+
+<!ELEMENT TYPICALAGERANGE (LANGSTRING?, EXTENSION?)>
+
+<!ELEMENT KIND (LANGSTRING?, EXTENSION?)>
+
+<!ELEMENT TAXON (ID?, ENTRY?, EXTENSION?)>
+<!-- Ordered list -->
+
+<!ELEMENT DATE (DATETIME?, DESCRIPTION?, EXTENSION?)>
+<!-- DATE may be repeated when both DateTime and Description are used. -->
+
+<!ELEMENT DURATION (DATETIME?, DESCRIPTION?, EXTENSION?)>
+
+<!ELEMENT TYPICALLEARNINGTIME (DATETIME?, DESCRIPTION?, EXTENSION?)>
+
+<!ELEMENT TAXONPATH (SOURCE?, TAXON*, EXTENSION?)>
+<!-- A taxonomic path in a specific classification. There may be different paths, in the same or different classifications, that describe the same characteristic. -->
+
+<!ELEMENT CATALOGENTRY (CATALOGUE?, ENTRY?, EXTENSION?)>
+<!-- Ordered list -->
+
+<!ELEMENT CONTRIBUTE (ROLE?, CENTITY*, DATE?, EXTENSION?)>
+	<!-- Type of contribution defined by Role -->
+
+<!ELEMENT RESOURCE (DESCRIPTION?, EXTENSION?)>
+
+<!ELEMENT REQUIREMENTS (TYPE?, NAME?, MINIMUMVERSION?, MAXIMUMVERSION?, EXTENSION?)>
+
+<!-- HHHHHHHHHHHHHHH  Category Elements HHHHHHHHHHHHHHH  -->
+
+<!ELEMENT ANNOTATION (CENTITY?, DATE?, DESCRIPTION?, EXTENSION?)>
+<!-- ANNOTATION is a category element -->
+<!-- Evaluations or comments. -->
+
+<!ELEMENT CLASSIFICATION (PURPOSE?, TAXONPATH*, DESCRIPTION?, KEYWORDS*, EXTENSION?)>
+<!-- CLASSIFICATION is a category element -->
+<!-- Description or cataloging of a characteristic. -->
+
+<!ELEMENT EDUCATIONAL (INTERACTIVITYTYPE?, LEARNINGRESOURCETYPE*, INTERACTIVITYLEVEL?, SEMANTICDENSITY?, INTENDEDENDUSERROLE*, LEARNINGCONTEXT*, TYPICALAGERANGE*, DIFFICULTY?, TYPICALLEARNINGTIME?, DESCRIPTION?, LANGUAGE?, EXTENSION?)>
+<!-- EDUCATIONAL is a Category element. -->
+<!-- Educational or pedagogic features of the resource. -->
+
+<!ELEMENT GENERAL (TITLE?, CATALOGENTRY*, LANGUAGE*, DESCRIPTION*, KEYWORDS*, COVERAGE*, STRUCTURE?, AGGREGATIONLEVEL?, EXTENSION?)>
+<!-- Category element -->
+<!-- Context-independent features of the resource. -->
+
+<!ELEMENT LIFECYCLE (VERSION?, STATUS?, CONTRIBUTE*, EXTENSION?)>
+<!-- Category Element -->
+<!-- Features related to the life cycle of the resource. -->
+
+<!ELEMENT METAMETADATA (CATALOGENTRY*, CONTRIBUTE*, METADATASCHEME*, LANGUAGE?, EXTENSION?)>
+<!-- METAMETADATA is a category element -->
+<!-- Features of the description rather than the resource. -->
+
+<!ELEMENT RELATION (KIND?, RESOURCE?, EXTENSION?)>
+<!-- RELATION is a category element -->
+<!-- Features of the resource in relationship to other resources. -->
+
+<!ELEMENT RIGHTS (COST?, COPYRIGHTOROTHERRESTRICTIONS?, DESCRIPTION?, EXTENSION?)>
+<!-- RIGHTS is a category element -->
+<!-- Conditions of use of the resource. -->
+
+<!ELEMENT TECHNICAL (FORMAT?, SIZE?, LOCATION*, REQUIREMENTS*, INSTALLATIONREMARKS?, OTHERPLATFORMREQUIREMENTS?, DURATION?, EXTENSION?)>
+<!-- TECHNICAL is a category element -->
+<!-- Technical features of the resource. -->
+
+<!-- HHHHHHHHHHHHHH ROOT ELEMENT HHHHHHHHHHHHHHHHH -->
+
+<!ELEMENT RECORD (METAMETADATA?, GENERAL?, LIFECYCLE?, TECHNICAL?, EDUCATIONAL?, RIGHTS?, RELATION*, ANNOTATION*, CLASSIFICATION*, EXTENSION?)>
+<!ATTLIST RECORD 
+	xmlns CDATA #FIXED "http://www.imsproject.org/metadata/">
+<!-- Root element -->
+
+<!-- end -->

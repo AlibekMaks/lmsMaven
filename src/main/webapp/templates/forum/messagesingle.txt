@@ -1,0 +1,32 @@
+<tr>
+    <td class="forumheader" height="16px">
+        <table width="100%" height="16px">
+            <tr>
+                <td width=25% class="forumheader"><b>{[date]}:</b> {[date name]}</td>
+                <td width=* class="forumheader"><b>{[theme]}:</b> {[theme name]}</td>
+                {[delete]}
+            </tr>
+        </table>
+    </td>
+</tr>
+
+<tr>
+    <td style="padding:0px">
+        <table width="100%" cellpadding="0" cellspacing="0">
+            <td width="25%" class="authorcell" style="margin:2px">
+                <b>{[author]}:</b>{[name]}<br>
+                {[job]}
+
+            </td>
+            <td valign="top" style="margin:2px">
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <div onclick="return false;"> {[body]}</div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </table>
+    </td>
+</tr>

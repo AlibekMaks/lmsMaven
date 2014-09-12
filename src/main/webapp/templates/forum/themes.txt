@@ -1,0 +1,93 @@
+<form action="themes" method="POST">
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table width="100%">
+                <tr>
+                    <td class="pageHeader">
+                        {[theme list]}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <table border="0" width="80%">
+
+                            <tr>
+                                <td width="100%">
+                                    <input type="text" name="search" class="input" value="{[search value]}" style="width:100%">
+                                </td>
+                                <td width="100px">
+                                    <input type="submit" value="{[search]}" class="button">
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+                 {[message]}
+                <tr>
+                    <td>
+                        <table border=0 cellspacing=0 cellpadding=0>
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0/>
+                                    </a>
+                                </td>
+                               {[add theme link]}
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="50%" class="td">
+                                    {[found]} : {[number of found records]}
+                                </td>
+                                <td align='right'>
+                                    {[parts]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <input type="hidden" name="roleID" value="{[roleID]}">
+                <input type="hidden" name="userID" value="{[userID]}">
+                <tr>
+                    <td>
+                        <table class="table" width="100%" border=1 bordercolor="#000000" cols=4>
+                            <tr>
+                                <td width='16px' class="coloredheader"></td>
+
+                                <td width=* align="center" class="coloredheader">
+                                    {[theme title]}
+                                </td>
+                                <td width="15%" align="center" class="coloredheader">
+                                    {[author]}
+                                </td>
+                                <td width="10%" align="center" class="coloredheader">
+                                    {[answers count]}    
+                                </td>
+                                <td width="15%" align="center" class="coloredheader">
+                                    {[last answer]}
+                                </td>
+
+                                {[delete column]}
+                            </tr>
+                         {[records]}
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input style="visibility:hidden" type="text" value="{[partid]}" name="partid">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

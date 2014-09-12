@@ -1,0 +1,38 @@
+<html><head><LINK TYPE="text/css" REL="stylesheet" HREF="css/common.css">
+<script type="text/javascript" language="JavaScript" 
+src="jscripts/JsHttpRequest/lib/JsHttpRequest/JsHttpRequest.js"></script>
+</head>
+<script language="javascript">
+    function getMenu(id){
+        var req = new JsHttpRequest();
+        req.onreadystatechange = function() {
+        try{
+            if (req.readyState == 4) {
+                document.getElementById("menu").innerHTML  =  req.responseJS.menu+ " ";
+            }
+         }catch (e) {}
+       }
+       req.open('get', "getMenu", true);       
+       req.send({ id : id});    
+    }
+</script>
+<body topmargin=0 bottommargin=0 leftmargin=0 rightmargin=0>
+<table border=0 width="100%" height="128px" cellpadding=0 cellspacing=0>
+    <tr>
+        <td background="images/menu.background.gif" align="center">
+            <table border=0 cellpadding=0 cellspacing=0>
+                <tr>
+                    <td width="480px" id="menu">
+                        {[menu]}
+                    </td>
+                    <td width="20px">
+                    </td>
+                    <td width="192px">
+                        {[common]}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body></html>

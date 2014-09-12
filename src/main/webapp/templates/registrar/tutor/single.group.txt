@@ -1,0 +1,14 @@
+<tr>
+    <td class="nameTD">
+        {[subject]}
+    </td>
+    <td align="center">
+        {[class]}
+    </td>
+    <td align="center">
+        {[group number]}
+    </td>
+    <td align="center">
+        {[open]}
+    </td>
+</tr>

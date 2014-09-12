@@ -1,0 +1,58 @@
+<form action="addmessage" method="POST">
+    <table class ="table" width="100%">
+        <tr>
+            <td class="mainTD">
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <table width="100%" class="table">
+                                <tr>
+                                    <td align="center" class="pageHeader">{[message]}</td>
+                                </tr>
+                                {[showmessage]}
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <table width="100%" class="table" align="left" >
+                                <tr>
+                                    <td align="left" style="padding:10px">
+                                        <a href="{[return link]}" title="{[return title]}">
+                                            <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border="0"/>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" style="padding:0px">
+                                        <table width="100%" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td width="20%" ><br>{[theme]}</td>
+                                                <td width=*><br><input type="text" name="theme" style="width:100%" class="input" value="{[theme value]}"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="top:100%"><br>{[body]}</td>
+                                </tr>
+                                <tr>
+                                    <td>{[input body]}</td>
+                                </tr>
+                                <tr>
+                                    <td><br><input type="submit" value="{[save]}" class="submit"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <input type="text" style="visibility:hidden" value={[partid]} name="partid">
+                                    <input type="text" style="visibility:hidden" value={[themeid]} name="themeid">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+     </table>
+</form>

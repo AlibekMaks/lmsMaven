@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0">
+
+    <servlet>
+        <servlet-name>DBGenerator</servlet-name>
+        <servlet-class>arta.common.servlet.DBGenerator</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DBGenerator</servlet-name>
+        <url-pattern>/dbgenerator</url-pattern>
+    </servlet-mapping>
+
+
+
+
+    <!--<servlet>-->
+        <!--<servlet-name>XackTestingsListServlet</servlet-name>-->
+        <!--<servlet-class>arta.dbchecker.dbcTestingsListServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>XackTestingsListServlet</servlet-name>-->
+        <!--<url-pattern>/xacktestings</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <servlet>
+        <servlet-name>DBChecker</servlet-name>
+        <servlet-class>arta.common.servlet.DBChecker</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DBChecker</servlet-name>
+        <url-pattern>/dbchecker</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+    <servlet>
+        <servlet-name>Index</servlet-name>
+        <servlet-class>arta.login.servlet.Index</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Index</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginPage</servlet-name>
+        <servlet-class>arta.login.servlet.LoginPage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginPage</servlet-name>
+        <url-pattern>/loginpage</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DirectorComment</servlet-name>
+        <servlet-class>arta.folder.directorComment.DirectorCommentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DirectorComment</servlet-name>
+        <url-pattern>/directorComment</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Authorize</servlet-name>
+        <servlet-class>arta.login.servlet.Authorize</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Authorize</servlet-name>
+        <url-pattern>/authorize</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Messages</servlet-name>
+        <servlet-class>arta.common.servlet.Messages</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Messages</servlet-name>
+        <url-pattern>/checkmessages</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Tutors</servlet-name>
+        <servlet-class>arta.filecabinet.servlet.tutors.TutorsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Tutors</servlet-name>
+        <url-pattern>/tutors</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TutorServlet</servlet-name>
+        <servlet-class>arta.filecabinet.servlet.tutors.TutorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TutorServlet</servlet-name>
+        <url-pattern>/tutor</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentsServlet</servlet-name>
+        <servlet-class>arta.filecabinet.servlet.students.StudentsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentsServlet</servlet-name>
+        <url-pattern>/students</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestingStudents</servlet-name>
+        <servlet-class>arta.scheduled.tests.servlet.schStudentsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestingStudents</servlet-name>
+        <url-pattern>/testingstudents</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentServlet</servlet-name>
+        <servlet-class>arta.filecabinet.servlet.students.StudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentServlet</servlet-name>
+        <url-pattern>/student</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SubjectsServlet</servlet-name>
+        <servlet-class>arta.subjects.servlet.SubjectsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubjectsServlet</servlet-name>
+        <url-pattern>/subjects</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Department</servlet-name>
+        <servlet-class>arta.departments.servlet.DepartmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Department</servlet-name>
+        <url-pattern>/department</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Departments</servlet-name>
+        <servlet-class>arta.departments.servlet.DepartmentsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Departments</servlet-name>
+        <url-pattern>/departments</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SubjectServlet</servlet-name>
+        <servlet-class>arta.subjects.servlet.SubjectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubjectServlet</servlet-name>
+        <url-pattern>/subject</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookServlet</servlet-name>
+        <servlet-class>arta.books.servlet.BookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookServlet</servlet-name>
+        <url-pattern>/book</url-pattern>
+    </servlet-mapping>    
+
+    <servlet>
+        <servlet-name>BookDownloadServlet</servlet-name>
+        <servlet-class>arta.books.servlet.BookDownloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookDownloadServlet</servlet-name>
+        <url-pattern>/bookdownload</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClassesServlet</servlet-name>
+        <servlet-class>arta.classes.servlet.ClassesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClassesServlet</servlet-name>
+        <url-pattern>/classes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TicketServlet</servlet-name>
+        <servlet-class>arta.exams.servlet.TicketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TicketServlet</servlet-name>
+        <url-pattern>/ticket</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ExamServlet</servlet-name>
+        <servlet-class>arta.exams.servlet.ExamServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExamServlet</servlet-name>
+        <url-pattern>/exam</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ExamsServlet</servlet-name>
+        <servlet-class>arta.exams.servlet.ExamsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExamsServlet</servlet-name>
+        <url-pattern>/exams</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ClassServlet</servlet-name>
+        <servlet-class>arta.classes.servlet.ClassServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClassServlet</servlet-name>
+        <url-pattern>/class</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudyGroupsServlet</servlet-name>
+        <servlet-class>arta.groups.servlet.StudyGroupsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudyGroupsServlet</servlet-name>
+        <url-pattern>/studygroups</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TutorSelectServlet</servlet-name>
+        <servlet-class>arta.groups.servlet.TutorSelectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TutorSelectServlet</servlet-name>
+        <url-pattern>/tutorselect</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudyGroupAddServlet</servlet-name>
+        <servlet-class>arta.groups.servlet.StudyGroupAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudyGroupAddServlet</servlet-name>
+        <url-pattern>/studygroupadd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudyGroupServlet</servlet-name>
+        <servlet-class>arta.groups.servlet.StudyGroupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudyGroupServlet</servlet-name>
+        <url-pattern>/studygroup</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChangeTutorServlet</servlet-name>
+        <servlet-class>arta.groups.servlet.ChangeTutorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangeTutorServlet</servlet-name>
+        <url-pattern>/changetutor</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>TestsEdit</servlet-name>
+        <servlet-class>arta.tests.servlets.TutorTestsList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestsEdit</servlet-name>
+        <url-pattern>/testsedit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestEdit</servlet-name>
+        <servlet-class>arta.tests.servlets.QuestionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestEdit</servlet-name>
+        <url-pattern>/testedit</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>TestingServlet</servlet-name>
+        <servlet-class>arta.tests.testing.servlet.TestingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestingServlet</servlet-name>
+        <url-pattern>/testing</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestsForTestingServlet</servlet-name>
+        <servlet-class>arta.tests.testing.servlet.TestsForTestingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestsForTestingServlet</servlet-name>
+        <url-pattern>/testsfortesting</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddTestsForTestingServlet</servlet-name>
+        <servlet-class>arta.tests.testing.servlet.AddTestsForTestingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddTestsForTestingServlet</servlet-name>
+        <url-pattern>/addtests</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TutorBooksServlet</servlet-name>
+        <servlet-class>arta.lessonmaterials.servelt.TutorBooksServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TutorBooksServlet</servlet-name>
+        <url-pattern>/tutorbooks</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TutorBookServlet</servlet-name>
+        <servlet-class>arta.lessonmaterials.servelt.TutorBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TutorBookServlet</servlet-name>
+        <url-pattern>/tutorbook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChatServlet</servlet-name>
+        <servlet-class>arta.chat.servlet.ChatServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChatServlet</servlet-name>
+        <url-pattern>/chat</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudyRoomServlet</servlet-name>
+        <servlet-class>arta.studyroom.servlet.StudyRoomServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudyRoomServlet</servlet-name>
+        <url-pattern>/studyroom</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChatDialogServlet</servlet-name>
+        <servlet-class>arta.chat.servlet.ChatDialogServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChatDialogServlet</servlet-name>
+        <url-pattern>/dialog</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InChatServlet</servlet-name>
+        <servlet-class>arta.chat.servlet.InChatServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InChatServlet</servlet-name>
+        <url-pattern>/inchat</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TutorBookDownload</servlet-name>
+        <servlet-class>arta.lessonmaterials.servelt.TutorBookDownload</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TutorBookDownload</servlet-name>
+        <url-pattern>/tutorbookdownload</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminAuthorization</servlet-name>
+        <servlet-class>arta.auth.servlet.AdminAuthorization</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminAuthorization</servlet-name>
+        <url-pattern>/adminauth</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentTestingServlet</servlet-name>
+        <servlet-class>arta.check.servlet.StudentTestingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentTestingServlet</servlet-name>
+        <url-pattern>/studenttesting</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuestionServlet</servlet-name>
+        <servlet-class>arta.check.servlet.QuestionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionServlet</servlet-name>
+        <url-pattern>/questionCheck</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CommonTestReportViewServlet</servlet-name>
+        <servlet-class>arta.tests.reports.servlet.commonReports.CommonTestReportViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CommonTestReportViewServlet</servlet-name>
+        <url-pattern>/testcommonreport</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>TestingAnalysisViewServlet</servlet-name>
+        <servlet-class>arta.tests.reports.servlet.privateReports.TestingAnalysisViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestingAnalysisViewServlet</servlet-name>
+        <url-pattern>/testing_analysis</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MainServlet</servlet-name>
+        <servlet-class>arta.welcome.servlet.MainServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MainServlet</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ExitServlet</servlet-name>
+        <servlet-class>arta.welcome.servlet.ExitServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExitServlet</servlet-name>
+        <url-pattern>/exit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LibraryServlet</servlet-name>
+        <servlet-class>arta.library.servlet.LibraryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LibraryServlet</servlet-name>
+        <url-pattern>/library</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TutorRegistrarServlet</servlet-name>
+        <servlet-class>arta.registrar.tutor.servlet.TutorRegistrarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TutorRegistrarServlet</servlet-name>
+        <url-pattern>/tutorregistrar</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TutorStudyGroupsServlet</servlet-name>
+        <servlet-class>arta.registrar.tutor.groupslist.servlet.TutorStudyGroupsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TutorStudyGroupsServlet</servlet-name>
+        <url-pattern>/tutorgroups</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestReportsList</servlet-name>
+        <servlet-class>arta.tests.reports.servlet.commonReports.CommonTestReportsSearch</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestReportsList</servlet-name>
+        <url-pattern>/testreports</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrivateTestReport</servlet-name>
+        <servlet-class>arta.tests.reports.servlet.privateReports.TestReportViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PrivateTestReport</servlet-name>
+        <url-pattern>/privatetestreport</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PrivateAttestatTestReport</servlet-name>
+        <servlet-class>arta.tests.reports.servlet.privateReports.TestAttestationReportViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PrivateAttestatTestReport</servlet-name>
+        <url-pattern>/test_attestat_report</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentRegistrarServlet</servlet-name>
+        <servlet-class>arta.registrar.student.servlet.StudentRegistrarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentRegistrarServlet</servlet-name>
+        <url-pattern>/studentregistrar</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginPasswordgenerateServlet</servlet-name>
+        <servlet-class>arta.auth.servlet.LoginPasswordgenerateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginPasswordgenerateServlet</servlet-name>
+        <url-pattern>/generate</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MenuServlet</servlet-name>
+        <servlet-class>arta.common.servlet.MenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MenuServlet</servlet-name>
+        <url-pattern>/getMenu</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TimerServlet</servlet-name>
+        <servlet-class>arta.check.servlet.TimerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TimerServlet</servlet-name>
+        <url-pattern>/timer</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SaveTimerServlet</servlet-name>
+        <servlet-class>arta.check.servlet.SaveTimerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveTimerServlet</servlet-name>
+        <url-pattern>/savetimer</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SettingsServlet</servlet-name>
+        <servlet-class>arta.settings.servlet.SettingsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SettingsServlet</servlet-name>
+        <url-pattern>/settings</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestViewServlet</servlet-name>
+        <servlet-class>arta.tests.test.view.QuestionViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestViewServlet</servlet-name>
+        <url-pattern>/testView</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateNewImage</servlet-name>
+        <servlet-class>arta.tests.servlets.CreateNewImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateNewImage</servlet-name>
+        <url-pattern>/createResource</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetImage</servlet-name>
+        <servlet-class>arta.tests.servlets.GetImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetImage</servlet-name>
+        <url-pattern>/getImage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelpServlet</servlet-name>
+        <servlet-class>arta.help.servlet.HelpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelpServlet</servlet-name>
+        <url-pattern>/help</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelpStartServlet</servlet-name>
+        <servlet-class>arta.help.servlet.HelpStartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelpStartServlet</servlet-name>
+        <url-pattern>/helpstart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>TestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServerStatus</servlet-name>
+        <servlet-class>arta.common.servlet.ServerStatus</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServerStatus</servlet-name>
+        <url-pattern>/serverStatus</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowMessageServlet</servlet-name>
+        <servlet-class>arta.common.servlet.ShowMessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowMessageServlet</servlet-name>
+        <url-pattern>/showmessage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetLogServlet</servlet-name>
+        <servlet-class>arta.log.servlet.GetLogServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetLogServlet</servlet-name>
+        <url-pattern>/getLog</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogPageServlet</servlet-name>
+        <servlet-class>arta.log.servlet.LogPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogPageServlet</servlet-name>
+        <url-pattern>/logs</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestImportServlet</servlet-name>
+        <servlet-class>arta.tests.parser.servlet.TestImportServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestImportServlet</servlet-name>
+        <url-pattern>/import</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>XLSReportServlet</servlet-name>
+        <servlet-class>arta.tests.reports.servlet.privateReports.XLSReportServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>XLSReportServlet</servlet-name>
+        <url-pattern>/xlsreport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CommonXLSReportServlet</servlet-name>
+        <servlet-class>arta.tests.reports.servlet.commonReports.CommonXLSReportServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CommonXLSReportServlet</servlet-name>
+        <url-pattern>/commonxlsrepotr</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>InvalidURL</servlet-name>
+        <servlet-class>arta.auth.servlet.InvalidURL</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InvalidURL</servlet-name>
+        <url-pattern>/invalid</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ContentServlet</servlet-name>
+        <servlet-class>arta.studyroom.servlet.ContentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContentServlet</servlet-name>
+        <url-pattern>/content</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LMSCourseAdmin</servlet-name>
+        <servlet-class>org.adl.samplerte.server.LMSCourseAdmin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LMSCourseAdmin</servlet-name>
+        <url-pattern>/LMSCourseAdmin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudyRoomMenuServlet</servlet-name>
+        <servlet-class>arta.studyroom.servlet.StudyRoomMenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudyRoomMenuServlet</servlet-name>
+        <url-pattern>/studyroommenu</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BoardStartServlet</servlet-name>
+        <servlet-class>arta.studyroom.servlet.BoardStartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BoardStartServlet</servlet-name>
+        <url-pattern>/boardstart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AppointTutorialServlet</servlet-name>
+        <servlet-class>arta.studyroom.servlet.AppointTutorialServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AppointTutorialServlet</servlet-name>
+        <url-pattern>/appointtutorial</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AppointTestingsServlet</servlet-name>
+        <servlet-class>arta.tests.testing.servlet.AppointTestingsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AppointTestingsServlet</servlet-name>
+        <url-pattern>/appointtests</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InsertObjectServlet</servlet-name>
+        <servlet-class>arta.tests.imageExchange.InsertObjectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertObjectServlet</servlet-name>
+        <url-pattern>/pasteObj</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestingsListServlet</servlet-name>
+        <servlet-class>arta.tests.testing.servlet.TestingsListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestingsListServlet</servlet-name>
+        <url-pattern>/testings</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudyRoomTestingsListServlet</servlet-name>
+        <servlet-class>arta.studyroom.servlet.StudyRoomTestingsListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudyRoomTestingsListServlet</servlet-name>
+        <url-pattern>/studyroomtestings</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+         <welcome-file>index</welcome-file>
+     </welcome-file-list>
+
+   <!--<security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Secure servlet</web-resource-name>
+            <url-pattern>/loginpage</url-pattern>
+            <url-pattern>/authorize</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>-->
+
+    <listener>
+        <listener-class>arta.auth.logic.SessionListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>SavePointServlet</servlet-name>
+        <servlet-class>arta.adminpanel.savepoint.servlet.SavePointServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SavePointServlet</servlet-name>
+        <url-pattern>/savepoint</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ScormMessageServlet</servlet-name>
+        <servlet-class>arta.scorm.servlet.ScormMessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ScormMessageServlet</servlet-name>
+        <url-pattern>/scormmsg</url-pattern>
+    </servlet-mapping>    
+
+    <!-- forum -->
+    <servlet>
+        <servlet-name>PartsServlet</servlet-name>
+        <servlet-class>arta.forum.servlet.PartsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PartsServlet</servlet-name>
+        <url-pattern>/forum</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ThemesServlet</servlet-name>
+        <servlet-class>arta.forum.servlet.ThemesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ThemesServlet</servlet-name>
+        <url-pattern>/themes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddMessageServlet</servlet-name>
+        <servlet-class>arta.forum.servlet.AddMessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddMessageServlet</servlet-name>
+        <url-pattern>/addmessage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MessagesServlet</servlet-name>
+        <servlet-class>arta.forum.servlet.MessagesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MessagesServlet</servlet-name>
+        <url-pattern>/messageslist</url-pattern>
+    </servlet-mapping>
+
+      <!-- Следующее описание предназначено для сервлетов adl -->
+
+    <servlet>
+      <servlet-name>LMSCMIServlet</servlet-name>
+      <servlet-class>org.adl.samplerte.server.LMSCMIServlet</servlet-class>
+        <!-- Load this servlet at server startup time -->
+      <load-on-startup>5</load-on-startup>
+    </servlet>
+
+    <servlet>
+      <servlet-name>SSPServer</servlet-name>
+      <servlet-class>org.ims.ssp.samplerte.server.SSP_Servlet</servlet-class>
+        <!-- Load this servlet at server startup time -->
+      <load-on-startup>5</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>ImportStudents</servlet-name>
+        <servlet-class>arta.filecabinet.servlet.students.ImportStudents</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImportStudents</servlet-name>
+        <url-pattern>/importstudents</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>download</servlet-name>
+        <servlet-class>arta.filecabinet.servlet.students.download</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>download</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>LMSCMIServlet</servlet-name>
+      <url-pattern>/LMSCMIServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>LMSCMIServlet</servlet-name>
+      <url-pattern>/lmscmi</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>SSPServer</servlet-name>
+      <url-pattern>/SSPServer</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index</welcome-file>
+    </welcome-file-list>
+</web-app>

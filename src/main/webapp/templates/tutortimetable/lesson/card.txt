@@ -1,0 +1,110 @@
+<table border=0 width="100%" height="100%" cellpadding=0 cellspacing=0>
+    <tr>
+        <td width="232px">
+            {[navigation]}
+        </td>
+        <td width=* valign=top>
+            <table border=0 width="100%" height="100%">
+                <tr height="100%">
+                    <td class="mainTD" valign="top">
+                        <table border=0 width="100%">
+                            <tr>
+                                <td>
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="48px" height="48px" border=0 />
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="header1">
+                                    {[day]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {[class]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {[lesson]}
+                                </td>
+                            </tr>
+                            {[message]}
+                            <tr>
+                                <td>
+                                    <table border=0 width="100%">
+                                        <tr>
+                                            <td class="header1" align="center">
+                                                {[testings]}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">
+                                                {[add testing]}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table border=1 width="100%" class="table" bordercolor="#000000">
+                                                    <tr>
+                                                        <td width="80%" class="coloredheader" align="center">
+                                                            {[name]}
+                                                        </td>
+                                                        <td width="10%" class="coloredheader" align="center">
+                                                            {[edit]}
+                                                        </td>
+                                                        <td width="10%" class="coloredheader" align="center">
+                                                            {[delete]}
+                                                        </td>
+                                                    </tr>
+                                                    {[testing records]}
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table border=0 width="100%">
+                                        <tr>
+                                            <td class="header1" align="center">
+                                                {[study materials]}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                {[add book]}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table border=1 width="100%" class="table" bordercolor="#000000">
+                                                    <tr>
+                                                        <td width="90%" class="coloredheader" align="center">
+                                                            {[book name]}
+                                                        </td>
+                                                        <td width="10%" class="coloredheader" align="center">
+                                                            {[delete book]}
+                                                        </td>
+                                                    </tr>
+                                                    {[book record]}
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,37 @@
+<form name="form"  method="post" enctype="multipart/form-data" action="tutorTest" id="frm">
+{[random]}
+
+<table border=0 width="100%" cellspacing=0>
+	<tr>
+		<td class="menuHeader" align="center">
+			<b>
+				{[test edit]}
+			</b>
+		</td>
+	</tr>
+</table>
+
+<table border=0 width="100%" cellpadding="20px">
+	<tr>
+		<td align="center" valign="top">
+
+			<table border=0 width="80%">
+				<tr>
+					<td class="TDtext" width="20%"><b>
+						{[test name]}
+					</td>
+					<td width="*">
+						<input name="testName" value="{[testNameValue]}" class="commonInput" style="width:100%;">
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2 align="left">
+						<a onClick='send();' href="{[edit questions href]}" class="filecabinetLink" >{[to questions]}</a>
+					</td>
+				</tr>
+			</table>	
+		</td>
+	</tr>
+</table>
+
+</form>		

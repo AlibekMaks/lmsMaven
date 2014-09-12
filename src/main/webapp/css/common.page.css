@@ -1,0 +1,90 @@
+table.menuItemTable{
+    font-family:arial,tahoma,sans-serif;
+    font-size:9pt;
+    color:#ffffff;
+    border-collapse:collapse;
+    border-style:none;
+}
+
+td.menuIcon{
+    font-family:arial,tahoma,sans-serif;
+    font-size:11pt;
+}
+
+a.menuLink {
+    font-family:arial,tahoma,sans-serif;
+    font-size:9pt;
+    color:#ffffff;
+}
+
+a.menuLink1 {
+    font-family:arial,tahoma,sans-serif;
+    font-size:9pt;
+    text-decoration:underline;
+    color:white;
+}
+
+td.commonMenuTD {
+    color:#ffffff;
+    text-decoration:none;
+    font-size:10pt;
+}
+
+.menuItem {
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#ffffff;    
+    vertical-align:middle;
+}
+
+td.menuHeader {
+    font-family:arial,tahoma,sans-serif;
+    font-size:11pt;
+    color:#ffffff;
+    font-weight:bold;
+    padding-left:5px;
+}
+
+.menuDescription{
+    font-family:arial,tahoma,sans-serif;
+    font-size:6pt;
+    color:#ffffff;
+}
+
+table.commonPageTable{
+    padding-bottom:3px;
+    padding-top:3px;
+    padding-left:3px;
+    padding-right:3px;
+}
+
+.time{
+    font-family:arial,tahoma,sans-serif;
+    font-size:28pt;
+    color:#ffffff;
+    vertical-align:middle;
+}
+
+.date{
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#ffffff;
+    vertical-align:middle;
+    font-weight:bold;
+}
+
+.calMonth{
+    font-family:tahoma,sans-serif;
+    vertical-align:middle;
+    text-align:center;
+    font-size:7pt;
+    color:#ffffff;
+    font-weight:bold;
+}
+
+.scormmsg{
+    font-family:tahoma,sans-serif;
+    vertical-align:top;    
+    font-size:12pt;
+    color:#424242; 
+}

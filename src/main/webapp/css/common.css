@@ -1,0 +1,282 @@
+.nameTD{
+    padding-left:3px;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+}
+
+.header{
+    font-family:arial,tahoma,sans-serif;
+    font-size:20pt;
+    font-weight:bold;
+    color:#454545; 
+    text-align:center;
+}
+
+.header1{
+    font-family:arial,tahoma,sans-serif;
+    font-size:14pt;
+    font-weight:bold;
+    color:#454545; 
+    text-align:center;
+}
+
+.header2{
+    font-family:arial,tahoma,sans-serif;
+    font-size:20pt;
+    color:#454545;
+    text-align:left
+    font-weight:bold;
+    font-style:italic;
+}
+
+.table{
+    border-collapse:collapse;
+    border-color:#000000;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#333333; 
+    vertical-align:middle;
+}
+
+
+.testtable{
+    border-collapse:collapse;
+    border-color:#000000;
+    font-family:arial,tahoma,sans-serif;
+    font-size:14pt;
+    vertical-align:middle;
+    cursor: pointer;
+}
+
+.coloredheader{
+    border-collapse:collapse;
+    border-color:#000000;
+    font-family:arial,tahoma,sans-serif;
+    font-size:11pt;
+    color:#333333;
+    background-color:#dae0e6;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.testview{
+    border-collapse:collapse;
+    border-color:#000000;
+    font-family:arial,tahoma,sans-serif;
+    font-size:11pt;
+    color:#333333;
+    background-color:#efefef;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.journal_testing{
+    border-collapse:collapse;
+    border-color:#000000;
+    font-family:arial,tahoma,sans-serif;
+    font-size:11pt;
+    color:#333333;
+    background-color:#adc5d3;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.journal_header{
+    border-collapse:collapse;
+    border-color:#000000;
+    font-family:arial,tahoma,sans-serif;
+    font-size:11pt;
+    color:#333333;    
+    text-align:center;
+    vertical-align:middle;
+}
+
+.href{
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#336699;
+}
+
+.bold_href{
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#9D102D;
+    font-weight:bold;
+}
+
+.menulink{
+    font-family:arial,tahoma,sans-serif;
+    font-size:9pt;
+    color:#336699;
+}
+
+.tableheader{
+    border-collapse:collapse;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    vertical-align:middle;
+    font-weight:bold;
+    background-color:#efefef;
+}
+
+.description{
+    border-collapse:collapse;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#000000;
+    vertical-align:middle;
+    background-color:#e2e1dd;    
+}
+
+.errordescription{
+    border-collapse:collapse;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#000000;
+    vertical-align:middle;
+    background-color:#E9B3A4;
+}
+
+.informationdescription{
+    border-collapse:collapse;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#000000;
+    vertical-align:middle;
+    background-color:#359CEA;
+}
+
+.messageHeader{
+    color:#000000;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;    
+}
+
+.message{
+    color:#000000;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+}
+
+.mainTD{
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    vertical-align:top;
+}
+
+.pageHeader{
+    font-family:arial,tahoma,sans-serif;
+    font-size:20pt;    
+    color:#0A5084;
+    text-align:center;
+}
+
+.input{
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#333333;
+    border-color:#4477aa;
+    border-width:1px;
+    border-style:solid;
+}
+
+.button{
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    cursor: pointer;
+}
+
+.td{
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+}
+
+.imgtd{
+    text-align:center;
+    vertical-align:bottom;
+    padding-right:3px;
+    padding-bottom:0px;
+}
+
+.navLink{
+    font-family:arial,tahoma,sans-serif;
+    font-size:12pt;
+    Color:#336699;
+    text-decoration:none;
+}
+
+.navSelectedLink{
+    font-family:arial,tahoma,sans-serif;
+    font-size:12pt;
+    Color:#336699;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.select{
+    font-family:arial,tahoma;
+    font-size:9pt;
+    color:#333333;
+    vertical-align:middle;
+    border-color:#4477aa;
+    border-width:1px;
+    border-style:solid;
+}
+
+.option{
+    font-family:arial,tahoma;
+    font-size:9pt;
+    color:#333333;
+    vertical-align:middle;
+}
+
+.forumheader{
+    border-collapse:collapse;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:white;
+    background-color:#0c548c;
+    text-align:left;
+    vertical-align:top;
+    border-color:#0c548c;
+    border-width:1px;
+}
+
+.authorcell {
+    border-collapse:collapse;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    background-color:#ced9e7;
+    text-align:left;
+    color:#333333;
+    vertical-align:top;
+    padding:2px;
+
+}
+
+.forumtable{
+    border-collapse:collapse;
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#333333;
+    vertical-align:middle;
+}
+
+.disabled_tr td, .disabled_tr td input{
+    background-color: rgba(231, 231, 231, 1);
+}
+
+.isRecommend td, .isRecommend td input{
+    background-color: rgba(243, 204, 204, 1);
+}
+
+.framebody {
+    padding: 0;
+    margin: 0;
+    background-image: url('images/1px.jpg');
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+}

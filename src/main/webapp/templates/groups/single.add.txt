@@ -1,0 +1,8 @@
+<tr>
+    <td align="center" width="15px">
+        <input type="checkbox" name="sub{[subjectID]}" onClick='changeState({[subjectID]}, this.checked)'/>
+    </td>
+    <td>
+        {[subject name]}
+    </td>
+</tr>

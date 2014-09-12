@@ -1,0 +1,96 @@
+<script language=JavaScript>
+    function isFormValid(){
+        document.getElementById("login").value = trim(document.getElementById("login").value);
+        document.getElementById("pass").value = trim(document.getElementById("pass").value);
+        document.getElementById("conf").value = trim(document.getElementById("conf").value);
+
+        if (document.getElementById("login").value.length == 0){
+            document.getElementById("login").focus();
+            alert("{[enter all data]}");
+            return false;
+        }
+        if (document.getElementById("pass").value.length == 0){
+            document.getElementById("pass").focus();
+            alert("{[enter all data]}");
+            return false;
+        }
+        if (document.getElementById("conf").value.length == 0){
+            document.getElementById("conf").focus();
+            alert("{[enter all data]}");
+            return false;
+        }
+        if (document.getElementById("conf").value != document.getElementById("pass").value){
+            alert("{[pass and conf are not equal]}");
+            return false;
+        }
+        return true;
+    }
+</script>
+<form action="adminauth" method="POST" onsubmit="return isFormValid()">
+<input type="hidden" name="nocacge" value="{[rnd]}"/>
+<input type="hidden" name="roleID" value="{[roleID]}"/>
+<input type="hidden" name="personID" value="{[personID]}"/>
+{[hidden inputs]}
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageHeader">
+                        {[page header]}
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border="0" >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 />
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%" class="table">
+                            <tr>
+                                <td width="20%">
+                                    {[login]}
+                                </td>
+                                <td>
+                                    <input class="input" id="login" name="login" style="width:100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {[password]}
+                                </td>
+                                <td>
+                                    <input class="input" id="pass" type="password" name="password" style="width:100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {[confirmation]}
+                                </td>
+                                <td>
+                                    <input class="input" id="conf" type="password" name="confirm" style="width:100%"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="{[save]}" class="button"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

@@ -1,0 +1,13 @@
+<tr>
+	<td width="*">
+		{[second tag]}
+	</td>
+	<td width="50%"> 
+		{[first tag]}
+	</td>
+	<td width="16px" valign="top">
+		<a href="#" onClick='return removeVariant({[name]},{[number]});'  >
+			<img src="images\icon.delete.gif" border=0 width="16px" height="16px">
+		</a>
+	</td>
+</tr>

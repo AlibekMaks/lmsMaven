@@ -1,0 +1,18 @@
+<table border=0 width="100%">
+    <tr>
+        <td width="100%" class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[help]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,84 @@
+<script language="javascript">
+    function check(){
+
+        if (document.getElementById("file").value == null || document.getElementById("file").value.length == 0){
+            alert("{[select file]}");
+            return false;
+        }
+
+        var fileName = document.getElementById("file").value;
+        var fileExt = fileName.substring(fileName.lastIndexOf('.'));
+        if (fileExt != ".xls"){
+            alert("{[select xls file]}");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+<form action="importstudents" name="form" method="post" enctype="multipart/form-data" onsubmit="return check(this);">
+{[hidden inputs]}
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table borde=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[import header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" class="href">
+                                        <img title="{[return title]}" src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0/>
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[download link]}" class="href">
+                                        <img title="{[download title]}" src="images/download2.gif" width="{[size]}px" height="{[size]}px" border=0/>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td height="15px">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="table" width="100%">
+                            <tr>
+                                <td width="20%"><b>
+                                    {[file: ]}
+                                </td>
+                                <td>
+                                    <input type="file" style="width:80%" name="file" id="file" accept="application/x-msexcel" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15px">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="{[import]}" class="button"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>
+
+
+
+

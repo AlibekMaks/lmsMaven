@@ -1,0 +1,17 @@
+<tr>
+	<td>
+<form action="savepoint" method="post">
+		<table class="TDtext" bgcolor="#fefefe">
+			<tr>
+				<td width="80%">
+					<input class="commonInput" type="text" style="width:100%" name="folder" value="{[current folder]}"/>
+				</td>
+				<td width="20%">
+					<input type="submit" value="{[change]}" class="button">
+				</td>				
+				<td width="20%"></td>
+			</tr>
+		</table>
+</form>
+	</td>
+</tr>

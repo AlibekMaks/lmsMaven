@@ -1,0 +1,8 @@
+<tr>
+    <td>
+        {[name]}
+    </td>
+    <td>
+        {[select]}
+    </td>
+</tr>

@@ -1,0 +1,186 @@
+<script type="text/javascript">
+  function showOrHide(checkbox_id, div_id, show) {
+    cb = document.getElementById(checkbox_id);
+    cat = document.getElementById(div_id);
+    if (!cb.checked) {
+        if (show) cat.style.display = "none"
+         else cat.style.display = "block";
+    } else {
+        if (show) cat.style.display = "block"
+         else cat.style.display = "none";
+    }
+  }
+</script>
+
+<form action="settings">
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="main" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 />
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0 width="100%" class="table">
+                            <tr height="30px">
+                                <td colspan=2>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="70%">
+                                    {[max mark value]}
+                                </td>
+                                <td width="30%">
+                                    <input class="input" name="maxmark" value="{[maxmark value]}" size=5/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="70%">
+                                    {[excellent mark]}
+                                </td>
+                                <td width="30%">
+                                    <input class="input" name="excellent" value="{[excellent value]}" size=5/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="70%">
+                                    {[good mark]}
+                                </td>
+                                <td width="30%">
+                                    <input class="input" name="good" value="{[good value]}" size=5/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="70%">
+                                    {[satisfactory]}
+                                </td>
+                                <td width="30%">
+                                    <input class="input" name="satisfactory" value="{[satisfactory value]}" size=5/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="70%">
+                                    {[show_report msg]}
+                                </td>
+                                <td width="30%">
+                                    <input type="checkbox" id="show_report" name="show_report" {[show_report value]} size=5  />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="70%">
+                                    {[show_answers msg]}
+                                </td>
+                                <td width="30%">
+                                    <input type="checkbox" id="show_answers" name="show_answers" {[show_answers value]} size=5  />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="70%">
+                                    {[student_test_access msg]}
+                                </td>
+                                <td width="30%">
+                                    <input type="checkbox" id="student_test_access" name="student_test_access" {[student_test_access value]} size=5  />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="70%">
+                                    {[recommend_candidates msg]}
+                                </td>
+                                <td width="30%">
+                                    <input type="checkbox" id="recommend_candidates" name="recommend_candidates" {[recommend_candidates value]} size=5 onchange='showOrHide("recommend_candidates", "recommend_candidates_div", true);'  />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan=2>
+                                    <div id='recommend_candidates_div' style='display: {[recommend_candidates_div display]};'>
+                                    <table border=0 width="300px" class="table">
+                                        <tr>
+                                            <td width="10px">
+                                                &nbsp;
+                                            </td>
+                                            <td width=*>
+                                                {[recommend_candidates_every every msg]}
+                                                {[recommend_candidates_every select]}
+                                                {[recommend_candidates_every month msg]}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                            <tr height="30px">
+                                <td colspan=2>
+                                    &nbsp;
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="70%">
+                                    {[usb label value]}
+                                </td>
+                                <td width="30%">
+                                    <input type="checkbox" name="usb" {[usb value]} size=5 id="usb" onchange='showOrHide("usb", "usb_div", false);' />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan=2>
+                                    <div id='usb_div' style='display: {[usb_div display]};'>
+                                    <table border=0 width="100%" class="table">
+                                        <tr>
+                                            <td width="70%">
+                                                {[attestat threshold for directors]}
+                                            </td>
+                                            <td width="30%">
+                                                <input class="input" name="att_d" value="{[att_d value]}" size=5/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="70%">
+                                                {[attestat threshold for employees]}
+                                            </td>
+                                            <td width="30%">
+                                                <input class="input" name="att_e" value="{[att_e value]}" size=5/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr height="30px">
+                                <td colspan=2>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="save" value="{[save]}" class="button">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

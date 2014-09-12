@@ -1,0 +1,97 @@
+<table width=100% cellpadding=20px>
+	<tr>
+		<td>
+			<table width=100% border=0 class="table">
+				<tr>
+					<td align=right>
+						{[print]}
+					</td>
+				</tr>
+				<tr>
+					<td class="header" align="center">
+						<i><b>{[paper]}
+					</td>
+				</tr>
+				<tr>
+					<td class="header" align="center">
+						<i><b>{[report name]}
+					</td>
+				</tr>
+				<tr>
+				    <td height="20px">
+				    </td>
+				</tr>
+				<tr>
+					<td>
+						<table width=100% border=0 class="table">
+							<tr>
+								<td width=20%>
+									<b>{[testing date]}:
+								</td>
+								<td  width="*">
+									{[date value]}
+								</td>
+							</tr>
+							<tr>
+								<td width=20%>
+									<b>{[tutor]}:
+								</td>
+								<td width="*">
+									{[tutor value]}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+				    <td height="20px">
+				    </td>
+				</tr>
+				<tr>
+					<td>
+						<table border=1 width="100%" class="table" bordercolor="#000000">
+							<tr>
+								<td width="*" rowspan=2 align=center>
+									<b>{[student name]}</b>
+								</td>
+                                <td width="20%" rowspan=2 align=center>
+                                    <b>{[class name]}</b>
+                                </td>
+
+								<td width="21%" colspan=3 align=center>
+									<b>{[right answers]}</b>
+								</td>
+								<td width="5%" rowspan=2 align=center>
+									<b>{[mark]}</b>
+								</td>
+								<td width="5%" rowspan=2 align=center>
+                                    <b>{[test language]}</b>
+                                </td>
+                                <td width="8%" rowspan=2 align=center>
+                                      {[testing result]}
+                                </td>
+							</tr>
+							<tr>
+								<td width="7%" align=center>
+									<b>{[easy]}</b>
+								</td>
+								<td width="7%" align=center>
+									<b>{[middle]}</b>
+								</td>
+								<td width="7%" align=center>
+									<b>{[difficult]}</b>
+								</td>
+							</tr>
+							{[students]}
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{[return]}
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

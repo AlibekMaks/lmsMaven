@@ -1,0 +1,13 @@
+<tr>
+    <td>
+        <input type="checkbox" id=="std{[studentID]}" name="std{[studentID]}" {[checked]} />
+    </td>
+    <td style="padding-left:3px;">
+        {[name]}
+    </td>
+    <td align="center">
+        {[class]}
+    </td>    
+    <td align="center">
+    </td>
+</tr>

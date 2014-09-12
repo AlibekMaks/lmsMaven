@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>Testing System</title>
+        <META HTTP-Equiv="Cache-Control" Content="no-cache">
+        <META HTTP-Equiv="Pragma" Content="no-cache">
+        <META HTTP-Equiv="Expires" Content="Tue, 01 Jan 1980 1:00:00 GMT">
+        <META http-equiv=Content-Type content="text/html; charset=utf-8">
+        <LINK TYPE="text/css" REL="stylesheet" HREF="css/common.css">
+        <LINK TYPE="text/css" REL="stylesheet" HREF="css/common.page.css">
+        <script type="text/javascript" src="jscripts/common.js"></script>
+        {[header]}
+        <script language=JavaScript>
+            function mouseEntered(obj){
+                obj.style.backgroundImage=document.getElementById('selectedMenuItem').style.backgroundImage;                                
+            }
+	      function mouseExited(obj){
+                obj.style.backgroundImage='url(none)';                                
+            }
+        </script>
+    </head>
+    <body  topmargin=0 bottommargin=0 leftmargin=0 rightmargin=0 {[bodyFunction]} >
+        <div id="menudiv" style="VISIBILITY:hidden;zIndex:3" >
+            <table id="selectedMenuItem" width="270px" cellpadding=0 cellspacing=0 style="background-image:url('images/button.gif');
+             background-position:center;   ">
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table width="100%" height="100%" cellspacing="0px" cellpadding="0px"
+               style="background-repeat:no-repeat;border-style:none;border-collapse:collapse" border=0>
+            <tr height="90px" width="100%">
+        		<td  background="images/banner1.jpg"  bgColor="#4aa2d4" valign="bottom" height="90px"
+                         width="100%" align=right nowrap style=" background-repeat:no-repeat;">
+	      		<table cellspacing=8px cellpadding=0 width="100%" height="100%" style="color:#ffffff;font-weight:bold">
+                            <tr>
+                                <td align="right" valign="bottom" >
+                                    {[common menu]}
+                                </td>
+                            </tr>
+			      </table>
+                    </td>
+	      </tr>
+            <tr height="1px" width="100%" bgcolor="#ffffff" style="border-style:none">
+		    <td valign="top" style="border-style:none">
+                </td>
+	      </tr>
+	      <tr height="8px" width="100%" bgcolor="#c2c2c2" style="border-style:none">
+                <td valign="top" style="border-style:none">
+		    </td>
+	      </tr>
+            <tr height="1px" width="100%" bgcolor="#ffffff" style="border-style:none">
+		    <td valign="top" style="border-style:none">
+		    </td>
+	      </tr>
+	      <tr height="*" width="100%">
+		    <td valign="top" bgcolor="#498bbd" style="border-style:none">
+                    <table width="100%" height="100%" style="border-style:none;border-collapse:collapse" border=0 cellpadding=0px cellspacing=0px>
+                        <tbody>
+                            <tr>
+                                <td width="270px" valign="top" height="100%" >
+                                    <table width="100%" height=100% background="images/menu.fon.jpg" bgcolor="#498bbd"cellpadding=0 cellspacing=0 style="background-repeat:no-repeat;border-style:none;border-collapse:collapse" border=0>
+                                        <tr>
+                                            <td>
+                                                <table height="41px" width="100%"  cellpadding=5px cellspacing=0 class="commonTable" border=0>
+                                                    <tr>
+                                                        <td>{[hours]}</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                {[menu]}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                {[menu1]}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td height="100%">
+                                            </td>
+                                        </tr>
+                                    </table>
+						</td>
+                                    <td width="*" valign="top" height="100%" bgcolor="#ffffff" style="border-color:#4477aa">
+							{[mainPart]}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+	<tr height="1px" width="100%" bgcolor="#ffffff" style="border-style:none">
+		<td valign="top" style="border-style:none">
+
+		</td>
+	</tr>
+	<tr height="8px" width="100%" bgcolor="#c2c2c2" style="border-style:none">
+		<td valign="top" style="border-style:none;color:#ffffff" align="CENTER" class="commonCenteredTD">
+		</td>
+	</tr>
+
+    <tr height="1px" width="100%" bgcolor="#ffffff" style="border-style:none">
+		<td valign="top" style="border-style:none">
+
+		</td>
+	</tr>
+    <tr height="8px" width="100%" bgcolor="#498bbd" style="border-style:none">
+		<td valign="top" style="border-style:none;color:#ffffff;font-family:9px;font-family:Arial" align="CENTER">
+              <a href="http://www.alssoft.kz/" style="color:#ffffff; text-decoration:none" title="{[visit our website]}">Testing System v3.0  (build# {[buildNumber]})</a>
+		</td>
+	</tr>
+</table>
+
+       
+    </body>
+</html>

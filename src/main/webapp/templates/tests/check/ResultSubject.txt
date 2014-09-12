@@ -1,0 +1,30 @@
+                    <tr>
+                        <td align="center" class="header">
+                            {[testing results]}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" class="header1">
+                            {[fio]}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <b>{[total questions count]}</b>&nbsp;{[questions count]}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <b>{[right answers count]}</b>&nbsp;{[answers count]}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <b>{[ur mark is]}</b>&nbsp;{[mark]}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <b>{[result.header]}</b>&nbsp;{[result]}
+                        </td>
+                    </tr>

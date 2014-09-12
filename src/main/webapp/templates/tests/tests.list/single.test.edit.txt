@@ -1,0 +1,20 @@
+<tr>
+	<td class="nameTD">
+		{[test name]}
+	</td>
+	<td align="center">
+		{[created]}
+	</td>
+	<td align="center">
+		{[modified]}
+	</td>
+	<td align="center">
+    	{[add tests]}
+    </td>
+	<td align="center">
+		{[edit]}
+	</td>
+	<td align="center">
+		{[delete]}
+	</td>
+</tr>

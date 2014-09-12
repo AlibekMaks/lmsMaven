@@ -1,0 +1,8 @@
+<tr>
+    <td>
+        {[name]}
+    </td>
+    <td align="center">
+        {[delete]}
+    </td>
+</tr>

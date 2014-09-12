@@ -1,0 +1,2063 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+   <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+<body>
+<!-- Masthead -->
+<div class="SubTitle">
+   Sharable Content Object Reference Model (SCORM&reg;) 2004 3rd Edition
+   <br />
+   Sample Run-Time Environment (RTE) Version 1.0.2 Readme File
+</div>
+<div class="SubTitleSmall" style="float:left">
+   Last updated: November 21, 2007
+   <br />
+   Questions and/or comments regarding the SCORM 2004 3rd Edition Sample RTE Version 1.0.2
+   <br />
+   can be sent to the ADL Technical Team through 
+    <a href="https://www.adlnet.gov/scorm/question/index.aspx" onclick="window.open(this.href);return false">
+    Ask The Experts </a>&nbsp;on the 
+   <a href="https://www.adlnet.gov/" onclick="window.open(this.href);return false">
+      ADLNet.gov
+   </a> Web site.
+</div>
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+	<link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+<body class="navbar">
+<table width="100%" cellpadding="3">
+   <tr>
+   <br />
+      <td class="stagebar">
+     		Table of Contents
+      </td>
+   </tr>
+</table>
+<!-- Page Body -->
+<table border="0" cellspacing="3" cellpadding="0" width="100%">
+   <!-- Navigation Controls -->
+   <tr>
+      <td align="left" valign="top" width="235">
+         <p>
+         	<b>Sample Run-Time Environment</b>
+            <br />
+            <a href="#rteIntroduction" 
+            	title="RTE Introduction">
+            	Introduction
+            </a>
+         </p>
+         <p>
+            <b>Installation Instructions</b>
+            <br />
+            <a href="#prereqs" 
+            	title=" Prerequisites ">
+            	Prerequisites
+            </a>
+            <br />
+            <a href="#constraints" 
+            	title=" Constraints ">
+            	Constraints
+            </a>
+            <br />
+            <a href="#installation" 
+            	title=" Installation ">
+            	Installation
+            </a>
+            <br />
+            <a href="#config" 
+            	title=" Configuration ">
+            	Configuration
+            </a>
+            <br />
+            <a href="#uninstalling"
+              title=" Uninstalling ">
+              Uninstalling
+            </a>
+            <br />
+         </p>
+         <p>
+            <b>Revisions</b>
+            <br />
+            <a href="#revisionsToRTE102" 
+            	title="Revisions">
+               3rd Edition Sample RTE Version 1.0.2
+            </a>
+            <br />
+            <a href="#revisionsToRTE101" 
+            	title="Revisions">
+               3rd Edition Sample RTE Version 1.0.1
+            </a>
+            <br />
+            <a href="#revisionsToRTE10" 
+            	title="Revisions">
+               3rd Edition Sample RTE Version 1.0
+            </a>
+            <br />
+         </p>
+         <p>
+            <b>Running the Sample RTE</b>
+            <br />
+            <a href="#runSampleRTE" 
+            	title=" Running the Sample RTE ">
+            		Instructions
+            </a>
+            <br />
+         </p>
+         <p>
+            <b>Design Information </b>
+            <br />
+            <a href="#rteServerComponent" 
+            	title=" Server Component ">
+            		Server Component 
+            </a>
+            <br />
+            <a href="#rteClientComponentJava" 
+            	title=" Client Component (Java Files)  ">
+               	Client Component (Java Files)
+            </a>
+            <br />
+            <a href="#rteClientComponentWeb" 
+            	title=" Client Component (Web Files)  ">
+               	Client Component (Web Files)
+            </a>
+            <br />
+            <a href="#thirdPartyComponents" 
+               title=" Third Party Components ">
+               	Third Party Components
+            </a>
+            <br />
+            <a href="#buildingTheRTE" 
+               title=" Building the Sample RTE ">
+               	Building the Sample RTE
+            </a>
+            <br />
+         </p>
+         <p>
+            <b>Additional Information</b>
+            <br />
+            <a href="#knownIssuesRTE" 
+            	title=" Known Issues ">
+            	 Known Issues
+            </a>
+            <br />
+            <a href="#implementationDecisions" 
+               title=" Implementation Decisions ">
+               	Implementation Decisions
+            </a>
+            <br />
+            <a href="#environmentVariableRTE" 
+               title="Environment Variable">
+            	Environment Variable
+            </a>
+            <br />
+            <a href="#odbcConnectionsRTE" 
+               title="ODBC Connections">
+            	ODBC Connections
+            </a>
+            <br />
+            <a href="#systemRequirementsRTE" 
+               title="System Requirements">
+            	System Requirements
+            </a>    
+            <br />
+            <a href="#licenseCopyright" 
+               title=" Licenses and Copyrights">
+               	Licenses and Copyrights
+            </a>
+            <br />
+            <br />
+				<br />
+         </p>
+      </td>
+   </tr>
+</table>
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+<body class="bg">
+<a name="rteIntroduction"></a>
+<table width="100%" cellpadding="3">
+   <tr>
+      <td class="stagebar">
+      	<strong>
+      		Sample Run-Time Environment
+      	</strong>
+      </td>
+   </tr>
+</table>
+<p>
+   <table>
+      <tr>
+         <td valign="TOP">
+         	<h5 class="title">Introduction</h5>
+            <p>
+            Welcome to the Sharable Content Object Reference Model (SCORM) 2004 
+            3rd Edition Sample Run-Time Environment (RTE) Version 1.0.2 
+            (Referred to hereafter as Sample RTE).  The Sample RTE is intended 
+            to provide an example implementation of the concepts described in 
+            the SCORM. Specifically, it was developed in order to provide an 
+            example of the SCORM Run-Time Environment (Application Programming 
+            Interface (API) and Data Model) and 
+            SCORM Sequencing and Navigation as they might be applied in a 
+            Learning Management System (LMS) environment.  Robust exception and 
+            error handling has not been included in this sample code, nor have
+            performance optimizations been considered.
+            </p>
+   
+            <p>
+            Even though there are a number of valid Web-enabled SCORM
+            implementations, this version of the Sample RTE was implemented as a
+            Web-based client/server application using HTML, JavaScript,
+            JavaServer Pages (JSP), Java Applets and Java Servlets (Refer to
+            the &quot;Design Information&quot; section of this Readme for 
+            additional Sample RTE design information).
+            </p>
+         </td>
+      </tr>
+   </table>
+</p>
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+<body class="bg">
+<a name="rteInstallation"></a>
+<table width="100%" cellpadding="3">
+   <tr>
+      <td class="stagebar">Installation</td>
+   </tr>
+</table>
+<p>
+   <table>
+	   <tr>
+	      <td valign="TOP">
+	         <a name="prereqs"></a>
+	         <p>
+		         <h5 class="title">Prerequisites</h5>
+	         </p>
+	         <p>
+		          <strong>It is recommended that you read through all of the Installation
+		          Instructions prior to beginning installation.</strong><br /><br />
+	         
+            This release of the Sample RTE requires the Java Development Kit (JDK)
+        from any one of the following Java versions:
+        <ul>
+          <li>Java SE 6, any update level
+          <li>J2SE 5.0, Update 10 or later
+          <li>J2SE 1.4.2_13 or later 
+        </ul>
+        The latest version of this software is available for download free of charge at
+        <a href="http://java.sun.com/javase/downloads/index.jsp"
+        onclick="window.open(this.href);return false">
+        http://java.sun.com/javase/downloads/index.jsp</a>.
+        Archived versions are available at 
+         <a href="http://java.sun.com/products/archive"
+         onclick="window.open(this.href);return false">
+         http://java.sun.com/products/archive/</a>.   
+         Refer to this site for a list of specific Java versions verified.
+	         </p>
+	         
+	         <a name="notes"></a>
+	         <p>
+	            <b>Notes:</b>
+               <ul>
+                  <li>
+                     <strong>
+                        The Sample RTE requires the full Java Development Kit.  The 
+                        Java Runtime Environment (JRE) alone is NOT sufficient for this software.
+                     </strong>
+                  </li>
+                  <li>
+                     <strong>
+                        The Sample RTE client may be accessed from a machine 
+                        other than the one on which it is installed using 
+                        Microsoft<sup>&reg;</sup> Internet Explorer<sup>&reg;</sup>.  In this case, the Java 
+                        Runtime Environment must be installed on the second machine. 
+                     </strong>
+                  </li>
+                  
+               </ul>
+	         </p>
+	         <p>
+	            After installing the Java Development Kit, you must do the following:
+	            <ol style="margin-bottom: 0;">
+	               <li>
+	                  Create an environment variable named "JAVA_HOME" and set 
+	                  its value to the root directory of the Java Development Kit.
+	                  <ul style="margin-bottom: 0;">
+	                     <li>
+	                        For Windows XP: Right click on "My Computer",
+	                        select "Properties", select the "Advanced" tab and then
+	                        click on "Environment Variables". Add a JAVA_HOME entry
+	                        in the User or System Variables that points to the
+	                        location where the Java Development Kit was installed
+	                        (e.g., C:\j2sdk1.4.2_05).
+	                     </li>
+	                     <li>
+	                        For Windows Vista: Open the “Start" menu and right click on 
+	                        "Computer", select "Properties", select the "Advanced 
+	                        System Settings" link on the left navigation menu, and 
+	                        then click on "Environment Variables". Add a JAVA_HOME 
+	                        entry in the User or System Variables that points to the 
+	                        location where the Java Development Kit was installed 
+	                        (e.g., C:\j2sdk1.4.2_05).<br><br>
+	                     </li>
+	                  </ul>
+	               </li>
+	               <li>
+	                  Add the full path of the Java Development Kit bin directory (where the
+	                  java.exe is located) to the PATH environment variable.
+	                  <ul style="margin-bottom: 0;">
+	                     <li>
+	                        For Windows XP: Right click on "My Computer",
+	                        select "Properties", select the "Advanced" tab and then
+	                        click on "Environment Variables". Add the Java Development Kit bin
+	                        directory to the Path by adding a semicolon followed by
+	                        a reference to the JAVA_HOME environment variable
+	                        followed by "\bin" (i.e., %JAVA_HOME%\bin).
+	                     </li>
+	                     <li>
+	                        For Windows Vista: Open the “Start” menu and right click 
+	                        on "Computer", select "Properties", select the "Advanced 
+	                        System Settings" link on the left navigation menu, and 
+	                        then click on "Environment Variables".  Add the Java Development Kit 
+	                        bin directory to the Path by adding a semicolon followed 
+	                        by a reference to the JAVA_HOME environment variable 
+	                        followed by "\bin" (i.e., %JAVA_HOME%\bin).
+	                     </li>
+	                  </ul>
+	               </li>
+	            </ol>
+	         </p>
+	         
+	         <a name="constraints"></a>
+	         <p>
+	            <h5 class="title">Constraints</h5>
+	         </p>
+	         <p>
+	            As of this release, the Sample RTE has been 
+	            tested on Microsoft<sup>&reg;</sup> Windows<sup>&reg;</sup> XP Professional (SP2), 
+	            and Vista all on the Intel<sup>&reg;</sup> Pentium<sup>&reg;</sup> PC 
+	            platform.  Testing was also performed with Microsoft Internet Explorer 6.0 and Internet Explorer 7.0.<br><br>
+	            The Sample RTE has not been formally tested with any other browsers 
+	            on any other platforms than those indicated above.
+	         </p>
+		         
+	         <a name="installation"></a>
+	         <p>
+	            <h5 class="title">Installation</h5>
+	         </p>
+	         <p>
+	            <strong>
+	               Installation of the Sample RTE is
+	               to be done only after installing the Java Development Kit as described in
+	               the Prerequisites.
+	            </strong>
+	         </p>
+	         <p>
+	            The Sample RTE is available for download as a self-extracting
+	            executable install file. Once you have completed 
+	            downloading the file, perform the following steps:
+	            <ol>
+	               <li>
+	                  Double-click on the downloaded self-extracting executable 
+	                  file to begin the installation process.
+	               </li>
+	               <li>
+	                  Click the &quot;Next&quot; button to continue 
+	                  from the &quot;Welcome&quot; page.
+	               </li>
+	               <li>
+	                  Read the &quot;License Agreement&quot;
+	                  <ul>
+	                     <li>
+	                        Click the &quot;Yes&quot; button to agree 
+	                        and continue with the install.
+	                     </li>
+	                     <li>
+	                        Click the &quot;No&quot; button if you do 
+	                        not agree with the terms of the license and wish to 
+	                        exit the install.
+	                     </li>
+	                  </ul>
+	               </li>
+	               <li>
+	                  Choose whether you would like the Sample RTE to be installed
+	                  for <i>Anyone who uses this computer (all users)</i> or <i>Only me</i>.
+	               </li>
+	               <li>
+	                  The recommended root installation directory
+	                  is &quot;C:\ADL&quot;. You may choose
+	                  another root installation directory, but the Sample RTE
+	                  install will always append the 
+	                  &quot;\ADL\SCORM_2004_3rd_Ed_Sample_RTE_V1.0.2&quot; sub-directory to the
+	                  specified root installation directory.  The remainder 
+	                  of this Readme document assumes that the Sample RTE will be
+	                  installed to &quot;C:\ADL\SCORM_2004_3rd_Ed_Sample_RTE_V1.0.2&quot;.  
+	                  This is referred to as 
+	                  &quot;&lt;drive&gt;:\&lt;install_directory&gt;&quot;. If 
+	                  you override the default to use a different root 
+	                  installation directory, please take that into consideration 
+	                  when reading the remainder of this Readme.
+	               </li>
+	               <li>Click the &quot;Next&quot; button</li>
+	               <li>Click the &quot;Install&quot; button to begin the installation</li>
+	               <li>
+	                  You will have the option to view a copy of this Readme document.
+	                  <ul>
+	                     <li>
+	                        Check the &quot;Show the Readme file&quot; checkbox 
+                            to view the Readme.
+	                     </li>
+	                     <li>
+	                        Uncheck the &quot;Show the Readme file&quot; 
+                            checkbox to skip viewing the Readme.
+	                     </li>
+	                  </ul>
+	               </li>
+	               <li>
+	                  Click on the &quot;Finish&quot; button to 
+	                  complete the installation.
+	               </li>
+	            </ol>
+	            <strong>Note:</strong> The installation will not remove/un-install 
+	            previous versions of the Sample RTE.
+	            <br /><br />
+	         </p>
+	         <p>
+	            <strong>Note:</strong> The apache-tomcat-5.5.20 Servlet Engine and Web server
+	            will be installed and pre-configured to bind to port 8080.
+	         </p>
+	         
+	         <a name="config"></a>
+	         <p>
+	            <h5 class="title">Configuration</h5>
+	         </p>
+	         After installation, the following actions are necessary to ensure 
+             that the Sample RTE will run properly:
+	         <ul>
+	           	<li>
+	              	The Internet Explorer browser must be set to check
+	              	for a new page every visit to the page.  To configure the
+	              	browser:
+	              	<ul>
+		              	<li>
+		              	Using Microsoft Internet Explorer 6.0
+		              	<ol>	              		
+		                 	<li>Open a Microsoft Internet Explorer browser</li>
+		                 	<li>Click on "Tools" -> "Internet Options"</li>
+		                 	<li>
+		                 		On the "General" tab, "Temporary Internet files"
+		                  	sub-section, click "Settings"
+		                 	</li>
+		                 	<li>
+		                 		Ensure that the "Every visit to the page" radio button
+		                  	is selected
+		                 	</li>
+		                 	<li>
+		                  	Click "OK" and then "OK" again.
+		                 	<br><br>
+		              	</ol>
+		              	</li>		              	
+		              	<li>
+		              	Using Microsoft Internet Explorer 7.0
+		              	<ol>	              		
+		                 	<li>Open a Microsoft Internet Explorer browser</li>
+		                 	<li>Click on "Tools" -> "Internet Options"</li>
+		                 	<li>
+		                 		On the "General" tab, "Browsing History"
+		                  	sub-section, click "Settings"
+		                 	</li>
+		                 	<li>
+		                 		Ensure that the "Every visit to the page" radio button
+		                  	is selected
+		                 	</li>
+		                 	<li>
+		                  	Click "OK" and then "OK" again.<br><br>
+		                 	</li>
+		              	</ol>
+		              	</li>
+	              	</ul>
+	            </li>                
+	            <li>
+	               The Java Plug-in must be configured to disable caching.  To
+	               disable the Java Plug-in cache:
+	               <ul>
+				      <li>For J2SE 1.4.2_XX
+				      <ol>
+					     <li>Open the Windows "Control Panel"
+					     <li>Double click on the "Java Plug-in" icon
+					     <li>Select the "Cache" tab
+					     <li>Un-check the "Enable Caching" option
+					     <li>Click "Apply"
+					     <li>Close Window.
+					     <li style="LIST-STYLE-TYPE: none">				     
+					     </li>
+				      </ol>
+				      <li>For J2SE 5.0				     
+				      <ol>
+					     <li>Open the Windows "Control Panel"
+					     <li>Double click on the "Java Plug-in" icon
+					     <li>Select the "General" tab
+					     <li>Under the "Temporary Internet Files" section, click the
+					     "Settings" button
+					     <li>In the "Temporary Files Settings" dialog box, click the "View
+					     Applets... " button
+					     <li>In the "Java Applet Cache Viewer" dialog box, ensure the
+					     "Enable Caching" check box is unchecked for the Sample Run-Time 
+					     Environment Applet(s).
+					     <li style="LIST-STYLE-TYPE: none">
+					     </li>
+				      </ol>
+				      </li>
+				      <li>For Java SE 6				      
+				      <ol>
+					     <li>Open the Windows "Control Panel"
+					     <li>Double click on the "Java" icon
+					     <li>Select the "General" tab
+					     <li>Under the "Temporary Internet Files" section click "Settings"
+					     <li>Ensure the "Keep Temporary Files on my computer." check box is unchecked.
+					     <li style="LIST-STYLE-TYPE: none">					     
+					     </li>
+				      </ol>
+			       </ul>
+            	</li>
+	            <li>
+	               Ensure that the Sun Java Plug-in is selected as the default
+	               Java Environment for the Microsoft Internet Explorer browser.
+	               To set the default browser Java Environment:
+	               <ul>
+		               <li>For J2SE 1.4.2_XX and J2SE 5.0</li>
+		               <ol>	               
+		                  <li>Open the "Java Plug-in" applet in the Control Panel</li>
+		                  <li>Select the "Browser" tab</li>
+		                  <li>
+		                  	Select the checkbox next to the browser that you are
+		                     using to run the Sample RTE</li>
+		                  <li>Click "Apply".
+		                  <li style="LIST-STYLE-TYPE: none">	
+		                  </li>
+	               	   </ol>
+	               	   <li>For Java SE 6</li>
+		               <ol>	               
+		                  <li>Open the Windows "Control Panel"
+					      <li>Double click on the "Java" icon
+		                  <li>Select the "Advanced" tab
+		                  <li>Expand the "Default Java for Browsers" section
+		                  <li>
+		                  	Select the checkbox next to the browser that you are
+		                     using to run the Sample RTE</li>
+		                  <li>Click "Apply".
+		                  <li style="LIST-STYLE-TYPE: none">	
+		                  </li>
+	               	   </ol>
+               	   </ul>
+	            </li>	                            
+	            <li>
+	               If you are using Windows XP SP2 or Vista these additional actions are
+	               required:
+	               <ul>
+	                  <li>
+	                     Allow JavaScript to run by:
+	                     <ol>
+	                        <li>Open a Microsoft Internet Explorer browser</li>
+	                        <li>Click on "Tools" -> "Internet Options"</li>
+	                        <li>
+	                           On the "Advanced" tab, check the box that states,
+	                           "Allow active content to run in files on My
+	                           Computer" under the "Security" section.
+	                        </li>
+	                     </ol>
+	                  </li>
+	                  <li>
+	                     Allow the Sample RTE to pop-up windows by either
+	                     disabling pop-up blocking or exclude the Sample RTE
+	                     from pop-up blocking.
+	                  </li>
+	               </ul>
+	            </li>
+	         </ul>
+	         <p>
+	            This completes the installation of the Sample RTE.
+	         </p>
+	         
+	         <a name="uninstalling"></a>
+	         <p>
+	            <h5 class="title">Uninstalling The Sample RTE</h5>
+	         </p>
+	         There are two methods that can be used for uninstalling the Sample RTE:<br>
+           <ul>
+           	  <li>Uninstall the Sample RTE using the Windows Control Panel.</li>
+           	  <ul>
+	              <li> For Windows XP, the Windows Control Panel "Add/Remove 
+	              Programs" feature can be used.
+	                 <ol>	                    
+	                    <li>Open the Windows "Control Panel"
+	                    <li>Double-Click on "Add or Remove Programs" icon
+	                    <li>Highlight the  "ADL SCORM 2004 3rd Ed. Sample Run-Time 
+	                    Environment Version 1.0.2"
+	                    <li>Click "Remove" and follow the instructions
+	                    <li style="LIST-STYLE-TYPE: none">
+	                    </li>
+	                 </ol>
+	              </li>
+	              <li>For Windows Vista, the Windows Control Panel "Programs and 
+	              Features" feature can be used.
+	                 <ol>	                    
+	                    <li>Open the Windows "Control Panel"
+	                    <li>Double-Click on "Programs and Features" icon
+	                    <li>Highlight the "ADL SCORM 2004 3rd Ed. Sample Run-Time 
+	                    Environment Version 1.0.2"
+	                    <li>Click "Uninstall" on the toolbar above the list and follow the instructions
+	                    <li style="LIST-STYLE-TYPE: none">
+	                    </li>
+	                 </ol>
+	              </li>
+	          </ul>
+              <li>If this version of the Sample RTE is already installed, running the install 
+                 again will uninstall the software. This method will not re-install 
+                 the Sample RTE. You will need to run the install a third
+                 time to accomplish a re-installation.</li>
+              </ul>
+           <strong>Note:</strong> The Sample Run-Time Environment may not appear 
+           in the "Add/Remove Programs" menu. If it does not appear, use the 
+           second method for uninstalling.
+           <br /><br />
+           
+           These methods of uninstalling will not remove files or directories that
+           have been altered in the course of running the Sample RTE.  In order to 
+           complete the process of uninstalling the Sample RTE, the following steps
+           will need to be completed:
+           
+           <ol>
+              <li>Delete the directory that the Sample RTE was installed to
+                  (&lt;drive&gt;:\&lt;Install Directory&gt;\SCORM_2004_3rd_Ed_Sample_RTE_V1.0.2 by default) along with any
+                  files or directories contained within it</li>
+              <li>Delete the &lt;drive&gt;:\SCORM3EDSampleRTE102Files directory</li>
+           </ol>
+           
+	     </td>
+	  </tr>
+   </table>
+</p>
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+   <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+   <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+</a>
+<!-- Page Content -->
+<table width="100%" cellpadding="3">
+   <tr>
+      <td class="stagebar">Revisions</td>
+   </tr>
+</table>
+
+<a name="revisionsToRTE102">
+<table width="100%" cellpadding="3">
+   <tr>
+      <td>
+      <h5 class="title" align="left">Changes from SCORM 2004 3rd Edition Sample RTE Version 1.0.1 
+      to SCORM 2004 3rd Edition Sample RTE Version 1.0.2 </h5>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <ol>
+            <li><!--  Ticket #11374 -->
+               The Sample RTE has been updated to support content packages containing 
+               a &lt;ruleCondition&gt; element which references a Global Objective located 
+               under the &lt;sequencingCollection&gt; element.  Global Objectives located 
+               under the &lt;sequencingCollection&gt; element will now be considered when 
+               validating the “referencedObjective” attribute of the &lt;ruleCondition&gt; 
+               element if needed.
+            </li>
+            <li><!--- Ticket #11293 --->
+                The Sample RTE was updated to support content packages utilizing the "../" directory escape 
+                sequence used in URI values contained in an imsmanifest.xml file. The escape sequence 
+                is now processed and the location which it references is successfully located. 
+            </li>            
+            <li><!--- Ticket #11225 --->
+            	The Sample RTE was updated to correctly format, add, and save values of type timeinterval
+            	which do not contain the hour (H) component. 
+            </li> 
+            <li><!--- Ticket #11291 --->
+            	The Sample RTE was updated to correctly log and store data model values containing line 
+            	return or carriage return characters. The value(s) containing the line return characters 
+            	are stored to the API Data Model as they appear in the imsmanifest.xml or SCO file. 
+            	The values are displayed in the API Data Model Log without the line return characters. 
+            	Both manually inserted line return characters and those inserted by a text editor are 
+            	supported.
+            </li>
+         </ol>
+      </td>
+   </tr>
+</table>
+
+<a name="revisionsToRTE101">
+<table width="100%" cellpadding="3">
+   <tr>
+      <td>
+      <h5 class="title" align="left">Changes from SCORM 2004 3rd Edition Sample RTE Version 1.0 
+      to SCORM 2004 3rd Edition Sample RTE Version 1.0.1 </h5>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <ol>
+            <li>
+                The Sample RTE has been upgraded to use the Apache-Tomcat 5.5.20 server
+                in place of the Jakarta-Tomcat 5.0.16 server.
+            </li>            
+            <li><!--- Ticket #10496 --->
+            	The Sample RTE now supports new sets of encoded characters following
+            	the syntax %xy in the values of href attributes of a content package's 
+            	imsmanifest.xml file.  Characters from the Basic Latin and 
+            	Latin-1 Unicode code pages are now supported.               
+            </li> 
+            <li><!--  Ticket #10546 -->
+              The Sample RTE was updated to fix a bug where <i>Terminate()</i> was being
+              called when the <i>Suspend</i> button is pushed.  This behavior has been corrected
+              and <i>Terminate()</i> is no longer called when the <i>Suspend</i> button is pushed.
+            </li>          
+            <li>
+            	The Sample RTE can now handle the importing of multiple courses stored in 
+            	a given directory.  When given the path of a directory on the <i>Import Multiple 
+            	Courses</i> page, the Sample RTE will import all courses found in that 
+            	directory.
+            </li>
+            <li><!--- Ticket #10941 --->
+            	The Sample RTE has been updated to notify the user if any error(s) occur during the
+            	course import process for single or multiple courses.  If an unzip, file copy, or 
+            	SQL error occurs during course import, the user will be notified.
+            </li>  
+            <li>
+            	The Sample RTE now contains a link to a corresponding help page for each option in 
+            	the Sample RTE main menu.
+            </li>
+            <li><!--- Ticket #11103 --->
+            	The Sample RTE has been updated to correctly format time duration 
+            	values obtained from a content package's imsmanifest.xml file which contain 
+            	sub-second values.
+            </li>    
+            <li><!--- Ticket #11104 --->
+              The Sample RTE has been updated to correctly format time duration
+              values obtained from a content package's imsmanifest.xml file that are less 
+              than one million seconds.
+            </li>               
+            <li><!--- Ticket # --->
+            	The Sample RTE <i>Global Objectives Administration</i> page can now create and edit a Global Objective
+            	with an Objective ID containing a single quotation mark (') or a semi-colon (;).
+            </li>    
+            <li>
+            	The Sample RTE has been updated to correctly display a course's timestamp on a non-English
+            	version of Microsoft Windows.
+            </li>  
+            <li><!--- Ticket #10852 --->
+            	The Sample RTE has been updated to correctly handle a directory escape string (../) in an
+            	href or xml:base attribute of a content package's imsmanifest.xml file.
+            </li> 
+            <li><!--- Ticket #10767 --->
+            	The Sample RTE Course Import and validation process now uses the Apache Xerces 2.9.0 parser in 
+            	place of the Apache Xerces 2.6.2 parser.
+            </li> 
+            <li><!--- Ticket #10655 --->
+              The Sequencer has been updated to correctly handle activities with 
+              an <i>attemptLimit</i> of 0.  These activities will no longer be delivered 
+              and will be displayed as disabled, or grayed out, in the <i>Table of Contents</i>
+              and will not be selectable.
+            </li>
+            <li><!--- Ticket #10783 --->
+              The Sequencer has been updated to correctly exit a course when a <i>Continue</i> 
+              navigation request results in walking off the activity tree.
+            </li>
+            <li><!--- Ticket #10815 --->
+              The Sequencer has been updated to recognize when a SCO has set cmi.exit to 
+              "logout" and respond by processing a Exit All Navigation Request.
+            </li>
+            <li><!-- Ticket #9981, #10550 -->
+              The Sample RTE <i>Table of Contents</i> has been updated to correctly identify
+              activities enabled/disabled by <i>preventActivaton</i> and <i>constrainedChoice</i>.
+            </li>
+            <li>
+              The Sample RTE install has been updated to give the user a choice of whether
+              to install for just that user, or for any user who uses the computer
+              it is being installed on.
+            </li>
+            <li>
+              The Sample RTE has been updated to include interstitial pages for the <i>Abandon</i> and 
+              <i>Abandon All</i> navigation requests and the Sequencer has been updated to
+              navigate to these pages in the event these requests are processed.
+            </li>
+         </ol>
+      </td>
+   </tr>
+</table>
+
+<a name="revisionsToRTE10"></a>
+<table width="100%" cellpadding="3">
+   <tr>
+      <td>
+      <h5 class="title" align="left">Changes from SCORM 2004 Sample RTE Version 1.3.3 to SCORM 2004 3rd 
+      Edition Sample RTE Version 1.0 </h5>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <ol>
+            <li><!--- Ticket  8664--->
+                 The Sample RTE now contains functionality to display
+                 API calls made by SCOs launched by the Sample RTE.  To view 
+                 the API calls that have been made by the SCOs, first click on 
+                 the <i>Activate Log</i> link in the lower left corner of the
+                 Sample RTE and then click on the <i>Show Log</i> link.  The log 
+                 will be displayed in the frame immediately above the link.  
+                 <i>Hide Log</i> will remove the display of the log string, but 
+                 does not delete the log.  <i>Clear Log</i> deletes the current 
+                 contents of the log.                           
+            </li>
+            <li><!--- Ticket 8711--->
+                The Sample RTE has been updated to hide the <i>Suspend</i> button 
+                when the Content Aggregation Content Package manifest explicitly 
+                states that the <i>Suspend All</i> control should be hidden.
+            </li>
+            <li><!--- Ticket 8750--->
+                The Sample RTE has been updated to allow invisible activities 
+                to be the target of a <i>Choice</i> navigation event when no 
+                Table of Contents is rendered.
+            </li>
+            <li><!--- Ticket 8779--->
+                The Sample RTE has been updated to display a validation error 
+                when importing a package in which there is a leaf item that 
+                contains no identifierref attribute or if the identifierref 
+                attribute is set to an empty string. In this case, the package 
+                may be imported with validation turned off.  However, when 
+                running the course contained in that package, if the element 
+                with no identifierref attribute is reached, the 
+                <i>ERROR</i> page will be displayed.
+            </li>
+            <li><!--- Ticket 8813--->
+                The Sample RTE has been updated to process an <i>Exit All</i> 
+                navigation request if the SCO sets cmi.exit to <i>time-out</i>.
+                Any other pending navigation requests will be ignored.
+            </li>
+            <li><!--- Ticket 8840--->
+               The Sample RTE Global Objectives Administration Page has been 
+                updated to include error checking for the <i>measure</i> 
+                value of a global objective. The acceptable 
+                range for <i>measure</i> is -1.0 to 1.0.
+            </li>
+            <li><!-- Ticket 8976-->
+                The Sample RTE has been updated to recognize and ignore empty 
+                sequencing elements.  If these elements occur in a SCORM Content 
+                Aggregation Content Package, the elements' defined defaults are 
+                used.
+           	<li> <!-- Ticket 8615-->
+            	The Sample RTE has been updated so that if a <i>Suspend All</i>
+                navigation event is invoked and cmi.exit is not set to 
+                <i>suspend</i>, then SCORM Run-Time Environment 
+                Data Model information will set cmi.exit to 
+                <i>suspend</i> and persist the run-time data. 
+            </li>
+            <li> <!-- Ticket 8915-->
+            	The Sample RTE has been updated to properly implement the 
+                sequencing Selection Control element <i>Selection Count</i>.  
+                The Selection Control elements enable content developers 
+                to define sequencing information that indicates when to select 
+                certain activities and to limit the number of activities to be 
+                chosen.  The <i>Selection Count</i> element limits the number of 
+                activities that are available.
+            </li>
+			<li> <!-- SSP-->
+				The Sample RTE has been updated to include an example implementation 
+				of IMS Shareable State Persistence SCORM Application Profile.
+			</li>
+			<li> <!-- Ticket 10141-->
+				The Sample RTE has been updated to properly handle several sets of
+				non-English characters which may be used in the imsmanifest.
+			</li>
+			<li> <!-- Ticket 9973-->
+			    The Sample RTE has been updated to allow Data Model setValue values to
+			    contain quotation marks and/or backslashes.  Values containing any number
+			    of quotation marks and/or backslashes in any location in the value can 
+			    be correctly displayed in the Data Model log.
+			</li>
+			<li> <!-- Ticket 9969-->
+			    The Sample RTE SampleRTE.mdb database has been updated to allow the
+			    CourseTitle field of the CourseInfo table to store title strings
+			    of up to 200 characters in length as specified in the SCORM_CAM
+			    document.
+			</li>
+			<li> <!-- Ticket 9942-->
+			    The Sample RTE has been updated to allow item identifiers to be 
+			    distinguished by string letter-case as well as string text.  
+			</li>
+			<li> <!-- Ticket 9909-->
+			    The Sample RTE Data Model has been updated to allow time intervals 
+			    containing sub-seconds to be correctly added and formatted between 
+			    learner sessions.
+			</li>
+			<li> <!-- Ticket 9809-->
+			    The Sample RTE has been modified to include links to <i>Start Course</i>
+			    and/or <i>View Table of Contents</i> for each course listed in the <i>View
+			    Registered Courses</i> menu.  The links will allow the user to choose
+			    to begin the course and start sequencing by choosing <i>Start Course</i>
+			    if available, or view the Table of Contents and begin without starting 
+			    sequencing by choosing <i>View Table of Contents</i> if available.
+			</li>
+			<li> <!--  -->
+			    The Sample RTE has been updated to utilize a proprietary file upload tool
+			    which has replaced the JSPSmartUpload tool.
+			</li>
+            <li>
+               <!--  PT # 9162  -->
+               The course import process of the Sample RTE has been updated to display a validation error 
+               when importing a package in which the IMS Manifest contains 
+               an adlcp:persistState attribute.  The adlcp:persistState 
+               attribute has been deleted.                
+            </li>
+            <li>
+               <!--TWG Issue #19:  Sub-Manifest Merging Process-->
+               The course import process of the Sample RTE has been updated to no longer validate 
+               (sub)manifest elements with the inclusion of metadata 
+               within the (sub)manifest.  A warning is now issued when a 
+               (sub)manifest is detected. 
+            </li>
+            <li>
+               <!--  PT # 9316 -->
+               The course import process of the Sample RTE has been updated to display a validation error 
+               when importing a package in which the IMS Manifest contains 
+               a referencedObjective attribute of a 
+               &lt;ruleCondition&gt; element that does not represent an 
+               identifier of an objective (&lt;primaryObjective&gt; / 
+               &lt;objective&gt;) found within that manifest.
+            </li>
+            <li>
+               <!--  PT # 9312 && 9721-->
+               The course import process of the Sample RTE has been updated to 
+               enforce that when a &lt;resource&gt; is local to the 
+               content package, then a &lt;file&gt; element is required 
+               that represents the &lt;resource&gt;.  The href attribute 
+               of the &lt;file&gt; element must be identical to the 
+               href attribute of the &lt;resource&gt;.  The &lt;file&gt; 
+               element can exist as a direct child of the &lt;resource&gt; 
+               or can be referenced from the &lt;dependency&gt; element.
+            </li>
+            <li>
+               <!--  PT # 9310 -->
+               The course import process of the Sample RTE has been updated to 
+               enforce that 0 or 1 &lt;adlcp:completionThreshold&gt; element 
+               exist as a child of an &lt;item&gt; element.  The Sample RTE
+               will display a validation error when more than 
+               one &lt;adlcp:completionThreshold&gt; element is detected as 
+               a child of the &lt;item&gt; element. 
+            </li>
+            <li>
+               <!--  IMS CP 1.1.4 Change -->
+               Based on the IMS CP 1.1.4 updates, the course import process of 
+               the Sample RTE has been updated to enforce a Smallest Permitted 
+               Maximum (SPM) value of 2000 characters for an href that is 
+               pre-appended with xml:base value.  This is a Best Practice 
+               warning only and does not affect validation. 
+            </li>
+            <li>
+               <!--  IMS CP 1.1.4 Change -->
+               Based on the IMS CP 1.1.4 updates, the course import process of 
+               the Sample RTE has been updated to enforce excess baggage and 
+               dangling resource checks.  Excess baggage is considered as files 
+               that exist in the Content Package that are not referenced from 
+               the IMS Manifest.  Dangling resources elements are those that 
+               are not referenced by an "identifierref" attribute.  These checks 
+               are Best Practice warnings only and do not affect validation.  
+            </li>
+            <li>
+               <!--  IMS CP 1.1.4 Change -->
+               The course import process of the Sample RTE has been updated to  
+               display an error when the parameters attribute of an 
+               &lt;item&gt; element does not abide to the following syntax:
+               <ul> 
+                  <li>#&lt;parameter&gt;</li>   
+                      <li>&lt;name&gt;=&lt;value&gt;(&&lt;name&gt;=&lt;value&gt;)*(#&lt;parameter&gt;)</li>   
+                      <li>?&lt;name&gt;=&lt;value&gt;(&&lt;name&gt;=&lt;value&gt;)*(#&lt;parameter&gt;)</li>
+               </ul>
+            </li>
+            <li>
+               <!--  Substring issue -->
+               The course import process of the Sample RTE has been updated to prevent
+               a java.lang.StringIndexOutOfBoundsException from occurring when 
+               a URI of 4 characters or less in length exists in an IMS 
+               Manifest.              
+            </li>
+            <li>
+               <!-- schemaversion element update -->
+               The course import process of the Sample RTE has been updated to 
+               conform to the requirement of SCORM 2004 3rd Edition that the 
+               <schemaversion> element value equal "2004 3rd Edition". If the 
+               SCORM 2004 2nd Edition vocabulary token of "CAM 1.3" is detected, 
+               the course import process has been updated to display a warning 
+               with the ADL recommendation to update the value to "2004 3rd 
+               Edition". It is recommended that the content package manifest be 
+               updated because some systems may rely on this value to process 
+               the content package.
+            </li>
+            <li>
+               <!-- 9853 -->
+               The course import process of the Sample RTE has been updated to 
+               produce a validation warning when the xsi:schemalocation 
+               attribute in the root manifest declaration is not declared. 
+            </li>
+            <li>
+               <!-- 9853 -->
+               When no xsi:schemalocation attribute is declared in the root 
+               manifest declaration, the Sample RTE provides the XML Parser with 
+               a defaulted list of controlling documents to use for XML 
+               validation.  The course import process of the Sample RTE has been 
+               updated to test for only those controlling document(s) to exist 
+               at the root of the content package only if the respective 
+               namespace has been declared. 
+            </li>
+            <li>
+               <!-- 10298 -->
+               The course import process of the Sample RTE has been updated to 
+               produce a warning when a URI exists multiple times in the IMS 
+               Manifest differing only in case.  
+            </li>
+            <li>
+               <!-- 10016 -->
+               The course import process of the Sample RTE has been updated to 
+               support content package zip files that contain non-ASCII 
+               characters in the file name.      
+            </li>
+            <li>
+               The Sequencer was updated to ensure that objective state (local 
+               and global) is not affected by measure threshold evaluations 
+               during tree traversals.
+            </li>
+            <li>
+               Numerous changes were made to the Sample RTE client to align 
+               implementation with the updated user interface interoperability 
+               requirements defined in the SCORM 2004 3rd Edition Conformance 
+               Requirements Document.
+            </li>
+         </ol>
+      </td>
+   </tr>
+</table>
+
+
+
+
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+   <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+<body class="bg">
+<a name="runSampleRTE"></a>
+<table width="100%" cellpadding="3">
+   <tr>
+      <td class="stagebar">
+     		Running the Sample RTE
+      </td>
+   </tr>
+</table>
+<p>
+   <table>
+	   <tr>
+	   	 <td>
+	      <p>
+	         <h5 class="title">Instructions</h5>
+	      </p>
+	      </td>
+	   </tr>
+	   <!--- End Major Heading Row --->
+	   <!--- Begin Text Row --->
+	   <tr>
+	      <td valign="TOP">
+	         <p>
+		         The instructions provided are for running the Sample RTE on a 
+		         Windows platform.  This is the only platform that the software 
+		         has been tested on and is the only platform for which 
+		         instructions are provided at this time.
+	         </p>
+	         <p>
+	         	<strong>To Run the Sample RTE:</strong>
+	         </p>
+	         <p>
+		         First, start the apache-tomcat-5.5.20 servlet container and
+		         Web server that is provided with this installation.  To do this:
+	         	<ol>
+		            <li>
+			            Click on the shortcut at Start Menu -> All Programs -> ADL -> 
+			            SCORM_2004_3rd_Edition_Sample_Run-Time_Environment_version_1.0.2 -> Start Server.  You will see a command 
+			            prompt window appear and show several lines of textual 
+			            information.  This window will remain open until you stop 
+			            the server.
+		            </li>
+		            <li>
+			            Next click on the Start Menu -> All Programs -> ADL -> 
+                        SCORM_2004_3rd_Edition_Sample_Run-Time_Environment_version_1.0.2 -> SCORM 2004 3rd Edition Sample Run-Time Environment version 1.0.2. This will launch 
+                        the Sample RTE Main page.  Log in with the username: 
+                        "admin", password: "admin".  
+                        (Be sure that Microsoft Internet Explorer 6.0 or greater
+			            is your default browser.)
+		            </li>
+	        		</ol>
+	        	</p>
+	        	<p>
+	           	Online help pages are available once the Sample RTE is started.
+	           	"Help" links appear at the bottom of each page.
+	        	</p>
+	        	<p>
+	          	To close the Sample RTE, first close the browser in which it is 
+                running.  To stop the apache-tomcat-5.5.20 servlet container 
+                and Web server, click on the 
+                Start Menu -> All Programs -> ADL -> SCORM_2004_3rd_Edition_Sample_Run-Time_Environment_version_1.0.2 -> Stop Server.
+	        	</p>
+	        	<p>
+	           	To return the Sample RTE to a "clean" state, log into the Sample 
+	           	RTE and from the main menu choose the Clear Database option.  
+	           	This will remove all course files that have been imported as 
+	           	well as any information associated with them, including IMS SSP
+                buckets and related information; and will remove all user 
+                registration information. All Global Objective information will 
+                also be removed.
+	        	</p>
+	        	
+	        	<p>
+	         	   <strong>Course Navigation User Interface</strong>
+	          </p>
+		        <p>
+			        In addition to any User Interface (UI) controls provided within course 
+			        content, the Sample RTE provides several mechanisms for navigating through 
+			        a course that are conformant to Section 2.1.7 of the SCORM 2004 3rd Edition 
+			        Conformance Requirements Version 1.0.  These mechanisms include the navigation 
+			        buttons in the top frame of the Sample RTE, such as the Quit, Suspend, 
+			        Previous, and Continue buttons, and the Table of Contents provided in 
+			        the left-hand frame.
+		        </p>
+	         
+		        <p>
+		          <strong>Navigation Buttons</strong>
+		        </p>
+		        
+		        <p>
+		           The navigation buttons provided by the Sample RTE in the top frame 
+		           will be visible when they are not explicitly “hidden” by an activity 
+		           via the hideLMSUI element within the manifest.  When an activity 
+		           explicitly hides any of the buttons, they will not appear in the 
+		           top frame.
+		        </p>
+		        
+		        <p>
+		           The following describes the behavior of the navigation buttons when 
+		           they are not hidden:
+		        </p>
+		        
+		        <p>
+			        <ul>
+			           <li>
+			              Quit – This button will issue an Exit All navigation request 
+			              to the Sample RTE’s Sequencer; the Sample RTE will end a user’s current 
+			              attempt on a course.  The user’s progress and course status 
+			              information for the current attempt will no longer be available 
+			              if  the user makes another attempt on the course.
+			           </li>
+			           <li>
+			              Suspend – This button will issue a Suspend All navigation request 
+			              to the Sample RTE’s Sequencer; the Sample RTE will end a user’s 
+			              current attempt on a course and will also ‘bookmark’ the user’s 
+			              position within the course.  The user’s progress and course status 
+			              information will be persisted.  When the user starts the course 
+			              again, they will resume the course from the same content they 
+			              triggered the suspend.
+			           </li>
+			           <li>
+			              Previous – This button will issue a Previous navigation request 
+			              to the Sample RTE’s Sequencer, resulting in launching the activity 
+			              identified prior to the current activity in the course’s activity 
+			              tree.
+			           </li>
+			           <li>
+			              Continue – This button will issue a Continue navigation request 
+			              to the Sample RTE’s Sequencer, resulting in launching the  
+			              activity identified after the  the current activity in the 
+			              course’s activity tree.
+			           </li>
+			        </ul>
+		        </p>
+		        
+		        <p>
+		          <strong>Table of Contents</strong>
+		        </p>
+		        
+		        <p>
+		           A Table of Contents (TOC) will be provided by the Sample RTE when 
+		           a course includes  Choice equal to “true” anywhere within its 
+		           activity tree.  When a course includes Choice equal to “false” at 
+		           every level of its activity tree, the table of contents will not 
+		           appear.
+		        </p>
+		        
+		        <p>
+		           The following describes the items in the TOC when Choice is set to 
+		           “true” in the course:
+		        </p>
+		        
+		        <p>
+			        <ul>
+			           <li>
+			              Selectable – Items that are selectable will be indicated with 
+			              black text and the cursor will change as the user mouses over them.
+			           </li>
+			           <li>
+			              Not Selectable – Items that are not selectable will be indicated 
+			              by gray text or  black text and the cursor that does not change 
+			              when the user mouses over them.
+			           </li>
+			        </ul>
+		        </p>
+	     	</td>
+	  	</tr>
+   </table>
+</p>
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+   <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+   <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+<body class="bg">
+<a name="rteServerComponent"></a>
+<table width="100%" cellpadding="3">
+   <tr>
+      <td class="stagebar">
+     		Design Information
+      </td>
+   </tr>
+</table>
+<p>
+   <table>
+	   <tr>
+	      <td valign="TOP">
+	         <p>
+	            The Sample RTE Version 1.0.2 is composed of several 
+	            distinct and separate components.  These components are as follows:
+	         </p>
+	         <p>
+		         <ol style="margin-bottom: 0;">
+		            <li>
+		               Sample Run-Time Environment Server Component: Implemented using 
+		               Java Applications and Java Servlets.
+		            </li>
+		            <li>
+		               Run-Time Environment Client Component: Implemented using JSP,
+		                Java Applets, HTML and JavaScript.
+		            </li>
+		         </ol>
+	         	<br />
+	         	<br />
+	         	<h5 class="title">Sample Run-Time Environment Server Component</h5>
+	         </p>
+	         <p>
+		         The Sample RTE Server Component is implemented using 
+		         Java Servlets and Java Applications. The Servlets respond to 
+		         requests from the Run-time Environment Client Component and are 
+		         responsible for Data Model persistence as well as sequencing and 
+		         parsing logic.  The source files for the server component are located
+		         beneath the Sample_RTE\source\src directory.  In addition, the JavaDoc
+		         associated with the source files is located at Sample_RTE\api\index.html.
+		         The modules that make up the Server Component are listed below:
+	         </p>
+	         <ul>
+	            <li>
+	               <i>ADL Validator</i>: This module is responsible for validating
+	               the imsmanifest.xml file that is required in SCORM Content
+	               Aggregation Content Packages.  The ADL 
+                   Validator is also responsible for parsing the XML file and 
+                   returning a DOM tree representation to the Sample RTE Server 
+                   Component. <i>Refer to the JavaDoc Package, "org.adl.validator" 
+                   for details.</i>
+	            </li>
+	            <li>
+	               <i>Utilities</i>: This module contains general purpose 
+                   utility Java files.
+	               <i>Refer to the JavaDoc Package, "org.adl.util" for details.</i>
+	            </li>
+	            <li>
+	               <i>ADL Sequencer</i>: This module is responsible for handling
+	               sequencing based on the IMS Simple Sequencing Specification and
+	               SCORM 2004 3rd Edition Sequencing and Navigation Version 1.0.
+	               It contains classes that create an initialized activity tree, 
+	               maintain the activity tree throughout the sequencing process and 
+	               handle all sequencing logic.
+	               <i>Refer to the JavaDoc Package, "org.adl.sequencer" for details.</i>
+	            </li>
+	            <li>
+	               <i>Sample RTE</i>:  The Sample RTE Package is the hub of all of
+	               the Server Component packages.  It contains the logic to utilize
+	               the other packages when needed.  It also contains Java 
+                   classes that interact with Java Server Pages to implement
+                   server side functionality.
+	               <i>Refer to the JavaDoc Packages,"org.adl.samplerte.server" and
+	               "org.adl.samplerte.util" for details.</i>
+	            </li>
+	            <li>
+	               <i>Data Models</i>:  This package contains the classes that
+	               maintain the SCORM Run-Time Environment Data Model and the 
+                   Navigation Data Model. <i>Refer to the JavaDoc Package 
+                   "org.adl.datamodels" for details.</i>
+	            </li>
+                <li>
+	               <i>Shareable State Persistence</i>:  This package contains 
+                   the classes used to provide the IMS Shareable State 
+                   Persistence implementation. <i>Refer to the JavaDoc Package 
+                   "org.ims.ssp.samplerte.server" for details.</i>
+	            </li>
+	         </ul>
+	     	</td>
+	  	</tr>
+   </table>
+</p>
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+<a name="rteClientcomponentJava"></a>
+<p>
+   <table>
+	   <tr>
+	     	<td valign="TOP">
+	         <p>
+	         	<h5 class="title">
+	         		Sample Run-Time Environment Client Component (Java Files)
+	         	</h5>
+	         </p>
+	         <p>
+		         The Sample RTE Client Component consists of a sample 
+		         user interface implemented in HTML and JavaScript and the 
+		         Sample RTE API Instance implemented as a Java Applet. 
+		         The Applet is downloaded to the client when the user accesses 
+		         the Sample RTE page through a Web browser. This Applet 
+		         provides the communication to the Sample RTE Server Component for 
+		         Data Model element persistence.  Refer to the JavaDoc Package, 
+		         "org.adl.samplerte.client", for details.
+	         </p>
+	     	</td>
+	  	</tr>
+   </table>
+</p>
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+<body class="bg">
+<a name="rteclientComponentWeb"></a>
+<p>
+   <table>
+	   <tr>
+	      <td>
+	         <p>
+	         	<h5 class="title">
+	         		Sample Run-Time Environment Client Component (Web Files)
+	         	</h5>
+	         	The Sample RTE Client Component is comprised of the following modules
+	         	which can be found beneath the installation location in the 
+	         	Sample_RTE\source\SampleRTE\LMSClient directory:
+	         </p>
+	         <ul>
+	            <li>
+	               <i>Administrative</i>: This module contains files that change
+	               passwords, delete courses, manage global objectives, create or
+	               delete users, delete courses and clear the Sample RTE database.
+	               The files that make up the Administrative module are located 
+                   in the "admin" directory.
+	            </li>
+	            <li>
+	               <i>Help</i>: This module contains information pages on how to
+	               use the Sample RTE.  The files that make up the Help module 
+                   are located in the "help" directory.
+	            </li>
+	            <li>
+	               <i>Import</i>: This module is responsible for managing the course
+	               import process.  These files utilize the Sample RTE Server side 
+	               Java Component to handle parsing, validation and database access. 
+	               The files that make up the Import module are located in the 
+	               "import" directory.
+	            </li>
+	            <li>
+	               <i>Includes</i>:  The Sample RTE utilizes a style sheet (*.css)
+	               that handles the interface look and feel.  See
+	               sampleRTE_style.css for details.  This file is located in the
+	               "includes" directory.
+	            </li>
+	            <li>
+	               <i>Run-Time</i>:  This module contains the files used to deliver
+	               a SCORM Conformant Content Aggregation Content Package.  
+                 In addition, the SCORM API is included.  All images used in 
+                 the Sample RTE menu are located in the "menu-images" directory 
+                 located in this module.  The files that make up the Run-Time 
+                 module are located in the "runtime" directory.
+	            </li>
+	            <li>
+	               <i>Special State</i>: This module contains information pages that
+	               describe special sequencing states.  It is possible that content
+	               will not be delivered as result of a sequencing request.  In that
+	               event these pages inform the user about what state the sequencer
+	               is in.  <strong>Note:</strong>  These pages are included to help debug sequencing
+	               in content.  There is no requirement by the SCORM that they be
+	               presented.  LMSs may handle sequencing states in their
+	               own manner.  The files that make up the Special State 
+	               module are located in the "specialstate" directory.
+	            </li>
+	         </ul>
+      	</td>
+  		</tr>
+  	</table>
+</p>
+</body>
+</html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+   <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+   <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+<body class="bg">
+<a name="thirdPartyComponents"></a>
+<p>
+   <table>
+	   <tr>
+	      <td valign="TOP">
+	         <p>
+	         	<h5 class="title">Third Party Components</h5>
+	         </p>
+	         <p>
+		         The Sample RTE uses the following third party tools:
+	         <p>
+	         <ul>	           	
+		         <li>
+		          	<strong><em>Morten's JavaScript Tree Menu</em></strong>
+		          	<br />
+		          	<br />
+		            	The Table of Contents Menu is used when the Sequencing 
+                        Control Choice mode is enabled.  The menu is presented 
+                        in the left Sample RTE frame.
+		            <br />
+		            <br />
+		            Morten's JavaScript Tree Menu version 2.3.0, dated 2001-04-30
+		            http://www.treemenu.com/
+						<br />	
+		            Copyright (c) 2001, Morten Wang & contributors
+		            All rights reserved.
+		            <br />
+		            <br />
+		         </li>
+					<li>
+						<strong><em>Apache Software</em></strong>
+						<br />
+						<br />
+		            This product includes software developed by the Apache Software
+		            Foundation (
+		            <a href="http://www.apache.org" target="_blank">
+		               http://www.apache.org/</a>
+		             )
+		            <br />
+		            <br />
+		            <ul>
+							<li>
+								<strong>
+									<em>Apache's Apache-Tomcat Server Version 5.5.20</em>
+								</strong>
+		            	
+								Licensed under the Apache License, Version 2.0 
+								(the "License"); you may not use this file except in 
+								compliance with the License.  You may obtain a copy of the 
+								License at
+				            <a href="http://www.apache.org/licenses/LICENSE-2.0" 
+				                target="_blank">
+				                http://www.apache.org/licenses/LICENSE-2.0</a>
+				            <br />
+				            Unless required by applicable law or agreed to in writing,
+				            software distributed under the License is distributed on an 
+				            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY 
+				            KIND, either express or implied. See the License for the 
+				            specific language governing permissions and limitations 
+				            under the License.
+		               </li>
+							<br />
+		             	<li>
+		             		<strong>
+		             			<em>Apache's Xerces Version 2.9.0 Parser</em>
+		                	</strong>
+		                	<br />
+					         	The Apache Xerces XML Parser is used to validate the XML in the
+					            imsmanifest.xml file during course import.
+					         <br />
+					            Please view the Apache License Agreement at
+					            <a href= "http://www.apache.org/licenses/LICENSE-2.0" target="_blank">
+					               http://www.apache.org/licenses/LICENSE-2.0</a>.
+		            	</li>
+		            	   <br />
+		             	<li>
+		             		<strong>
+		             			<em>Apache Ant Version 1.6.2 (ant.jar)</em>
+		                	</strong>
+		                	<br />
+					         	The Apache Ant ant.jar provides access to the Apache classes 
+					         	ZipFile and ZipEntry.  The ZipFile class allows the encoding of
+					         	an incoming zip file to be specified which enables support of
+					         	certain foreign characters in filenames during import.
+					         <br />
+					            Please view the Apache License Agreement at
+					            <a href= "http://ant.apache.org/LICENSE" target="_blank">
+					               http://ant.apache.org/LICENSE
+					            </a>.					            
+		            	</li>
+		            </ul>
+		         </li>		         
+	      	</ul>
+	      </td>
+	   </tr>
+   </table>
+</p>
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+<a name="buildingTheRTE"></a>
+<p>
+   <table>
+	   <tr>
+	      <td valign="TOP">
+	         <p>
+	         	<h5 class="title">Building the Sample RTE</h5>
+	         </p>
+	         <p>
+	         	<strong>
+	            	<strong>Note:</strong> It is not a requirement to build the Sample RTE 
+                    before using it.  It will install as a fully operational 
+                    unit.  It is only necessary to build the Sample RTE if the 
+                    source code has been changed.
+	         	</strong>
+	         </p>
+	         <p>
+		         <em>In order to compile the Sample RTE, the full installation
+		         instructions must be completed first.</em>  The Sample RTE 
+		         build file depends on a full apache-tomcat-5.5.20 install, 
+		         along with resources provided in the installation of the Sample RTE.  
+                 It is important to note that when the Sample RTE is built, it 
+                 overwrites the previously installed Sample RTE. To move back 
+                 to the original Sample RTE, the un-install must be executed and then 
+                 the downloaded self-extracting executable must be re-run.
+	         </p>
+	         <p>
+		         The Sample RTE is built using Apache Ant, a Java-based build tool.
+		         <b>Before building the Sample RTE, Apache Ant must be installed.</b>
+		         For information about and downloads of Ant, refer to
+	         	<a href="http://ant.apache.org/" target="_blank">http://ant.apache.org/</a>.
+	         </p>
+	
+	         <em>
+	         	To build the Sample RTE:
+	         </em>
+	         <ul>
+	            <li>
+	            	Open a command prompt and navigate to the directory where the
+	               Sample RTE is installed (Default: C:\ADL\SCORM_2004_3rd_Ed_Sample_RTE_V1.0.2)
+	            </li>
+	            <li>
+	            	From this point, navigate to the Sample_RTE\source directory
+	            </li>
+	            <li>
+	            	At the prompt type "ant".
+	            </li>
+	         </ul>
+	         
+	         <p>
+		         The XML Ant build files will compile all Java class and jar files
+		         needed by the Sample RTE.  In addition the files will be 
+		         installed to apache-tomcat.  
+		         (<strong>Note:</strong> For changes to take effect, the tomcat server will need 
+		         to be restarted).  This completes the compilation of the Sample 
+		         RTE.
+	         </p>
+	         
+	         <p>
+	         	<em>Source File Locations</em>
+	         	<ul>
+	            	<li>
+	            		All JSP, HTML, and JavaScript files are located at
+	                	&lt;drive&gt;:\&lt;install_directory&gt;\Sample_RTE\source\SampleRTE\LMSClient.
+	             	</li>
+	             	<li>
+	             		The Sample RTE Java files are located in their respective
+	                	package locations.  For example the data model classes are 
+	                	located at "org\adl\datamodels".  The root of the Java 
+	                	source directory is 
+	                	&lt;drive&gt;:\&lt;install_directory&gt;\Sample_RTE\source\src.
+	                 	Here you will find the build script and the root "org"
+	                 	directory.
+	             	</li>
+	           	</ul>
+	         </p>
+	      </td>
+	   </tr>
+   </table>
+</p>
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+<a name="knownIssuesRTE"></a>
+<table width="100%" cellpadding="3">
+   <tr>
+      <td class="stagebar">Additional Information</td>
+   </tr>
+</table>
+
+<p>
+	<table>
+	   <tr>
+	      <td valign="TOP">
+	         <h5 class="title">Known Issues</h5>
+	         </p>
+	            <ol style="margin-bottom: 0;">
+	               <li>
+	               	If a package manifest contains references to Sharable Content 
+	               	Objects (SCOs) that are located at an external Web site, 
+	               	a cross-domain JavaScript security error will occur.  
+	               	This may prevent the SCOs from 
+	               	communicating with the Sample RTE provided API.
+	               </li>
+	               <br />
+	               <br />
+	               <li>
+	               	The Internet Explorer browser must be set to 
+	               	check for a new page every visit to the page.  
+	               	To configure the browser:
+	                  <ol>
+	                     <li>
+	                     	Open a Microsoft Internet Explorer Browser
+	                     </li>
+	                     <li>
+	                     	Click on "Tools" -> "Internet Options"
+	                     </li>
+	                     <li>
+	                     	On the "General" tab, "temporary internet files"
+	                        sub-section, click "Settings"
+	                     </li>
+	                     <li>
+	                     	Ensure that the "Every visit to the page" radio
+	                        button is selected
+	                     </li>
+	                     <li>
+	                     	Click "OK" and then "OK" again.
+	                     </li>
+	                  </ol>
+	               </li>	               	               
+	               <br />
+	               <li>
+	                  It is possible that switching between different
+	                  versions of the Sample RTE could cause an Applet Error
+	                  if Applet Caching is enabled.  If this occurs,
+	                  the following steps can be taken to correct the issue:
+	               
+	            <ul>
+	               <li>   
+	                  For J2SE 1.4.2_XX				      
+				            <ol>
+					            <li>Open the Windows "Control Panel"</li>
+										  <li>Double click on the "Java Plug-in" icon</li>
+						          <li>Click on the "Cache" tab</li>
+						          <li>
+					               Click the "Clear" button in the upper right-hand corner
+						          </li>
+						          <li>
+						             Click Yes when prompted to confirm
+						          </li>
+						          <li>
+						             Uncheck the Enable Caching check box in the upper
+						             left-hand corner
+						          </li>
+						          <li>
+						             Click the Apply button.<br><br>
+						          </li>
+						         </ol>
+						      </li>	
+	                <li>               
+                    For J2SE 5.0				      
+				            <ol>
+				      	       <li>Open the Windows "Control Panel"</li>
+					             <li>Double click on the "Java Plug-in" icon</li>
+	                     <li>
+                          Click on the "General" tab at the top of the 
+                          dialog box
+                       </li>
+	                     <li> 
+                          Under the "Temporary Internet Files" section, 
+                          click the "Settings" button
+                       </li>                     
+                       <li>
+                          Click the "View Applets" button
+                       </li>                     
+                       <li>
+                          Ensure that the check box labeled "Enable Caching" 
+                          is unchecked (for the ADL applets).<br><br>
+                       </li>
+	                  </ol>
+	                </li>
+	                <li>
+	                  For Java SE 6				      
+				            <ol>
+				               <li>Open the Windows "Control Panel"</li>
+					             <li>Double click on the "Java" icon</li>
+	                     <li>
+                          Click on the "General" tab at the top of the 
+                          dialog box
+                       </li>
+	                     <li> 
+                          Under the "Temporary Internet Files" section, 
+                          click the "Settings" button
+                       </li>                                                                 
+                       <li>
+                          Ensure that the check box labeled "Keep temporary files on my computer" is unchecked.<br>
+                       </li>
+	                  </ol>
+	                  </li>
+	                </ul>
+	                </li>               
+	            </ol>
+	      	<p>
+	   	</td>
+	   </tr> 	      
+    </table>
+</p>
+
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+<a name="implementationDecisions"></a>
+<p>
+	<table>
+	   <tr>
+	      <td valign="TOP">
+	      	 <h5 class="title">Implementation Decisions</h5>	      	 
+	         <strong>Case Sensitive URLs</strong>
+	         </p>
+	            <ul style="margin-bottom: 0;">
+	               <li>
+	               	    URLs that are located in the imsmanifest.xml file and that 
+                        identify launch locations and other hrefs are case sensitive in 
+                        the Sample Run-Time Environment.
+                        For example, sco.html is different from SCO.HTML and from Sco.html.
+                        If the case used to specify a file name does not match the case 
+                        of the actual file, an error will result while running the course.
+	               </li>
+	               <br />
+	               <br />
+	            </ul>
+	      	<p>
+	      	<strong>Maximum Allowable Course Size</strong>
+	         </p>
+	            <ul style="margin-bottom: 0;">
+	               <li>
+	               	    The maximum allowable size for a course imported into the Sample 
+	               	    Run-Time Environment is approximately 2.0 gigabytes.  Courses 
+	               	    exceeding 2.0 gigabytes may not import correctly.
+	               </li>
+	               <br />
+	               <br />
+	            </ul>
+	      	<p>
+	      	<strong>Manifest Encodings</strong>
+	         </p>
+	            <ul style="margin-bottom: 0;">
+	               <li>
+	               	    Any course imported into the Sample Run-Time Environment which
+	               	    contains foreign characters in the manifest, must have the
+	               	    imsmanifest.xml file encoded in either UTF-8 or UTF-16 (Big Endian
+	               	    or Little Endian). 
+	               </li>
+	               <br />
+	               <br />
+	            </ul>
+	      	<p>
+	   	</td>
+	   </tr>
+   	<tr>
+	      <td valign="TOP">
+	         <strong>Supported Java Versions</strong>
+	         <ul style="margin-bottom: 0;">
+	         	<li>
+                  The following list describes Java Development Kit versions that have been 
+	               tested with the Sample RTE as of the date of this release:
+                  <ul>
+                     <li>Java SE 6, any update level
+                     <li>J2SE 5.0, Update 10 or later
+                     <li>J2SE 1.4.2_13 or later 
+                  </ul>
+                  <br />
+                  <br />
+               </li>
+	         </ul>
+	   	</td>
+   	</tr>
+	</table>
+</p>
+
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+<a name="environmentVariableRTE"></a>
+<p>
+	<table>
+   	<tr>
+	      <td valign="TOP">
+	         <h5 class="title">Environment Variable</h5>
+	         </p>
+	            <ul>
+               <li>
+                  The Environment Variable will be set when the Sample Run-Time 
+                  Environment is installed.  If for any reason it would need 
+                  manually reset, please follow these instructions.
+                  <ol>
+                     <li>Right-Click My Computer</li>
+                     <li>Click the Advanced Tab</li>
+                     <li>Click the Environment Variables button</li>
+                     <li>Click the New button</li>
+                     <li>Set the Variable name to SCORM3ED_SRTE102_HOME</li>
+                     <li>Set the Variable value to &lt;drive&gt;:\&lt;install_directory&gt;</li>
+                     <li>Click Ok on the New Variable window</li>
+                     <li>Click Ok on the Environment Variables window</li>
+                     <li>Click Ok on the Systems Properties window</li>
+                  </ol>
+               </li>
+               <br />
+               <br />
+            </ul>
+	      	<p>	      	
+	   	</td>
+	   </tr>
+   </table>
+</p>
+</body>
+</html>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+<a name="odbcConnectionsRTE"></a>
+<p>
+	<table>
+   	<tr>
+	      <td valign="TOP">	         
+	      	<h5 class="title">ODBC Connections</h5>
+	         </p>
+	            <ul>
+               <li>
+                  The ODBC Connections will be set when the Sample Run-Time 
+                  Environment is installed.  If for any reason they would need 
+                  manually reset, please follow these instructions.
+                  <ol>
+                     <li>Open the Windows "Control Panel"
+                     <li>Double-click Administrative Tools</li>
+                     <li>Double-click Data Sources (ODBC)</li>
+                     <li>If you are an Administrator, choose the System DSN tab</li>
+                     <li>If you are a user, choose the User DSN tab</li>
+                     <li>Click Add</li>
+                     <li>Choose Microsoft Access Driver (*.mdb), and click Finish</li>
+                     <li>Enter SCORM3EDGlobalObjs102 for Data Source Name:</li>
+                     <li>Click Select and browse to 
+                     	&lt;drive&gt;:\&lt;install_directory&gt;\Sample_RTE\database\</li>
+                     <li>Select the GlobalObjectives.mdb database and click OK</li>
+                     <li>Repeat steps 6 through 10 using the Data Source Name 
+                     	SCORM3EDSRTE102 matched to the SampleRTE.mdb database, and 
+                     	the Data Source Name SCORM3EDSSP102 matched to the 
+                     	SSPManager.mdb database</li>
+                     <li>Click OK on the ODBC Data Source Administrator window</li>
+                  </ol>
+               </li>
+            </ul>
+	      	<p>	      	
+	   	</td>
+	   </tr>
+   </table>
+</p>
+</body>
+</html>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+<a name="systemRequirementsRTE"></a>
+<p>
+	<table>
+   	<tr>
+	      <td valign="TOP">
+	         <h5 class="title">System Requirements</h5>
+	         </p>
+	            <ul>
+               <li>
+                  Minimum System Requirements for operation of the Sample Run-Time
+                  Environment:
+                  <ul>
+                     <li>Windows XP or Windows Vista</li>
+                     <li>2 GHz Processor</li>
+                     <li>1 GB of RAM</li>
+                     <li>35 MB of free disk space </li>
+                  </ul>
+               </li>
+               <br />               
+               <li>
+                  Recommended System Requirements for operation of the Sample Run-Time
+                  Environment:
+                  <ul>
+                     <li>Windows XP or Windows Vista</li>
+                     <li>4 GHz Processor</li>
+                     <li>2 GB of RAM</li>
+                     <li>35 MB of free disk space </li>
+                  </ul>
+               </li>
+            </ul>
+	      	<p>	      	
+	   	</td>
+	   </tr>
+   </table>
+</p>
+</body>
+</html>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+      <title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+      <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+
+<body class="bg">
+<a name="licenseCopyright"></a>
+<p>
+	<table>
+   	<tr>
+   		<td valign="TOP">
+      		<p>
+      			<h5 class="title">Licenses and Copyrights</h5>
+      		</p>
+       		<strong>
+			   	Advanced Distributed Learning Co-Laboratory (ADL Co-Lab) Hub grants 
+			   	you ("Licensee") a non-exclusive, royalty free, license to use, 
+			   	modify and redistribute this software in source and binary code 
+			   	form, provided that i) this copyright notice and license appear 
+			   	on all copies of the software; and ii) Licensee does not utilize 
+			   	the software in a manner which is disparaging to ADL Co-Lab Hub. 
+			   	<br />
+			   	<br />
+			      This software is provided "AS IS," without a warranty of any 
+			      kind.  ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND 
+			      WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, 
+			      FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY 
+			      EXCLUDED.  ADL Co-Lab Hub AND ITS LICENSORS SHALL NOT BE LIABLE FOR 
+			      ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING 
+			      OR DISTRIBUTING THE SOFTWARE OR ITS DERIVATIVES.  IN NO EVENT 
+			      WILL ADL Co-Lab Hub OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE,
+			      PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL,
+			      INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF 
+			      THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR INABILITY 
+			      TO USE SOFTWARE, EVEN IF ADL Co-Lab Hub HAS BEEN ADVISED OF THE 
+			      POSSIBILITY OF SUCH DAMAGES.
+			   </strong>
+   		</td>
+   	</tr>
+   </table>
+</p>
+</body>
+</html>
+
+
+

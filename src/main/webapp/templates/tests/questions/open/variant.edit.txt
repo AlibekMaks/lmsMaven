@@ -1,0 +1,14 @@
+<tr>
+	<td width="5px">
+		<input type="{[type]}" {[name]} {[checked]}/>
+	</td>	
+	<td width="*">
+		{[variant]}
+	</td>
+
+	<td width="16px">
+		<a href="#" onClick='return removeVariant({[nnn]}, {[number]})'>
+			<img src="images\icon.delete.gif" border=0 width="16px" height="16px">
+		</a>
+	</td>
+</tr>

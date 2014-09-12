@@ -1,0 +1,25 @@
+<table border=0 width="100%" class="table" border=0>
+	<tr>
+		<td>
+<table border=0 width="100%" class="table">
+    <tr>
+        <td colspan=3 align="center" class="coloredheader">
+            {[day name]}
+        </td>
+    </tr>
+    <tr>
+        <td width="2%">
+            {[number]}
+        </td>
+        <td width="49%">
+            {[from]}
+        </td>
+        <td width="49%">
+            {[till]}
+        </td>
+    </tr>
+    {[records]}
+</table>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,20 @@
+<tr>
+    <td>
+        <table border=1 width="100%" class="table">
+            <tr>
+                <td width="3%" align="center">
+		        {[first tag number select]}
+                </td>
+                <td width="47%">
+		        {[first tag]}
+                </td>
+                <td width="3%" align="center">
+		    {[second tag number select]}
+                </td>
+                <td width="47%" >
+		    {[second tag]}
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>

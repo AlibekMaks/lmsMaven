@@ -1,0 +1,256 @@
+<script language="javascript">
+    function warning(){
+        if (confirm("{[warn1]}")){
+            return confirm("{[warn2]}");
+        }
+        return false;
+    }
+
+    function Change(obj){
+        var btn = document.getElementById("btn");
+        btn.value = obj.name;
+    }
+
+    function isFormValid(){
+
+//        if(!getObject('date1').mask.isComplete()){
+//            alert("{[wrong date format]}");
+//            return false;
+//        }
+
+        var btn = document.getElementById("btn");
+        if(btn.value == 'appointbutton'){
+            var obj = document.getElementById("testingName");
+            obj.value = trim(obj.value);
+
+            if (obj.value.length == 0){
+                obj.focus();
+                alert("{[enter testing name]}");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function keyUP(event){
+        if(event.keyCode>= 96 & event.keyCode<=105){
+            var dt = document.getElementById('date1');
+            if(dt.value.length == 10){
+                if(getObject('date1').mask.isComplete()){
+                    document.appointtests.submit();
+                }
+            }
+        }
+    }
+
+    function onChangeChb(obj) {
+        change_a(obj);
+
+        if (obj.name == 'all') {
+            return;
+        }
+
+        var valOld = obj.id + "=" + (obj.checked?0:1);
+        var valNew = obj.id + "=" + (obj.checked?1:0);
+
+        var valStd = document.getElementById('studentList').value;
+
+        if (valStd.indexOf(obj.id) == -1) {
+            valStd = valStd + valNew + "_";
+        } else {
+            valStd = valStd.replace(valOld, valNew);
+        }
+
+        var pageLinks = document.getElementsByClassName('navLink');
+        for (var i = 0; i < pageLinks.length; ++i) {
+            var item = pageLinks[i];
+
+
+            var href = item.href;
+            var pos = href.indexOf("studentList=");
+            if(pos > 0){
+                var endPos = href.indexOf("&", pos);
+                hrefTemp = href.substring(pos, endPos+1);
+                href=href.replace(hrefTemp,"studentList=" + valStd + "&")
+            }
+
+            item.href= href;
+        }
+        document.getElementById('studentList').value=valStd;
+    }
+
+</script>
+<form name="appointtests" id="appointtests" action="appointtests" method="post" onsubmit="return isFormValid();" >
+{[hidden_fields]}
+<input name="btn" id="btn" value="" type="hidden">
+
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table width="100%" border=0>
+                <tr>
+                    <td class="pageHeader">
+                        {[students list]}
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="20%">
+                                </td>
+                                <td width="80%">
+                                    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="100%">
+                                                <input type="text" name="search" class="input" value="{[search value]}" style="width:100%">
+                                            </td>
+                                            <td width="100px" style="padding-left:2px">
+                                                <input type="submit" name="search" id="search" value="{[search]}" class="button" onclick="Change(this)" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" align="right">
+                                    {[class]}
+                                </td>
+                                <td>
+                                    {[class select]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" align="right">
+                                    {[period]}
+                                </td>
+                                <td>
+                                    {[period select]}
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0>
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0/>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr height="10px">
+                    <td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table border=0 class="table">
+                            <tr>
+                                <td width="150px" align="left">
+                                        {[date]}
+                                </td>
+                                <td width="50px" align="left">
+                                        {[date input]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="150px" align="left">
+                                    {[duration]}
+                                </td>
+                                <td width="50px" align="left">
+                                    <input name="duration" size=5 value="{[duration value]}" class="input"/>мин.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="150px" align="left">
+                                    {[testingName label]}
+                                </td>
+                                <td width="50px" align="left">
+                                    <input name="testingName" id="testingName" size=80 value="{[testingName value]}" class="input"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr height="10px">
+                    <td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="50%" class="td">
+                                    {[found]} : {[number of found records]}
+                                </td>
+                                <td width="50%" align="right">
+                                    {[parts]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+
+
+                <input type="hidden" name="roleID" value="{[roleID]}" />
+                {[params]}
+                <tr>
+                    <td>
+                        <table class="table" width="100%" border=1 bordercolor="#000000" cols=4>
+                            <tr>
+                                <td width="5px" class="coloredheader">
+                                    <input type="checkbox" name="all" id="all" onClick="change_a(this)" />
+                                </td>
+                                <td width=* align="center" class="coloredheader">
+                                    {[name]}
+                                </td>
+                                <td width="25%" align="center" class="coloredheader">
+                                    {[class]}
+                                </td>
+                                <td width="10%" align="center" class="coloredheader">
+                                    {[startdate]}
+                                </td>
+                                <td width="13%" align="center" class="coloredheader">
+                                    {[last testing date]}
+                                </td>
+                                <td width="10%" align="center" class="coloredheader">
+                                    {[passed]}
+                                </td>
+                                <td width="13%" align="center" class="coloredheader">
+                                    {[status]}
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+
+                <tr height="20px">
+                    <td>
+                    </td>
+                </tr>
+
+                <tr>
+                   <td width="100px" style="padding-left:2px">
+                       <input type="submit" name="appointbutton" id="appointbutton" value="{[appoint]}" class="button" onclick="Change(this)" />
+                   </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

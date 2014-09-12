@@ -1,0 +1,104 @@
+.chatBackground{
+    background-color:#efefef;
+}
+
+.chatDarkBackground{
+    background-color:#000000;  
+}
+
+.time{
+    font-family:arial,tahoma;
+    font-size:10pt;
+    color:#333333; 	
+}
+
+.tutorMessage{
+    font-family:arial,tahoma;
+    font-size:10pt;
+    color:#333333; 	
+    background-color:#efefef;  
+}
+
+.studentMessage{
+    font-family:arial,tahoma;
+    font-size:10pt;
+    color:#555555; 	
+}
+
+.tutorInChat{
+    font-family:arial,tahoma;
+    font-size:10pt;
+    color:#000428; 
+}
+
+.studentInChat{
+    font-family:arial,tahoma;
+    font-size:10pt;
+    color:#000428; 
+}
+
+.inChat{
+    font-family:arial,tahoma;
+    font-size:10pt;
+    color:#333333; 
+}
+
+.messageInput{
+    font-family:arial,tahoma;
+    font-size:10pt;
+    color:#333333; 
+    border-color:#4477aa;
+    border-width:1px;
+    border-style:solid;	
+}
+
+input.button{
+    font-family:arial,tahoma;
+    font-size:10pt;
+    color:#333333
+}
+
+.userName{
+    font-family:arial,tahoma,sans-serif;
+    font-size:9pt;
+    color:#000428; 
+}
+
+.recept{
+    font-family:arial,tahoma,sans-serif;
+    font-size:8pt;
+    color:#000428;
+}
+
+.border{
+    font-family:arial,tahoma;
+    font-size:11pt;
+    color:#ffffff;
+    background-color:#dedede;
+}
+
+.header1 {
+    font-family:arial,tahoma;
+    font-size:18pt;
+    color:#333333;
+}
+
+.srmheader{
+    font-family:arial,tahoma;
+    font-size:11pt;
+    color:#ffffff;
+    background-color:#0c5389;
+    padding-left:10px;
+}
+
+.srmitem{
+    font-family:arial,tahoma;
+    font-size:11pt;
+    color:#333333;
+}
+
+.chatlink{
+    font-family:arial,tahoma;
+    font-size:9pt;
+    color:#333333;
+}

@@ -1,0 +1,114 @@
+<form action="testing" id="form" name="form">
+<input type="hidden" name="option" value="4" id="option">
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         {[options]}
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0 width="100%" class="table">
+                            <tr>
+                                <td width="20%">
+                                    {[name]}
+                                </td>
+                                <td>
+                                    <input name="name" style="width:80%" class="input" value="{[name value]}" maxlength="{[maxlength]}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {[date]}
+                                </td>
+                                <td >
+                                    {[date input]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >
+                                    {[time start]}
+                                </td>
+                                <td >
+                                    {[time start inputs]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >
+                                    {[time finish]}
+                                </td>
+                                <td >
+                                    {[time finish inputs]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {[duration]}
+                                </td>
+                                <td>
+                                    <input name="duration" size=5 value="{[duration value]}" class="input"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="students-tree"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="{[accept]}" class="button">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>
+
+
+<script language="javascript">
+
+$("#students-tree")
+		.bind("loaded.jstree", function (event, data) {
+        	{[check students that are in the testing]}
+	    })
+	    .jstree({
+        /*
+        "ui":{
+            "initially_select" : [ tableName ]
+
+        },
+        "core":  {
+            "initially_open" : [ tableName ]
+        },
+        */
+        "json_data" : {
+            "data" :  [
+
+                {[students tree data]}
+
+			]
+
+        },
+        "checkbox" : {
+        	real_checkboxes: true
+        },
+        "themes": {
+        	"theme": "default"
+        },
+        "plugins" : [ "themes", "json_data", "checkbox", "ui","crrm"]
+    });
+
+</script>

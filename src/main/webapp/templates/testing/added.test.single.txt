@@ -1,0 +1,27 @@
+<tr>
+    <td width="16px"><input type="checkbox" onClick="changeState(this.checked, {[testID]})"></td>
+    <td>
+        {[testname]}
+    </td>
+    <td>
+        {[all easy]}
+    </td>
+    <td>
+        {[all middle]}
+    </td>
+    <td>
+        {[all difficult]}
+    </td>
+    <td align="center">
+        <input disabled name="tID_{[testID]}_e" id="tID_{[testID]}_e" style="text-align:center;" class="input" value="{[easy value]}" size=3 />
+    </td>
+    <td align="center">
+        <input disabled name="tID_{[testID]}_m" id="tID_{[testID]}_m" style="text-align:center;" class="input" value="{[middle value]}" size=3 />
+    </td>
+    <td align="center">
+        <input disabled name="tID_{[testID]}_d" id="tID_{[testID]}_d" style="text-align:center;" class="input" value="{[difficult value]}" size=3 />
+    </td>
+    <td>
+        {[delete]}
+    </td>
+</tr>

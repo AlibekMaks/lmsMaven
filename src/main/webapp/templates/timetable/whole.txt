@@ -1,0 +1,70 @@
+<script language="javascript">
+    function selectLesson(day, lesson, sitting){
+        width = 600;
+        height = 400;
+        tmpLeft = (window.screen.availWidth-width)/2;
+        tmpTop = (window.screen.availHeight-height)/2;   
+
+        window.open("addlesson?day="+day+"&lesson="+lesson+"&tutorID="+{[tutorID]}+"&sitting="+sitting, "", "height="+height+"; width="+width+
+        "; left="+tmpLeft+"; top="+tmpTop+"; resizable=1; scrollbars=1;");
+    }
+    function setLesson(day, lesson, group, classroom,lessonID){
+        document.getElementById("gd"+day+"less"+lesson).innerHTML = group;
+        document.getElementById("cd"+day+"less"+lesson).innerHTML = classroom;
+	document.getElementById("a"+day+"less"+lesson).href="timetable?option=delete&lessonID="+lessonID+"&tutorID="+{[tutorID]}+"&{[params]}&sitting="+{[sitting]};
+	document.getElementById("a"+day+"less"+lesson).disabled="false";
+	document.getElementById("a"+day+"less"+lesson).onclick="return true";
+    }
+</script>
+<table border=0 width="100%" height="100%" cellpadding=0 cellspacing=0>
+    <tr>
+        <td width="232px">
+            {[navigation]}
+        </td>
+        <td width=* valign="top">
+            <table border=0 width="100%" height="100%">
+                <tr height="100%">
+                    <td class="mainTD" valign="top">
+                        <table border=0 width="100%" >
+                            <tr>
+                                <td>
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="48px" height="48px" border=0 />
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table border=0 width="100%">
+                                        <tr>
+                                            <td width="33%">
+                                                {[monday]}
+                                            </td>
+                                            <td width="33%">
+                                                {[tuesday]}
+                                            </td>
+                                            <td width="33%">
+                                                {[wednesday]}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="33%">
+                                                {[thursday]}
+                                            </td>
+                                            <td width="33%">
+                                                {[friday]}
+                                            </td>
+                                            <td width="33%">
+                                                {[saturday]}
+                                            </td>
+                                        </tr>       
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

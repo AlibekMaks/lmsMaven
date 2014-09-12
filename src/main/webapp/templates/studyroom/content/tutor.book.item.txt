@@ -1,0 +1,16 @@
+<tr>
+    <td width=* class="td">
+        {[name]}
+    </td>
+    <td width="16px" align=center valign=middle>
+        <a href="bookdownload?inline=true&bookID={[bookID]}&nocache={[random]}" target="_blank">
+            <img src="images/open.blank.gif" width="16px" height="16px" border=0 title="{[name]}">
+        </a>        
+    </td>
+    <td width="16px" align=center valign=middle>
+        <a href="bookdownload?bookID={[bookID]}&nocache={[random]}" >
+            <img src="images/download.gif" width="16px" height="16px" border=0 title="{[name]}">
+        </a>        
+    </td>
+    {[delete td]}
+</tr>

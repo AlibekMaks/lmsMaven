@@ -1,0 +1,130 @@
+<form id="frm" method="POST" enctype="multipart/form-data" onsubmit="return setAction()">
+
+<script language="JavaScript">
+    function setAction(){
+
+        document.getElementById("name").value = trim(document.getElementById("name").value);
+
+        if (document.getElementById("typeselect").value == -1){
+            alert("{[choose type]}");
+            return false;
+        }
+
+        if (document.getElementById("name").value.length == 0){
+            alert("{[fill in all of the fields]}");
+            document.getElementById("name").focus();
+            return false;
+        }
+
+        if (document.getElementById("bookID").value <= 0 &&
+            document.getElementById("coursezipfile").value.length == 0){
+            alert("{[fill in all of the fields]}");
+            document.getElementById("coursezipfile").focus();
+            return false;
+        }
+
+        query = "book?type=" +
+                document.getElementById("typeselect").value +
+                "&name=" + document.getElementById("name").value +
+                "&lang=" + document.getElementById("lang").value +
+                "&subjectID={[subjectID]}&{[params]}&bookID={[bookID]}";
+        if (document.getElementById("validate").checked)
+            query += "&validate=on";
+        document.getElementById("frm").action = query;
+        return true;
+
+    }
+    function changeState(){
+        isScorm = document.getElementById("typeselect").value == {[SCORM_TYPE]};
+        document.getElementById("validate_td").disabled = !isScorm;
+        document.getElementById("validate").disabled = !isScorm;
+        if (!isScorm)
+            document.getElementById("validate").checked = false;
+    }
+</script>
+
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageHeader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return href]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 title="{[return title]}">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="20%" class="td">
+                                    {[path]}
+                                </td>
+                                <td width="80%">
+                                    <input type="file" id="coursezipfile" name="coursezipfile"  style="width:100%" {[scorm file disabled]}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td">
+                                    {[name]}
+                                </td>
+                                <td>
+                                    <input name="name" id="name" class="input" style="width:100%" value="{[name value]}" maxlength="{[maxlength]}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td">
+                                    {[type]}
+                                </td>
+                                <td>
+                                    {[type select]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" id="validate_td" >
+                                    {[validate]}
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="validate" id="validate" class="chck" disabled>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td">
+                                    {[lang]}
+                                </td>
+                                <td>
+                                    {[lang select]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="{[save]}" class="button">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+<input type=hidden name="theManifest">
+<input type=hidden name="theZipFile">
+<input type="hidden" name="nocache" value="{[rnd]}"/>
+<input type="hidden" name="bookID" id="bookID" value="{[bookID]}"/>
+<input type="hidden" name="subjectID" value="{[subjectID]}"/>
+{[hidden inputs]}
+</table>
+</form>

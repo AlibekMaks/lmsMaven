@@ -1,0 +1,27 @@
+<tr><td></td></tr>
+<tr>
+    <td>
+    <table border=1 cellspacing=0 class="testtable" width="100%">
+        <tr>
+            <td valign="middle" width="5px" id="Q{[number]}" onmouseover='sel("{[number]}")' onmouseout='unsel("{[number]}")'   {[chckbg]}  onClick='clck("{[number]}"); chng("{[number]}", "{[max]}");'>
+                    {[check]}
+            </td>
+            <td valign="middle" width="*" onClick='clck("{[number]}"); chng("{[number]}", "{[max]}");'  id="A{[number]}"  onmouseover='sel("{[number]}")' onmouseout='unsel("{[number]}")'  {[varbg]}>
+                <table border=0 cellspacing=0 class="testtable" width="100%">
+                    <tr>
+                        <td height="5px" class="">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td valign="middle">
+                            {[variant]}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="5px" class="">&nbsp;</td>
+                    </tr>
+                </table>
+            </td> 
+        </tr>
+    </table>
+    </td>
+</tr>

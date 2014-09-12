@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>SCORM 2004 3rd Edition Sample Run-Time Environment Version 1.0.2 Readme</title>
+   <link rel="stylesheet" href="../css/README.css" type="text/css" />
+</head>
+<body class="bg">
+<a name="runSampleRTE"></a>
+<table width="100%" cellpadding="3">
+   <tr>
+      <td class="stagebar">
+     		Running the Sample RTE
+      </td>
+   </tr>
+</table>
+<p>
+   <table>
+	   <tr>
+	   	 <td>
+	      <p>
+	         <h5 class="title">Instructions</h5>
+	      </p>
+	      </td>
+	   </tr>
+	   <!--- End Major Heading Row --->
+	   <!--- Begin Text Row --->
+	   <tr>
+	      <td valign="TOP">
+	         <p>
+		         The instructions provided are for running the Sample RTE on a 
+		         Windows platform.  This is the only platform that the software 
+		         has been tested on and is the only platform for which 
+		         instructions are provided at this time.
+	         </p>
+	         <p>
+	         	<strong>To Run the Sample RTE:</strong>
+	         </p>
+	         <p>
+		         First, start the apache-tomcat-5.5.20 servlet container and
+		         Web server that is provided with this installation.  To do this:
+	         	<ol>
+		            <li>
+			            Click on the shortcut at Start Menu -> All Programs -> ADL -> 
+			            SCORM_2004_3rd_Edition_Sample_Run-Time_Environment_version_1.0.2 -> Start Server.  You will see a command 
+			            prompt window appear and show several lines of textual 
+			            information.  This window will remain open until you stop 
+			            the server.
+		            </li>
+		            <li>
+			            Next click on the Start Menu -> All Programs -> ADL -> 
+                        SCORM_2004_3rd_Edition_Sample_Run-Time_Environment_version_1.0.2 -> SCORM 2004 3rd Edition Sample Run-Time Environment version 1.0.2. This will launch 
+                        the Sample RTE Main page.  Log in with the username: 
+                        "admin", password: "admin".  
+                        (Be sure that Microsoft Internet Explorer 6.0 or greater
+			            is your default browser.)
+		            </li>
+	        		</ol>
+	        	</p>
+	        	<p>
+	           	Online help pages are available once the Sample RTE is started.
+	           	"Help" links appear at the bottom of each page.
+	        	</p>
+	        	<p>
+	          	To close the Sample RTE, first close the browser in which it is 
+                running.  To stop the apache-tomcat-5.5.20 servlet container 
+                and Web server, click on the 
+                Start Menu -> All Programs -> ADL -> SCORM_2004_3rd_Edition_Sample_Run-Time_Environment_version_1.0.2 -> Stop Server.
+	        	</p>
+	        	<p>
+	           	To return the Sample RTE to a "clean" state, log into the Sample 
+	           	RTE and from the main menu choose the Clear Database option.  
+	           	This will remove all course files that have been imported as 
+	           	well as any information associated with them, including IMS SSP
+                buckets and related information; and will remove all user 
+                registration information. All Global Objective information will 
+                also be removed.
+	        	</p>
+	        	
+	        	<p>
+	         	   <strong>Course Navigation User Interface</strong>
+	          </p>
+		        <p>
+			        In addition to any User Interface (UI) controls provided within course 
+			        content, the Sample RTE provides several mechanisms for navigating through 
+			        a course that are conformant to Section 2.1.7 of the SCORM 2004 3rd Edition 
+			        Conformance Requirements Version 1.0.  These mechanisms include the navigation 
+			        buttons in the top frame of the Sample RTE, such as the Quit, Suspend, 
+			        Previous, and Continue buttons, and the Table of Contents provided in 
+			        the left-hand frame.
+		        </p>
+	         
+		        <p>
+		          <strong>Navigation Buttons</strong>
+		        </p>
+		        
+		        <p>
+		           The navigation buttons provided by the Sample RTE in the top frame 
+		           will be visible when they are not explicitly “hidden” by an activity 
+		           via the hideLMSUI element within the manifest.  When an activity 
+		           explicitly hides any of the buttons, they will not appear in the 
+		           top frame.
+		        </p>
+		        
+		        <p>
+		           The following describes the behavior of the navigation buttons when 
+		           they are not hidden:
+		        </p>
+		        
+		        <p>
+			        <ul>
+			           <li>
+			              Quit – This button will issue an Exit All navigation request 
+			              to the Sample RTE’s Sequencer; the Sample RTE will end a user’s current 
+			              attempt on a course.  The user’s progress and course status 
+			              information for the current attempt will no longer be available 
+			              if  the user makes another attempt on the course.
+			           </li>
+			           <li>
+			              Suspend – This button will issue a Suspend All navigation request 
+			              to the Sample RTE’s Sequencer; the Sample RTE will end a user’s 
+			              current attempt on a course and will also ‘bookmark’ the user’s 
+			              position within the course.  The user’s progress and course status 
+			              information will be persisted.  When the user starts the course 
+			              again, they will resume the course from the same content they 
+			              triggered the suspend.
+			           </li>
+			           <li>
+			              Previous – This button will issue a Previous navigation request 
+			              to the Sample RTE’s Sequencer, resulting in launching the activity 
+			              identified prior to the current activity in the course’s activity 
+			              tree.
+			           </li>
+			           <li>
+			              Continue – This button will issue a Continue navigation request 
+			              to the Sample RTE’s Sequencer, resulting in launching the  
+			              activity identified after the  the current activity in the 
+			              course’s activity tree.
+			           </li>
+			        </ul>
+		        </p>
+		        
+		        <p>
+		          <strong>Table of Contents</strong>
+		        </p>
+		        
+		        <p>
+		           A Table of Contents (TOC) will be provided by the Sample RTE when 
+		           a course includes  Choice equal to “true” anywhere within its 
+		           activity tree.  When a course includes Choice equal to “false” at 
+		           every level of its activity tree, the table of contents will not 
+		           appear.
+		        </p>
+		        
+		        <p>
+		           The following describes the items in the TOC when Choice is set to 
+		           “true” in the course:
+		        </p>
+		        
+		        <p>
+			        <ul>
+			           <li>
+			              Selectable – Items that are selectable will be indicated with 
+			              black text and the cursor will change as the user mouses over them.
+			           </li>
+			           <li>
+			              Not Selectable – Items that are not selectable will be indicated 
+			              by gray text or  black text and the cursor that does not change 
+			              when the user mouses over them.
+			           </li>
+			        </ul>
+		        </p>
+	     	</td>
+	  	</tr>
+   </table>
+</p>
+</body>
+</html>

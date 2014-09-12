@@ -1,0 +1,41 @@
+<tr>
+    <td>
+        {[number]}
+    </td>
+    <td>
+        <table border=0 width="100%" class="table">
+            <tr>
+                <td width="40%">
+                    {[start hour select]}
+                </td>
+                <td width="10%">
+                    {[hour]}
+                </td>
+                <td width="40%">
+                    {[start minute select]}
+                </td>
+                <td width="10%">
+                    {[minute]}
+                </td>
+            </tr>
+        </table>
+    </td>
+        <td>
+        <table border=0 width="100%" class="table">
+            <tr>
+                <td width="40%">
+                    {[end hour select]}
+                </td>
+                <td width="10%">
+                    {[hour]}
+                </td>
+                <td width="40%">
+                    {[end minute select]}
+                </td>
+                <td width="10%">
+                    {[minute]}
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>

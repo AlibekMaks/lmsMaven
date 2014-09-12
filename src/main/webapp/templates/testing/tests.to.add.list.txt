@@ -1,0 +1,109 @@
+<script language="javascript">
+    function changeState(state, id){
+        document.getElementById("tID_"+id+"_e").disabled = !state;
+        document.getElementById("tID_"+id+"_m").disabled = !state;
+        document.getElementById("tID_"+id+"_d").disabled = !state;
+    }
+</script>
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {[options]}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <form action="testsfortesting" id="frm1" method="post">
+                        <input type="hidden" name="option" value="1">
+                        <table border=0 width="80%">
+                            <tr>
+                                <td width="100%">
+                                    <input type="text" name="search" value="{[search value]}" class="input" style="width:100%">
+                                </td>
+                                <td width="100px">
+                                    <input type="submit" value="{[search]}">
+                                </td>
+                            </tr>
+                        </table>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="50%" class="td">
+                                    {[found]}:{[number of found records]}
+                                </td>
+                                <td width="50%" align="right">
+                                    {[parts]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form action="testsfortesting" id="frm2" method="post">
+                        <input type="hidden" name="option" value="2">
+                        <table border=0 width="100%">
+                            <tr>
+                                <td>
+                                    <table border=1 class="table" width="100%" cols=8 bordercolor="#000000">
+                                        <tr>
+                                            <td width="10px" rowspan=2 class="coloredheader">&nbsp;</td>
+                                            <td width=70% rowspan=2 align="center" class="coloredheader">
+                                                {[name]}
+                                            </td>
+                                            <td colspan=3 width="15%" align="center" class="coloredheader">
+                                                {[total]}
+                                            </td>
+                                            <td colspan=3 width="15%" align="center" class="coloredheader">
+                                                {[add]}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="5%" align="center" class="coloredheader">
+                                                {[easy]}
+                                            </td>
+                                            <td align="center" width="5%"  class="coloredheader">
+                                                {[middle]}
+                                            </td>
+                                            <td align="center" width="5%"  class="coloredheader">
+                                                {[difficult]}
+                                            </td>
+                                            <td align="center" width="5%"  class="coloredheader">
+                                                {[easy]}
+                                            </td>
+                                            <td align="center" width="5%"  class="coloredheader">
+                                                {[middle]}
+                                            </td>
+                                            <td align="center" width="5%"  class="coloredheader">
+                                                {[difficult]}
+                                            </td>
+                                        </tr>
+                                        {[records]}
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="{[add]}" name="add_tests">
+                                </td>
+                            </tr>
+                        </table>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

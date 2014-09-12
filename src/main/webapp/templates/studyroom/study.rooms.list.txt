@@ -1,0 +1,34 @@
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[study rooms list]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=1 width="100%" class="table" bordercolor="#000000">
+                            <tr>
+                                <td class="coloredheader" width="40%">
+                                    {[subject]}
+                                </td>
+                                <td class="coloredheader" width="40%">
+                                    {[additionsl field]}
+                                </td>
+                                <td class="coloredheader" width="10%">
+                                     {[subgroup number]}
+                                </td>
+                                <td class="coloredheader" width="10%">
+                                    {[in room]}
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

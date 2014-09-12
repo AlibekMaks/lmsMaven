@@ -1,0 +1,17 @@
+<tr>
+    <td>
+        {[number]}
+    </td>
+    <td id="gd{[day]}less{[lesson]}">
+        {[group]}
+    </td>
+    <td id="cd{[day]}less{[lesson]}">
+        {[class room]}
+    </td>    
+    <td>
+        {[select]}
+    </td>
+    <td>
+        {[delete]}
+    </td>
+</tr>

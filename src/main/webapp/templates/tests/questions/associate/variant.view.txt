@@ -1,0 +1,8 @@
+<tr>
+    <td width="50%">
+         {[first tag]}
+    </td>
+    <td width="50%">
+         {[second tag]}
+     </td>
+</tr>

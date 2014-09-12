@@ -1,0 +1,11 @@
+<tr>
+	<td>
+		{[name]}
+	</td>
+	<td>
+		<a href="savepoint?option=1&name={[name]}&{[random]}" class="filecabinetLink" onClick='return confirm("Do u really want to rollback savepoint {[name]}?")'>rollback</a>
+	</td>
+	<td>
+		<a href="savepoint?option=-1&name={[name]}&{[random]}" class="filecabinetLink" onClick='return confirm("Do u really want to delete savepoint {[name]}?")'>delete</a>
+	</td>
+</tr>

@@ -1,0 +1,38 @@
+<table style="width:232px" class="navigate" cellspacing=0 height="100%" border=0 callpadding=0>
+    <tr style="height:96px">
+        <td class="navigateTD" background="images/menu.empty.gif" align="center" valign="top" style="border-bottom-style:none">
+            <img src="{[img]}" width="96px" height="96px" border=0 />
+        </td>
+    </tr>
+    <tr height="18px">
+        <td align="center" valign="middle" class="panelheader">
+            {[header]}
+        </td>
+    </tr>
+    <tr height="48px">
+        <td class="navigateTD" valign="top" style="padding-top:0px" align="center">
+            <table border=0 >{[navigate title]}
+                <tr style="height:48px">
+                    <td style="width:2px"></td>
+                    <td style="width:48px">
+                        <a href="{[previous href]}">
+                            <img src="images/buttons.left.gif" width="48px" height="48px" border=0 title="{[previous title]}">
+                        </a>
+                    </td>
+                    <td style="width:4px"></td>
+                    <td style="width:48px">
+                        <a href="{[next href]}">
+                            <img src="images/buttons.right.gif" width="48px" height="48px" border=0 title="{[next title]}">
+                        </a>
+                    </td>
+                    <td style="width:2px"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr height=100%>
+        <td class="navigateTD"  valign="top" style="padding-left:5px; padding-right:5px; padding-top:5px">
+            {[info]}
+        </td>
+    </tr>
+</table>

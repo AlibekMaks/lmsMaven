@@ -1,0 +1,35 @@
+<table border=0 width="100%">
+    <tr>
+        <td class="header1" align="center"> 
+            {[schedule header]}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table border=0 width="100%">
+                <tr>
+                    <td width="33%">
+                        {[mon]}
+                    </td>
+                    <td width="33%">
+                        {[tues]}
+                    </td>
+                    <td width="33%">
+                        {[wedn]}
+                    </td>
+                </tr>
+                <tr>
+                    <td width="33%">
+                        {[thir]}
+                    </td>
+                    <td width="33%">
+                        {[frid]}
+                    </td>
+                    <td width="33%">
+                        {[sat]}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

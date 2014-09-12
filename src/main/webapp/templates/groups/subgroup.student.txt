@@ -1,0 +1,11 @@
+<tr>
+    <td>
+        <input type="checkbox" name="std{[studentID]}" onClick='changeState({[studentID]}, this.checked)'/>
+    </td>
+    <td>
+        {[name]}
+    </td>
+    <td>
+        {[subgroup select]}
+    </td>
+</tr>

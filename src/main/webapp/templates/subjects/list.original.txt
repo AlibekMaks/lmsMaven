@@ -1,0 +1,77 @@
+<form action="subjects" method="POST">
+
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageHeader">
+                        {[subjects list]}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <table border=0 width="80%">
+                            <tr>
+                                <td width="100%">
+                                    <input type="text" name="search" value="{[search value]}" class="input" style="width:100%">
+                                </td>
+                                <td width="100px">
+                                    <input type="submit" value="{[search]}" class="button">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 />
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[add link]}" title="{[add title]}">
+                                        <img src="images/buttons.plus.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td class="td" width="50%">
+                                    {[found]}:{[number of found records]}
+                                </td>
+                                <td width="50%" align="right">
+                                    {[parts]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=1 width="100%" class="table" bordercolor="#000000">
+                            <tr>
+                                <td width="*" class="coloredheader" align="center">
+                                    {[name]}
+                                </td>
+                                <td width="16px" class="coloredheader" align="center">                                    
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

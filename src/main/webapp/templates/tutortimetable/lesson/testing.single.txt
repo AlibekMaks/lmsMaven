@@ -1,0 +1,11 @@
+<tr>
+    <td class="nameTD">
+        {[name]}
+    </td>
+    <td align="center">
+        {[edit]}
+    </td>
+    <td align="center">
+        {[delete]}
+    </td>
+</tr>

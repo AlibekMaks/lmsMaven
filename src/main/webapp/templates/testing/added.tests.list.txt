@@ -1,0 +1,77 @@
+<form action="testsfortesting" method="post">
+<input type="hidden" name="option" value="{[change option]}">
+<script language="javascript">
+    function changeState(state, id){
+        document.getElementById("tID_"+id+"_e").disabled = !state;
+        document.getElementById("tID_"+id+"_m").disabled = !state;
+        document.getElementById("tID_"+id+"_d").disabled = !state;
+    }
+</script>
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {[options]}
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=1 class="table" width="100%" bordercolor="#000000" cols=9>
+                            <tr>
+                                <td style="width:16px" rowspan=2 class="coloredheader">&nbsp;
+                                </td>
+                                <td width=*	 rowspan=2 align="center" class="coloredheader">
+                                    {[name]}
+                                </td>
+                                <td colspan=3 width="300px" align="center" class="coloredheader">
+                                    {[total]}
+                                </td>
+                                <td colspan=3 align="center" width="300px" class="coloredheader">
+                                    {[add]}
+                                </td>
+                                <td rowspan=2 align="center" width="16px" class="coloredheader">
+                                    {[delete]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100px" align="center" class="coloredheader">
+                                    {[easy]}
+                                </td>
+                                <td width="100px" align="center" class="coloredheader">
+                                    {[middle]}
+                                </td>
+                                <td width="100px" align="center" class="coloredheader">
+                                    {[difficult]}
+                                </td>
+                                <td width="100px" align="center" class="coloredheader">
+                                    {[easy]}
+                                </td>
+                                <td width="100px" align="center" class="coloredheader">
+                                    {[middle]}
+                                </td>
+                                <td width="100px" align="center" class="coloredheader">
+                                    {[difficult]}
+                                </td>
+                            </tr>
+                            {[added records]}
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="change" value="{[change]}" class="button">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

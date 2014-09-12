@@ -1,0 +1,18 @@
+<table width="100%" class="table" border=0 >
+<tr>
+    <td width="40%" align="left">
+        <table width="100%" class="table" border=0 >
+        <tr>
+            <td width="50%">
+                {[name]}
+            </td>
+            <td width=*>
+                {[questions counts]}
+            </td>
+        </tr>
+        </table>
+    </td>
+    <td width=*>
+    </td>
+</tr>
+</table>

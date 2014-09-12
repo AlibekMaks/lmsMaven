@@ -1,0 +1,24 @@
+<frameset cols="270px, *">
+    <frameset rows="*, 200px, 200px">
+        <!-- tutorials -->
+        <frame src="content?roomID={[roomID]}&nocache={[random]}" marginwidth=0 marginheight=0 scrolling="yes" frameborder=0/>
+        <!-- testings -->
+        <frame src="studyroomtestings?roomID={[roomID]}&nocache={[random]}"  marginwidth=0 marginheight=0 scrolling="yes" frameborder=0/>
+        <!-- some menu items -->
+        <frame src="studyroommenu?roomID={[roomID]}&nocache={[random]}"  marginwidth=0 marginheight=0 scrolling="yes" frameborder=0/>
+    </frameset>
+    <frameset rows="*, 100px" name="inner_content">
+        <frameset cols="*, 200px">
+            <frameset rows="30%, 70%" id="frm">
+                <!-- black board -->
+                <frame src="boardstart?roomID={[roomID]}&nocache={[random]}" marginwidth=0 marginheight=0 scrolling="yes" frameborder=0/>
+                <!-- dialog -->
+                <frame src="dialog?roomID={[roomID]}&nocache={[random]}" marginwidth=0 marginheight=0 scrolling="yes" frameborder=0/>
+            </frameset>
+            <!-- in chat -->
+            <frame src="inchat?roomID={[roomID]}&nocache={[random]}" name="inChat" marginwidth=0 marginheight=0 scrolling="yes" frameborder=0 />
+        </frameset>
+        <!-- vvod soobschenii -->
+        <frame src="chat?roomID={[roomID]}&nocache={[random]}&option={[print message]}" name="message" marginwidth=0 marginheight=0 scrolling="no" frameborder=0 noresize/>
+    </frameset>
+</frameset>

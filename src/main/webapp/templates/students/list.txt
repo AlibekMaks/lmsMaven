@@ -1,0 +1,140 @@
+<script language="javascript">
+    function warning(){
+        if (confirm("{[warn1]}")){
+            return confirm("{[warn2]}");
+        }
+        return false;
+    }
+</script>
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table width="100%" border=0>
+                <tr>
+                    <td class="pageHeader">
+                        {[students list]}
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                    <form action="students" method="POST">
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="20%">
+                                </td>
+                                <td width="80%">
+                                    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="100%">
+                                                <input type="text" name="search" class="input" value="{[search value]}" style="width:100%">
+                                            </td>
+                                            <td width="100px" style="padding-left:2px">
+                                                <input type="submit" value="{[search]}" class="button">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" align="right">
+                                    {[class]}
+                                </td>
+                                <td>
+                                    {[class select]}
+                                </td>
+                            </tr>
+                        </table>
+                        </form>
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0>
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0/>
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[add link]}" title="{[add title]}">
+                                        <img src="images/buttons.plus.gif" width="{[size]}px" height="{[size]}px" border=0/>
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[import link]}" title="{[import title]}">
+                                        <img src="images/xls.import.gif" width="{[size]}px" height="{[size]}px" border=0/>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="50%" class="td">
+                                    {[found]} : {[number of found records]}
+                                </td>
+                                <td width="50%" align="right">
+                                    {[parts]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <form action="generate" name="generate" id="generate" method="post" target="_blank" onsubmit="return warning()">
+                <input type="hidden" name="roleID" value="{[roleID]}" />
+                {[params]}
+                <tr>
+                    <td>
+                        <table class="table" width="100%" border=1 bordercolor="#000000" cols=4>
+                            <tr>
+                                <td width="5px" class="coloredheader">
+                                    <input type="checkbox" name="all" id="all" onClick="change_a(this)" />
+                                </td>
+                                <td width="30%" align="center" class="coloredheader">
+                                    {[name]}
+                                </td>
+                                <td width="*" align="center" class="coloredheader">
+                                    {[class]}
+                                </td>
+                                <td width="16px" align="center" class="coloredheader">
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 class="table">
+                            <tr>
+                                <td>
+                                    <input type="submit" value="{[generate]}" name="generate" class="button"/>
+                                </td>
+                                <td width="8px"></td>
+                                <td onClick='document.getElementById("t0").checked=true;'>
+                                    {[all selected]}
+                                </td>
+                                <td width="8px"></td>
+                                <td>
+                                    <input type="radio" name="generateType" value="0" id="t0">
+                                </td>
+                                <td width="8px"></td>
+                                <td onClick='document.getElementById("t1").checked=true;'>
+                                    {[all extracted]}
+                                <td>
+                                <input type="radio" name="generateType" value="1" id="t1">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                </form>
+            </table>
+        </td>
+    </tr>
+</table>

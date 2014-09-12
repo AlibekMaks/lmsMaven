@@ -1,0 +1,72 @@
+td.loginHeader{
+    font-family:arial, tahoma,sans-serif;
+    color:#ffffff;
+    font-size:13pt;
+    text-align:center;
+    vertical-align:middle;
+    font-weight:bold;
+}
+
+td.loginItem{
+    font-family:arial, tahoma,sans-serif;
+    color:#ffffff;   
+    font-size:13pt;
+}
+
+input.loginInput{
+    font-family:arial,tahoma,sans-serif;
+    font-size:10pt;
+    color:#333333;
+    border-color:#5492e9;
+    border-width:1px;
+    border-style:solid;
+}
+
+.select{
+    font-family:arial,tahoma,sans-serif;
+    font-size:9pt;
+    color:#333333;
+    vertical-align:middle;
+    border-color:#5492e9;
+    border-width:1px;
+    border-style:solid;
+}
+
+.option{
+    font-family:arial,tahoma,sans-serif;
+    font-size:9pt;
+    color:#333333;
+    vertical-align:middle;
+}
+
+a.lang{
+    font-family:arial, tahoma,sans-serif;
+    color:#0D69ac;
+    font-size:10pt;
+    font-weight:bold;
+}
+
+.Copyrights{
+     font-family:arial, tahoma,sans-serif;
+     color:#ffffff;
+     font-size:7pt;
+}
+
+.button{
+    font-family:arial, tahoma,sans-serif;
+    color:#ffffff;
+    font-size:10pt;
+    background-color:#299dd6;
+    border-color:#22b4e7;
+    border-bottom-style:solid;
+}
+
+.accessdenied{
+    font-family:tahoma,sans-serif;
+    vertical-align:middle;
+    text-align:center;
+    font-size:16pt;
+    color:#ffffff;
+    font-weight:bold;
+    text-decoration:none;
+}

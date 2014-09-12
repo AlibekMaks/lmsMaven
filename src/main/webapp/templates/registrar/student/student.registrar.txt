@@ -1,0 +1,43 @@
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd"> 
+                                    <a href="main" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 />
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    {[prev month]}
+                                </td>
+                                <td style="width:200px" valign="middle" align="center">
+                                    {[month select]}
+                                </td>
+                                <td style="width:80px" valign="middle" align="center">
+                                    {[year select]}
+                                </td>
+                                <td class="imgtd">
+                                    {[next month]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {[journal table]}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

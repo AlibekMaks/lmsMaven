@@ -1,0 +1,47 @@
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td>
+                                    <a href="main" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=1 width="100%" class="table" bordercolor="#000000">
+                            <tr>
+                                <td width=* align="center" class="coloredheader">
+                                    {[subject]}
+                                </td>
+                                <td width="10%" align="center" class="coloredheader">
+                                    {[class]}
+                                </td>
+                                <td width="10%" align="center" class="coloredheader">
+                                    {[subgroup number]}
+                                </td>
+                                <td width="10%" align="center" class="coloredheader">
+                                    {[open]}
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

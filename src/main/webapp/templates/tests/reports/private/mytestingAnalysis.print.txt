@@ -1,0 +1,127 @@
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader" colspan=3>
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15px">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="150px"></td>
+                    <td align="center" style="align:center;font-size:15pt;font-weight:bold">
+                        {[text test result]}
+                    </td>
+                    <td width="150px"></td>
+                </tr>
+
+                <tr>
+                    <td width="150px"></td>
+                    <td align="center">
+                        <table border=1 width="100%" class="table">
+                            <tr>
+                                <td>
+                                    <b>{[test result]}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table border=0 width="100%">
+                                        <tr>
+                                            <td width="40%" class="td">
+                                                <b>{[pretendent.msg]}:</b>
+                                            </td>
+                                            <td class="td">
+                                                <b>{[pretendent]}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td">
+                                                <b>{[post.msg]}:</b>
+                                            </td>
+                                            <td class="td">
+                                                <b>{[post]}</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td">
+                                                <b>{[actual address msg]}:</b>
+                                            </td>
+                                            <td class="td">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                             <td class="td">
+                                                 <b>{[registration address msg]}:</b>
+                                             </td>
+                                             <td class="td">
+                                             </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table border=0 width="100%">
+                            <tr>
+                                <td height="15px">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table border=1 width="100%" class="table" bordercolor="#000000">
+                            <tr>
+                                <td align="left" colspan=4>
+                                    <b>{[results msg]}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="*" align="center">
+                                    {[subject]}
+                                </td>
+                                <td width="21%" align="center">
+                                    {[questions.count]}
+                                </td>
+                                <td width="10%" align="center">
+                                    {[right.answers.count]}
+                                </td>
+                                <td width="5%" align="center" coloredheader>
+                                    %
+                                </td>
+                            </tr>
+
+                            {[subjects]}
+
+                            <tr>
+                                <td class="nameTD" align="right">
+                                    <b>{[summary]} : </b>
+                                </td>
+                                <td align="center">
+                                    <b>{[sum.questions.count]}</b>
+                                </td>
+                                <td colspan=3 align="center" {[redcolor]}>
+                                    <b>{[sum.right.answers.count]}</b>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table border=0 width="100%">
+                            <tr>
+                                <td height="15px">
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        {[exam]}
+                    </td>
+                    <td width="150px"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

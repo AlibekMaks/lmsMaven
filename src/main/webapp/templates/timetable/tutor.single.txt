@@ -1,0 +1,8 @@
+<tr>
+    <td>
+        {[name]}
+    </td>
+    <td>
+        {[edit]}
+    </td>
+</tr>

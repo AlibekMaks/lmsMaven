@@ -1,0 +1,88 @@
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <table border=0 width="80%">
+                        <form action="studygroups" method="POST">                        
+                        {[hidden inputs]}
+                        <input type="hidden" name="classID" value="{[classID]}"/>
+                        <input type="hidden" name="nocache" value="{[rand]}"/>
+                            <tr>
+                                <td width="100%">
+                                    <input type="text" name="searchSb" value="{[search value]}" class="input" style="width:100%">
+                                <td>
+                                <td width="100px">
+                                    <input type="submit" class="button" value={[search]} >
+                                </td>
+                            </tr>
+                        </form>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0>
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 >
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td  width="50%" class="td">
+                                    {[found]}:{[number of found records]}
+                                </td>
+                                <td  width="50%" align="right">
+                                    {[parts]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form action="studygroupadd" method="POST" id="frm" >
+                        <input type="hidden" name="nocache" value="{[rand]}"/>
+                        <input type="hidden" name="classID" value="{[classID]}"/>
+                        {[hidden inputs]}
+                        <table border=0 width="100%">
+                            <tr>
+                                <td>
+                                    <table border=1 width="100%" class="table" bordercolor="#000000">
+                                        <tr>
+                                            <td width="15px" class="coloredheader">&nbsp;</td>
+                                            <td width=* class="coloredheader" align="center">
+                                                {[name]}
+                                            </td>
+                                        </tr>
+                                        {[records]}
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="{[add]}" class="button" name="add"/>
+                                </td>
+                            </tr>
+                        </table >
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

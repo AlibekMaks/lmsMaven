@@ -1,0 +1,23 @@
+<table border=1 width="100%" class="table">
+    <tr>
+        <td class="coloredheader" align="center" colspan=5>
+            {[day name]}
+        </td>
+    </tr>
+    <tr>
+        <td width="10px">
+            {[number]}
+        </td>
+        <td>
+            {[group]}
+        </td>
+        <td>
+            {[class room]}
+        </td>
+        <td style="width:16px">
+        </td>
+        <td style="width:16px">
+        </td>
+    </tr>
+    {[records]}
+</table>

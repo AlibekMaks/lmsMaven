@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <META HTTP-Equiv="Cache-Control" Content="no-cache">
+    <META HTTP-Equiv="Pragma" Content="no-cache">
+    <META HTTP-Equiv="Expires" Content="0">
+    <META http-equiv=Content-Type content="text/html; charset=utf-8">
+    <LINK TYPE="text/css" REL="stylesheet"  HREF="css/chat.css">
+    <LINK TYPE="text/css" REL="stylesheet"  HREF="css/common.css">	
+    <script type="text/javascript" language="JavaScript"  src="jscripts/JsHttpRequest/lib/JsHttpRequest/JsHttpRequest.js"></script>
+    <script language="javascript">
+        function isFormValid(){
+            if (document.chat.message.value==null && document.chat.message.value.length==0){
+                return false;
+	        }
+            return true;
+        }
+        function sendMessage() {
+            if (isFormValid()){
+                var req = new JsHttpRequest();
+                req.open('post', "chat", true);
+                var tmp =  {[roomID]};
+                req.send({ roomID : tmp,  form : document.getElementById("frm")});
+                document.getElementById("msg").value = "";
+                document.getElementById("recept").innerHTML = "";
+            }
+        }
+        function clearReceipents(){
+	      document.getElementById("recept").innerHTML = "";
+        }
+    </script>
+  </head>
+    <body class=chatBackground>
+        <form action="chat" method="post"  enctype="multipart/form-data" name="chat" id="frm" onsubmit='sendMessage(); return false;'>
+        <input type="hidden" name="roomID" value={[roomID]}>
+        <table border=0 width="100%" cellpadding="0" cellspacing=0 height="100%"  >
+            <tr height="4px">
+                <td class="srmheader">
+                </td>
+            </tr>
+            <tr height="*">
+                <td align="center" valign="top" width=*>
+                    <table border=0 width="100%" cellpadding=0 >
+			      <tr>
+				    <td width="20%" class="td" align="left">
+					 {[receipents]}:
+				    </td>
+				    <td width="100%" id="recept" class="recept" >
+				    </td>
+                            <td width="100px" nowrap>
+                                <a onClick='clearReceipents(); return false;' href="#" class="chatlink">{[clear]}</a>
+                            </td>
+                        </tr>
+			      <tr>
+				    <td width="20%" class="userName" align="left">
+				    	{[user name]}
+				    </td>
+				    <td width="*">
+				    	<input name="message" style="width:100%" class="messageInput" id="msg"/>
+				    </td>
+				    <td width="5%">
+				    	<input type="button" value="{[send]}" onClick='sendMessage()' class="button"/>
+				    </td>
+			      </tr>
+			  </table>
+		    </td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>

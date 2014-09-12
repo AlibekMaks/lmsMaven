@@ -1,0 +1,143 @@
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <form name="form" action="testings" method="post">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" width="100%">
+                        <table border=0 width="100%">
+                            <tr>
+                                <td class="td" width="20%" align="right">
+                                    {[report label]}
+                                </td>
+                                <td width=* align="left">
+                                    <input type="text" class="input" name="search" value="{[search value]}" style="width:100%">
+                                </td>
+                                <td width="100px">
+                                    <input type="submit" value="{[search]}" class="button">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" width="20%" align="right">
+                                    {[fio label]}
+                                </td>
+                                <td width=* align="left">
+                                    <input type="text" name="fio" class="input" value="{[fio value]}" style="width:100%">
+                                </td>
+                                <td width="100px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" width="20%" align="right">
+                                    {[department label]}
+                                </td>
+                                <td width=* align="left">
+                                    {[department select]}
+                                </td>
+                                <td width="100px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" width="20%" align="right">
+                                    {[tutorName label]}
+                                </td>
+                                <td width=* align="left">
+                                    {[tutorName select]}
+                                </td>
+                                <td width="100px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                </td>
+                                <td align="left" width=* >
+                                    <table border=0 width="100%">
+                                        <tr>
+                                            <td class="td" style="padding-right:3px" width="10px">
+                                                {[from]}
+                                            </td>
+                                            <td width="100px">
+                                                {[from input]}
+                                            </td>
+                                            <td class="td" style="padding-right:3px" width="10px">
+                                                {[till]}
+                                            </td>
+                                            <td width="100px">
+                                                {[till input]}
+                                            </td>
+                                            <td width=*>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td width="100px">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}" class="href">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="50%" class="td">
+                                    {[found]}: {[number of found records]}
+                                </td>
+                                <td width="50%" align="right">
+                                    {[parts]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="table" width="100%" border=1 bordercolor="#000000">
+                            <tr>
+                                <td class="coloredheader" width=*>
+                                     {[name]}
+                                </td>
+                                <td class="coloredheader" width="240px">
+                                    {[tutor name]}
+                                </td>
+                                <td class="coloredheader" width="120px">
+                                    {[date]}
+                                </td>
+                                <td class="coloredheader" width="120px">
+                                    {[testing time]}
+                                </td>
+                                <td class="coloredheader" width="16px">
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </td>
+    </tr>
+</table >

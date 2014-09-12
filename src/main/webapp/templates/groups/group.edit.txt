@@ -1,0 +1,65 @@
+<script language="javascript">
+    function setTutor(tutorname, groupID){
+        document.getElementById("tut"+groupID).innerHTML = tutorname;    
+    }
+    function selectTutor(subgroupID){
+        width = 600;
+        height = 400;
+        tmpLeft = (window.screen.availWidth-width)/2;
+        tmpTop = (window.screen.availHeight-height)/2; 
+        window.open("changetutor?option=show&subgroupID="+subgroupID, "", "height="+height+", width="+width+
+        ", left="+tmpLeft+", top="+tmpTop+", resizable=1, scrollbars=1");
+    }
+    function changeState(studentID, state){
+        document.getElementById("stdsel"+studentID).disabled = !state;
+    }
+</script>
+<form action="studygroup" method="POST">
+<input type="hidden" name="classID" value="{[classID]}"/>
+<input type="hidden" name="studyGroupID" value="{[studyGroupID]}"/>
+<input type="hidden" name="{[groupNumberStr]}" value="{[groupNumber]}"/>
+<input type="hidden" name="{[groupsCountStr]}" value="{[groupsCount]}"/>
+<input type="hidden" name="nocache" value="{[rand]}"/>
+{[hidden inputs]}
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0>
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 >
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {[add subgroup]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {[subgroups]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="{[save]}" class="button" name="save"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

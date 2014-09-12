@@ -1,0 +1,61 @@
+<table border=0 width="100%" height="100%" cellpadding="0" cellspacing="0">
+         <tr>
+            <td width=* valign="top">
+                <table border=0 width="100%" height="100%" cellpadding="0" cellspacing="0">
+                    <tr height="40px">
+                        <td colspan="2" >
+                        </td>
+                    </tr>
+                    <tr height="70%">
+                        <td width="30px">
+                        </td>
+                        <td width=*>
+                            <table border=0 bordercolor="#000000" width="100%" height="100%" cellpadding="0" cellspacing="0"
+                                     bgcolor="#f1f2f2">
+                                <tr  height="70px">
+                                    <td width="30px" ><img src="images/message/top_left.gif"
+                                                           width="30px" height="70px" border=0></td>
+                                    <td width=*
+                                             background="images/message/top_center.gif"
+                                             style="background-repeat:repeat-x;background-position:top;">
+                                    </td>
+                                    <td width="118px" ><img src="images/message/top_right.gif" width="118px"
+                                                            height="70px" border=0></td>
+                                </tr>
+                                <tr height="*">
+                                    <td background="images/message/center_left.gif"
+                                        style="background-repeat:repeat-y;background-position:left;">&nbsp;</td>
+                                    <td class="scormmsg">
+                                        {[message]}
+                                        {[additional]}
+                                    </td>
+                                    <td background="images/message/center_right.gif"
+                                             style="background-repeat:repeat-y;background-position:right;">&nbsp;</td>
+                                </tr>
+                                <tr height="70px">
+                                    <td background="images/message/bottom_left.gif"
+                                             style="background-repeat:no-repeat;background-position:left;">&nbsp;</td>
+                                    <td background="images/message/bottom_center.gif"
+                                            style="background-repeat:repeat-x;background-position:bottom;">&nbsp;</td>
+                                    <td background="images/message/bottom_right.gif"
+                                             style="background-position:right;background-repeat:no-repeat;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" height=*>
+                        </td>
+                    </tr>
+                </table >
+                
+            </td>
+             <td width="371px" valign="top">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="right" valign="top"><img src="images/message/boy.jpg" border=0></td>
+                    </tr>
+                </table>
+            </td>
+         </tr>
+     </table>

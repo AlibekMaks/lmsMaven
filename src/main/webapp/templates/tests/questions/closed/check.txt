@@ -1,0 +1,9 @@
+<input type="hidden" name="{[random]}" value="0" />
+<input type="hidden" name="questionNumber" value="{[questionNumber]}" />
+<table border=0 width="100%" class="table">
+    <tr>
+        <td>
+            <textarea style="width:100%" rows=5 name="answer" class="input">{[value]}</textarea>
+        </td>
+    </tr>
+</table>

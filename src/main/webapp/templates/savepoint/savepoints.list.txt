@@ -1,0 +1,58 @@
+<table border=0 width="100%">
+	<tr>
+		<td style="padding-left:30px; padding-right:30px; padding-top:10px; padding-bottom:10px">
+
+{[message]}
+
+<table border=0 width="100%">
+	<tr>
+		<td>
+			<table border=0 width="100%" cellspacing=0>
+				<tr>
+					<td width=50%">
+			<a class="filecabinetLink" href="savepoint?option=2&full=true&{[random]}" onClick='return confirm("{[confirm create]}?")'>{[full]}</a>
+			&nbsp;
+			<a class="filecabinetLink" href="savepoint?option=2&{[random]}" onClick='return confirm("{[confirm create]}?")'>{[short]}</a>
+			&nbsp;
+			<a class="filecabinetLink" href="savepoint?option=3&{[random]}" >{[change folder link]}</a>
+					</td>
+					<!--<td width=* align="right">
+			<a class="filecabinetLink" href="import">import</a>
+			&nbsp;
+			<a class="filecabinetLink" href="export">export</a>
+					</td>-->
+				</tr>
+			</table>
+		<td>
+	</tr>
+	<tr>
+		<td class="commonTD">
+			{[current folder is]}: {[current folder]}
+		</td>
+	</tr>
+{[change folder]}
+	<tr>
+		<td>
+
+<table border=1 class="TDtext" bordercolor="#000000" width="100%"> 	
+	<tr>
+		<td width="60%" align="center" class="tableHeaderClass"><b>
+			{[name]}
+		</td>
+		<td width="20%" align="center" class="tableHeaderClass"><b>
+			{[roll back]}
+		</td>
+		<td width=* align="center" class="tableHeaderClass"><b>
+			{[delete]}
+		</td>
+	</tr>
+	{[savepoints]}
+</table>
+
+		</td>
+	</tr>
+</table>
+
+		</td>
+	</tr>
+</table>

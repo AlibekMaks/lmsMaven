@@ -1,0 +1,17 @@
+<tr {[red color]}>
+    <td align="center">
+        <input type="checkbox" name="std{[studentID]}" />
+    </td>
+    <td style="padding-left:3px;">
+        {[name]}
+    </td>
+    <td align="center">
+        {[class]}
+    </td>
+    <td align="center">
+        {[testing result]}
+    </td>
+    <td align="center">
+        {[delete]}
+    </td>
+</tr>

@@ -1,0 +1,12 @@
+<table border=0 width="100%" class="table">
+	<tr>
+		<td>
+			{[right answer]}	
+		</td>
+	</tr>
+	<tr>
+		<td>
+			{[right answer input]}
+		</td>
+	</tr>
+</table>

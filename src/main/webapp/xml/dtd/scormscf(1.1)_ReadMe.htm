@@ -1,0 +1,35 @@
+
+<html>
+   <head>
+
+   </head>
+
+   <body>
+      <p>
+         This document records changes between the scormcsf(1.0).dtd file and the
+         scormcsf(1.1).dtd file.
+      <br>
+      <p>
+         removed relation attribute on assignmentRef element.
+      <p>
+         changed objectiveRef attribute 'targetIDs IDREFS' to 'targetID IDREF'.  (This element can repeat within the AU.)
+      <p>
+         changed assignmentRef attribute 'targetIDs IDREFS' to 'targetID IDREF'.  (This element can repeat within the AU.)
+      <p>
+         blockAlias and auAlias elements' targetID attribute data type changed from ID to IDREF
+      <p>
+         prerequisites element data type changed from PCDATA to CDATA.
+      <p>
+         completionReq element data type changed from PCDATA to CDATA.
+      <p>
+        location element data type changed from PCDATA to CDATA.   Affects location used in launch, extensions, curricularTaxonomy, ... 
+      <p>
+         parameterString element data type changed from PCDATA to CDATA.
+      <p>
+         dataFromLMS element data type changed from PCDATA to CDATA.
+      <br>
+      <p>
+         NOTE:  Aparrently, there is no way to specify/enforce that elements contain CDATA vs. PCDATA.  The standard seems to say that CDATA sections can be used anywhere PCDATA is allowed.  So it is up to the document creator and not forced by the DTD.
+   </body>
+
+</html>

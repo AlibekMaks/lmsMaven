@@ -1,0 +1,371 @@
+<?xml version = "1.0"?>
+<!DOCTYPE course SYSTEM "scormcsf(1.1)_SlashAndBurn.dtd">
+<course>   
+	<globalProperties>      
+		<externalMetadata>         
+			<source>ADL</source>         
+			<model>ADL SCORM 1.1</model>         
+			<location><![CDATA[Course01.xml ]]></location>      
+		</externalMetadata>      
+		<curricularTaxonomy>         
+			<model>ADL Sample LMS Course Model</model>      
+		</curricularTaxonomy>   
+	</globalProperties>   
+	<!-- The whole course -->
+	   
+	<block id = "B0">            
+		<identification>         
+			<title>Maritime Navigation</title>         
+			<description>This course has four lessons that provide an overview of maritime navigation rules and principles.</description>         
+			<labels>            
+				<curricular>COURSE</curricular>            
+				<developer>1235566-9759498</developer>         
+			</labels>      
+		</identification>      
+		<!-- Lesson 01: Inland Rules of the Road; HTML format -->
+		      
+		<block id = "B100">         
+			<externalMetadata>            
+				<source>ADL</source>            
+				<model>ADL SCORM 1.1</model>            
+				<location><![CDATA[Course01\Lesson01.xml]]></location>         
+			</externalMetadata>                  
+			<identification>            
+				<title>Inland Rules of the Road (HTML Format)</title>            
+				<description>This lesson covers inland waterways navigation rules and principles.</description>            
+				<labels>               
+					<curricular>LESSON</curricular>               
+					<developer>9934u939-2393938</developer>            
+				</labels>         
+			</identification>         
+			<!-- AU01: References and Objectives -->
+			         
+			<au id = "A100001">            
+				<externalMetadata>               
+					<source>ADL</source>               
+					<model>ADL SCORM 1.1</model>               
+					<location><![CDATA[Course01\Lesson01\au01.xml]]></location>            
+				</externalMetadata>                        
+				<identification>               
+					<title>References and Lesson Objective</title>               
+					<description>This AU serves as a title page, citing references and listing the lesson objective.</description>               
+					<labels>                  
+						<curricular>AU</curricular>                  
+						<developer>940994-0983938</developer>               
+					</labels>            
+				</identification>            
+				<launch>               
+					<location><![CDATA[Course01\Lesson01\au01.htm]]></location>            
+				</launch>         
+			</au>         
+			<block id = "B110">                        
+				<identification>               
+					<title>Steering &amp; Sailing Rules</title>               
+					<description>This module covers the steering and sailing navigation rules for vessels on inland waterways.</description>               
+					<labels>                  
+						<curricular>MODULE</curricular>                  
+						<developer>6523535-i843847</developer>               
+					</labels>            
+				</identification>            
+				<au id = "A110001">               
+					<externalMetadata>                  
+						<source>ADL</source>                  
+						<model>ADL SCORM 1.1</model>                  
+						<location><![CDATA[Course01\Lesson01\au02.xml]]></location>               
+					</externalMetadata>                              
+					<identification>                  
+						<title>Conduct of Vessels in any Condition of Visibility</title>                  
+						<description>This AU covers general inland vessel navigation rules. It includes definitions, collision avoidance, channels, and traffic separation schemes.</description>                  
+						<labels>                     
+							<curricular>AU</curricular>                     
+							<developer>9893883-kk393839</developer>                  
+						</labels>               
+					</identification>               
+					<launch>                  
+						<location><![CDATA[Course01\Lesson01\au02.htm]]></location>               
+					</launch>            
+				</au>                    
+				<au id = "A110002">               
+					<externalMetadata>                  
+						<source>ADL</source>                  
+						<model>ADL SCORM 1.1</model>                  
+						<location><![CDATA[Course01\Lesson01\au03.xml]]></location>               
+					</externalMetadata>                              
+					<identification>                  
+						<title>Conduct of Vessels in Sight of One Another</title>                  
+						<description>This AU covers multi-vessel interactions, movement patterns and rules.</description>                  
+						<labels>                     
+							<curricular>AU</curricular>                     
+							<developer>983893838-j83993</developer>                  
+						</labels>               
+					</identification>               
+					<launch>                  
+						<location><![CDATA[Course01\Lesson01\au03.htm]]></location>               
+					</launch>            
+				</au>                        
+				<au id = "A110003">               
+					<externalMetadata>                  
+						<source>ADL</source>                  
+						<model>ADL SCORM 1.1</model>                  
+						<location><![CDATA[Course01\Lesson01\au04.xml]]></location>               
+					</externalMetadata>                              
+					<identification>                  
+						<title>Conduct of Vessels in Restricted Visibility</title>                  
+						<description>This AU covers the behavior of vessels on inland waterways when visibility is limited.</description>                  
+						<labels>                     
+							<curricular>AU</curricular>                     
+							<developer>9398398393-pp3393938</developer>                  
+						</labels>               
+					</identification>               
+					<launch>                  
+						<location><![CDATA[Course01\Lesson01\au04.htm]]></location>               
+					</launch>            
+				</au>         
+			</block>         
+			<au id = "A100002">            
+				<externalMetadata>               
+					<source>ADL</source>               
+					<model>ADL SCORM 1.1</model>               
+					<location><![CDATA[Course01\Lesson01\au05.xml]]></location>            
+				</externalMetadata>                        
+				<identification>               
+					<title>Lights &amp; Shapes</title>               
+					<description>This AU covers vessel lighting schemes.</description>               
+					<labels>                  
+						<curricular>AU</curricular>                  
+						<developer>04393ke-kd93339</developer>               
+					</labels>            
+				</identification>            
+				<launch>               
+					<location><![CDATA[Course01\Lesson01\au05.htm]]></location>            
+				</launch>         
+			</au>                  
+			<au id = "A100003">            
+				<externalMetadata>               
+					<source>ADL</source>               
+					<model>ADL SCORM 1.1</model>               
+					<location><![CDATA[Course01\Lesson01\au06.xml]]></location>            
+				</externalMetadata>                        
+				<identification>               
+					<title>Sound &amp; Light Signals</title>               
+					<description>This AU covers inter-vessel communication schemes using sounds and lights.</description>               
+					<labels>                  
+						<curricular>AU</curricular>                  
+						<developer>83874848f-l9398439</developer>               
+					</labels>            
+				</identification>            
+				<launch>               
+					<location><![CDATA[Course01\Lesson01\au06.htm]]></location>            
+				</launch>         
+			</au>                  
+			<au id = "A100004">            
+				<externalMetadata>               
+					<source>ADL</source>               
+					<model>ADL SCORM 1.1</model>               
+					<location><![CDATA[Course01\Lesson01\au07.xml]]></location>            
+				</externalMetadata>                        
+				<identification>               
+					<title>Exam</title>               
+					<description>This AU is the lesson exam.  A score of 4 out of 5 is required for passing.</description>               
+					<labels>                  
+						<curricular>EXAM</curricular>                  
+						<developer>k3839239-9389389d</developer>               
+					</labels>            
+				</identification>            
+				<launch>               
+					<location><![CDATA[Course01\Lesson01\au07.htm]]></location>            
+				</launch>            
+				<masteryScore>4</masteryScore>         
+			</au>      
+		</block>      
+		<!-- Lesson 02: Inland Rules of the Road; Authorware format -->
+		      
+		<block id = "B200">         
+			<externalMetadata>            
+				<source>ADL</source>            
+				<model>ADL SCORM 1.1</model>            
+				<location><![CDATA[Course01\Lesson02\Lesson02.xml]]></location>         
+			</externalMetadata>         
+			<identification>            
+				<title>Inland Rules of the Road (Authorware Format)</title>            
+				<description>This lesson covers inland waterways navigation rules and principles.</description>            
+				<labels>               
+					<curricular>LESSON</curricular>               
+					<developer>838d83939-dl393939</developer>            
+				</labels>         
+			</identification>         
+			<!-- AU01: References and Objectives -->
+			         
+			<au id = "A200001">            
+				<externalMetadata>               
+					<source>ADL</source>               
+					<model>ADL SCORM 1.1</model>               
+					<location><![CDATA[Course01\Lesson02\au01.xml]]></location>            
+				</externalMetadata>            
+				<identification>               
+					<title>References and Lesson Objective</title>               
+					<description>This AU serves as a title page, citing references and listing the lesson objective.</description>               
+					<labels>                  
+						<curricular>AU</curricular>               
+					</labels>            
+				</identification>            
+				<launch>               
+					<location><![CDATA[Course01\Lesson02\au01.htm]]></location>            
+				</launch>         
+			</au>         
+			<block id = "B210">            
+				<identification>               
+					<title>Steering &amp; Sailing Rules</title>               
+					<description>This module covers the steering and sailing navigation rules for vessels on inland waterways.</description>               
+					<labels>                  
+						<curricular>MODULE</curricular>                  
+						<developer>83d939393-kd9383838</developer>               
+					</labels>            
+				</identification>            
+				<au id = "A210001">               
+					<externalMetadata>                  
+						<source>ADL</source>                  
+						<model>ADL SCORM 1.1</model>                  
+						<location><![CDATA[Course01\Lesson02\au02.xml]]></location>               
+					</externalMetadata>                              
+					<identification>                  
+						<title>Conduct of Vessels in any Condition of Visibility</title>                  
+						<description>This AU covers general inland vessel navigation rules. It includes definitions, collision avoidance, channels, and traffic separation schemes.</description>                  
+						<labels>                     
+							<curricular>AU</curricular>                     
+							<developer>339398d9393-3939d</developer>                  
+						</labels>               
+					</identification>               
+					<launch>                  
+						<location><![CDATA[Course01\Lesson02\au02.htm]]></location>               
+					</launch>            
+				</au>                    
+				<au id = "A210002">               
+					<externalMetadata>                  
+						<source>ADL</source>                  
+						<model>ADL SCORM 1.1</model>                  
+						<location><![CDATA[Course01\Lesson02\au03.xml]]></location>               
+					</externalMetadata>               
+					<identification>                  
+						<title>Conduct of Vessels in Sight of One Another</title>                  
+						<description>This AU covers multi-vessel interactions, movement patterns and rules.</description>                  
+						<labels>                     
+							<curricular>AU</curricular>                     
+							<developer>33920dd-309d0d</developer>                  
+						</labels>               
+					</identification>               
+					<launch>                  
+						<location><![CDATA[Course01\Lesson02\au03.htm]]></location>               
+					</launch>            
+				</au>                        
+				<au id = "A210003">               
+					<externalMetadata>                  
+						<source>ADL</source>                  
+						<model>ADL SCORM 1.1</model>                  
+						<location><![CDATA[Course01\Lesson02\au04.xml]]></location>               
+					</externalMetadata>               
+					<identification>                  
+						<title>Conduct of Vessels in Restricted Visibility</title>                  
+						<description>This AU covers the behavior of vessels on inland waterways when visibility is limited.</description>                  
+						<labels>                     
+							<curricular>AU</curricular>                     
+							<developer>39d09d0d9-9d9c9d</developer>                  
+						</labels>               
+					</identification>               
+					<launch>                  
+						<location><![CDATA[Course01\Lesson02\au04.htm]]></location>               
+					</launch>            
+				</au>         
+			</block>         
+			<au id = "A200002">            
+				<externalMetadata>               
+					<source>ADL</source>               
+					<model>ADL SCORM 1.1</model>               
+					<location><![CDATA[Course01\Lesson02\au05.xml]]></location>            
+				</externalMetadata>            
+				<identification>               
+					<title>Lights &amp; Shapes</title>               
+					<description>This AU covers vessel lighting schemes.</description>               
+					<labels>                  
+						<curricular>AU</curricular>                  
+						<developer>9839d98d9c9-c09d9d9</developer>               
+					</labels>            
+				</identification>            
+				<launch>               
+					<location><![CDATA[Course01\Lesson02\au05.htm]]></location>            
+				</launch>         
+			</au>                  
+			<au id = "A200003">            
+				<externalMetadata>               
+					<source>ADL</source>               
+					<model>ADL SCORM 1.1</model>               
+					<location><![CDATA[Course01\Lesson02\au06.xml]]></location>            
+				</externalMetadata>            
+				<identification>               
+					<title>Sound &amp; Light Signals</title>               
+					<description>This AU covers inter-vessel communication schemes using sounds and lights.</description>               
+					<labels>                  
+						<curricular>AU</curricular>                  
+						<developer>00d0c0d-c9d9c9</developer>               
+					</labels>            
+				</identification>            
+				<launch>               
+					<location><![CDATA[Course01\Lesson02\au06.htm]]></location>            
+				</launch>         
+			</au>                  
+			<au id = "A200004">            
+				<externalMetadata>               
+					<source>ADL</source>               
+					<model>ADL SCORM 1.1</model>               
+					<location><![CDATA[Course01\Lesson02\au07.xml]]></location>            
+				</externalMetadata>                        
+				<identification>               
+					<title>Exam</title>               
+					<description>This AU is the lesson exam.  A score of 4 out of 5 is required for passing.</description>               
+					<labels>                  
+						<curricular>EXAM</curricular>                  
+						<developer>8c9d8d8d-c9d9c8</developer>               
+					</labels>            
+				</identification>            
+				<launch>               
+					<location><![CDATA[Course01\Lesson02\au07.htm]]></location>            
+				</launch>            
+				<masteryScore>4</masteryScore>         
+			</au>      
+		</block>      
+		<!-- Lesson 03: International Rules of the Road; (not implemented) -->
+		      
+		<block id = "B300">         
+			<externalMetadata>            
+				<source>ADL</source>            
+				<model>ADL SCORM 1.1</model>            
+				<location><![CDATA[Course01\Lesson03\Lesson03.xml]]></location>         
+			</externalMetadata>         
+			<identification>            
+				<title>International Rules of the Road</title>            
+				<description>This lesson covers international waterways navigation rules and principles.</description>            
+				<labels>               
+					<curricular>LESSON</curricular>               
+					<developer>8d8c9d8c99-s8d888</developer>            
+				</labels>         
+			</identification>      
+		</block>      
+		<!-- Lesson 04: Charting; (not implemented) -->
+		      
+		<block id = "B400">         
+			<externalMetadata>            
+				<source>ADL</source>            
+				<model>ADL SCORM 1.1</model>            
+				<location><![CDATA[Course01\Lesson04\Lesson04.xml]]></location>         
+			</externalMetadata>         
+			<identification>            
+				<title>Charting</title>            
+				<description>This lesson covers charting principles and techniques.</description>            
+				<labels>               
+					<curricular>LESSON</curricular>               
+					<developer>389838d8-d88d88</developer>            
+				</labels>         
+			</identification>      
+		</block>   
+	</block>
+</course>

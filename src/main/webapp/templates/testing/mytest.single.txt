@@ -1,0 +1,28 @@
+<tr class="disabled_tr" id="tr_test_{[testID]}">
+    <td><input type="checkbox" onClick='changeState(this.checked, {[testID]})'/></td>
+    <td>
+        {[testname]}
+    </td>
+    <td>
+        {[all easy]}
+    </td>
+    <td>
+        {[all middle]}
+    </td>
+    <td>
+        {[all difficult]}
+    </td>
+    <td align="center">
+        <input type="hidden" name="tn_{[testID]}" value="{[testname]}">
+        <input type="hidden" name="all_{[testID]}_e" value="{[all easy]}">
+        <input disabled name="tID_{[testID]}_e" id="tID_{[testID]}_e" title="{[testname]}" style="text-align:center;" class="input" value="{[easy value]}" size=3 />
+    </td>
+    <td align="center">
+        <input type="hidden" name="all_{[testID]}_m" value="{[all middle]}">
+        <input disabled name="tID_{[testID]}_m" id="tID_{[testID]}_m" title="{[testname]}"  style="text-align:center;" class="input" value="{[middle value]}" size=3 />
+    </td>
+    <td align="center">
+        <input type="hidden" name="all_{[testID]}_d" value="{[all difficult]}">
+        <input disabled name="tID_{[testID]}_d" id="tID_{[testID]}_d" title="{[testname]}"  style="text-align:center;" class="input" value="{[difficult value]}" size=3 />
+    </td>
+</tr>

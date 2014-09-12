@@ -1,0 +1,18 @@
+<tr>
+    <td>
+    </td>
+</tr>
+<tr>
+   <td>
+    <table border=1 cellspacing=0 bordercolor="#000000" class="table" width="100%">
+           <tr>
+              <td class="TDtext" id="T{[number]}" onmouseover='sel("{[number]}");' onmouseout='unsel("{[number]}");'>
+	  {[tag]}
+              </td>
+              <td width="35px" id="N{[number]}" onmouseover='sel("{[number]}");' onmouseout='unsel("{[number]}");'>
+	{[tag number select]}
+              </td>
+            </tr>
+         </table>
+     </td>
+</tr>

@@ -1,0 +1,11 @@
+<tr>
+	<td class="nameTD">
+		{[name]}
+	</td>
+	<td align="left">
+        {[tutor name]}
+    </td>
+	<td align="center">
+		{[date]}
+	</td>
+</tr>

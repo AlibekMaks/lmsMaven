@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <META HTTP-Equiv="Cache-Control" Content="no-cache">
+        <META HTTP-Equiv="Pragma" Content="no-cache">
+        <META HTTP-Equiv="Expires" Content="0">
+        <META http-equiv=Content-Type content="text/html; charset=utf-8">
+        <LINK TYPE="text/css" REL="stylesheet"  HREF="css/chat.css">
+        <script type="text/javascript" language="JavaScript"
+        	      src="jscripts/JsHttpRequest/lib/JsHttpRequest/JsHttpRequest.js">
+        </script>
+        <script language="javascript">
+            setInterval('addMessage()', 2000);
+        </script>
+        <script language="javascript">
+	      function scr(){
+		    window.scrollBy(0,100000);
+	      }
+        </script>
+        <script type="text/javascript" language="JavaScript">
+            function addMessage() {
+                var req = new JsHttpRequest();
+                req.onreadystatechange = function() {
+                    try{
+                        if (req.readyState == 4) {
+                            messages = req.responseJS.messages;
+                            if (messages.length > 0){
+                                document.getElementById("chat").innerHTML  +=  messages+ " ";
+                                del();
+                                scr();
+                            }
+                        }
+                    }catch (e) {}
+                }
+                req.open('get', "chat", true);
+                var tmp =  {[roomID]};
+                req.send({ roomID : tmp, option:{[get messages]}});
+            }
+
+            function del(){
+                var maxSize = 100000;
+                if (document.getElementById("chat").innerHTML.length>maxSize) {
+                    document.getElementById("chat").innerHTML = document.getElementById("chat").innerHTML.substring(document.getElementById("chat").innerHTML.length- maxSize,  document.getElementById("chat").innerHTML.length);
+                    var n = document.getElementById("chat").innerHTML.indexOf("<BR>", 0);
+                    if (n>=0){
+                        document.getElementById("chat").innerHTML = document.getElementById("chat").innerHTML.substring(n, document.getElementById("chat").innerHTML.length);
+                    } else{
+	                  document.getElementById("chat").innerHTML = "";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body >
+        <table border=0 width="100%" cellspacing=0 cols="2" height="100%">
+     <tr height="*">
+	<td id="chat" valign="top">
+	</td>
+     </tr>
+</table>
+</body>
+</html>

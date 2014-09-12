@@ -1,0 +1,26 @@
+<tr>
+	<td class="nameTD">
+		{[name]}
+	</td>
+	<td align="center">
+		{[class name]}
+	</td>
+	<td align="center">
+		{[easy]}
+	</td>
+	<td align="center">
+		{[middle]}
+	</td>
+	<td align="center">
+		{[difficult]}
+	</td>
+	<td align="center">
+		{[mark]}
+	</td>
+	<td align="center">
+		{[test language]}
+	</td>
+	<td align="center">
+		{[testing result]}
+	</td>
+</tr>

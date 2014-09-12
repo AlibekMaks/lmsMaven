@@ -1,0 +1,162 @@
+<script language="javascript">
+	function changeState(state){
+		document.getElementById("inn").disabled=!state;
+		document.getElementById("int").disabled=!state;
+		if(!state){
+			document.getElementById("inn").checked = false;
+			document.getElementById("int").checked = false;
+		}
+	}
+	function changeChkbx(id){
+		if (!document.getElementById(id).disabled){
+			document.getElementById(id).checked = !document.getElementById(id).checked;
+		}
+	}
+</script>
+<form action="library">
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="20%">
+                                </td>
+                                <td width="80%">
+                                    <table border=0 width="100%">
+                                        <tr>
+                                            <td width="100%">
+                                                <input type="text" name="search" value="{[search value]}" class="input" style="width:100%">
+                                            </td>
+                                            <td width="100px">
+                                                <input type="submit" value="{[search]}" class="button">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" align="right">
+                                    {[Language]}
+                                </td>
+                                <td>
+                                    {[language sel]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td" align="right" valign="top">
+                                    {[search in]}:
+                                </td>
+                                <td>
+                                    <table border=0 width="100%">
+                                        <tr>
+                                            <td width="16px">
+                                                <input type="checkbox" name="subjectbook" {[subject book checked]} id="sb">
+                                            </td>
+                                            <td width=* class="td" onclick='document.getElementById("sb").checked=!document.getElementById("sb").checked'>
+                                                {[subject book]}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="tutorbook" {[tutor book checked]} id="tb" onClick='changeState(this.checked)'>
+                                            </td>
+                                            <td >
+                                                <table border=0 cellpadding=0 cellspacing=0>
+                                                    <tr>
+                                                        <td class="td" onclick='document.getElementById("tb").checked=!document.getElementById("tb").checked; changeState(document.getElementById("tb").checked);'>
+                                                            {[tutor book]}
+                                                        </td>
+                                                        <td class="td" width="3px">
+                                                        </td>
+                                                        <td class="td">
+                                                            <input type="checkbox" name="inbookname" {[in book name disabled]} {[in book name checked]} id="inn">
+                                                        </td>
+                                                        <td class="td" width="3px">
+                                                        </td>
+                                                        <td onClick='changeChkbx("inn");'>
+                                                        </td>
+                                                        <td class="td" width="3px">
+                                                        </td>
+                                                        <td class="td">
+                                                            {[in book name]}
+                                                        </td>
+                                                        <td class="td" width="3px">
+                                                        </td>
+                                                        <td class="td">
+                                                            <input type="checkbox" name="intutorname" {[in tutor name disabled]} {[in tutor name checked]} id="int">
+                                                        </td>
+                                                        <td class="td" width="3px">
+                                                        </td>
+                                                        <td onClick='changeChkbx("int")'>
+                                                        </td>
+                                                        <td class="td" width="3px">
+                                                        </td>
+                                                        <td class="td">
+                                                            {[in tutor name]}
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0>
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="main" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 />
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="50%" class="td">
+                                    {[found]}:{[number of found records]}
+                                </td>
+                                <td width="50%" align="right">
+                                    {[parts]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=1 width="100%" class="table" bordercolor="#000000">
+                            <tr>
+                                <td width=* class="coloredheader" align="center">
+                                    {[name]}
+                                </td>
+                                <td width="16px" class="coloredheader" align="center">
+                                </td>
+                                <td width="16px" class="coloredheader" align="center">&nbsp;
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

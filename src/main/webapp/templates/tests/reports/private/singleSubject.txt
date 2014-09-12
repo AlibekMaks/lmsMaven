@@ -1,0 +1,14 @@
+<tr {[redcolor]} >
+	<td class="nameTD">
+		{[subject.name]}
+	</td>
+	<td align="center">
+		{[questions.count]}
+	</td>
+	<td align="center">
+		{[right.answers.count]}
+	</td>
+	<td align="center">
+		{[percentage]}%
+	</td>
+</tr>

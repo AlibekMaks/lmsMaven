@@ -1,0 +1,4 @@
+<frameset rows="50px, *" border=0 name="testmain">
+	<frame  src="timer" name="timer" frameborder=0 marginwidth=0 marginheight=0 resize="false" scrolling="no"/>
+	<frame  src="questionCheck?next=0" name="testing" frameborder=0 marginwidth=0 marginheight=0/>
+</frameset>

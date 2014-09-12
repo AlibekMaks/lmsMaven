@@ -1,0 +1,6 @@
+<tr>
+    <td class="td" width="100%">
+        {[name]}
+    </td>
+    {[link]}
+</tr>

@@ -1,0 +1,14 @@
+<tr>
+	<td width="50px">
+		{[tag number]}
+	</td>
+	<td width="*">
+		{[tag]}
+	</td>
+
+	<td width="10px" valign="top">
+		<a href="#" onClick='return removeVariant({[name]}, {[number]});'>
+			<img src="images\icon.delete.gif" border=0 width="16px" height="16px">
+		</a>
+	</td>
+</tr>

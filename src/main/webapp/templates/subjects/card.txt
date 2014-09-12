@@ -1,0 +1,166 @@
+<script language="JavaScript">
+    function isFormValid(){
+        document.getElementById("nameru").value = trim(document.getElementById("nameru").value);
+        document.getElementById("namekz").value = trim(document.getElementById("namekz").value);
+        if (document.getElementById("namekz").value.length == 0){
+            alert("{[fill in all of the fields]}");
+            document.getElementById("namekz").focus();
+            return false;
+        }
+        if (document.getElementById("nameru").value.length == 0){
+            alert("{[fill in all of the fields]}");
+            document.getElementById("nameru").focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<table border=0 width="100%">
+    <tr>
+        <form action="subject" method="POST" onsubmit="return isFormValid()">
+        <input type="hidden" name="subjectID" value="{[subjectID]}"/>
+        <input type="hidden" name="nocache" value="{[rnd]}"/>
+        {[hidden inputs]}
+        <td class="mainTD">
+            <table border="0" width="100%">
+                <tr>
+                    <td class="pageHeader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 />
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[add link]}" title="{[add title]}">
+                                        <img src="images/buttons.plus.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0 width="100%" class="table">
+                            <tr>
+                                <td width="20%" nowrap>
+                                    {[name kz]}
+                                </td>
+                                <td width=*>
+                                    <input style="width:100%" name="namekz" id="namekz" class="input" value="{[name kz value]}" maxlength={[maxlength]}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  nowrap>
+                                    {[name ru]}
+                                </td>
+                                <td width=*>
+                                    <input style="width:100%" name="nameru" id="nameru" class="input" value="{[name ru value]}" maxlength={[maxlength]}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  nowrap>
+                                    {[preferred mark]}
+                                </td>
+                                <td width=*>
+                                    <input name="preferredMark" id="preferredMark" class="input" value="{[preferred mark value]}">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr height="30px">
+                    <td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="left">
+                        <table border=0 width="100%" class="table">
+                            <tr style="vertical-align:middle">
+                                <td width="20%" align="left" nowrap>
+                                    {[checkbox title kz]}
+                                </td>
+                                <td width="80%" align="left">
+                                    <select name="kaz_test" style="width:*">
+                                        {[option values kz]}
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align:middle">
+                                <td width="20%" align="left" nowrap>
+                                    {[checkbox title ru]}
+                                </td>
+                                <td width="80%" align="left">
+                                    <select name="rus_test" style="width:*">
+                                        {[option values ru]}
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr height="10px">
+                    <td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" class="button" value="{[save]}">
+                    </td>
+                </tr>
+
+                <tr height="30px">
+                    <td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" class="header1">
+                        {[books on subect]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="book?subjectID={[subjectID]}&{[params]}" {[add link disabled]} class="href">
+                        {[add book]}
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=1 class="table" width="100%" bordercolor="#000000">
+                            <tr>
+                                <td width="*" class="coloredheader" align="center">
+                                    {[name]}
+                                </td>
+                                <td width="20%" class="coloredheader" align="center">
+                                    {[type]}
+                                </td>
+                                <td width="16px" class="coloredheader" align="center">
+                                </td>
+                                <td width="16px" class="coloredheader" align="center">
+                                </td>
+                                <td width="16px" class="coloredheader" align="center">
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        </form>
+    </tr>
+</table>

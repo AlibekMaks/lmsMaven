@@ -1,0 +1,15 @@
+<tr>
+    <td>
+        <input type="radio" name="groupID" value={[subgroupID]} 
+         onClick='setParam({[subgroupID]})'/>
+    </td>
+    <td id="cl{[subgroupID]}">
+        {[class name]}
+    </td>
+    <td id="sub{[subgroupID]}">
+        {[subject]}
+    </td>
+    <td id="subgr{[subgroupID]}">
+        {[subgroup number]}
+    </td>
+</tr>

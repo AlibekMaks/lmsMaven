@@ -1,0 +1,107 @@
+<script language="JavaScript">
+    function isFormValid(){
+        document.getElementById("name").value = trim(document.getElementById("name").value);
+        if (document.getElementById("name").value.length == 0){
+            alert("{[fill in all of the fields]}");
+            document.getElementById("name").focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<form action="exam" method="POST" onsubmit="return isFormValid()">
+{[hidden inputs]}
+<input type="hidden" name="nocache" value="{[rand]}">
+<input type="hidden" name="examID" value="{[examID]}">
+<table border=0 width="100%">
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0>
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    {[add ticket]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td>
+                        <table border=0 width="100%" class="table">
+                            <tr>
+                                <td width="250px">
+                                    {[name]}
+                                </td>
+                                <td width=*>
+                                    <input name="examName" id="examName" style="width:100%" class="input" value="{[name value]}" maxlength="{[maxlenth]}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="250px">
+                                    {[questionCount label]}
+                                </td>
+                                <td width=*>
+                                    <input name="questionCount" id="questionCount" style="width:100%" class="input" value="{[questionCount value]}" maxlength="3" {[disabled]} />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="{[save]}" class="button">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td height="20px">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="header1" align="center">
+                        {[subjects]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {[add subject]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=1 width="100%" class="table" bordercolor="#000000">
+                            <tr>
+                                <td width="20px" class="coloredheader" align="center">
+                                    №
+                                </td>
+                                <td width="*" class="coloredheader" align="center">
+                                    {[name]}
+                                </td>
+                                <td width="16px" class="coloredheader" align="center">
+                                </td>
+                            </tr>
+                            {[records]}
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>

@@ -1,0 +1,228 @@
+<script language="JavaScript">
+    function isFormValid(){
+        document.getElementById("ln").value = trim(document.getElementById("ln").value);
+        document.getElementById("fn").value = trim(document.getElementById("fn").value);
+        if (document.getElementById("ln").value.length == 0){
+            document.getElementById("ln").focus();
+            alert("{[enter all data]}");
+            return false;
+        }
+        if (document.getElementById("fn").value.length == 0){
+            document.getElementById("fn").focus();
+            alert("{[enter all data]}");
+            return false;
+        }
+        return true;
+    }
+</script>
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <form action="student" method="POST" onsubmit="return isFormValid();" name="form">{[hidden inputs]}<input type="hidden" name="nocache" value="{[rnd]}">
+                <input type="hidden" name="studentID" value="{[studentID]}"/>
+                <tr>
+                    <td class="pageHeader">
+                        {[student card]}
+                    </td>
+                </tr>
+                {[message]}
+                <tr>
+                    <td >
+                        <table border=0>
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" class="href">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 title="{[return title]}" />
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[add link]}" class="href">
+                                        <img src="images/buttons.plus.gif" width="{[size]}px" height="{[size]}px" border=0 title="{[add title]}" />
+                                    </a>
+                                </td>
+                                {[auth]}
+                                {[director comment]}
+                                <td class="imgtd">
+                                    <a href="{[first record]}" class="href">
+                                        <img src="images/buttons.first.gif" width="{[size]}px" height="{[size]}px" border=0 title="{[first title]}" />
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[prev record]}" class="href">
+                                        <img src="images/buttons.left.gif" width="{[size]}px" height="{[size]}px" border=0  title="{[prev title]}" />
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[next record]}" class="href">
+                                        <img src="images/buttons.right.gif" width="{[size]}px" height="{[size]}px" border=0 title="{[next title]}"/>
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="{[last record]}" class="href">
+                                        <img src="images/buttons.last.gif" width="{[size]}px" height="{[size]}px" border=0 title="{[last title]}" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 width="100%" class="table">
+                            <tr>
+                                <td width="20%">
+                                    {[lastname]}*
+                                </td>
+                                <td>
+                                    <input name="lastname"  id="ln" style="width:100%" value="{[lastname value]}" class="input" maxlength="{[maxlength]}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[firstname]}*
+                                </td>
+                                <td>
+                                    <input name="firstname" id="fn" style="width:100%" value="{[firstname value]}" class="input" maxlength="{[maxlength]}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[patronymic]}
+                                </td>
+                                <td>
+                                    <input name="patronymic" style="width:100%" value="{[patronymic value]}" class="input" maxlength="{[maxlength]}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[class]}
+                                </td>
+                                <td>
+                                    {[class select]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[adress]}
+                                </td>
+                                <td>
+                                    <input name="adress" style="width:100%" value="{[adress value]}" class="input" maxlength="{[maxlength]}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[phone]}
+                                </td>
+                                <td>
+                                    <input name="phone" style="width:100%" value="{[phone value]}" class="input" maxlength="{[maxlength]}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[parents]}
+                                </td>
+                                <td>
+                                    <textarea name="parents" class="input" style="width:100%" rows=5>{[parents value]}</textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[birthdate]}
+                                </td>
+                                <td>
+                                    {[birthdate input]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[startdate]}
+                                </td>
+                                <td>
+                                    {[startdate input]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[stazOverallStart]}
+                                </td>
+                                <td>
+                                    {[stazOverallStart input]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[stazSocietyStart]}
+                                </td>
+                                <td>
+                                    {[stazSocietyStart input]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[stazPostStart]}
+                                </td>
+                                <td>
+                                    {[stazPostStart input]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[eduUZ]}
+                                </td>
+                                <td>
+                                    <textarea name="eduUZ" class="input" style="width:100%" rows=5>{[eduUZ value]}</textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[eduProfession]}
+                                </td>
+                                <td>
+                                    <textarea name="eduProfession" class="input" style="width:100%" rows=5>{[eduProfession value]}</textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[eduQualification]}
+                                </td>
+                                <td>
+                                    <textarea name="eduQualification" class="input" style="width:100%" rows=5>{[eduQualification value]}</textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[hadUpgradedQualification]}
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="upgrade" {[hadUpgradedQualification value]} />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[isDirector]}
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="isdir" {[isDirector value]} />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">
+                                    {[isInMaternityLeave]}
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="ismat" {[isInMaternityLeave value]} />
+                                </td>
+                            </tr>
+                         </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="{[save]}" class="button"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

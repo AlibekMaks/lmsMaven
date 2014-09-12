@@ -1,0 +1,9 @@
+<table border=0 width="100%" >
+	<tr>
+		<td>
+			<table border=0 width="100%" class="table">
+				{[variants]}
+			</table>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,17 @@
+<tr>
+    <td align="center">
+        {[number]}
+    </td>
+    <td style="paddin-left:2px;">
+        {[subject]}
+    </td>
+    <td style="paddin-left:2px;">
+        {[class]}
+    </td>
+    <td align="center">
+        {[class room]}
+    </td>
+    <td align="center">
+        {[details]}
+    </td>
+</tr>

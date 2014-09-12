@@ -1,0 +1,39 @@
+<table border=0 width="100%" class="navigate"><tr><td>
+<table border=0 cellpadding=0>
+    <tr>
+        <td width="20px">
+        </td>
+        <td>
+            <a href="{[first href]}">
+            <img src="images/button.left.end.gif" width="24px" height="24px" border=0 title="{[first title]}">
+            </a>
+        </td>
+        <td width="10px">
+        </td>
+        <td>
+            <a href="{[previous href]}">
+            <img src="images/button.left.gif" width="24px" height="24px" border=0 title="{[previous title]}">
+            </a>
+        </td>        
+        <td width="10px">
+        </td>
+        <td>
+            {[parts]}
+        </td>
+        <td width="10px">
+        </td>
+        <td>
+            <a href="{[next href]}">
+            <img src="images/button.right.gif" width="24px" height="24px" border=0 title="{[next title]}">
+            </a>            
+        </td>   
+        <td width="10px">
+        </td>
+        <td>
+            <a href="{[last href]}">
+            <img src="images/button.right.gif" width="24px" height="24px" border=0 title="{[last title]}">
+            </a>            
+        </td>
+    </tr>
+</table>
+</td></tr></table>

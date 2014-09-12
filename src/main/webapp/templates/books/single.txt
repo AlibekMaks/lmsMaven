@@ -1,0 +1,17 @@
+<tr>
+    <td class="nameTD">
+        {[name]}
+    </td>
+    <td class="nameTD">
+        {[type]}
+    </td>
+    <td align="center">
+        {[open]}
+    </td>
+    <td align="center">
+        {[download]}
+    </td>
+    <td align="center">
+        {[delete]}
+    </td>
+</tr>

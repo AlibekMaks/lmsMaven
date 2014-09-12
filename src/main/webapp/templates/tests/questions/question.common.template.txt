@@ -1,0 +1,192 @@
+<form name="form" action="testedit"  method="post" enctype="multipart/form-data" action="tutorTestsList" id="frm">
+<input type="hidden" name="currentQuestionNumber" value="{[questionNumber]}" />
+<input type="hidden" name="testID" id="testID" value="{[testID]}" />
+<input type="hidden" name="signature" id="signature" value="{[signature]}" />
+<input type="hidden" name="option" value="0" />
+<input type="hidden" name="variant" value="-1" />
+<input type="hidden" name="{[random]}" value="0" />
+{[hidden inputs]}
+{[script]}
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return href]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 />
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    <a href="testView?print=true&questionNumber={[questionNumber]}" title="{[preview title]}" target="_blank">
+                                        <img src="images/icon.printer.gif" width="{[size]}px" height="{[size]}px" border=0 />
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+<table border=1 width="100%" cellspacing=0 cellpadding=0 bordercolor="#000000" bgcolor="#efefef" class="table">
+                            <tr>
+                                <td>
+                                    <table border=0 width="100%" class="table">
+                                        <tr>
+                                            <td width="20%" align="center">
+                                                <b>{[test name]}</b>
+                                            </td>
+                                            <td width="*">
+                                                <input name="testName" value="{[testNameValue]}" class="input" style="width:100%;">
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                <table border=0>
+                                                    <tr>
+                                                        <td>
+                                                           <a onClick='form.option.value=1;form.submit(); return false;' href="#">
+                                                                <img src="images/test.save.gif" width="32px" height="32px" border=0 />
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a onClick='form.option.value=1;form.submit(); return false;' href="#"class="href">
+                                                                {[save test]}
+                                                            </a>
+                                                        </td>
+                                                        <td width="10px"></td>
+                                                        <td>
+                                                            <a onClick='form.option.value=2;form.submit(); return false;' href="#" class="href">
+                                                                <img src="images/test.add.gif" width="32px" height="32px" border=0 />
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a  onClick='form.option.value=2;form.submit(); return false;' href="#" class="href">{[add question]}</a>
+                                                        </td>
+                                                        <td width="10px"></td>
+                                                        <td>
+                                                            <a onClick='return areYouSure();' href="#" class="href">
+                                                                <img src="images/test.delete.gif" width="32px" height="32px" border=0 />
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a onClick='return areYouSure();' href="#" class="href">{[delete question]}</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td  align="center">
+                                                <b>{[navigation]}</b>
+                                            </td>
+                                            <td>
+                                                <table border=0 class="table">
+                                                    <tr>
+                                                        <td align="center">
+                                                            {[first]}
+                                                        </td>
+                                                        <td align="center">
+                                                            {[previous]}
+                                                        </td>
+                                                        <td width="10px"></td>
+                                                        <td width="80px" align="center">
+                                                            {[question numberselect]}
+                                                        </td>
+                                                        <td width="10px"></td>
+                                                        <td>
+                                                            {[next]}
+                                                        </td>
+                                                        <td>
+                                                            {[last]}
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=1 width="100%" bordercolor="#000000" bgcolor="#efefef" class="table">
+                            <tr>
+                                <td>
+                                    <table border=0 width="100%" class="table">
+                                        <tr>
+                                            <td width="20%"><b>
+                                                {[question type]}</b>
+                                            </td>
+                                            <td width="60%">
+                                                {[question type select]}
+                                            </td>
+                                            <td rowspan=2 align="right"></td>
+                                        </tr>
+                                        <tr>
+                                            <td >
+                                                <b>{[question difficulty]}</b>
+                                            </td>
+                                            <td>
+                                                {[question difficulty select]}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td  colspan=3>
+                                                <b>{[question formulation]}:</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan=3>
+                                                {[question formulation input]}
+                                            </td>
+                                        </tr>
+                                        {[add]}
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {[variants]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      <table border=0 width="100%" class="table">
+                            <tr>
+                                  <td align="left">
+                            <applet code="arta/common/clipboard/PasteImageApplet.class" archive="jars/pasteImage.jar" name="insertImageApplet" width="150px" height="36px">
+                            <a href="jre.exe" >
+                                <img  border=0 src="images/insert.image.unsupported.gif"  width="150px" height="30px"/></a><font class="table">{[title]}</font>
+                            </applet>
+                                  </td>
+                            </tr>
+                      </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>
+

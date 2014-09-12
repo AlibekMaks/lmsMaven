@@ -1,0 +1,57 @@
+<form action="messageslist" method="POST">
+    <table class ="table" width="100%">
+        <tr>
+            <td width="100%" class="mainTD">
+                <table width="100%">
+                    <tr>
+                        <td align="center" class="pageHeader">
+                            {[theme]}
+                        </td>
+                    </tr>
+                    {[show message]}
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td class="imgtd">
+                                        <a href="{[return link]}" title="{[return title]}">
+                                            <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border="0"/>
+                                        </a>
+                                    </td>
+                                    {[add message link]}
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table border=0 width="100%" align="left">
+                                <tr>
+                                    <td width="50%" class="td">
+                                        {[found]} : {[number of found records]}
+                                    </td>
+                                    <td align="right">
+                                        {[parts]}
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="forumtable" width="100%" border=1 bordercolor="#0c548c">
+                                {[messages list]}
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" style="visibility:hidden" value="{[option]}" name="option">
+            </td>
+        </tr>
+    </table>
+</form>

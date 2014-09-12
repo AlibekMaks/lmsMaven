@@ -1,0 +1,8 @@
+<tr>
+    <td width="5px" valign="top">
+        {[is right]}
+    </td>
+    <td >
+       {[variant]}
+    </td>
+</tr>

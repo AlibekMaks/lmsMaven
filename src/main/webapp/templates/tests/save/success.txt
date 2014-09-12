@@ -1,0 +1,32 @@
+<table border=0 width="100%" height="*">
+	<tr height="15%">
+		<td>
+			&nbsp;
+		</td>
+	</tr>
+	<tr height="10%">
+		<td valign="middle">
+			<table border=0 width="100%" class="table">
+				<tr>
+					<td align="center">
+						<b>
+							{[test successfully saved]}
+						</b>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<a href="{[back to tests list href]}" class="href">
+							{[back to tests list]}
+						</a>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr height="*">
+		<td>
+			&nbsp;
+		</td>
+	</tr>
+</table>

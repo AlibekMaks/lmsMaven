@@ -1,0 +1,23 @@
+<tr {[tr class]} >
+    <td align="center">
+        <input type="checkbox" class="cbx" id="std{[studentID]}" name="std{[studentID]}" onChange="onChangeChb(this)" {[checked]} />
+    </td>
+    <td style="padding-left:3px;">
+        {[name]}
+    </td>
+    <td align="center">
+        {[class]}
+    </td>    
+    <td align="center">
+        {[startdate]}
+    </td>
+    <td align="center">
+        {[last testing date]}
+    </td>
+    <td align="center">
+        {[passed]}
+    </td>
+    <td align="center">
+        {[status]}
+    </td>
+</tr>

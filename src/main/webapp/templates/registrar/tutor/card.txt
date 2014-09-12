@@ -1,0 +1,74 @@
+<script type="text/javascript" language="JavaScript">
+
+    function confirmDelete(linkID){
+
+        document.getElementById(linkID).className = "bold_href";
+
+        continueDelete = confirm('{[confirmDelete]}');
+        if (!continueDelete){
+            document.getElementById(linkID).className = "href";
+        }
+        return continueDelete;
+
+    }
+
+</script>
+<table border=0 width="100%">
+    <tr>
+        <td class="mainTD">
+            <table border=0 width="100%">
+                <tr>
+                    <td class="pageheader">
+                        {[page header]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border=0 >
+                            <tr>
+                                <td class="imgtd">
+                                    <a href="{[return link]}" title="{[return title]}">
+                                        <img src="images/return.gif" width="{[size]}px" height="{[size]}px" border=0 />
+                                    </a>
+                                </td>
+                                <td class="imgtd">
+                                    {[prev month]}
+                                </td>
+                                <td style="width:200px" valign="middle" align="center">
+                                    {[month select]}
+                                </td>
+                                <td style="width:80px" valign="middle" align="center">
+                                    {[year select]}
+                                </td>
+                                <td class="imgtd">
+                                    {[next month]}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {[message]}
+<form action="tutorregistrar" id="form" method="POST">
+<input type="hidden" name="studygroupID" value="{[studygroupID]}" />
+<input type="hidden" name="subgroupID" value="{[subgroupID]}" />
+<input type="hidden" name="month" value="{[month]}" />
+<input type="hidden" name="year" value="{[year]}" />
+<input type="hidden" name="new_year" id="new_year" value="{[year]}" />
+<input type="hidden" name="new_month" id="new_month" value="{[year]}" />
+<input type="hidden" id="action" name="action" value="0" />
+                <tr>
+                    <td>
+                        {[students table]}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="{[save]}" onClick='document.getElementById("action").value=0;
+                        document.getElementById("form").submit();'/>
+                    </td>
+                </tr>
+</form>
+            </table>
+        </td>
+    </tr>
+</table>
