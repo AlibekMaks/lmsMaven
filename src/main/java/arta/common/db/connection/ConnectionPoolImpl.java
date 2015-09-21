@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class ConnectionPoolImpl {
 
-    private int maxConnectionsCount = 20;
+    private int maxConnectionsCount = 200;
 
     public ArrayList<PooledConnection> connections = new ArrayList<PooledConnection> ();
 
