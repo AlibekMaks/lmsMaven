@@ -382,6 +382,8 @@ public class DBSchema {
         testreports.fields.add(new DBField("easy", FieldType.INTEGER, "0"));
         testreports.fields.add(new DBField("middle", FieldType.INTEGER, "0"));
         testreports.fields.add(new DBField("difficult", FieldType.INTEGER, "0"));
+        testreports.fields.add(new DBField("starttime", FieldType.TIMESTAMP));
+        testreports.fields.add(new DBField("finishtime", FieldType.TIMESTAMP));
         tables.add(testreports);
         testreports.indexes.add(new DBIndex("testreports_studid", "studentid"));
         testreports.indexes.add(new DBIndex("testreports_testingid", "testingid"));

@@ -133,6 +133,40 @@
                 </tr>
 
                 <tr>
+                    <td width="150px"></td>
+                    <td>
+                        <b>{[elapsed_time]}</b>
+                    </td>
+                    <td width="150px"></td>
+                </tr>
+                <tr>
+                    <td width="150px"></td>
+                    <td>
+                        <b>{[date]}</b>
+                    </td>
+                    <td width="150px"></td>
+                </tr>
+
+                <tr height="50px" colspan="3">
+                    <td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="150px"></td>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="75%">
+                                </td>
+                                <td>{[signature_of_the_applicant]}</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="150px"></td>
+                </tr>
+
+                <tr>
                     <td colspan=3 height="50px">
                     </td>
                 </tr>

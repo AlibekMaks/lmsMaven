@@ -11,7 +11,6 @@ import arta.login.logic.Access;
 import arta.filecabinet.logic.Person;
 import arta.filecabinet.logic.students.Student;
 import arta.check.logic.Testing;
-import arta.check.html.TestCheckHandler;
 import arta.check.html.TestResultsEmptyHandler;
 import arta.check.html.TestResultsHandler;
 import arta.settings.logic.Settings;
@@ -27,6 +26,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Statement;
+import java.util.Date;
 
 import arta.tests.testing.logic.SaveObject;
 import com.bentofw.mime.MimeParser;
@@ -66,6 +66,12 @@ public class QuestionServlet extends HttpServlet {
                 pw.close();
                 return;
             }
+
+            if(testing.startTime == null){
+                testing.startTime = new Date();
+            }
+
+            testing.finishTime = new Date();
 
             SaveObject saveSession = new SaveObject();
             saveSession.saveObject(person.getPersonID(), testing.testingID, testing);
@@ -125,7 +131,7 @@ public class QuestionServlet extends HttpServlet {
 
                 session.removeAttribute("studenttesting");
             } else {
-                new Parser(new FileReader("tests/questions/myquestion.common.check.template.txt").read(getServletContext()),
+                new Parser(new FileReader("tests/questions/myquestion.common.check.template.html").read(getServletContext()),
                         pw, new QuestionCheckHandler(lang, next, getServletContext(), testing)).parse();
             }
 
@@ -160,6 +166,12 @@ public class QuestionServlet extends HttpServlet {
                 return;
             }
 
+            if(testing.startTime == null){
+                testing.startTime = new Date();
+            }
+
+            testing.finishTime = new Date();
+
             Person person = (Person) session.getAttribute("person");
             int lang = extractor.getInteger(session.getAttribute("lang"));
             int next = extractor.getInteger(request.getParameter("next"));
@@ -167,7 +179,7 @@ public class QuestionServlet extends HttpServlet {
             SaveObject saveSession = new SaveObject();
             saveSession.saveObject(person.getPersonID(), testing.testingID, testing);
 
-            new Parser(new FileReader("tests/questions/myquestion.common.check.template.txt").read(getServletContext()),
+            new Parser(new FileReader("tests/questions/myquestion.common.check.template.html").read(getServletContext()),
                 pw, new QuestionCheckHandler(lang, next, getServletContext(), testing)).parse();
             pw.flush();
             pw.close();
@@ -186,9 +198,8 @@ public class QuestionServlet extends HttpServlet {
             con = connectionPool.getConnection();
             st = con.createStatement();
 
-            st.execute("DELETE FROM testingtime t \n" +
-                       " WHERE (t.studentID = "+studentID+") AND (t.testingID = "+testingID+") "+
-                       " OR (DATE(t.modified) < DATE(NOW()))");
+            st.execute("DELETE FROM testingtime \n" +
+                       " WHERE (studentID = "+studentID+") AND (testingID = "+testingID+") OR (DATE(modified) < DATE(NOW()))");
 
         } catch (Exception exc){
             Log.writeLog(exc);

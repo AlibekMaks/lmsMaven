@@ -17,12 +17,11 @@ import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Connection;
+import java.sql.Timestamp;
 import java.text.Format;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.Date;
 
 
 public class Testing implements Serializable {
@@ -50,6 +49,8 @@ public class Testing implements Serializable {
     public static LockManager studentCheckLockManager = new LockManager();
     public boolean testingIsPassed = false;
     public boolean result_TestingIsPassed = false;
+    public java.util.Date startTime = new Date();
+    public java.util.Date finishTime = new Date();
 
 
     // Xacking
@@ -333,6 +334,19 @@ public class Testing implements Serializable {
                 test.difficult = res.getInt("difficult");
                 tests.add(test);
             }
+
+
+            Timestamp _starttime = null;
+            Timestamp _finishtime = null;
+
+            res = st.executeQuery("SELECT starttime, finishtime FROM testreports WHERE studentID = " + studentID+ " AND testingID = "+ testingID);
+            while (res.next()) {
+                _starttime = res.getTimestamp("starttime");
+                _finishtime = res.getTimestamp("finishtime");
+            }
+
+            startTime = _starttime;
+            finishTime = _finishtime;
 
 
 
@@ -644,8 +658,9 @@ public class Testing implements Serializable {
         ResultSet res = null;
 
         try {
-
             studentCheckLockManager.execute(lockString);
+
+            student.loadById(student.getPersonID());
 
             if (state == STARTED) {
 

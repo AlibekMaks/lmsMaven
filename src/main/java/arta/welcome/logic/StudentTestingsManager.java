@@ -20,6 +20,8 @@ public class StudentTestingsManager {
 
     public ArrayList<StudentTesting> testings = new ArrayList <StudentTesting> ();
 
+    public ArrayList<StudentTesting> finishTestings = new ArrayList <StudentTesting> ();
+
 
     public void mysearch(int studentID, int lang){
 
@@ -97,6 +99,53 @@ public class StudentTestingsManager {
                         testing.setTestingTime(testingTime);
                         testing.setTutorID(tutorID);
                     testings.add(testing);
+                }
+            } else {
+                res = st.executeQuery("SELECT t.mainTestingID AS mid from testings t " +
+                        " JOIN testingstudents ts ON t.testingID=ts.testingID " +
+                        "  WHERE ts.studentID="+studentID+" AND (ts.status!=0 AND ts.status!=1) AND t.testingDate= DATE(NOW()) " +
+                        "  ORDER BY t.testingID DESC LIMIT 1 ");
+                if(res.next()){
+                    int _mainTestingID = res.getInt(1);
+                    int _kaz_test_id = 0;
+                    int _rus_test_id = 0;
+                    int _tutorID = 0;
+                    int _testingTime = 0;
+                    int _tmp_lang = 0;
+                    int _classID = 0;
+                    int _testingID = 0;
+
+                    res1 = st1.executeQuery("SELECT r.testingID FROM registrar r WHERE r.studentid="+studentID+" AND r.mainTestingID="+_mainTestingID);
+                    while(res1.next()){
+                        _testingID = res1.getInt(1);
+                    }
+
+                    res1 = st1.executeQuery("SELECT t.testingID AS id, t.tutorID AS tid, "+
+                            " t.testingTime AS tt, t.lang AS la, t.classID AS cl "+
+                            " FROM testings t "+
+                            " WHERE t.mainTestingID = "+_mainTestingID);
+                    while(res1.next()){
+                        _tutorID = res1.getInt("tid");
+                        _testingTime = res1.getInt("tt");
+                        _tmp_lang = res1.getInt("la");
+                        _classID = res1.getInt("cl");
+                        if(_tmp_lang == Constants.KAZ_TEST){
+                            _kaz_test_id = res1.getInt("id");
+                        } else if (_tmp_lang == Constants.RUS_TEST){
+                            _rus_test_id = res1.getInt("id");
+                        }
+                    }
+
+                    StudentTesting testing = new StudentTesting();
+                    testing.lang = lang;
+                    testing.setMainTestingID(_mainTestingID);
+                    testing.setTestingID(_testingID);
+                    testing.setClassID(_classID);
+                    testing.setKaz_test_ID(_kaz_test_id);
+                    testing.setRus_test_ID(_rus_test_id);
+                    testing.setTestingTime(_testingTime);
+                    testing.setTutorID(_tutorID);
+                    finishTestings.add(testing);
                 }
             }
         } catch(Exception exc){

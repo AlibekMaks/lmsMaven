@@ -134,8 +134,8 @@ public class AppointTestingsStudentsList extends TemplateHandler {
         }  else if (name.equals("size")){
             pw.print(Constants.MENU_IMAGE_SIZE);
         } else if (name.equals("parts")){
-            new PartsHandler(params.getPartsNumber(), params.partNumber, lang,
-                    "appointtests?" + params.getParams(), params.partNumberStr).writeLinks(pw);
+//            new PartsHandler(params.getPartsNumber(), params.partNumber, lang,
+//                    "appointtests?" + params.getParams(), params.partNumberStr).writeLinks(pw);
         } else if (name.equals("class select")){
             ClassesSelect select = new ClassesSelect(0);
             select.writePostSelect(params.classIDStr, 100, pw, params.classID, true);

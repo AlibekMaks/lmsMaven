@@ -4,10 +4,7 @@ import arta.common.logic.util.Languages;
 import arta.exams.logic.Ticket;
 import arta.settings.logic.Settings;
 import arta.tests.common.TestMessages;
-import arta.tests.reports.html.commonReports.SingleStudentHandler;
-import arta.tests.reports.logic.commonReports.CommonTestReportStudent;
 import arta.tests.reports.logic.commonReports.CommonTestSearchParams;
-import arta.tests.reports.logic.commonReports.CommonTestReportView;
 import arta.tests.testing.logic.TestingMessages;
 import arta.check.logic.Testing;
 import arta.common.html.handler.PageContentHandler;
@@ -17,11 +14,11 @@ import arta.common.html.handler.TemplateHandler;
 import arta.common.logic.messages.MessageManager;
 import arta.common.logic.util.Constants;
 import arta.common.logic.util.StringTransform;
-import arta.filecabinet.logic.FileCabinetMessages;
 import arta.filecabinet.logic.students.Student;
 
 import javax.servlet.ServletContext;
 import java.io.PrintWriter;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -225,7 +222,7 @@ public class TestingAnalysisHandler extends PageContentHandler {
                 else
                     pw.print("&nbsp;");
             } else if (name.equals("ticket")){
-                if (ticket != null){
+                if (ticket != null && ticket.ticketID > 0){
                     if(testing.testingIsPassed){
                         ticket.writeTicket(pw, lang);
                     } else {
@@ -265,21 +262,24 @@ public class TestingAnalysisHandler extends PageContentHandler {
 
             } else if (name.equals("exam")) {
                 if(testing.testingIsPassed){
-                    pw.print("<table border=0 width=\"100%\">");
+                    Ticket ticket = new Ticket();
+                    ticket.getTestingTicketForStudent(testing.studentID, mainTestingID);
+
+                    if(ticket.ticketID > 0) {
+                        pw.print("<table border=0 width=\"100%\">");
                         pw.print("<tr>");
-                            pw.print("<td height=\"50px\">");
-                            pw.print("</td>");
+                        pw.print("<td height=\"50px\">");
+                        pw.print("</td>");
                         pw.print("</tr>");
 
                         pw.print("<tr>");
-                            pw.print("<td width=* align=\"center\" >");
-                                Ticket ticket = new Ticket();
-                                ticket.getTestingTicketForStudent(testing.studentID, mainTestingID);
-                                ticket.loadById(ticket.ticketID, lang, true);
-                                ticket.writeTicket(pw, lang);
-                            pw.print("</td>");
+                        pw.print("<td width=* align=\"center\" >");
+                        ticket.loadById(ticket.ticketID, lang, true);
+                        ticket.writeTicket(pw, lang);
+                        pw.print("</td>");
                         pw.print("</tr>");
-                    pw.print("</table>");
+                        pw.print("</table>");
+                    }
                 }
             } else if (name.equals("questions.count")) {
                 pw.print(MessageManager.getMessage(Languages.RUSSIAN, TestMessages.QUESTIONS_COUNT, null) + "/" +
@@ -305,6 +305,26 @@ public class TestingAnalysisHandler extends PageContentHandler {
                     pw.print(MessageManager.getMessage(Languages.RUSSIAN, TestMessages.TEST_NOT_PASSED, null) + "/" +
                              MessageManager.getMessage(Languages.KAZAKH, TestMessages.TEST_NOT_PASSED, null));
                 }
+            } else if (name.equals("elapsed_time")) {
+
+                long diff = testing.finishTime.getTime() - testing.startTime.getTime();
+                long hour = (diff / 1000 / 60 / 60) % 24;
+                long minutes = (diff / 1000 / 60) % 60;
+                long seconds = (diff / 1000) % 60;
+
+                String dateStr = String.format("%02d:%02d:%02d", hour, minutes, seconds);
+
+                pw.print(MessageManager.getMessage(Languages.RUSSIAN, TestMessages.ELAPSED_TIME, null) + "/" +
+                        MessageManager.getMessage(Languages.KAZAKH, TestMessages.ELAPSED_TIME, null) + " : " + dateStr);
+            } else if (name.equals("date")) {
+                DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+                String date = df.format(testing.startTime);
+
+                pw.print(MessageManager.getMessage(Languages.RUSSIAN, TestMessages.DATE2, null) + "/" +
+                        MessageManager.getMessage(Languages.KAZAKH, TestMessages.DATE2, null) + ": " + date);
+            } else if (name.equals("signature_of_the_applicant")) {
+                pw.print(MessageManager.getMessage(Languages.RUSSIAN, TestMessages.SIGNATURE_OF_THE_APPLICANT, null) + "/" +
+                        MessageManager.getMessage(Languages.KAZAKH, TestMessages.SIGNATURE_OF_THE_APPLICANT, null));
             }
         }
 

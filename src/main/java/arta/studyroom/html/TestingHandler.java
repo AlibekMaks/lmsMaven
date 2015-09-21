@@ -99,6 +99,8 @@ public class TestingHandler extends TemplateHandler {
             java.util.Date dt = new java.util.Date();
             String s = formatter.format(dt);
             pw.print(s);
+        } else if (name.equals("result_link")){
+            pw.print("<a href=\"testing_analysis?mainTestingID="+testing.getMainTestingID()+"&testingID="+testing.getTestingID()+"&studentID="+studentID+"&print=true\" target=\"_blank\">Посмотреть результат</a>");
         }
 
     }

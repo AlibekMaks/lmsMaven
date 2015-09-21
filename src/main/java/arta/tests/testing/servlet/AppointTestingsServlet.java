@@ -4,12 +4,8 @@ import arta.common.html.handler.PageGenerator;
 import arta.common.logic.messages.MessageManager;
 import arta.common.logic.util.*;
 import arta.filecabinet.logic.Person;
-import arta.filecabinet.logic.SearchParams;
 import arta.filecabinet.logic.students.StudentSearchParams;
 import arta.login.logic.Access;
-import arta.tests.testing.html.AppointmentResultsMainHandler;
-import arta.tests.testing.html.TestingCardMainHandler;
-import arta.tests.testing.html.TestsListMain;
 import arta.tests.testing.logic.Testing;
 
 import javax.servlet.ServletException;
@@ -20,7 +16,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Collections;
 
 
 public class AppointTestingsServlet extends HttpServlet {
@@ -69,7 +64,9 @@ public class AppointTestingsServlet extends HttpServlet {
                 **/
             }
 
-            testing.getTestingDate().loadDate(request.getParameter("date"), Date.FROM_INPUT);
+            String dddd = request.getParameter("date1");
+
+            testing.getTestingDate().loadDate(request.getParameter("date1"), Date.FROM_INPUT);
 //            testing.getTestingStartTime().hour = extractor.getInteger(request.getParameter("hour"));
 //            testing.getTestingStartTime().minute = extractor.getInteger(request.getParameter("minute"));
 //            testing.getTestingFinishTime().hour = extractor.getInteger(request.getParameter("hourfinish"));

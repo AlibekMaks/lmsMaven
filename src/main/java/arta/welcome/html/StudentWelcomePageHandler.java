@@ -53,10 +53,10 @@ public class StudentWelcomePageHandler extends TemplateHandler {
                 StudentTestingsManager manager = new StudentTestingsManager();
                 manager.mysearch(person.getPersonID(), lang);
 
-                if (manager.testings.size() > 0){
+                if (manager.testings.size() > 0 || manager.finishTestings.size() > 0){
                     new Parser(new FileReader("welcome/mytestings.txt").read(servletContext),
                                pw,
-                               new StudentTestingsHandler(lang, person.getPersonID(), manager.testings, null, person.getRoleID(),servletContext)).parse();
+                               new StudentTestingsHandler(lang, person.getPersonID(), manager.testings, manager.finishTestings, null, person.getRoleID(),servletContext)).parse();
                 }
             }
         } else if (name.equals("recommend students")){

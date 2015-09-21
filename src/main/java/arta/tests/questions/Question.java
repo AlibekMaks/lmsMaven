@@ -16,10 +16,10 @@ import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 
 public interface Question {
 
-    public static String UNSELCOLOR = "LightSkyBlue"; //"#ffffff";
-    public static String SELCOLOR = "#cfcfcf";
-    public static String RIGHT_CHCK_COLOR = "#c0c0c0";
-    public static String RIGHT_VAR_COLOR = "#cfcfcf";
+    public static String UNSELCOLOR = "#ffffff";//"LightSkyBlue";
+    public static String SELCOLOR = "#BDE3B3"; //"#cfcfcf";
+    public static String RIGHT_CHCK_COLOR = "#BDE3B3"; //"#c0c0c0";
+    public static String RIGHT_VAR_COLOR = "#BDE3B3"; //"#cfcfcf";
 
     public static String RIGHT_VARIANT_BACKGROUND = "#cfcfcf";
 

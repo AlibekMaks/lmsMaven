@@ -19,11 +19,12 @@ public class ParseData {
 
     InputStream test;
     int type;
+    private final String fileName;
 
-
-    public ParseData(InputStream test, int type) {
+    public ParseData(InputStream test, int type, String fileName) {
         this.test = test;
         this.type = type;
+        this.fileName = fileName;
     }
 
 
@@ -43,13 +44,28 @@ public class ParseData {
         return type;
     }
 
-    public boolean check(Message message, int lang){
-        if (type != ParseData.DOC_TYPE && type != ParseData.MHT_TYPE && type != ParseData.XLS_TYPE){
+    public boolean check(Message message, int lang) {
+        if (type != ParseData.DOC_TYPE && type != ParseData.MHT_TYPE && type != ParseData.XLS_TYPE) {
             message.setMessageType(Message.ERROR_MESSAGE);
             message.setMessageHeader(MessageManager.getMessage(lang, TestMessages.SELECT_IMPORT_TYPE, null));
             return false;
         }
-        if (test == null){
+        if (type == ParseData.DOC_TYPE && !fileName.endsWith(".doc")) {
+            message.setMessageType(Message.ERROR_MESSAGE);
+            message.setMessageHeader(MessageManager.getMessage(lang, TestMessages.FILE_TYPE_AND_EXTENSION_CONFLICT, null));
+            return false;
+        }
+        if (type == ParseData.MHT_TYPE && !fileName.endsWith(".mht")) {
+            message.setMessageType(Message.ERROR_MESSAGE);
+            message.setMessageHeader(MessageManager.getMessage(lang, TestMessages.FILE_TYPE_AND_EXTENSION_CONFLICT, null));
+            return false;
+        }
+        if (type == ParseData.XLS_TYPE && !fileName.endsWith(".xls")) {
+            message.setMessageType(Message.ERROR_MESSAGE);
+            message.setMessageHeader(MessageManager.getMessage(lang, TestMessages.FILE_TYPE_AND_EXTENSION_CONFLICT, null));
+            return false;
+        }
+        if (test == null) {
             message.setMessageType(Message.ERROR_MESSAGE);
             message.setMessageHeader(MessageManager.getMessage(lang, TestMessages.SELECT_FILE, null));
             return false;

@@ -65,7 +65,7 @@ public class QuestionCheckHandler extends TemplateHandler {
             }
         } else if (name.equals("last")){
             if (questionNumber<testing.questions.size()-1){
-                pw.println("<a   onClick='send("+(testing.questions.size()-1)+"); return false;' href=\"#\" class=\"link\" ");
+                pw.println("<a onClick='send("+(testing.questions.size()-1)+"); return false;' href=\"#\" class=\"link\" ");
                 pw.print(" title=\""+MessageManager.getMessage(lang, TestMessages.TO_LAST_QUESTION, null)+"\" >");
                 pw.println("<img src=\"images/button.right.end.gif\" border=0 width=\"24px\" height=\"24px\">");
                 pw.println("</a>");

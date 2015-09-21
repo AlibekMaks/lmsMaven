@@ -58,7 +58,7 @@ public class TestCheckHandler2 extends TemplateHandler {
                 handler.getMainPart(pw);
             }
         } else if (name.equals("ticket")){
-            if(ticket != null){
+            if(ticket != null && ticket.ticketID > 0){
                 ticket.writeTicket(pw, lang);
             }
         } else if (name.equals("answers report")){

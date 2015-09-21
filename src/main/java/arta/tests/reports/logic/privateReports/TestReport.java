@@ -1,10 +1,7 @@
 package arta.tests.reports.logic.privateReports;
 
 import java.io.StringReader;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 import arta.check.logic.Testing;
 import arta.common.logic.sql.ConnectionPool;
@@ -111,17 +108,21 @@ public class TestReport {
         report.append(reportBuilder.getReport(testing, lang));
         report.append("</td></tr></table>");
         report.append("</div>");
-        
-        
+
 
         PrivateXLSReport xlsReport = new PrivateXLSReport(lang, student, subject, tutor, date, testing);
         xlsReport.build();
 
-        PreparedStatement prst = con.prepareStatement("INSERT INTO testreports (studentID, mark, testingDate, report, xlsreport, tutorID, testingID, easy, middle, difficult) " +
-                " VALUES ("+student.getPersonID()+", "+testing.mark+", '"+date.getDate()+"', ?, ?, "+tutorID+", "+testing.testingID+", "+easy+", "+middle+", "+difficult+")");
+        Timestamp startTime = new Timestamp(testing.startTime.getTime());
+        Timestamp finishTime = new Timestamp(testing.finishTime.getTime());
+
+        PreparedStatement prst = con.prepareStatement("INSERT INTO testreports (studentID, mark, testingDate, report, xlsreport, tutorID, testingID, easy, middle, difficult, starttime, finishtime) " +
+                " VALUES ("+student.getPersonID()+", "+testing.mark+", '"+date.getDate()+"', ?, ?, "+tutorID+", "+testing.testingID+", "+easy+", "+middle+", "+difficult+",?,?)");
         StringReader reader = new StringReader(report.toString());
         prst.setCharacterStream(1, reader, report.length());
         prst.setBytes(2, xlsReport.getReport());
+        prst.setTimestamp(3, startTime);
+        prst.setTimestamp(4, finishTime);
         prst.execute();
 
     }

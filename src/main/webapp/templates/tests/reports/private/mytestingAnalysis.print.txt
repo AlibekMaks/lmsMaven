@@ -12,15 +12,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td width="150px"></td>
                     <td align="center" style="align:center;font-size:15pt;font-weight:bold">
                         {[text test result]}
                     </td>
-                    <td width="150px"></td>
                 </tr>
 
                 <tr>
-                    <td width="150px"></td>
                     <td align="center">
                         <table border=1 width="100%" class="table">
                             <tr>
@@ -115,11 +112,33 @@
                                 </td>
                             </tr>
                         </table>
+                    </td>
+                </tr>
+                <tr><td><b>{[elapsed_time]}</b></td></tr>
+                <tr><td><b>{[date]}</b></td></tr>
 
+                <tr height="50px">
+                    <td>
 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table border=0 width="100%">
+                            <tr>
+                                <td width="75%">
+                                </td>
+                                <td>{[signature_of_the_applicant]}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr height="50px">
+                    <td>
                         {[exam]}
                     </td>
-                    <td width="150px"></td>
                 </tr>
             </table>
         </td>

@@ -133,18 +133,18 @@ public class StudentsManager {
 
             query.append(" GROUP BY tb.studentid \n");
 
-            if (params.countInPart > 0) {
-                int partsCount = params.getPartsNumber();
-                if (params.partNumber >= partsCount){
-                    params.partNumber = partsCount - 1;
-                    if (params.partNumber < 0)
-                        params.partNumber = 0;
-                }
-                query.append(" LIMIT ");
-                query.append(params.countInPart * params.partNumber);
-                query.append(", ");
-                query.append(params.countInPart);
-            }
+//            if (params.countInPart > 0) {
+//                int partsCount = params.getPartsNumber();
+//                if (params.partNumber >= partsCount){
+//                    params.partNumber = partsCount - 1;
+//                    if (params.partNumber < 0)
+//                        params.partNumber = 0;
+//                }
+//                query.append(" LIMIT ");
+//                query.append(params.countInPart * params.partNumber);
+//                query.append(", ");
+//                query.append(params.countInPart);
+//            }
 
 //            System.out.println("query.toString() = " + query.toString());
 

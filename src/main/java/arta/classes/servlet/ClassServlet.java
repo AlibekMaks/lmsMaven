@@ -38,8 +38,8 @@ public class ClassServlet extends HttpServlet {
             }
 
             Person person = (Person) session.getAttribute("person");
-            int lang = extractor.getInteger(session.getAttribute("lang"));
-            int examID = extractor.getInteger(request.getParameter("examID"));
+            Integer lang = extractor.getInteger(session.getAttribute("lang"));
+            Integer examID = extractor.getInteger(request.getParameter("examID"));
 
             SearchParams params = new SearchParams();
             params.extractParameterValues(request, extractor);

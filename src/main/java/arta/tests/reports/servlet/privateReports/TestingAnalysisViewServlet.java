@@ -2,16 +2,9 @@ package arta.tests.reports.servlet.privateReports;
 
 import arta.common.logic.util.DataExtractor;
 import arta.common.logic.util.Constants;
-import arta.common.logic.util.Date;
 import arta.common.logic.util.Log;
-import arta.common.html.handler.Parser;
-import arta.common.html.handler.FileReader;
 import arta.common.html.handler.PageGenerator;
-import arta.exams.logic.Ticket;
 import arta.tests.reports.logic.commonReports.CommonTestSearchParams;
-import arta.tests.reports.logic.commonReports.CommonTestReportView;
-import arta.tests.reports.html.commonReports.CommonTestReportForm;
-import arta.tests.reports.html.commonReports.ReportViewMainHandler;
 import arta.tests.reports.html.privateReports.TestingAnalysisHandler;
 import arta.filecabinet.logic.SearchParams;
 import arta.filecabinet.logic.Person;
@@ -38,10 +31,12 @@ public class TestingAnalysisViewServlet extends HttpServlet {
             String return_link = request.getHeader("referer");
 
             if (!Access.isUserInRole(Constants.TUTOR, session)){
-                pw.print(Constants.RETURN_TO_MAIN_PAGE);
-                pw.flush();
-                pw.close();
-                return;
+                if (!Access.isUserInRole(Constants.STUDENT, session)){
+                    pw.print(Constants.RETURN_TO_MAIN_PAGE);
+                    pw.flush();
+                    pw.close();
+                    return;
+                }
             }
 
             Person person = (Person) session.getAttribute("person");
@@ -70,7 +65,7 @@ public class TestingAnalysisViewServlet extends HttpServlet {
                         "</head>\n" +
                         "<body topmargin=0 bottommargin=0 leftmargin=0 rightmargin=0 >");
 
-                        TestingAnalysisHandler handler = new TestingAnalysisHandler(lang, person.getRoleID(),testingId,studentId,
+                        TestingAnalysisHandler handler = new TestingAnalysisHandler(lang, person.getRoleID(), testingId, studentId,
                                 mainTestingID, params, return_link, getServletContext(), print, null);
                         handler.getMainPart(pw);
                 pw.print("</html>");

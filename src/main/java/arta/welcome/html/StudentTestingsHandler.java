@@ -30,16 +30,18 @@ public class StudentTestingsHandler extends TemplateHandler {
     int lang;
     int studentID;
     ArrayList <StudentTesting> testings;
+    ArrayList <StudentTesting> finishTestings;
 
     StringTransform trsf = new StringTransform();
     StudyRoomTestingsManager srtmanager;
     int roleID;
     ServletContext servletContext ;
 
-    public StudentTestingsHandler(int lang, int studentID, ArrayList<StudentTesting> testings, StudyRoomTestingsManager srtmanager, int roleID, ServletContext servletContext) {
+    public StudentTestingsHandler(int lang, int studentID, ArrayList<StudentTesting> testings, ArrayList<StudentTesting> finishTestings, StudyRoomTestingsManager srtmanager, int roleID, ServletContext servletContext) {
         this.lang = lang;
         this.studentID = studentID;
         this.testings = testings;
+        this.finishTestings = finishTestings;
         this.srtmanager = srtmanager;
         this.roleID = roleID;
         this.servletContext = servletContext;
@@ -122,6 +124,11 @@ public class StudentTestingsHandler extends TemplateHandler {
             for (int i=0; i < testings.size(); i++){
                 new Parser(new FileReader("studyroom/content/testing.item.txt").read(servletContext), pw,
                         new TestingHandler(testings.get(i), lang, trsf, studentID, roleID)).parse();
+            }
+
+            for (int i=0; i < finishTestings.size(); i++){
+                new Parser(new FileReader("studyroom/content/finishtesting.item.html").read(servletContext), pw,
+                        new TestingHandler(finishTestings.get(i), lang, trsf, studentID, roleID)).parse();
             }
 //            for (int i=0; i < srtmanager.testings.size(); i++){
 //                System.out.println();

@@ -278,14 +278,12 @@ public class Testing extends SimpleTesting{
             String test_name = "";
             String test_link = "";
             classes.clear();
-            res = st.executeQuery("SELECT DISTINCT s.classID FROM students s " +
-                                  " WHERE s.studentid IN ("+studentIDs+")");
+            res = st.executeQuery("SELECT DISTINCT s.classID FROM students s WHERE s.studentid IN ("+studentIDs+")");
             while(res.next()){
                 ClassesManager cl = new ClassesManager();
                 cl.classID = res.getInt(1);
 
                 boolean examFound = false;
-
 
                 int subjectsCountInClass = 0;
                 res1 = st1.executeQuery("SELECT COUNT(*) FROM studygroups s WHERE s.classID = " + cl.classID);
@@ -315,15 +313,17 @@ public class Testing extends SimpleTesting{
                     cl.examName = res1.getString("examname");
                 }
 
-                if(!examFound){
-                    String link = null;
-                    if(person.isAdministrator) link = "class?classID="+cl.classID+"&"+Rand.getRandString();
+//                if(!examFound){
+//                    String link = null;
+//                    if(person.isAdministrator) link = "class?classID="+cl.classID+"&"+Rand.getRandString();
+//
+//                    message.setMessageType(Message.ERROR_MESSAGE);
+//                    message.setMessageHeader(MessageManager.getMessage(lang, Constants.NOT_SAVED, null));
+//                    message.addReason(MessageManager.getMessage(lang, TestingMessages.FOUND_A_POSITION_IN_WHICH_THE_EXAM_IS_NOT_SELECTED), link);
+//                    return false;
+//                } else {}
 
-                    message.setMessageType(Message.ERROR_MESSAGE);
-                    message.setMessageHeader(MessageManager.getMessage(lang, Constants.NOT_SAVED, null));
-                    message.addReason(MessageManager.getMessage(lang, TestingMessages.FOUND_A_POSITION_IN_WHICH_THE_EXAM_IS_NOT_SELECTED), link);
-                    return false;
-                } else {
+                if(cl.examID > 0){
                     res1 = st1.executeQuery("SELECT t.ticketID FROM tickets t WHERE t.examID = " + cl.examID);
                     while(res1.next()){
                         cl.ticketIDs.add(res1.getInt("ticketID"));
@@ -555,10 +555,17 @@ public class Testing extends SimpleTesting{
 
                     //---- запись данных в таблицу "registrar" -----
                     Random randomGenerator = new Random();
-                    int randomInt = randomGenerator.nextInt(cl.ticketIDs.size());
-                    int randomTicketID = cl.ticketIDs.get(randomInt);
-                    st1.execute("INSERT INTO registrar (studentid, groupID, markdate, mark, marktype, mainTestingID, testingID, examID, ticketID) "+
-                                " VALUES ("+res.getInt("id")+", null, '"+testingDate.getDate()+"', null, 2, "+cl.mainTestingID+", null, "+cl.examID+", "+randomTicketID+")");
+
+                    int randomInt = 0;
+                    int randomTicketID = 0;
+                    if(cl.ticketIDs.size() > 0){
+                        randomInt = randomGenerator.nextInt(cl.ticketIDs.size());
+                        randomTicketID = cl.ticketIDs.get(randomInt);
+                    }
+
+
+                    st1.execute("INSERT INTO registrar (studentid, groupID, markdate, mark, marktype, mainTestingID, testingID, examID, ticketID) " +
+                            " VALUES (" + res.getInt("id") + ", null, '" + testingDate.getDate() + "', null, 2, " + cl.mainTestingID + ", null, " + cl.examID + ", " + randomTicketID + ")");
 
 //                    st1.execute("INSERT INTO registrar (studentid, groupID, markdate, mark, marktype, mainTestingID, testingID) "+
 //                                " VALUES ("+res.getInt("id")+", 0, '"+testingDate.getDate()+"', null, 2, "+cl.mainTestingID+", "+cl.testingID_ru+")");

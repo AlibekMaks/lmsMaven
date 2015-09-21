@@ -191,4 +191,16 @@ public class TestMessages {
 
     public static final int TESTING_MSG = 218365;
 
+
+
+    public static final int ELAPSED_TIME = 218366; //Затраченное время
+    public static final int DATE2 = 218367; //Дата
+    public static final int SIGNATURE_OF_THE_APPLICANT = 218368; //Подпись претендента
+    public static final int SIGNATURE = 218369; //Подпись
+
+    /**
+     * Выберите тип импортируемого файла.
+     */
+    public static final int FILE_TYPE_AND_EXTENSION_CONFLICT = 700111;
+
 }

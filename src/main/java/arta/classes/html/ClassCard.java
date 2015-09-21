@@ -119,9 +119,11 @@ public class ClassCard extends TemplateHandler {
 
             pw.print(select.addOption(0, false, MessageManager.getMessage(lang, Constants.NOT_SELECTED, null)));
             for (int i=0; i<manager.exams.size(); i++){
-                pw.print(select.addOption(manager.exams.get(i).examID+"",
-                                          manager.exams.get(i).examID == studyClass.getExamID(),
-                                          manager.exams.get(i).getExamName()));
+                if(studyClass.getExamID() != null) {
+                    pw.print(select.addOption(manager.exams.get(i).examID + "",
+                            manager.exams.get(i).examID == studyClass.getExamID(),
+                            manager.exams.get(i).getExamName()));
+                }
             }
             pw.print(select.endSelect());
         }

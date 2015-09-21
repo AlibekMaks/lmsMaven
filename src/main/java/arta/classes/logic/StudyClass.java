@@ -21,7 +21,7 @@ public class StudyClass {
 
     private int classID;
     private String className;
-    private int examID;
+    private Integer examID;
 
     public ArrayList<StudyGroup> groups = new ArrayList<StudyGroup>();
 
@@ -208,7 +208,7 @@ public class StudyClass {
 
             message.setMessageHeader(MessageManager.getMessage(lang, Constants.SAVED, null));
             message.setMessageType(Message.INFORMATION_MESSAGE);
-            return false;
+            return true;
         } catch (Exception exc){
             Log.writeLog(exc);
             message.setMessageHeader(MessageManager.getMessage(lang,  Constants.NOT_SAVED, null));
@@ -301,10 +301,10 @@ public class StudyClass {
             }
         }
 
-        if(examID <= 0){
-            message.addReason(MessageManager.getMessage(lang, FileCabinetMessages.THE_EXAM_IS_NOT_SELECTED, null));
-            checked = false;
-        }
+//        if(examID <= 0){
+//            message.addReason(MessageManager.getMessage(lang, FileCabinetMessages.THE_EXAM_IS_NOT_SELECTED, null));
+//            checked = false;
+//        }
         return checked;
     }
 
@@ -312,7 +312,7 @@ public class StudyClass {
         return classID;
     }
 
-    public int getExamID(){
+    public Integer getExamID(){
         return examID;
     }
 
@@ -326,7 +326,7 @@ public class StudyClass {
         this.classID = classID;
     }
 
-    public void setExamID(int examID){
+    public void setExamID(Integer examID){
         this.examID = examID;
     }
 
