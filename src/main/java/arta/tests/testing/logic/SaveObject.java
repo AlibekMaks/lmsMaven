@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import arta.check.logic.Testing;
-import sunw.io.Serializable;
+//import sunw.io.Serializable;
 
 
 public class SaveObject {

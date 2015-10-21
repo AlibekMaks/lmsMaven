@@ -1,6 +1,6 @@
 <Context cachingAllowed="false">
 <Resource name="jdbc/mysql" auth="Container" type="javax.sql.DataSource"
-		               maxActive="100" maxIdle="30" maxWait="-1" 
+		               maxActive="10000" maxIdle="30" maxWait="-1"
 			 minIdle="1"  initialSize="1"
  			validationQuery="SELECT 1" testOnBorrow="true" 
 			removeAbandoned="true" removeAbandonedTimeout="600" logAbandoned="true"

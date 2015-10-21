@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.Executor;
 
 
 public class PooledConnection implements java.sql.Connection{
@@ -250,7 +251,7 @@ public class PooledConnection implements java.sql.Connection{
     }
 
     public boolean checkMe(){
-    	Statement st = null;
+        Statement st = null;
         try{
             st = connection.createStatement();
             st.execute("SELECT CURRENT_DATE FROM DOCFLOW"); // PROFORMS
@@ -258,7 +259,7 @@ public class PooledConnection implements java.sql.Connection{
         } catch (Exception exc){
             exc.printStackTrace();
             if (st != null) {
-            	try{
+                try{
                     st.close();
                 } catch (SQLException sqlExc){
                     sqlExc.printStackTrace();
@@ -276,5 +277,30 @@ public class PooledConnection implements java.sql.Connection{
 
     public boolean isWrapperFor(Class<?> iface) throws SQLException {
         return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public void setSchema(String schema) throws SQLException {
+        // TODO Auto-generated method stub
+
+    }
+
+    public String getSchema() throws SQLException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    public void abort(Executor executor) throws SQLException {
+        // TODO Auto-generated method stub
+
+    }
+
+    public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+        // TODO Auto-generated method stub
+
+    }
+
+    public int getNetworkTimeout() throws SQLException {
+        // TODO Auto-generated method stub
+        return 0;
     }
 }
