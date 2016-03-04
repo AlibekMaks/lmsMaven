@@ -44,6 +44,10 @@ public class TestingsManager {
         try{
             examiners.clear();
 
+            if(!person.isAdministrator) {
+                params.departmentID = person.getDepartmentID();
+            }
+
             con = new ConnectionPool().getConnection();
             st = con.createStatement();
 //            StringBuffer query = new StringBuffer(
@@ -56,6 +60,7 @@ public class TestingsManager {
 //                            " WHERE testings.testingdate>=current_date AND testings.tutorID="+tutorID+" "
 //            );
 
+            String examinersID = "";
             String sql = "";
             if(!person.isAdministrator){
                 sql ="SELECT \n"+
@@ -64,8 +69,7 @@ public class TestingsManager {
                         " t.firstname, \n" +
                         " t.patronymic \n" +
                         " FROM tutors t \n"+
-                        " WHERE t.tutorID = " + tutorID +
-                        " LIMIT 1";
+                        " WHERE t.departmentID = " + params.departmentID;
             } else {
                 sql ="SELECT \n"+
                         " t.tutorID as tid, \n" +
@@ -87,6 +91,11 @@ public class TestingsManager {
                 examiner.firstname = res.getString("firstname");
                 examiner.patronymic = res.getString("patronymic");
                 examiners.put(examiner.examinerID, examiner);
+
+                if(examinersID.length() > 0) {
+                    examinersID += ", ";
+                }
+                examinersID += examiner.examinerID;
             }
 
             sql = "";
@@ -97,7 +106,11 @@ public class TestingsManager {
                     sql = " AND (t.tutorID="+params.examinerID+") ";
                 }
             } else {
-                sql = " AND (t.tutorID="+tutorID+") ";
+                if(params.examinerID == 0) {
+                    sql = " AND t.tutorID IN (" + examinersID + ") ";
+                } else {
+                    sql = " AND (t.tutorID=" + params.examinerID + ") ";
+                }
             }
 
             //TestingMessages.TESTING_LABEL

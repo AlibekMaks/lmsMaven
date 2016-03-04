@@ -48,7 +48,12 @@ public class TestingsListMainHandler extends PageContentHandler {
     public void getBodyFunction(PrintWriter pw) { }
 
     public void getMainPart(PrintWriter pw) {
-        new Parser(new FileReader("tests/testings/mytestings.list.html").read(servletContext),
+        String templateFileName = "tests/testings/mytestings.list.html";
+        if(person.isAdministrator) {
+            templateFileName = "tests/testings/testings.list-superAdmin.html";
+        }
+
+        new Parser(new FileReader(templateFileName).read(servletContext),
                 pw,
                 new TestingsListHandler(lang, person, params, servletContext, message, tutorID, calendar)).parse();
     }

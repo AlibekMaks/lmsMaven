@@ -43,8 +43,14 @@ public class ReportsListMainHandler extends PageContentHandler {
 
     public void getMainPart(PrintWriter pw) {
         if (roleID != Constants.TUTOR) tutorID = 0;
+
+        String templateFileName = "tests/reports/common/reportsList.html";
+        if(person.isAdministrator) {
+            templateFileName = "tests/reports/common/reportsList-superAdmin.html";
+        }
+
         ReportsListHandler handler = new ReportsListHandler(person, params, lang, servletContext, tutorID, calendar, roleID);
-        FileReader fileReader = new FileReader("tests/reports/common/reportsList.txt");
+        FileReader fileReader = new FileReader(templateFileName);
         Parser parser = new Parser(fileReader.read(servletContext), pw, handler);
         parser.parse();
     }

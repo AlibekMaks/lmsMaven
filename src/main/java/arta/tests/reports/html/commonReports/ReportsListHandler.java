@@ -50,7 +50,7 @@ public class ReportsListHandler extends TemplateHandler {
         this.calendar = calendar;
         this.roleID = roleID;
         this.servletContext  = servletContext;
-        FileReader fileReader = new FileReader("tests/reports/common/singleReport.txt");
+        FileReader fileReader = new FileReader("tests/reports/common/singleReport.html");
         str = fileReader.read(servletContext);
         manager = new CommonTestReportsManager();
         manager.mysearch(person, params, lang, tutorID);

@@ -126,12 +126,18 @@ public class CommonTestReportsManager {
         ResultSet res = null;
 
         try{
+            if(!person.isAdministrator) {
+                params.departmentID = person.getDepartmentID();
+            }
+
+
             examiners.clear();
 
             ConnectionPool connectionPool = new ConnectionPool();
             con = connectionPool.getConnection();
             st = con.createStatement();
 
+            String examinersID = "";
             String _sql = "";
             if(!person.isAdministrator){
                 _sql = "SELECT "+
@@ -140,8 +146,7 @@ public class CommonTestReportsManager {
                         " t.firstname, " +
                         " t.patronymic " +
                         " FROM tutors t "+
-                        " WHERE t.tutorID = " + tutorID +
-                        " LIMIT 1";
+                        " WHERE t.departmentID = " + params.departmentID;
             } else {
                 _sql = "SELECT "+
                         " t.tutorID as tid, " +
@@ -163,6 +168,11 @@ public class CommonTestReportsManager {
                 examiner.firstname = res.getString("firstname");
                 examiner.patronymic = res.getString("patronymic");
                 examiners.put(examiner.examinerID, examiner);
+
+                if(examinersID.length() > 0) {
+                    examinersID += ", ";
+                }
+                examinersID += examiner.examinerID;
             }
 
 //            System.out.println(_sql);
@@ -221,8 +231,8 @@ public class CommonTestReportsManager {
 
             if(!person.isAdministrator){
                 condition.append(" AND (");
-                condition.append("t.tutorID=");
-                condition.append(person.getPersonID());
+                condition.append("t.tutorID IN (" + examinersID + ")");
+                //condition.append(person.getPersonID());
                 condition.append(") ");
             } else {
                 if(params.examinerID > 0){
