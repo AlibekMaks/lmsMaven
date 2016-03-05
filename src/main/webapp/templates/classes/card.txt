@@ -51,7 +51,7 @@
                             </tr>
 
                             <tr>
-                                <td width="10%">
+                                <td width="20%">
                                     {[namekz]}
                                 </td>
                                 <td width=*>
@@ -59,7 +59,7 @@
                                 </td>
                             </tr>
                             <tr>
-                               <td width="10%">
+                               <td width="20%">
                                     {[nameru]}
                                        </td>
                                         <td width=*>

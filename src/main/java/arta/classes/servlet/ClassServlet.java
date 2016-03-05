@@ -47,8 +47,8 @@ public class ClassServlet extends HttpServlet {
             StudyClass studyClass = new StudyClass();
             studyClass.setClassID(extractor.getInteger(request.getParameter("classID")));
             studyClass.setExamID(extractor.getInteger(request.getParameter("examID")));
-            studyClass.setClassName(extractor.getRequestString(request.getParameter("nameru")));
-            studyClass.setClassName(extractor.getRequestString(request.getParameter("namekz")));
+            studyClass.setClassNameru(extractor.getRequestString(request.getParameter("nameru")));
+            studyClass.setClassNamekz(extractor.getRequestString(request.getParameter("namekz")));
 
             Message message = new Message();
             studyClass.save(message, lang, params, person.getPersonID());            

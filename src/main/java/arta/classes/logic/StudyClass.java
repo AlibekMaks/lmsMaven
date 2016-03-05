@@ -21,6 +21,7 @@ public class StudyClass {
 
     private int classID;
     private String classNameru;
+    private String classNamekz;
     private Integer examID;
 
     public ArrayList<StudyGroup> groups = new ArrayList<StudyGroup>();
@@ -105,8 +106,9 @@ public class StudyClass {
 
     private void load(int lang, Statement st, ResultSet res) throws Exception{
 
-            res = st.executeQuery("SELECT classname, examID FROM classes WHERE classID="+classID);
+            res = st.executeQuery("SELECT classnamekz,classname, examID FROM classes WHERE classID="+classID);
             if (res.next()){
+                classNamekz = res.getString("classnamekz");
                 classNameru = res.getString("classname");
                 examID = res.getInt("examID");
             }
@@ -126,11 +128,12 @@ public class StudyClass {
 
     }
 
-    public SimpleObject loadAsSimpleObject(int classID){
+    public SimpleObjectRU loadAsSimpleObject(int classID){
         Connection con = null;
         Statement st = null;
         ResultSet res = null;
-        SimpleObject studyClass = new SimpleObject();
+        SimpleObjectRU studyClass = new SimpleObjectRU();
+        SimpleObjectKZ studyClasskz = new SimpleObjectKZ();
         studyClass.id = classID;
 
         try{
@@ -139,11 +142,13 @@ public class StudyClass {
             con = connectionPool.getConnection();
             st = con.createStatement();
 
-            res = st.executeQuery("SELECT classname FROM classes WHERE classID="+classID);
+            res = st.executeQuery("SELECT classname,classnamekz FROM classes WHERE classID="+classID);
             if (res.next()){
-                studyClass.name = res.getString(1);
+                studyClass.nameru = res.getString(1);
+                studyClasskz.namekz = res.getString(2);
             } else {
-                studyClass.name = "";
+                studyClass.nameru = "";
+                studyClasskz.namekz = "";
             }
 
         } catch (Exception exc){
@@ -187,9 +192,10 @@ public class StudyClass {
 
             if (classID > 0){
                 st.execute("UPDATE classes SET examID="+examID+", classname='"+trsf.getDBString(classNameru)+"' " +
-                        " WHERE classID="+classID);
+                        ", classnamekz='"+trsf.getDBString(classNamekz)+"' WHERE classID="+classID);
             } else {
-                st.execute("INSERT INTO classes (examID, classname) VALUES ("+examID+", '"+trsf.getDBString(classNameru)+"')",
+                st.execute("INSERT INTO classes (examID, classname, classnamekz) " +
+                                "VALUES ("+examID+", '"+trsf.getDBString(classNameru)+"', '"+trsf.getDBString(classNamekz)+"')",
                          Statement.RETURN_GENERATED_KEYS);
                 res = st.getGeneratedKeys();
                 if (res.next()){
@@ -320,7 +326,10 @@ public class StudyClass {
         if (classNameru == null) return "";
         return classNameru;
     }
-
+    public String getClassNamekz() {
+        if (classNamekz == null) return "";
+        return classNamekz;
+    }
 
     public void setClassID(int classID) {
         this.classID = classID;
@@ -330,7 +339,10 @@ public class StudyClass {
         this.examID = examID;
     }
 
-    public void setClassName(String classNameru) {
+    public void setClassNameru(String classNameru) {
         this.classNameru = classNameru;
+    }
+    public void setClassNamekz(String classNamekz) {
+        this.classNamekz = classNamekz;
     }
 }

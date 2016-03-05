@@ -168,6 +168,7 @@ public class DBSchema {
         DBTable classes = new DBTable("classes");
         classes.fields.add(new DBField("classid", FieldType.INTEGER, false, Key.AUTO_INCREMENT_KEY));
         classes.fields.add(new DBField("classname", FieldType.VARCHAR, Varchar.LONG_NAME));
+        classes.fields.add(new DBField("classnamekz", FieldType.VARCHAR, Varchar.LONG_NAME));
         classes.fields.add(new DBField("examID", FieldType.INTEGER, "0"));
         tables.add(classes);
 

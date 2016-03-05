@@ -51,7 +51,7 @@ public class ClassesSelect {
 
             while (res.next()){
                 SimpleObject classObject = new SimpleObject();
-                classObject.nameru = res.getString("name");
+                classObject.name = res.getString("name");
                 classObject.id = res.getInt("id");
                 classes.add(classObject);
             }
@@ -94,7 +94,7 @@ public class ClassesSelect {
 
         for (int i = 0; i < classes.size(); i ++){
             pw.print(select.addOption(classes.get(i).id, classes.get(i).id == value,
-                    classes.get(i).nameru));
+                    classes.get(i).name));
         }
 
         pw.print(select.endSelect());

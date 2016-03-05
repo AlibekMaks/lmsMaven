@@ -47,10 +47,18 @@ public class ClassCard extends TemplateHandler {
     }
 
     public void replace(String name, PrintWriter pw) {
-        if (name.equals("name")){
+        if (name.equals("nameru")){
+            pw.print(MessageManager.getMessage(lang, Constants.NAMERU, null));
+        } else if (name.equals("nameru value")){
+            pw.print(trsf.getHTMLString(studyClass.getClassNameru()));
+        } else if (name.equals("namekz")){
+            pw.print(MessageManager.getMessage(lang, Constants.NAMEKZ, null));
+        } else if (name.equals("namekz value")){
+            pw.print(trsf.getHTMLString(studyClass.getClassNamekz()));
+        } else if (name.equals("name")){
             pw.print(MessageManager.getMessage(lang, Constants.NAME, null));
         } else if (name.equals("name value")){
-            pw.print(trsf.getHTMLString(studyClass.getClassNameru()));
+            pw.print(trsf.getHTMLString(studyClass.getClassNamekz()));
         } else if (name.equals("maxlenth")){
             pw.print(Varchar.NAME);
         } else if (name.equals("subjects")){
