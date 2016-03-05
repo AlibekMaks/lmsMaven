@@ -126,6 +126,8 @@ public class Constants {
     public static final int SAVED = 44;
     public static final int NOT_SAVED = 45;    
     public static final int NAME = 102;
+    public static final int NAMERU = 2000;
+    public static final int NAMEKZ = 2001;
     public static final int INDEX_ID = 218235;
     public static final int INDEX_NUMBER = 218358;
     public static final int ENTER_FIELD_VALUE = 109;

@@ -50,7 +50,7 @@ public class ClassCard extends TemplateHandler {
         if (name.equals("name")){
             pw.print(MessageManager.getMessage(lang, Constants.NAME, null));
         } else if (name.equals("name value")){
-            pw.print(trsf.getHTMLString(studyClass.getClassName()));
+            pw.print(trsf.getHTMLString(studyClass.getClassNameru()));
         } else if (name.equals("maxlenth")){
             pw.print(Varchar.NAME);
         } else if (name.equals("subjects")){
@@ -102,7 +102,7 @@ public class ClassCard extends TemplateHandler {
             pw.print(MessageManager.getMessage(lang, Constants.SAVE, null));
         } else if (name.equals("page header")){
             Properties prop = new Properties();
-            prop.setProperty("name", studyClass.getClassName());
+            prop.setProperty("name", studyClass.getClassNameru());
             pw.print(MessageManager.getMessage(lang, ClassMessages.CLASS, prop));
         } else if (name.equals("size")){
             pw.print(Constants.MENU_IMAGE_SIZE);

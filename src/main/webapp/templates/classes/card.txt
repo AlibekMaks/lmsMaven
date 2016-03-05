@@ -52,12 +52,20 @@
 
                             <tr>
                                 <td width="10%">
-                                    {[name]}
+                                    {[namekz]}
                                 </td>
                                 <td width=*>
-                                    <input name="name" id="name" style="width:100%" class="input" value="{[name value]}" maxlength="{[maxlenth]}"/>
+                                    <input name="namekz" id="namekz" style="width:100%" class="input" value="{[namekz value]}" maxlength="{[maxlenth]}"/>
                                 </td>
                             </tr>
+                            <tr>
+                               <td width="10%">
+                                    {[nameru]}
+                                       </td>
+                                        <td width=*>
+                                         <input name="nameru" id="nameru" style="width:100%" class="input" value="{[nameru value]}" maxlength="{[maxlenth]}"/>
+                                        </td>
+                                    </tr>
 
                             <tr>
                                 <td height="20px">

@@ -20,7 +20,7 @@ import java.sql.ResultSet;
 public class StudyClass {
 
     private int classID;
-    private String className;
+    private String classNameru;
     private Integer examID;
 
     public ArrayList<StudyGroup> groups = new ArrayList<StudyGroup>();
@@ -107,7 +107,7 @@ public class StudyClass {
 
             res = st.executeQuery("SELECT classname, examID FROM classes WHERE classID="+classID);
             if (res.next()){
-                className = res.getString("classname");
+                classNameru = res.getString("classname");
                 examID = res.getInt("examID");
             }
 
@@ -186,10 +186,10 @@ public class StudyClass {
             st = con.createStatement();
 
             if (classID > 0){
-                st.execute("UPDATE classes SET examID="+examID+", classname='"+trsf.getDBString(className)+"' " +
+                st.execute("UPDATE classes SET examID="+examID+", classname='"+trsf.getDBString(classNameru)+"' " +
                         " WHERE classID="+classID);
             } else {
-                st.execute("INSERT INTO classes (examID, classname) VALUES ("+examID+", '"+trsf.getDBString(className)+"')",
+                st.execute("INSERT INTO classes (examID, classname) VALUES ("+examID+", '"+trsf.getDBString(classNameru)+"')",
                          Statement.RETURN_GENERATED_KEYS);
                 res = st.getGeneratedKeys();
                 if (res.next()){
@@ -199,7 +199,7 @@ public class StudyClass {
                 if (res.next()){
                     params.recordsCount = res.getInt(1);
                 }
-                Part part = new Part(className, 0, 0, classID);
+                Part part = new Part(classNameru, 0, 0, classID);
                 part.create(lang, new Message());
                 
             }
@@ -287,15 +287,15 @@ public class StudyClass {
 
     private boolean check(Message message, int lang){
         boolean checked = true;
-        if (className == null || className.length() == 0){
+        if (classNameru == null || classNameru.length() == 0){
             Properties prop = new Properties();
-            prop.setProperty("field", MessageManager.getMessage(lang, Constants.NAME, null));
+            prop.setProperty("field", MessageManager.getMessage(lang, Constants.NAMERU, null));
             message.addReason(MessageManager.getMessage(lang, Constants.ENTER_FIELD_VALUE, prop));
             checked = false;
         } else {
-            if (className.length()> Varchar.NAME/2){
+            if (classNameru.length()> Varchar.NAME/2){
                 Properties prop = new Properties();
-                prop.setProperty("field", MessageManager.getMessage(lang, Constants.NAME, null));
+                prop.setProperty("field", MessageManager.getMessage(lang, Constants.NAMERU, null));
                 message.addReason(MessageManager.getMessage(lang, FileCabinetMessages.TOO_LONG_VALUE, prop));
                 checked = false;
             }
@@ -316,9 +316,9 @@ public class StudyClass {
         return examID;
     }
 
-    public String getClassName() {
-        if (className == null) return "";
-        return className;
+    public String getClassNameru() {
+        if (classNameru == null) return "";
+        return classNameru;
     }
 
 
@@ -330,7 +330,7 @@ public class StudyClass {
         this.examID = examID;
     }
 
-    public void setClassName(String className) {
-        this.className = className;
+    public void setClassName(String classNameru) {
+        this.classNameru = classNameru;
     }
 }

@@ -194,7 +194,6 @@ public class AttestatTestReportBuilder {
     	str.append("<td>");
     	str.append("</td>");
     	str.append("</tr>");
-    	
     	str.append("<tr>");
     	str.append("<td>");
     	str.append("</td>");
