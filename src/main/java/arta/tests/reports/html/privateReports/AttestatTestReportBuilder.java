@@ -58,7 +58,7 @@ public class AttestatTestReportBuilder {
     	str.append(bundle.getString("educatioin"));
     	str.append("&nbsp;");
 		str.append(student.getEducation());
-		str.append("&nbsp;");
+		str.append(",&nbsp;");
     	str.append(bundle.getString("institution"));
     	str.append("&nbsp;");
     	str.append(student.getEducationUZ());
@@ -76,33 +76,37 @@ public class AttestatTestReportBuilder {
     	str.append("5.&nbsp;");
     	str.append(bundle.getString("upgrading.info"));
     	str.append("&nbsp;");
-    	str.append( student.isHadUpgradedQualification()?"☑":"☒" );
+    	str.append( student.isHadUpgradedQualification()? bundle.getString("yes"): bundle.getString("no"));
     	str.append("<br/>");
     	str.append("6.&nbsp;");
     	str.append(bundle.getString("position.and.date"));
     	// SELECT FROM positions
     	str.append("&nbsp;");
     	str.append(student.getClassName());
-    	str.append("&nbsp;");
-    	str.append(student.getStartdate().getStringDateValue(lang));
+    	str.append(",&nbsp;");
+    	str.append(student.getStartdate().getInputValue());
+        str.append("&nbsp;");
+        str.append(bundle.getString("year"));
+//    	str.append("<br/>");
+//    	str.append("7.&nbsp;");
+//    	str.append(bundle.getString("experience.overall"));
+//    	str.append("&nbsp;");
+//    	appendStaz(bundle, str, student.getStazOverallStart());
     	str.append("<br/>");
     	str.append("7.&nbsp;");
-    	str.append(bundle.getString("experience.overall"));
-    	str.append("&nbsp;");
-    	appendStaz(bundle, str, student.getStazOverallStart());
-    	str.append("<br/>");
-    	str.append("8.&nbsp;");
     	str.append(bundle.getString("experience.post"));
     	str.append("&nbsp;");
     	appendStaz(bundle, str, student.getStazPostStart());
     	str.append("<br/>");
-    	str.append("9.&nbsp;");
+    	str.append("8.&nbsp;");
     	str.append(bundle.getString("results"));
     	str.append("<br/>");
-    	
+		str.append("<br/>");
     	str.append("<table style=\"width: 100%;border:1px solid black;border-collapse:collapse;\">");
     	str.append("<tr style=\"border:1px solid black;\">");
-    	str.append("<td style=\"border-right:1px solid black;\">№");
+    	str.append("<td style=\"border-right:1px solid black;\">" );
+        str.append("&nbsp;&nbsp;&nbsp;");
+       // str.append(bundle.getString("numb"));
     	str.append("</td>");
     	str.append("<td style=\"border-right:1px solid black;\">");
     	str.append(bundle.getString("header.testing"));
@@ -112,36 +116,78 @@ public class AttestatTestReportBuilder {
     	str.append("</td>");
     	str.append("<td style=\"border-right:1px solid black;\">");
     	str.append(bundle.getString("header.interview"));
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append(bundle.getString("header.summary"));
-    	str.append("</td>");
-    	str.append("</tr>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append(bundle.getString("header.summary"));
+//    	str.append("</td>");
+//    	str.append("</tr>");
     	
     	str.append("<tr style=\"border:1px solid black;\">");
     	str.append("<td style=\"border-right:1px solid black;\"></td>" +
     			"<td style=\"border-right:1px solid black;\">" + testing.mark + "</td>" +
-    			"<td style=\"border-right:1px solid black;\"></td>" +
-    			"<td style=\"border-right:1px solid black;\"></td>" +
-    			"<td></td>");
+    			"<td style=\"border-right:1px solid black;\">"
+                +bundle.getString("yes2") + "<br/>"
+                +bundle.getString("no2") +
+                "</td>" +
+    			"<td style=\"border-right:1px solid black;\">"
+                +bundle.getString("yes3") + "<br/>"
+                +bundle.getString("no3") +
+                "</td>" ); // +
+    			//"<td></td>");
     	str.append("</tr>");
     	str.append("</table>");
     	
     	str.append("<br/>");
-    	str.append("10.&nbsp;");
+    	str.append("9.&nbsp;");
     	str.append(bundle.getString("present.committee"));
     	str.append("<br/>");
-    	str.append(bundle.getString("votes.count") + "___");
+        str.append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        str.append(bundle.getString("votes.count") + "___________");
     	str.append("<br/>");
-    	str.append(bundle.getString("votes.positive") + "___");
+        str.append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        str.append(bundle.getString("votes.positive") + " _____________");
     	str.append("<br/>");
-    	str.append(bundle.getString("votes.negative") + "___");
+        str.append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        str.append(bundle.getString("votes.negative") + "__________");
     	str.append("<br/>");
-    	str.append(bundle.getString("votes.indifferent") + "___");
+        str.append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        str.append(bundle.getString("votes.indifferent") + "__________");
     	str.append("<br/>");
-    	str.append("11.&nbsp;");
+    	str.append("10.&nbsp;");
     	str.append(bundle.getString("comission.decision"));
     	str.append("<br/>");
+        str.append("<table style=\"width: 100%;border:1px solid black;border-collapse:collapse;\">");
+        str.append("<tr style=\"border:1px solid black;\">");
+        str.append("<td style=\"border-right:1px solid black;\">&nbsp;&nbsp;&nbsp;" );
+        str.append("</td>");
+        str.append("<td style=\"border-right:1px solid black;\">");
+        str.append(bundle.getString("comission.decision1"));
+        str.append("</td>");
+        str.append("</tr>");
+        str.append("<tr style=\"border:1px solid black;\">");
+        str.append("<td style=\"border-right:1px solid black;\">&nbsp;&nbsp;&nbsp;" );
+        str.append("</td>");
+        str.append("<td style=\"border-right:1px solid black;\">");
+        str.append(bundle.getString("comission.decision2"));
+        str.append("</td>");
+        str.append("</tr>");
+        str.append("<tr style=\"border:1px solid black;\">");
+        str.append("<td style=\"border-right:1px solid black;\">&nbsp;&nbsp;&nbsp;" );
+        str.append("</td>");
+        str.append("<td style=\"border-right:1px solid black;\">");
+        str.append(bundle.getString("comission.decision3"));
+        str.append("</td>");
+        str.append("</tr>");
+        str.append("<tr style=\"border:1px solid black;\">");
+        str.append("<td style=\"border-right:1px solid black;\">&nbsp;&nbsp;&nbsp;" );
+        str.append("</td>");
+        str.append("<td style=\"border-right:1px solid black;\">");
+        str.append(bundle.getString("comission.decision4"));
+        str.append("</td>");
+        str.append("</tr>");
+        str.append("</table>");
+        str.append("11.&nbsp;");
+        str.append(bundle.getString("recomed"));
     	str.append("<div style=\"width:100%;border-bottom:1px solid black;\">&nbsp;</div>");
     	str.append("<div style=\"width:100%;border-bottom:1px solid black;\">&nbsp;</div>");
     	str.append("<div style=\"width:100%;border-bottom:1px solid black;\">&nbsp;</div>");
@@ -206,34 +252,7 @@ public class AttestatTestReportBuilder {
     	str.append("<td>");
     	str.append("</td>");
     	str.append("</tr>");
-    	
-    	str.append("<tr>");
-    	str.append("<td>");
-    	str.append(bundle.getString("committee.secretary"));
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("</tr>");
-    	
-    	str.append("<tr>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ signature +"</span>");
-    	str.append("</td>");
-    	str.append("</td width=\"5%\">");
-    	str.append("<td>");
-    	str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ decipherment +"</span>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("</tr>");
-    	
+
     	str.append("<tr>");
     	str.append("<td>");
     	str.append(bundle.getString("committee.members"));
@@ -274,59 +293,85 @@ public class AttestatTestReportBuilder {
     	str.append("</td>");
     	str.append("</tr>");
     	
-    	str.append("<tr>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("</tr>");
+//    	str.append("<tr>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("</tr>");
     	
-    	str.append("<tr>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ signature +"</span>");
-    	str.append("</td>");
-    	str.append("</td width=\"5%\">");
-    	str.append("<td>");
-    	str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ decipherment +"</span>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("</tr>");
-    	
+//    	str.append("<tr>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ signature +"</span>");
+//    	str.append("</td>");
+//    	str.append("</td width=\"5%\">");
+//    	str.append("<td>");
+//    	str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ decipherment +"</span>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("</tr>");
+
+        str.append("<tr>");
+        str.append("<td>");
+        str.append(bundle.getString("committee.secretary"));
+        str.append("</td>");
+        str.append("<td>");
+        str.append("</td>");
+        str.append("<td>");
+        str.append("</td>");
+//        str.append("<td>");
+//        str.append("</td>");
+        str.append("<td>"); //    <-- комиссия +
+        str.append("</td>");
+        str.append("</tr>");
+
+        str.append("<tr>");
+        str.append("<td>");
+        str.append("</td>");
+        str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ signature +"</span>");
+        str.append("</td>");
+        str.append("</td width=\"5%\">");
+        str.append("<td>");
+//        str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\"></span>");
+//        str.append("</td>");
+        str.append("<td>");
+        str.append("</td>");
+        str.append("</tr>");
     	str.append("</table>");
     	
-    	str.append("<br/>");
-    	str.append("<br/>");
-    	str.append(bundle.getString("committee.date"));
-    	str.append("<br/>");
+//    	str.append("<br/>");
+//    	str.append("<br/>");
+//    	str.append(bundle.getString("committee.date"));
+//    	str.append("<br/>");
     	
-    	str.append("<table style=\"width: 80%;border-collapse:collapse;\">");
-    	str.append("<tr>");
-    	str.append("<td width=\"40%\">");
-    	str.append(bundle.getString("had.read.attestation.info"));
-    	str.append("</td>");
-    	str.append("<td width=\"30%\">");
-    	str.append("</td>");
-    	str.append("<td width=*>");
-    	str.append("</td>");
-    	str.append("</tr>");
-    	
-    	str.append("<tr>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ bundle.getString("signature.and.date") +"</span>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("</tr>");
-    	str.append("</table>");
+//    	str.append("<table style=\"width: 80%;border-collapse:collapse;\">");
+//    	str.append("<tr>");
+//    	str.append("<td width=\"40%\">");
+//    	str.append(bundle.getString("had.read.attestation.info"));
+//    	str.append("</td>");
+//    	str.append("<td width=\"30%\">");
+//    	str.append("</td>");
+//    	str.append("<td width=*>");
+//    	str.append("</td>");
+//    	str.append("</tr>");
+//
+//    	str.append("<tr>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ bundle.getString("signature.and.date") +"</span>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("</tr>");
+//    	str.append("</table>");
 
         return str;
     }
