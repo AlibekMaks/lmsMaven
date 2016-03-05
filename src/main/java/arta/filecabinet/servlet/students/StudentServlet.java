@@ -55,6 +55,7 @@ public class StudentServlet extends HttpServlet {
             student.getStazOverallStart().loadDate(request.getParameter("staz_o"), Date.FROM_INPUT);
             student.getStazSocietyStart().loadDate(request.getParameter("staz_s"), Date.FROM_INPUT);
             student.getStazPostStart().loadDate(request.getParameter("staz_p"), Date.FROM_INPUT);
+            student.setEducation(extractor.getRequestString(request.getParameter("education")));
             student.setEducationUZ(extractor.getRequestString(request.getParameter("eduUZ")));
             student.setEducationProfession(extractor.getRequestString(request.getParameter("eduProfession")));
             student.setEducationQualification(extractor.getRequestString(request.getParameter("eduQualification")));

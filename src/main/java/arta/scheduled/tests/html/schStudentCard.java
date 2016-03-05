@@ -114,6 +114,10 @@ public class schStudentCard extends TemplateHandler {
             pw.print(MessageManager.getMessage(lang, FileCabinetMessages.ENTER_DATE, null));
         } else if (name.equals("startdate input")){
             calendar.printInput(pw, student.getStartdate(), "start", "form");
+        } else if (name.equals("education")){
+            pw.print(MessageManager.getMessage(lang, FileCabinetMessages.EDU_UZ, null));
+        } else if (name.equals("education value")){
+            pw.print(trsf.getHTMLString(student.getEducation()));
         } else if (name.equals("eduUZ")){
         	pw.print(MessageManager.getMessage(lang, FileCabinetMessages.EDU_UZ, null));
         } else if (name.equals("eduUZ value")){

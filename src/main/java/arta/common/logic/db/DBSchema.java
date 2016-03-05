@@ -33,10 +33,11 @@ public class DBSchema {
         students.fields.add(new DBField("classID", FieldType.INTEGER));
         students.fields.add(new DBField("startdate", FieldType.DATE));
         students.fields.add(new DBField("birthdate", FieldType.DATE));
-        students.fields.add(new DBField("parents", FieldType.VARCHAR, Varchar.DESCRIPTION));
+        students.fields.add(new DBField("parents", FieldType.VARCHAR, Varchar.NAME));
         students.fields.add(new DBField("staz_overall_startdate", FieldType.DATE));
         students.fields.add(new DBField("staz_society_startdate", FieldType.DATE));
         students.fields.add(new DBField("staz_post_startdate", FieldType.DATE));
+        students.fields.add(new DBField("education", FieldType.VARCHAR, Varchar.LONG_NAME));
         students.fields.add(new DBField("edu_uz", FieldType.VARCHAR, Varchar.LONG_NAME));
         students.fields.add(new DBField("edu_profession", FieldType.VARCHAR, Varchar.LONG_NAME));
         students.fields.add(new DBField("edu_qualification", FieldType.VARCHAR, Varchar.LONG_NAME));

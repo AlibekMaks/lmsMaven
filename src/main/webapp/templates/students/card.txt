@@ -176,6 +176,14 @@
                             </tr>
                             <tr>
                                 <td width="20%">
+                                    {[education]}
+                                  </td>
+                                   <td>
+                                     <input name="education" id="fn" style="width:100%" value="{[education value]}" class="input" maxlength="{[maxlength]}"/>
+                                    </td>
+                                  </tr>
+                            <tr>
+                                <td width="20%">
                                     {[eduUZ]}
                                 </td>
                                 <td>

@@ -30,6 +30,7 @@ public class Student extends Person{
     private Date stazSocietyStart;
     private Date stazPostStart;
     private String educationUZ;
+    private String education;
     private String educationProfession;
     private String educationQualification;
     private boolean hadUpgradedQualification;
@@ -100,6 +101,7 @@ public class Student extends Person{
                         " adress='"+trsf.getDBString(adress)+"', " +
                         " phone='"+trsf.getDBString(phone)+"', " +
                         " parents='"+trsf.getDBString(parents)+"', " +
+                        " education='"+trsf.getDBString(education)+"', " +
                         " edu_uz='"+trsf.getDBString(educationUZ)+"', " +
                         " edu_profession='"+trsf.getDBString(educationProfession)+"', " +
                         " edu_qualification='"+trsf.getDBString(educationQualification)+"', " +
@@ -125,7 +127,7 @@ public class Student extends Person{
 
                 st.execute("INSERT INTO students (lastname, firstname, patronymic, birthdate, " +
                 		"staz_overall_startdate, staz_society_startdate, staz_post_startdate, " +
-                		"edu_uz, edu_profession, edu_qualification, " +
+                		" education, edu_uz, edu_profession, edu_qualification, " +
                 		"isUpgrade, isDirector, isInMaternityLeave, departmentid, " +
                 		"adress, phone, parents, startdate, classID) " +
                         " VALUES ('"+trsf.getDBString(lastname)+"', '"+trsf.getDBString(firstname)+"', '"+trsf.getDBString(patronymic)+"', " +
@@ -133,6 +135,7 @@ public class Student extends Person{
                         " '"+stazOverallStart.getDate()+"', "+
                         " '"+stazSocietyStart.getDate()+"', "+
                         " '"+stazPostStart.getDate()+"', "+
+                        " '"+ trsf.getDBString(education) +"'," +
                         " '"+ trsf.getDBString(educationUZ) +"'," +
                         " '"+ trsf.getDBString(educationProfession) +"'," +
                         " '"+ trsf.getDBString(educationQualification) +"', " +
@@ -315,6 +318,7 @@ public class Student extends Person{
                 " staz_overall_startdate as staz_o, " +
                 " staz_society_startdate as staz_s, " +
                 " staz_post_startdate as staz_p, " +
+                " education," +
                 " edu_uz," +
                 " edu_profession as edu_p," +
                 " edu_qualification as edu_q," +
@@ -338,6 +342,7 @@ public class Student extends Person{
             stazOverallStart.loadDate(res.getString("staz_o"), Date.FROM_DB_CONVERT);
             stazSocietyStart.loadDate(res.getString("staz_s"), Date.FROM_DB_CONVERT);
             stazPostStart.loadDate(res.getString("staz_p"), Date.FROM_DB_CONVERT);
+            education = res.getString("education");
             educationUZ = res.getString("edu_uz");
             educationProfession = res.getString("edu_p");
             educationQualification = res.getString("edu_q");
@@ -482,7 +487,12 @@ public class Student extends Person{
 		return stazPostStart;
 	}
 
-	public String getEducationUZ() {
+    public String getEducation() {        return education;}
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public String getEducationUZ() {
 		return educationUZ;
 	}
 
