@@ -5,6 +5,7 @@ import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import arta.filecabinet.logic.tutors.Tutor;
 import kz.arta.plt.common.Person;
 
 import arta.tests.common.TestMessages;
@@ -17,7 +18,10 @@ import arta.filecabinet.logic.students.Student;
 import arta.classes.ClassMessages;
 import arta.subjects.logic.SubjectMessages;
 
+import javax.swing.plaf.synth.Region;
+
 public class AttestatTestReportBuilder {
+
 
     public StringBuffer build(Testing testing, Student student, int lang){
     	
@@ -31,9 +35,10 @@ public class AttestatTestReportBuilder {
     	}
 
 
+
         //String p=AttestatTestReportBuilder.class.getResource("attestat_report_msgs.properties").getPath();
     	ResourceBundle bundle = ResourceBundle.getBundle("attestat_report_msgs", locale); //arta.tests.reports.html.privateReports.
-    	
+
         StringBuffer str = new StringBuffer();
         
         str.append("<center><b>");
@@ -376,7 +381,63 @@ public class AttestatTestReportBuilder {
         return str;
     }
 
-	private void appendStaz(ResourceBundle bundle, StringBuffer str, Date dade) {
+    public StringBuffer tutor(Testing testing,Tutor tutor, int lang) {
+
+        Locale locale = null;
+        if (lang == Languages.ENGLISH) {
+            locale = new Locale("en");
+        } else if (lang == Languages.KAZAKH) {
+            locale = new Locale("kz");
+        } else {
+            locale = new Locale("ru");
+        }
+
+        ResourceBundle bundle = ResourceBundle.getBundle("attestat_report_msgs", locale); //arta.tests.reports.html.privateReports.
+        StringBuffer str1 = new StringBuffer();
+
+        String signature = bundle.getString("signature");
+       // String decipherment = bundle.getString("decipherment");
+        str1.append("<table style=\"width: 100%;border-collapse:collapse;\">");
+        str1.append("<tr>");
+        str1.append("<td width=\"40%\">");
+        str1.append(bundle.getString("committee.chairman"));
+        str1.append("</td>");
+        str1.append("<td width=\"15%\">");
+        str1.append("</td>");
+        str1.append("<td width=\"1%\">");
+        str1.append("</td>");
+        str1.append("<td width=\"15%\">");
+        str1.append("</td>");
+        str1.append("<td width=*>");
+        str1.append("</td>");
+        str1.append("</tr>");
+
+        str1.append("<tr>");
+        str1.append("<td>");
+        str1.append("</td>");
+        str1.append("<td>");
+        str1.append("</td>");
+        str1.append("<td>");
+        str1.append("</td>");
+        str1.append("<td>"+testing.name+"</td>"); //    <-- комиссия +
+       // str1.append("</td>");
+        str1.append("</tr>");
+        str1.append("<tr>");
+        str1.append("<td>");
+        str1.append("</td>");
+        str1.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ signature +"</span>");
+        str1.append("</td>");
+        str1.append("</td width=\"5%\">");
+        str1.append("<td>");
+        str1.append("<td>");
+        str1.append("</td>");
+        str1.append("</tr>");
+        str1.append("</table>");
+        return str1;
+    }
+
+
+    private void appendStaz(ResourceBundle bundle, StringBuffer str, Date dade) {
 		int days = new Date().getDifference(dade);
     	int years = days / 365;
     	int months = (days % 365) / 30;

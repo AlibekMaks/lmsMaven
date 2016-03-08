@@ -37,6 +37,8 @@ public class Testing implements Serializable {
     public int mainTestingID;
     public int state;
     public int mark;
+    public int tutorid;
+    public String name;
     public ArrayList<Question> questions = new ArrayList<Question>();
     private Map<Integer, List<Question>> questionsByTests = new HashMap<Integer, List<Question>>();
     private Map<Integer, List<Test>> myQuestionsByTests = new HashMap<Integer, List<Test>>();
@@ -283,6 +285,7 @@ public class Testing implements Serializable {
         Connection con = null;
         Statement st = null;
         ResultSet res = null;
+        ResultSet res2 = null;
 
         try {
 
@@ -382,10 +385,26 @@ public class Testing implements Serializable {
 
             res = st.executeQuery("SELECT mark FROM registrar WHERE testingID=" + testingID + " " +
                                   " AND studentID=" + studentID);
-            if (res.next()) {
+
+            if (res.next())
+            {
                 mark = res.getInt("mark");
             }
+            res2 = st.executeQuery("SELECT tutorid,lastname ln, firstname fn, patronymic p FROM tutors WHERE tutorid=1 ");
 
+            while (res2.next()){
+
+                name = res2.getString("ln");
+                String tmp = res2.getString("fn");
+                if (tmp!=null && tmp.length()>0){
+                    name += " " + tmp.substring(0, 1) + ".";
+                    tmp = res2.getString("p");
+                    if (tmp!=null && tmp.length()>0){
+                        name += tmp.substring(0, 1) + ".";
+                    }
+                }
+                tutorid = res2.getInt("tutorid");
+            }
         } catch (Exception exc) {
             Log.writeLog(exc);
         } finally {
@@ -1064,4 +1083,6 @@ public class Testing implements Serializable {
             }
         }
     }
+
+
 }

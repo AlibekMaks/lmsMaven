@@ -10,9 +10,12 @@ import arta.common.logic.util.Languages;
 import arta.common.logic.util.Log;
 import arta.filecabinet.logic.Person;
 import arta.filecabinet.logic.students.Student;
+import arta.filecabinet.logic.tutors.Tutor;
 import arta.tests.reports.html.privateReports.AttestatTestReportBuilder;
 import arta.tests.reports.html.privateReports.TestReportBuilder;
 import arta.tests.reports.html.privateReports.TestReportHeader;
+
+import javax.swing.plaf.synth.Region;
 
 /**
  * Мндивидуальная ведомость тестирования
@@ -127,18 +130,22 @@ public class TestReport {
 
     }
 
-	public String getReportAttestat(int testingID, int studentID, int lang) {
+	public String getReportAttestat(int testingID, int studentID,int tutorid, String name, int lang) {
 		Testing testing = new Testing();
+        Tutor tutor = new Tutor();
+        testing.tutorid= tutorid;
+        testing.name=name;
         testing.studentID = studentID;
         testing.testingID = testingID;
         testing.load();
-        
+        tutor.loadName();
         Student student = new Student();
         student.loadById(studentID);
         
 		StringBuffer report_attestat = new StringBuffer("<table border=0 width=\"100%\" cellpadding=\"20px\"><tr><td>");
         AttestatTestReportBuilder builder_attestat = new AttestatTestReportBuilder();
         report_attestat.append(builder_attestat.build(testing, student, lang));
+        report_attestat.append(builder_attestat.tutor(testing, tutor, lang));
         report_attestat.append("</td></tr></table>");
         return report_attestat.toString();
 	}
