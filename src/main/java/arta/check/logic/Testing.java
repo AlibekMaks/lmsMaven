@@ -3,6 +3,7 @@ package arta.check.logic;
 import arta.common.logic.sql.ConnectionPool;
 import arta.common.logic.util.*;
 import arta.common.lock.LockManager;
+import arta.filecabinet.logic.tutors.Tutor;
 import arta.settings.logic.Settings;
 import arta.tests.questions.Question;
 import arta.tests.test.Test;
@@ -39,7 +40,10 @@ public class Testing implements Serializable {
     public int mark;
     public int departmentID;
     public int tutorid;
-    public String name;
+    public String chairman;
+    public String vicechairman;
+    public String members;
+    public String secretary;
     public ArrayList<Question> questions = new ArrayList<Question>();
     private Map<Integer, List<Question>> questionsByTests = new HashMap<Integer, List<Question>>();
     private Map<Integer, List<Test>> myQuestionsByTests = new HashMap<Integer, List<Test>>();
@@ -288,7 +292,9 @@ public class Testing implements Serializable {
         ResultSet res = null;
         ResultSet res0 = null;
         ResultSet res2 = null;
-
+        ResultSet res3 = null;
+        ResultSet res4 = null;
+        ResultSet res5 = null;
         try {
 
             ConnectionPool connectionPool = new ConnectionPool();
@@ -394,26 +400,68 @@ public class Testing implements Serializable {
             }
 
             res0 = st.executeQuery("SELECT departmentID FROM students WHERE studentid=" + studentID + " ");
-
             if (res0.next())
             {
                 departmentID = res0.getInt("departmentID");
             }
 
             res2 = st.executeQuery("SELECT tutorid,lastname ln, firstname fn, patronymic p FROM tutors WHERE ischairman=1 and departmentID=" + departmentID +  "");
-
             while (res2.next()){
-
-                name = res2.getString("ln");
                 String tmp = res2.getString("fn");
                 if (tmp!=null && tmp.length()>0){
-                    name += " " + tmp.substring(0, 1) + ".";
+                    chairman += " " + tmp.substring(0, 1) + ".";
                     tmp = res2.getString("p");
                     if (tmp!=null && tmp.length()>0){
-                        name += tmp.substring(0, 1) + ".";
+                        chairman += tmp.substring(0, 1) + ".";
+
                     }
                 }
+                chairman +=" ";
+                chairman += res2.getString("ln");
                 tutorid = res2.getInt("tutorid");
+            }
+            res3 = st.executeQuery("SELECT tutorid,lastname ln, firstname fn, patronymic p FROM tutors WHERE isvicechairman=1 and departmentID=" + departmentID +  "");
+            while (res3.next()){
+                String tmp = res3.getString("fn");
+                if (tmp!=null && tmp.length()>0){
+                    vicechairman += " " + tmp.substring(0, 1) + ".";
+                    tmp = res3.getString("p");
+                    if (tmp!=null && tmp.length()>0){
+                        vicechairman += tmp.substring(0, 1) + ".";
+                    }
+                }
+                vicechairman +=" ";
+                vicechairman += res3.getString("ln");
+                tutorid = res3.getInt("tutorid");
+            }
+            res4 = st.executeQuery("SELECT tutorid,lastname ln, firstname fn, patronymic p FROM tutors WHERE ismembers=1 and departmentID=" + departmentID +  "");
+            while (res4.next()){
+                String tmp = res4.getString("fn");
+                if (tmp!=null && tmp.length()>0){
+                    members += " " + tmp.substring(0, 1) + ".";
+                    tmp = res4.getString("p");
+                    if (tmp!=null && tmp.length()>0){
+                        members += tmp.substring(0, 1) + ".";
+                    }
+                }
+                members +=" ";
+                members += res4.getString("ln");
+                tutorid = res4.getInt("tutorid");
+                ArrayList<Tutor> members = new ArrayList<Tutor>(10);
+            }
+            res5 = st.executeQuery("SELECT tutorid,lastname ln, firstname fn, patronymic p FROM tutors WHERE issecretary=1 and departmentID=" + departmentID +  "");
+            while (res5.next()){
+                String tmp = res5.getString("fn");
+                if (tmp!=null && tmp.length()>0){
+                    secretary += " " + tmp.substring(0, 1) + ".";
+                    tmp = res5.getString("p");
+                    if (tmp!=null && tmp.length()>0){
+                        secretary += tmp.substring(0, 1) + ".";
+                    }
+                }
+                secretary +=" ";
+                secretary += res5.getString("ln");
+                tutorid = res5.getInt("tutorid");
             }
         } catch (Exception exc) {
             Log.writeLog(exc);

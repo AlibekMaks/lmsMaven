@@ -48,12 +48,15 @@ public class TestAttestationReportViewServlet extends HttpServlet {
             int testingID = extractor.getInteger(request.getParameter("testingID"));
             int mainTestingID = extractor.getInteger(request.getParameter("mainTestingID"));
             int tutorID = extractor.getInteger(request.getParameter("tutorID"));
-            String name = extractor.getRequestString(request.getParameter("name"));
+            String chairman = extractor.getRequestString(request.getParameter("chairman"));
+            String vicechairman = extractor.getRequestString(request.getParameter("vicechairman"));
+            String members = extractor.getRequestString(request.getParameter("members"));
+            String secretary = extractor.getRequestString(request.getParameter("secretary"));
 
             TestReport report = new TestReport(studentID, testingID);
             report.load();
             
-            String reportAttestat = report.getReportAttestat(testingID, studentID, tutorID, name, lang);
+            String reportAttestat = report.getReportAttestat(testingID, studentID, tutorID, chairman,vicechairman,members,secretary, lang);
             
             if (!print){
 

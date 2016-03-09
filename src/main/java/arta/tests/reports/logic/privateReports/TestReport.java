@@ -130,11 +130,15 @@ public class TestReport {
 
     }
 
-	public String getReportAttestat(int testingID, int studentID,int tutorid, String name, int lang) {
+	public String getReportAttestat(int testingID, int studentID,int tutorid, String chairman,
+                                    String vicechairman, String members, String secretary, int lang) {
 		Testing testing = new Testing();
         Tutor tutor = new Tutor();
         testing.tutorid= tutorid;
-        testing.name=name;
+        testing.chairman=chairman;
+        testing.vicechairman=vicechairman;
+        testing.members=members;
+        testing.secretary=secretary;
         testing.studentID = studentID;
         testing.testingID = testingID;
         testing.load();
@@ -145,7 +149,7 @@ public class TestReport {
 		StringBuffer report_attestat = new StringBuffer("<table border=0 width=\"100%\" cellpadding=\"20px\"><tr><td>");
         AttestatTestReportBuilder builder_attestat = new AttestatTestReportBuilder();
         report_attestat.append(builder_attestat.build(testing, student, lang));
-        report_attestat.append(builder_attestat.tutor(testing, tutor, lang));
+       // report_attestat.append(builder_attestat.tutor(testing, tutor, lang));
         report_attestat.append("</td></tr></table>");
         return report_attestat.toString();
 	}

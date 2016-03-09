@@ -93,7 +93,7 @@ public class Tutor extends Person{
                 return true;
             } else {
                 st.execute("INSERT INTO tutors(lastname, firstname, patronymic, " +
-                        " adress, phone, education, roleID, ischairman, departmentID, " +
+                        " adress, phone, education, roleID, ischairman,isvicechairman,ismembers,issecretary, departmentID, " +
                         " birthdate, startdate) " +
                         " VALUES ('"+trsf.getDBString(lastname)+"', '"+trsf.getDBString(firstname)+"', '"+trsf.getDBString(patronymic)+"', " +
                         " '"+trsf.getDBString(adress)+"', '"+trsf.getDBString(phone)+"', '"+trsf.getDBString(education)+"', "+roleID+", "+ischairman+", "
