@@ -86,6 +86,26 @@ public class TutorCard extends TemplateHandler {
         } else if (name.equals("isadmin checeked")){
             if ((tutor.getRoleID() & Constants.ADMIN) > 0)
                 pw.print(" checked ");
+        } else if (name.equals("ischairman")){
+            pw.print(MessageManager.getMessage(lang, Constants.CHAIRMAN, null));
+        } else if (name.equals("ischairman checeked")){
+            if ((tutor.getChairman()) > 0)
+                pw.print(" checked ");
+        } else if (name.equals("isvicechairman")){
+            pw.print(MessageManager.getMessage(lang, Constants.VICECHAIRMAN, null));
+        } else if (name.equals("isvicechairman checeked")){
+            if ((tutor.getViceChairman()) > 0)
+                pw.print(" checked ");
+        } else if (name.equals("ismembers")){
+            pw.print(MessageManager.getMessage(lang, Constants.MEMBERS, null));
+        } else if (name.equals("ismembers checeked")){
+            if ((tutor.getMembers()) > 0)
+                pw.print(" checked ");
+        } else if (name.equals("issecretary")){
+            pw.print(MessageManager.getMessage(lang, Constants.SECRETATY, null));
+        } else if (name.equals("issecretary checeked")){
+            if ((tutor.getSecretary()) > 0)
+                pw.print(" checked ");
         } else if (name.equals("message")){
             if (message!=null && !message.isEmpty()){
                 pw.print("<tr><td>");

@@ -20,6 +20,10 @@ public abstract class Person {
     protected Date birthdate;
     protected int personID = -1;
     protected int roleID = 0;
+    protected int ischairman = 0;
+    protected int isvicechairman = 0;
+    protected int ismembers = 0;
+    protected int issecretary = 0;
     protected int departmentID = 0;
     public boolean isAdministrator = false;
 
@@ -75,6 +79,8 @@ public abstract class Person {
 
     public abstract int getRoleID();
 
+  //  public abstract int getChairman();
+
     public abstract String getFullName();
 
     public void setFirstname(String firstname) { this.firstname = firstname; }
@@ -123,6 +129,10 @@ public abstract class Person {
         this.roleID = roleID;
     }
 
+    public void setCheirman(int ischairman) { this.ischairman = ischairman;}
+    public void setViceCheirman(int isvicechairman) { this.isvicechairman = isvicechairman;}
+    public void setMembers(int ismembers) { this.ismembers = ismembers;}
+    public void setSecretary(int issecretary) { this.issecretary = issecretary;}
 
     public Date getBirthdate() {
         return birthdate;

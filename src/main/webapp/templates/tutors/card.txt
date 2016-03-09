@@ -150,6 +150,38 @@
                                     {[startdate input]}
                                 </td>
                             </tr>
+                             <tr>
+                                  <td width="20%">
+                                       {[ischairman]}
+                                  </td>
+                                  <td>
+                                       <input type="checkbox" {[ischairman checeked]} name="ischairman"/>
+                                  </td>
+                             </tr>
+                             <tr>
+                                  <td width="20%">
+                                       {[isvicechairman]}
+                                  </td>
+                                  <td>
+                                      <input type="checkbox" {[isvicechairman checeked]} name="isvicechairman"/>
+                                  </td>
+                             </tr>
+                             <tr>
+                                  <td width="20%">
+                                       {[ismembers]}
+                                  </td>
+                                  <td>
+                                      <input type="checkbox" {[ismembers checeked]} name="ismembers"/>
+                                  </td>
+                             </tr>
+                             <tr>
+                                  <td width="20%">
+                                       {[issecretary]}
+                                  </td>
+                                  <td>
+                                      <input type="checkbox" {[issecretary checeked]} name="issecretary"/>
+                                  </td>
+                             </tr>
                          </table>
                     </td>
                 </tr>

@@ -128,11 +128,12 @@ public class StudyClass {
 
     }
 
-    public SimpleObjectRU loadAsSimpleObject(int classID){
+    public SimpleObject loadAsSimpleObject(int classID){
         Connection con = null;
         Statement st = null;
         ResultSet res = null;
-        SimpleObjectRU studyClass = new SimpleObjectRU();
+    //    SimpleObject studyClass = new SimpleObject();
+        SimpleObject studyClass = new SimpleObject();
         SimpleObjectKZ studyClasskz = new SimpleObjectKZ();
         studyClass.id = classID;
 
@@ -144,10 +145,10 @@ public class StudyClass {
 
             res = st.executeQuery("SELECT classname,classnamekz FROM classes WHERE classID="+classID);
             if (res.next()){
-                studyClass.nameru = res.getString(1);
+                studyClass.name = res.getString(1);
                 studyClasskz.namekz = res.getString(2);
             } else {
-                studyClass.nameru = "";
+                studyClass.name = "";
                 studyClasskz.namekz = "";
             }
 

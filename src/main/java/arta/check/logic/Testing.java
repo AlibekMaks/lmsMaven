@@ -37,6 +37,7 @@ public class Testing implements Serializable {
     public int mainTestingID;
     public int state;
     public int mark;
+    public int departmentID;
     public int tutorid;
     public String name;
     public ArrayList<Question> questions = new ArrayList<Question>();
@@ -285,6 +286,7 @@ public class Testing implements Serializable {
         Connection con = null;
         Statement st = null;
         ResultSet res = null;
+        ResultSet res0 = null;
         ResultSet res2 = null;
 
         try {
@@ -390,7 +392,15 @@ public class Testing implements Serializable {
             {
                 mark = res.getInt("mark");
             }
-            res2 = st.executeQuery("SELECT tutorid,lastname ln, firstname fn, patronymic p FROM tutors WHERE tutorid=1 ");
+
+            res0 = st.executeQuery("SELECT departmentID FROM students WHERE studentid=" + studentID + " ");
+
+            if (res0.next())
+            {
+                departmentID = res0.getInt("departmentID");
+            }
+
+            res2 = st.executeQuery("SELECT tutorid,lastname ln, firstname fn, patronymic p FROM tutors WHERE ischairman=1 and departmentID=" + departmentID +  "");
 
             while (res2.next()){
 

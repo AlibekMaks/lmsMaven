@@ -46,6 +46,8 @@ public class Constants {
      * Роль пользователя преподавателя
      */
     public static final int TUTOR = 2;
+    public static final int ISCHAIRMAN = 1;
+    public static final int NOTCHAIRMAN = 0;
 
     /**
      * Включается в роль преподавателя с правами администратора
@@ -123,6 +125,10 @@ public class Constants {
     public static final int SUNDAY_SHORT = 91;
     public static final int SAVE = 96;
     public static final int ADMNISTRATOR = 98;
+    public static final int CHAIRMAN = 2002;
+    public static final int VICECHAIRMAN = 2003;
+    public static final int MEMBERS = 2004;
+    public static final int SECRETATY = 2005;
     public static final int SAVED = 44;
     public static final int NOT_SAVED = 45;    
     public static final int NAME = 102;

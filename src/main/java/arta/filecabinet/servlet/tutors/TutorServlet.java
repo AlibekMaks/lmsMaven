@@ -51,8 +51,17 @@ public class TutorServlet extends HttpServlet {
             tutor.setPatronymic(extractor.getRequestString(request.getParameter("patronymic")));
             tutor.setPhone(extractor.getRequestString(request.getParameter("phone")));
             tutor.setRoleID(Constants.TUTOR);
+            tutor.setCheirman(Constants.ISCHAIRMAN);
+            tutor.setViceCheirman(Constants.ISCHAIRMAN);
+            tutor.setMembers(Constants.ISCHAIRMAN);
+            tutor.setSecretary(Constants.ISCHAIRMAN);
             tutor.setDepartmentID(extractor.getInteger(request.getParameter("department")));
             if(request.getParameter("isadmin")!=null) tutor.setRoleID(tutor.getRoleID()|Constants.ADMIN);
+            if(request.getParameter("ischairman")==null) tutor.setCheirman(Constants.NOTCHAIRMAN);
+            if(request.getParameter("isvicechairman")==null) tutor.setViceCheirman(Constants.NOTCHAIRMAN);
+            if(request.getParameter("ismembers")==null) tutor.setMembers(Constants.NOTCHAIRMAN);
+            if(request.getParameter("issecretary")==null) tutor.setSecretary(Constants.NOTCHAIRMAN);
+
             tutor.getBirthdate().loadDate(request.getParameter("birth"), Date.FROM_INPUT);
             tutor.getStartdate().loadDate(request.getParameter("start"), Date.FROM_INPUT);
             Message message = new Message();

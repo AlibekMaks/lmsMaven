@@ -82,6 +82,10 @@ public class Tutor extends Person{
                         " education='"+trsf.getDBString(education)+"',  " +
                         " birthdate='"+birthdate.getDate()+"', " +
                         " roleID="+roleID+", " +
+                        " ischairman=" + ischairman+", "+
+                        " isvicechairman=" + isvicechairman+", "+
+                        " ismembers=" + ismembers+", "+
+                        " issecretary=" + issecretary+", "+
                         " departmentID="+departmentID+", " +
                         " startdate='"+startdate.getDate()+"' WHERE tutorID="+personID+"");
                 message.setMessageType(Message.INFORMATION_MESSAGE);
@@ -89,10 +93,11 @@ public class Tutor extends Person{
                 return true;
             } else {
                 st.execute("INSERT INTO tutors(lastname, firstname, patronymic, " +
-                        " adress, phone, education, roleID, departmentID, " +
+                        " adress, phone, education, roleID, ischairman, departmentID, " +
                         " birthdate, startdate) " +
                         " VALUES ('"+trsf.getDBString(lastname)+"', '"+trsf.getDBString(firstname)+"', '"+trsf.getDBString(patronymic)+"', " +
-                        " '"+trsf.getDBString(adress)+"', '"+trsf.getDBString(phone)+"', '"+trsf.getDBString(education)+"', "+roleID+", " + departmentID + ", " +
+                        " '"+trsf.getDBString(adress)+"', '"+trsf.getDBString(phone)+"', '"+trsf.getDBString(education)+"', "+roleID+", "+ischairman+", "
+                        +isvicechairman+", "+ismembers+", "+issecretary+", "+ departmentID + ", " +
                         " '"+birthdate.getDate()+"', '"+startdate.getDate()+"')", Statement.RETURN_GENERATED_KEYS);
                 res = st.getGeneratedKeys();
                 if (res.next()){
@@ -191,7 +196,11 @@ public class Tutor extends Person{
                 " education as ed,  " +
                 " roleID as role, " +
                 " departmentID as department, " +
-                " startdate as sd "+
+                " startdate as sd, "+
+                " ischairman as chm, " +
+                " isvicechairman as vichm, " +
+                " ismembers as memb, " +
+                " issecretary as secr " +
                 " FROM tutors "+
                 " WHERE tutorid="+personID);
         if (res.next()){
@@ -203,6 +212,10 @@ public class Tutor extends Person{
             phone = res.getString("ph");
             education = res.getString("ed");
             roleID = res.getInt("role");
+            ischairman = res.getInt("chm");
+            isvicechairman = res.getInt("vichm");
+            ismembers = res.getInt("memb");
+            issecretary = res.getInt("secr");
             departmentID = res.getInt("department");
             startdate.loadDate(res.getString("sd"), Date.FROM_DB_CONVERT);
         }
@@ -256,6 +269,18 @@ public class Tutor extends Person{
         return roleID;
     }
 
+    public int getChairman() {
+        return ischairman;
+    }
+    public int getViceChairman() {
+        return isvicechairman;
+    }
+    public int getMembers() {
+        return ismembers;
+    }
+    public int getSecretary() {
+        return issecretary;
+    }
     public String getFullName() {
         StringBuffer fullName = new StringBuffer();
         if (lastname != null){

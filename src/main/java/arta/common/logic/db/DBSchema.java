@@ -109,6 +109,10 @@ public class DBSchema {
         tutors.fields.add(new DBField("birthdate", FieldType.DATE));
         tutors.fields.add(new DBField("startdate", FieldType.DATE));
         tutors.fields.add(new DBField("roleID", FieldType.INTEGER));
+        tutors.fields.add(new DBField("ischairman", FieldType.INTEGER));
+        tutors.fields.add(new DBField("isvicechairman", FieldType.INTEGER));
+        tutors.fields.add(new DBField("ismembers", FieldType.INTEGER));
+        tutors.fields.add(new DBField("issecretary", FieldType.INTEGER));
         tutors.fields.add(new DBField("departmentID", FieldType.INTEGER, "0"));
         tutors.fields.add(new DBField("deleted", FieldType.BOOLEAN, "0"));
         tables.add(tutors);

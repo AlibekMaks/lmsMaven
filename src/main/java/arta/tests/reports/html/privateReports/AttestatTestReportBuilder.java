@@ -285,18 +285,18 @@ public class AttestatTestReportBuilder {
     	str.append("</td>");
     	str.append("</tr>");
     	
-    	str.append("<tr>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("<td>");
-    	str.append("</td>");
-    	str.append("</tr>");
+//    	str.append("<tr>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("<td>");
+//    	str.append("</td>");
+//    	str.append("</tr>");
     	
 //    	str.append("<tr>");
 //    	str.append("<td>");
@@ -324,32 +324,32 @@ public class AttestatTestReportBuilder {
 //    	str.append("</td>");
 //    	str.append("</tr>");
 
-        str.append("<tr>");
-        str.append("<td>");
-        str.append(bundle.getString("committee.secretary"));
-        str.append("</td>");
-        str.append("<td>");
-        str.append("</td>");
-        str.append("<td>");
-        str.append("</td>");
+//        str.append("<tr>");
+//        str.append("<td>");
+//        str.append(bundle.getString("committee.secretary"));
+//        str.append("</td>");
 //        str.append("<td>");
 //        str.append("</td>");
-        str.append("<td>"); //    <-- комиссия +
-        str.append("</td>");
-        str.append("</tr>");
+//        str.append("<td>");
+//        str.append("</td>");
+//        str.append("<td>");
+//        str.append("</td>");
+//        str.append("<td>"); //    <-- комиссия +
+//        str.append("</td>");
+//        str.append("</tr>");
 
-        str.append("<tr>");
-        str.append("<td>");
-        str.append("</td>");
-        str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ signature +"</span>");
-        str.append("</td>");
-        str.append("</td width=\"5%\">");
-        str.append("<td>");
+//        str.append("<tr>");
+//        str.append("<td>");
+//        str.append("</td>");
+//        str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\">"+ signature +"</span>");
+//        str.append("</td>");
+//        str.append("</td width=\"5%\">");
+//        str.append("<td>");
 //        str.append("<td style=\"border-top: 1px solid black;\"><span style=\"font-size:0.75em;\"></span>");
 //        str.append("</td>");
-        str.append("<td>");
-        str.append("</td>");
-        str.append("</tr>");
+//        str.append("<td>");
+//        str.append("</td>");
+//        str.append("</tr>");
     	str.append("</table>");
     	
 //    	str.append("<br/>");
@@ -400,7 +400,7 @@ public class AttestatTestReportBuilder {
         str1.append("<table style=\"width: 100%;border-collapse:collapse;\">");
         str1.append("<tr>");
         str1.append("<td width=\"40%\">");
-        str1.append(bundle.getString("committee.chairman"));
+        str1.append(bundle.getString("committee.secretary"));
         str1.append("</td>");
         str1.append("<td width=\"15%\">");
         str1.append("</td>");
