@@ -1,23 +1,24 @@
 package arta.check.logic;
 
+import arta.common.lock.LockManager;
 import arta.common.logic.sql.ConnectionPool;
 import arta.common.logic.util.*;
-import arta.common.lock.LockManager;
+import arta.filecabinet.logic.students.Student;
 import arta.filecabinet.logic.tutors.Tutor;
 import arta.settings.logic.Settings;
+import arta.subjects.logic.SubjectsStatus;
+import arta.tests.common.DifficultySelect;
 import arta.tests.questions.Question;
-import arta.tests.test.Test;
 import arta.tests.reports.html.privateReports.TestResultSubject;
 import arta.tests.reports.html.privateReports.TestResultSubjectsManager;
 import arta.tests.reports.logic.privateReports.TestReport;
-import arta.tests.common.DifficultySelect;
-import arta.filecabinet.logic.students.Student;
+import arta.tests.test.Test;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.sql.Connection;
 import java.sql.Timestamp;
 import java.text.Format;
 import java.text.SimpleDateFormat;
@@ -328,11 +329,12 @@ public class Testing implements Serializable {
                 System.out.println("---ERROR--- studentID <= 0");
             }
 
-            res = st.executeQuery("SELECT t.classID AS cid, t.subjectID as sid, s.name"+Languages.getLang(lang)+" AS name, t.mainTestID as mid, t.testID, t.easy, t.middle, t.difficult FROM " +
-                                  " testsfortesting t "+
-                                  " JOIN testings t1 ON t.testingID = t1.testingID "+
-                                  " JOIN subjects s ON t.subjectID = s.subjectID "+
-                                  " WHERE (t.testingID = " + testingID + ") AND (t.classID = "+classID+")");
+            res = st.executeQuery("SELECT t.classID AS cid, t.subjectID as sid, s.name" + Languages.getLang(lang) + " AS name, t.mainTestID as mid, t.testID, t.easy, t.middle, t.difficult FROM " +
+                    " testsfortesting t " +
+                    " JOIN testings t1 ON t.testingID = t1.testingID " +
+                    " JOIN subjects s ON t.subjectID = s.subjectID " +
+                    " WHERE (t.testingID = " + testingID + ") AND (t.classID = " + classID + ")" + " AND (s.isArchive = " +
+                    SubjectsStatus.ACTIVE.statusId + ")");
             while (res.next()) {
                 TestingTest test = new TestingTest();
                 test.classID = res.getInt("cid");
@@ -758,11 +760,11 @@ public class Testing implements Serializable {
 
                 double rightSum = 0;
                 double totalSum = 0;
-
+                boolean subjectPassed=false;
                 int easy = 0;
                 int middle = 0;
                 int difficult = 0;
-
+                int count=0;
 
                 Map<Integer, TestResultSubject> subjectsByTests = new HashMap<Integer, TestResultSubject>();
                 int inc = 0;
@@ -785,9 +787,10 @@ public class Testing implements Serializable {
                             subject.classID = eachQuestion.getClassID();
                             subject.mainTestingID = eachQuestion.getMainTestingID();
                             subject.subjectId = eachQuestion.getSubjectID();
-                            res = st.executeQuery("SELECT s.name"+Languages.getLang(lang)+" AS name FROM subjects s WHERE s.subjectID = "+subject.subjectId);
+                            res = st.executeQuery("SELECT s.name"+Languages.getLang(lang)+" AS name,s.preferredMark as prefmark FROM subjects s WHERE s.subjectID = "+subject.subjectId);
                             if(res.next()){
                                 subject.subjectName = res.getString("name");
+                                subject.preferred_mark = res.getInt("prefmark");
                             }
                             subject.questionsCount++;
                             totalSum += eachQuestion.getDifficulty();
@@ -818,8 +821,12 @@ public class Testing implements Serializable {
                                     difficult++;
                                 }
                             }
+
+
                         }
+                        if(subject.rightAnswersCount>=subject.preferred_mark){count++;}
                         inc ++;
+                        if(count==myQuestionsByTests.keySet().size())subjectPassed=true;
                         subjectsByTests.put(inc, subject);
                     }
                 }
@@ -874,7 +881,12 @@ public class Testing implements Serializable {
                 boolean tmp_result = TestResultSubjectsManager.save(subjectsByTests, testingID, studentID, student.isDirector(), settings);
 
                 mark = (int) Math.round((rightSum * (double) Constants.MAX_MARK_VALUE) / totalSum);
+                int reccomendBall=0;
+                int attestatThreshold=0;
+                getPreferredMark(testingID,studentID);
                 if(!settings.usesubjectball){
+//                    reccomendBall=preferredMark;
+//                    result_TestingIsPassed=false;
                     if(student.isDirector() & mark < settings.attestatThresholdForDirectors){
                         result_TestingIsPassed = false;
                     } else if(!student.isDirector() &  mark < settings.attestatThresholdForEmployee){
@@ -883,8 +895,24 @@ public class Testing implements Serializable {
                         result_TestingIsPassed = true;
                     }
                 } else {
-                    result_TestingIsPassed = tmp_result;
+
+                    if(!settings.usetotalball){
+                        reccomendBall=preferredMark;
+                        if(subjectPassed)result_TestingIsPassed=true;
+                        else result_TestingIsPassed=false;
+                    }else{
+                        reccomendBall = preferredMark;
+                        attestatThreshold = student.isDirector() ?
+                                settings.attestatThresholdForDirectors : settings.attestatThresholdForEmployee;
+
+                        if (mark >= attestatThreshold && subjectPassed) {
+                            result_TestingIsPassed = true;
+                        } else result_TestingIsPassed = false;
+                    }
+//                    result_TestingIsPassed = tmp_result;
                 }
+
+
 
                 int mainTestingID = 0;
                 res = st.executeQuery("SELECT t.mainTestingID AS mid FROM testings t " +

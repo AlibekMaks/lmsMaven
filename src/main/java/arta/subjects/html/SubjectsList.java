@@ -4,6 +4,7 @@ import arta.common.html.handler.TemplateHandler;
 import arta.common.html.handler.Parser;
 import arta.common.html.handler.FileReader;
 import arta.common.html.navigation.PartsHandler;
+import arta.common.html.util.Select;
 import arta.common.logic.messages.MessageManager;
 import arta.common.logic.util.Constants;
 import arta.common.logic.util.Message;
@@ -11,6 +12,8 @@ import arta.common.logic.util.StringTransform;
 import arta.filecabinet.logic.SearchParams;
 import arta.subjects.logic.SubjectMessages;
 import arta.subjects.logic.SubjectsManager;
+import arta.subjects.logic.SubjectsSelect;
+import arta.subjects.logic.SubjectsStatus;
 
 import javax.servlet.ServletContext;
 import java.io.PrintWriter;
@@ -48,7 +51,9 @@ public class SubjectsList extends TemplateHandler {
             pw.print(MessageManager.getMessage(lang, Constants.INDEX_ID, null));
         } else if (name.equals("name")){
             pw.print(MessageManager.getMessage(lang, Constants.NAME, null));
-        } else if (name.equals("records")){
+        } else if (name.equals("status")) {
+            pw.print(MessageManager.getMessage(lang, Constants.STATUS));
+        }else if (name.equals("records")){
             Parser parser = new Parser();
             parser.setPrintWriter(pw);
             SubjectSingle handler = new SubjectSingle(params, lang);
@@ -84,6 +89,16 @@ public class SubjectsList extends TemplateHandler {
             pw.print(MessageManager.getMessage(lang, SubjectMessages.SUBJECTS, null));
         } else if (name.equals("search")){
             pw.print(MessageManager.getMessage(lang, Constants.SEARCH));
+        } else if (name.equals("status")){
+            pw.print(MessageManager.getMessage(lang, Constants.STATUS));
+        } else if (name.equals("select_status")){
+           /* SubjectsSelect select = new SubjectsSelect(0);
+            select.writePostSelect(params.classIDStr, 100, pw, params.classID, true);*/
+            Select select = new Select(Select.POST_SELECT);
+            pw.print(select.startSelect("status_select"));
+            pw.print(select.addOption(String.valueOf(SubjectsStatus.ARCHIVE.statusId), params.subjectStatusID == SubjectsStatus.ARCHIVE.statusId, MessageManager.getMessage(lang,Constants.ARCHIVE), null));
+            pw.print(select.addOption(String.valueOf(SubjectsStatus.ACTIVE.statusId),  params.subjectStatusID == SubjectsStatus.ACTIVE.statusId, MessageManager.getMessage(lang,Constants.ACTIVE), null));
+            pw.print(select.endSelect());
         }
     }
 }

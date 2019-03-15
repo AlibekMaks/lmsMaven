@@ -37,10 +37,10 @@
                             </tr>
                             <tr>
                                 <td class="td" align="right">
-                                    {[class]}
+                                    {[status]}
                                 </td>
                                 <td>
-                                    {[class select]}
+                                    {[status_select]}
                                 </td>
                             </tr>
                         </table>

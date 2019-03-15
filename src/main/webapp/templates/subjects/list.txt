@@ -20,6 +20,18 @@
                                     <input type="submit" value="{[search]}" class="button">
                                 </td>
                             </tr>
+                            <tr>
+                                <table border=0 width="100%">
+                                    <tr>
+                                       <td class="td" width="20%" align="right">
+                                          {[status]}
+                                      </td>
+                                       <td width="*" align="left">
+                                          {[select_status]}
+                                      </td>
+                                    </tr>
+                                </table>
+                            </tr>
                         </table>
                     </td>
                 </tr>

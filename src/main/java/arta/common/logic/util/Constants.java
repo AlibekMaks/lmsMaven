@@ -57,6 +57,7 @@ public class Constants {
 
     public static int MAX_MARK_VALUE = 100;
     public static boolean USE_SUBJECT_BALL = false;
+    public static boolean USE_TOTAL_BALL = false;
     public static boolean SHOW_REPORT = false;
     public static boolean RECOMMEND_CANDIDATES = false;
     public static boolean SHOW_ANSWER = false;
@@ -123,6 +124,7 @@ public class Constants {
     public static final int FRIDAY_SHORT = 89;
     public static final int SATURDAY_SHORT = 90;
     public static final int SUNDAY_SHORT = 91;
+    public static final int STATUS = 95;
     public static final int SAVE = 96;
     public static final int ADMNISTRATOR = 98;
     public static final int CHAIRMAN = 2002;
@@ -149,7 +151,8 @@ public class Constants {
     public static final int ADD = 133;
     public static final int XLS_IMPORT = 460;
     public static final int SELECT = 134;
-
+    public static final int ACTIVE=219;
+    public static final int ARCHIVE=220;
     public static final int NUMBER = 147;
     public static final int START = 148;
     public static final int END = 149;

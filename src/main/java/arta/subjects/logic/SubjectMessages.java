@@ -14,6 +14,7 @@ public class SubjectMessages {
     public static final int SPECIFY_FILE =  113; 
     public static final int BOOK_ON_SUBJECT =  114; 
     public static final int DO_YOU_REALLY_WANT_DELETE_BOOK =  123;
+    public static final int IS_ARCHIVE =  93;
     /*
     name - name of the subject to be deleted
      */

@@ -1,11 +1,11 @@
-<tr {[redcolor]} >
+<tr >
 	<td class="nameTD">
 		{[subject.name]}
 	</td>
 	<td align="center">
 		{[questions.count]}
 	</td>
-	<td align="center">
+	<td align="center" {[redcolor]}>
 		{[right.answers.count]}
 	</td>
 	<td align="center">

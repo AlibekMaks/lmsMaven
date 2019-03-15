@@ -39,6 +39,10 @@ public class SettingsMessages {
      */
     public static final int USB_LABEL_VALUE = 459;
 
+    /**
+     * Использовать общий балл, достаточный для прохождения аттестации
+     */
+    public static final int USB_TOTAL_LABEL_VALUE = 461;
 
     /**
      * Включить возможность просмотра ответов предентенду после сдачи тестирования

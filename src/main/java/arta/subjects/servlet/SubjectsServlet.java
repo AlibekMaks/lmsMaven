@@ -44,6 +44,10 @@ public class SubjectsServlet extends HttpServlet {
             SearchParams params = new SearchParams();
             params.extractParameterValues(request, extractor);
 
+            params.subjectStatusID = extractor.getInteger(request.getParameter("status_select"));
+//            params.getSubjectStatusID();
+
+
             new PageGenerator().writeHtmlPage(new SubjectsListMain(person, lang, getServletContext(), params, null, return_link), pw,
                     getServletContext());
             pw.flush();

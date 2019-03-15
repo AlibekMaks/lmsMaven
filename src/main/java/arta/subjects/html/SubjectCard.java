@@ -8,6 +8,7 @@ import arta.common.logic.messages.MessageManager;
 import arta.common.logic.sql.ConnectionPool;
 import arta.common.logic.util.*;
 import arta.common.logic.db.Varchar;
+import arta.settings.logic.Settings;
 import arta.subjects.logic.*;
 import arta.filecabinet.logic.SearchParams;
 import arta.books.html.BookSingle;
@@ -30,16 +31,19 @@ public class SubjectCard extends TemplateHandler {
     StringTransform trsf = new StringTransform();
     public ArrayList<TestsSelect> tests = new ArrayList<TestsSelect>();
     String return_link;
+    Settings settings;
 
 
     public SubjectCard(Subject subject, int lang, SearchParams params, ServletContext servletContext,
-                       Message message, String return_link) {
+                       Message message, String return_link,Settings settings) {
         this.subject = subject;
         this.lang = lang;
         this.params = params;
         this.servletContext = servletContext;
         this.message = message;
         this.return_link = return_link;
+        this.settings=settings;
+        settings.load();
     }
 
     public void replace(String name, PrintWriter pw) {
@@ -56,10 +60,21 @@ public class SubjectCard extends TemplateHandler {
         } else if (name.equals("name en value")){  
             pw.print(trsf.getHTMLString(subject.getName(Languages.ENGLISH)));
         **/
+        } else if(name.equals("preferred_mark_div display")){
+//            if(settings.isUsetotalball()){
+//                pw.print("block");
+//            } else {
+//                pw.print("none");
+//            }
+                pw.print("block");
         } else if (name.equals("preferred mark")){
             pw.print(MessageManager.getMessage(lang,  SubjectMessages.PREFERRED_MARK, null));
-        } else if (name.equals("preferred mark value")){  
+        } else if (name.equals("preferred mark value")){
             pw.print(subject.getPreferredMark());
+        } else if (name.equals("isArchive")){
+            pw.print(MessageManager.getMessage(lang,  SubjectMessages.IS_ARCHIVE, null));
+        } else if (name.equals("isArchive value")){
+            if(subject.isArchive()){pw.print("checked");} else {pw.print("");}
         } else if (name.equals("checkbox title kz")){
             pw.print(MessageManager.getMessage(lang,  SubjectMessages.CHECKBOX_TITLE_KZ, null));
         } else if (name.equals("checkbox title ru")){

@@ -6,6 +6,7 @@ import arta.common.logic.util.Constants;
 import arta.common.logic.util.Message;
 import arta.common.logic.messages.MessageManager;
 import arta.common.logic.util.SimpleObject;
+import arta.subjects.logic.SubjectsStatus;
 import arta.timetable.designer.logic.LessonConstants;
 
 import java.sql.Connection;
@@ -17,8 +18,11 @@ import java.util.HashMap;
 public class Settings {
 
     public int excellent, good, satisfactory, maxMarkValue, attestatThresholdForDirectors, attestatThresholdForEmployee;
-    public boolean usesubjectball, show_report, show_answers, recommend_candidates, student_test_access;
+    public boolean usesubjectball,usetotalball, show_report, show_answers, recommend_candidates, student_test_access;
     public int recommend_candidates_month;
+
+
+
     public HashMap<Integer, Integer> subjects = new HashMap<Integer, Integer>();
 
 
@@ -55,16 +59,17 @@ public class Settings {
 
 
             st.execute("INSERT INTO  settings (excellent, good, satisfactory, maxmark, attestat_threshold_director, "+
-                       " attestat_threshold_employee, usesubjectball, show_report, show_answers, recommend_candidates, student_test_access, recommend_candidates_month) " +
+                       " attestat_threshold_employee, usesubjectball,usetotalball, show_report, show_answers, recommend_candidates, student_test_access, recommend_candidates_month) " +
                        " VALUES " +
                        " ("+excellent+", "+good+", "+satisfactory+","+maxMarkValue+","+attestatThresholdForDirectors+","+
-                        attestatThresholdForEmployee+", "+usesubjectball+", "+show_report+", "+show_answers+", "+recommend_candidates+", "+student_test_access+", "+recommend_candidates_month+")");
+                        attestatThresholdForEmployee+", "+usesubjectball+", "+usetotalball+","+show_report+", "+show_answers+", "+recommend_candidates+", "+student_test_access+", "+recommend_candidates_month+")");
 
             Constants.EXCELLENT_MARK = excellent;
             Constants.GOOD_MARK = good;
             Constants.SATISFACTORY_MARK = satisfactory;
             Constants.MAX_MARK_VALUE = maxMarkValue;
             Constants.USE_SUBJECT_BALL = usesubjectball;
+            Constants.USE_TOTAL_BALL = usetotalball;
             Constants.SHOW_REPORT = show_report;
             Constants.RECOMMEND_CANDIDATES = recommend_candidates;
 
@@ -106,7 +111,7 @@ public class Settings {
             st = con.createStatement();
 
             res = st.executeQuery("SELECT excellent, good, satisfactory, maxmark, attestat_threshold_director as att_d, "+
-                                  " attestat_threshold_employee as att_e, usesubjectball as usb, show_report as sr, "+
+                                  " attestat_threshold_employee as att_e, usesubjectball as usb,usetotalball as usb_total, show_report as sr, "+
                                   " show_answers as sa, recommend_candidates as rc, student_test_access as sta, recommend_candidates_month as rcm "+
                                   " FROM settings ");
             if (res.next()){
@@ -115,6 +120,7 @@ public class Settings {
                 Constants.SATISFACTORY_MARK = res.getInt("satisfactory");
                 Constants.MAX_MARK_VALUE = res.getInt("maxmark");
                 Constants.USE_SUBJECT_BALL = res.getBoolean("usb");
+                Constants.USE_TOTAL_BALL = res.getBoolean("usb_total");
                 Constants.SHOW_REPORT = res.getBoolean("sr");
                 Constants.SHOW_ANSWER = res.getBoolean("sa");
                 Constants.RECOMMEND_CANDIDATES = res.getBoolean("rc");
@@ -126,6 +132,7 @@ public class Settings {
                 this.satisfactory = Constants.SATISFACTORY_MARK;
                 this.maxMarkValue = Constants.MAX_MARK_VALUE;
                 this.usesubjectball = Constants.USE_SUBJECT_BALL;
+                this.usetotalball = Constants.USE_TOTAL_BALL;
                 this.show_report = Constants.SHOW_REPORT;
                 this.show_answers = Constants.SHOW_ANSWER;
                 this.recommend_candidates = Constants.RECOMMEND_CANDIDATES;
@@ -159,7 +166,8 @@ public class Settings {
             con = connectionPool.getConnection();
             st = con.createStatement();
 
-            res = st.executeQuery("SELECT s.subjectID AS sid, s.preferredMark as mark FROM subjects s");
+            res = st.executeQuery("SELECT s.subjectID AS sid, s.preferredMark as mark FROM subjects s where (s.isArchive = "+
+                    SubjectsStatus.ACTIVE.statusId + ")");
             while (res.next()){
                 subjects.put(res.getInt("sid"), res.getInt("mark"));
             }
@@ -175,6 +183,14 @@ public class Settings {
                 Log.writeLog(exc);
             }
         }
+    }
+
+    public boolean isUsetotalball() {
+        return usetotalball;
+    }
+
+    public void setUsetotalball(boolean usetotalball) {
+        this.usetotalball = usetotalball;
     }
 
 }

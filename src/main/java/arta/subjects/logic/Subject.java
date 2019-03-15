@@ -22,6 +22,7 @@ public class Subject {
     private String nameKZ = null;
     private String nameEN = null;
     private int preferredMark;
+    private boolean isArchive;
     private int subjectID = 0;
     private int kaz_test_ID = 0;
     private int rus_test_ID = 0;
@@ -100,13 +101,14 @@ public class Subject {
 
     private void load(Statement st, ResultSet res) throws Exception {
         res = st.executeQuery("SELECT nameru as nr, " +
-                " nameen as ne, namekz as nk, preferredMark as pm, kaz_test_id, rus_test_id "+
+                " nameen as ne, namekz as nk, preferredMark as pm,isArchive as isArchive, kaz_test_id, rus_test_id "+
                 " FROM subjects WHERE subjectID=" + subjectID);
         if (res.next()) {
             nameRU = res.getString("nr");
             nameEN = "";//res.getString("ne");
             nameKZ = res.getString("nk");
             preferredMark = res.getInt("pm");
+            isArchive = res.getBoolean("isArchive");
             kaz_test_ID = res.getInt("kaz_test_id");
             rus_test_ID = res.getInt("rus_test_id");
         }
@@ -163,14 +165,15 @@ public class Subject {
                         " namekz='" + trsf.getDBString(nameKZ) + "', " +
                         //" nameen='" + trsf.getDBString(nameEN) + "', " +
                         " preferredMark = " + preferredMark + ", " +
+                        " isArchive = " + isArchive + ", " +
                         " kaz_test_id = " + kaz_test_ID + ", " +
                         " rus_test_id = " + rus_test_ID +
                         " WHERE subjectID=" + subjectID + "");
             } else {
                 //st.execute("INSERT INTO subjects (nameru, namekz, nameen, preferredMark) " +
-                st.execute("INSERT INTO subjects (nameru, namekz, preferredMark, kaz_test_id, rus_test_id) " +
+                st.execute("INSERT INTO subjects (nameru, namekz, preferredMark, isArchive, kaz_test_id, rus_test_id) " +
                         " VALUES ('" + trsf.getDBString(nameRU) + "', '" + trsf.getDBString(nameKZ) + "', " +
-                        preferredMark+", "+kaz_test_ID+", " +rus_test_ID+")", Statement.RETURN_GENERATED_KEYS);
+                        preferredMark+", "+isArchive+","+kaz_test_ID+", " +rus_test_ID+")", Statement.RETURN_GENERATED_KEYS);
                         //" '" + trsf.getDBString(nameEN) + "', "+preferredMark+")", Statement.RETURN_GENERATED_KEYS);
                 res = st.getGeneratedKeys();
                 if (res.next())
@@ -361,6 +364,14 @@ public class Subject {
 	public int getPreferredMark() {
 		return preferredMark;
 	}
+
+	public boolean isArchive(){
+        return isArchive;
+    }
+
+    public void setArchive(boolean isArchive) {
+        this.isArchive= isArchive;
+    }
 
     public int getKaz_test_ID(){
         return kaz_test_ID;

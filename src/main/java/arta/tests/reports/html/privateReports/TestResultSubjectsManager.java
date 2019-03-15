@@ -27,7 +27,9 @@ public class TestResultSubjectsManager {
         
         try {
             con = new ConnectionPool().getConnection();
-            st = con.prepareStatement("INSERT INTO test_result (testing_id, subject_id, student_id, questions_count, right_answers_count, persentage, isPassed) SELECT ?, ?, ?, ?, ?, ?, ? FROM tests WHERE testid = ?");
+            st = con.prepareStatement("INSERT INTO test_result (testing_id, subject_id, student_id, questions_count," +
+                    " right_answers_count,preferred_mark, persentage, isPassed)" +
+                    " SELECT ?, ?, ?, ?, ?, ?, ? , ?  FROM tests WHERE testid = ?");
             
 //            for (int testId : subjectsByTests.keySet()) {
 //            	TestResultSubject subject = subjectsByTests.get(testId);
@@ -45,6 +47,8 @@ public class TestResultSubjectsManager {
                 subject.rightAnswersPersentage = (int)Math.round((double)subject.rightAnswersCount * 100 / subject.questionsCount);
 
                 if(settings.usesubjectball){
+
+//                    if(subject.rightAnswersPersentage < settings.subjects.get(subject.subjectId)){
                     if(subject.rightAnswersPersentage < settings.subjects.get(subject.subjectId)){
                         subject.isPassed = false;
                         result_TestingIsPassed = false;
@@ -62,9 +66,10 @@ public class TestResultSubjectsManager {
                 st.setInt(3, studentId);
                 st.setInt(4, subject.questionsCount);
                 st.setInt(5, subject.rightAnswersCount);
-                st.setInt(6, subject.rightAnswersPersentage);
-                st.setBoolean(7, subject.isPassed);
-                st.setInt(8, subject.testID);
+                st.setInt(6, subject.preferred_mark);
+                st.setInt(7, subject.rightAnswersPersentage);
+                st.setBoolean(8, subject.isPassed);
+                st.setInt(9, subject.testID);
                 st.execute();
             }
             
@@ -146,7 +151,8 @@ public class TestResultSubjectsManager {
             st = con.createStatement();
             st1 = con.createStatement();
 
-            res = st.executeQuery("SELECT t.subject_id, s.name"+Languages.getLang(lang)+" as nim, t.questions_count, t.right_answers_count, t.isPassed, t.persentage " +
+            res = st.executeQuery("SELECT t.subject_id, s.name"+Languages.getLang(lang)+" as nim, t.questions_count, t.right_answers_count," +
+                    " t.isPassed,t.preferred_mark, t.persentage " +
                                   " FROM test_result t " +
                                   " JOIN subjects s ON t.subject_id = s.subjectid " +
                                   " WHERE t.testing_id = "+testingId+" AND t.student_id = " + studentId + " "+
@@ -160,6 +166,7 @@ public class TestResultSubjectsManager {
                 subject.subjectId = res.getInt("subject_id");
                 subject.questionsCount = res.getInt("questions_count");
                 subject.rightAnswersCount = res.getInt("right_answers_count");
+                subject.preferred_mark = res.getInt("preferred_mark");
                 subject.isPassed = res.getBoolean("isPassed");
                 //subject.rightAnswersPersentage = res.getInt("persentage");
 //

@@ -1,28 +1,27 @@
 package arta.tests.reports.html.privateReports;
 
+import arta.check.logic.Testing;
+import arta.common.html.handler.FileReader;
+import arta.common.html.handler.PageContentHandler;
+import arta.common.html.handler.Parser;
+import arta.common.html.handler.TemplateHandler;
+import arta.common.logic.messages.MessageManager;
+import arta.common.logic.util.Constants;
 import arta.common.logic.util.Languages;
+import arta.common.logic.util.StringTransform;
 import arta.exams.logic.Ticket;
+import arta.filecabinet.logic.students.Student;
 import arta.settings.logic.Settings;
 import arta.tests.common.TestMessages;
 import arta.tests.reports.logic.commonReports.CommonTestSearchParams;
 import arta.tests.testing.logic.TestingMessages;
-import arta.check.logic.Testing;
-import arta.common.html.handler.PageContentHandler;
-import arta.common.html.handler.Parser;
-import arta.common.html.handler.FileReader;
-import arta.common.html.handler.TemplateHandler;
-import arta.common.logic.messages.MessageManager;
-import arta.common.logic.util.Constants;
-import arta.common.logic.util.StringTransform;
-import arta.filecabinet.logic.students.Student;
+import kz.arta.plt.common.Person;
 
 import javax.servlet.ServletContext;
 import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
-
-import kz.arta.plt.common.Person;
 
 public class TestingAnalysisHandler extends PageContentHandler {
 
@@ -296,7 +295,11 @@ public class TestingAnalysisHandler extends PageContentHandler {
             } else if (name.equals("sum.right.answers.count")) {
             	pw.print(testing.mark);
             } else if (name.equals("redcolor")) {
-                if(!testing.testingIsPassed) pw.print(" style=\"color:red;\" ");
+                if(!settings.usesubjectball || settings.usetotalball){
+                    if((student.isDirector() && testing.mark<settings.attestatThresholdForDirectors)
+                            || (!student.isDirector() && testing.mark<settings.attestatThresholdForEmployee))
+                    pw.print(" style=\"color:red;\" ");
+                }
             } else if (name.equals("text test result")) {
                 if(testing.testingIsPassed){
                     pw.print(MessageManager.getMessage(Languages.RUSSIAN, TestMessages.TEST_PASSED, null) + "/" +
@@ -345,6 +348,7 @@ public class TestingAnalysisHandler extends PageContentHandler {
             this.testingID = testingID;
             this.params = params;
             this.settings = settings;
+            settings.loadSubjectsMark();
         }
 
         public void replace(String name, PrintWriter pw) {
@@ -357,7 +361,13 @@ public class TestingAnalysisHandler extends PageContentHandler {
             } else if (name.equals("percentage")) {
             	pw.print(subject.rightAnswersPersentage);
             } else if (name.equals("redcolor")) {
-                if(!subject.isPassed) pw.print(" style=\"color:red;\" ");
+                if(settings.usesubjectball ){
+                    if(subject.preferred_mark>subject.rightAnswersCount)
+                    pw.print(" style=\"color:red;\" ");
+                }
+//                if(settings.usesubjectball & !subject.isPassed){
+//                    pw.print(" style=\"color:red;\" ");
+//                }
             }
         }
 

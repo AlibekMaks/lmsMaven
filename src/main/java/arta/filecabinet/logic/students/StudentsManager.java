@@ -1,27 +1,26 @@
 package arta.filecabinet.logic.students;
 
+import arta.common.db.connection.PooledConnection;
+import arta.common.logic.sql.ConnectionPool;
+import arta.common.logic.util.Constants;
+import arta.common.logic.util.Log;
+import arta.common.logic.util.SearchParser;
+import arta.common.logic.util.StringTransform;
+import arta.settings.logic.Settings;
+import arta.tests.testing.logic.Testing;
+import kz.arta.plt.common.Person;
+import org.joda.time.DateTime;
+import org.joda.time.Period;
+import org.joda.time.PeriodType;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
-
-import arta.common.logic.util.Constants;
-import arta.settings.logic.Settings;
-import arta.tests.testing.logic.Testing;
-import arta.common.db.connection.PooledConnection;
-import arta.common.logic.sql.ConnectionPool;
-import arta.common.logic.util.Log;
-import arta.common.logic.util.SearchParser;
-import arta.common.logic.util.StringTransform;
-import kz.arta.plt.common.Person;
-import org.joda.time.DateTime;
-import org.joda.time.Period;
-import org.joda.time.PeriodType;
 
 public class StudentsManager {
 
@@ -99,7 +98,6 @@ public class StudentsManager {
             ConnectionPool connectionPool = new ConnectionPool();
             con = connectionPool.getConnection();
             st = con.createStatement();
-
             StringBuffer query = new StringBuffer("SELECT SQL_CALC_FOUND_ROWS tb.* \n" +
                                                     "  FROM (SELECT \n" +
                                                     "          s.studentid AS studentid, \n" +
@@ -118,7 +116,7 @@ public class StudentsManager {
 
             query.append(condition);
 
-            //query.append(" GROUP BY s.studentid \n");
+            query.append(" GROUP BY s.studentid,r.modified \n");
             query.append(" ORDER BY r.modified DESC) tb \n");
 
 
@@ -133,18 +131,21 @@ public class StudentsManager {
 
             query.append(" GROUP BY tb.studentid \n");
 
-//            if (params.countInPart > 0) {
-//                int partsCount = params.getPartsNumber();
-//                if (params.partNumber >= partsCount){
-//                    params.partNumber = partsCount - 1;
-//                    if (params.partNumber < 0)
-//                        params.partNumber = 0;
-//                }
-//                query.append(" LIMIT ");
-//                query.append(params.countInPart * params.partNumber);
-//                query.append(", ");
-//                query.append(params.countInPart);
-//            }
+
+
+
+            if (params.countInPart > 0) {
+                int partsCount = params.getPartsNumber();
+                if (params.partNumber >= partsCount){
+                    params.partNumber = partsCount - 1;
+                    if (params.partNumber < 0)
+                        params.partNumber = 0;
+                }
+                query.append(" LIMIT ");
+                query.append(params.countInPart * params.partNumber);
+                query.append(", ");
+                query.append(params.countInPart);
+            }
 
 //            System.out.println("query.toString() = " + query.toString());
 

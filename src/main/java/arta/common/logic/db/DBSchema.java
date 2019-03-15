@@ -55,6 +55,7 @@ public class DBSchema {
         test_result.fields.add(new DBField("student_id", FieldType.INTEGER));
         test_result.fields.add(new DBField("questions_count", FieldType.INTEGER));
         test_result.fields.add(new DBField("right_answers_count", FieldType.INTEGER));
+        test_result.fields.add(new DBField("preferred_mark",FieldType.INTEGER));
         test_result.fields.add(new DBField("isPassed", FieldType.BOOLEAN, "0"));
         test_result.fields.add(new DBField("persentage", FieldType.INTEGER, "0"));
         tables.add(test_result);
@@ -124,6 +125,7 @@ public class DBSchema {
         subjects.fields.add(new DBField("namekz", FieldType.VARCHAR, Varchar.NAME));
         subjects.fields.add(new DBField("nameen", FieldType.VARCHAR, Varchar.NAME));
         subjects.fields.add(new DBField("preferredMark", FieldType.INTEGER));
+        subjects.fields.add(new DBField("isArchive", FieldType.BOOLEAN));
         subjects.fields.add(new DBField("kaz_test_id", FieldType.INTEGER));
         subjects.fields.add(new DBField("rus_test_id", FieldType.INTEGER));
         tables.add(subjects);
@@ -239,6 +241,7 @@ public class DBSchema {
         settings.fields.add(new DBField("attestat_threshold_director", FieldType.INTEGER));
         settings.fields.add(new DBField("attestat_threshold_employee", FieldType.INTEGER));
         settings.fields.add(new DBField("usesubjectball", FieldType.BOOLEAN, "0" ));
+        settings.fields.add(new DBField("usetotalball", FieldType.BOOLEAN, "0" ));
         settings.fields.add(new DBField("show_report", FieldType.BOOLEAN, "0" ));
         settings.fields.add(new DBField("show_answers", FieldType.BOOLEAN, "0" ));
         settings.fields.add(new DBField("recommend_candidates", FieldType.BOOLEAN, "0" ));

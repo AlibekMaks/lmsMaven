@@ -582,10 +582,10 @@ public class Date implements Serializable {
         String result = "";
         if (day < 10)
             result += "0";
-        result += day + ".";
+        result += day + "-";
         if (month < 10)
             result += "0";
-        result += month + ".";
+        result += month + "-";
         result += year;
         return result;
     }

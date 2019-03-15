@@ -10,6 +10,7 @@ public class TestResultSubject {
 	public int rightAnswersCount;
     public int ball;
 	public int rightAnswersPersentage;
+	public int preferred_mark;
 
     public int testID;
     public boolean isPassed = true;

@@ -78,9 +78,31 @@ public class SettingsHandler extends TemplateHandler {
             } else {pw.print("");}
         }  else if (name.equals("usb_div display")){
             if(settings.usesubjectball){
-                pw.print("none");
-            } else {
                 pw.print("block");
+            } else {
+                pw.print("none");
+            }
+        } else if (name.equals("usb_total label value")){
+            pw.print(MessageManager.getMessage(lang, SettingsMessages.USB_TOTAL_LABEL_VALUE, null));
+        } else if (name.equals("usb_total value")){
+            if(settings.usetotalball){
+                pw.print("checked");
+            } else {pw.print("");}
+        }  else if (name.equals("usb_total_tr display")){
+            if(settings.usesubjectball){
+                pw.print("block");
+            } else {
+                pw.print("none");
+            }
+        } else if (name.equals("usb_total_div display")){
+            if(!settings.usesubjectball){
+                pw.print("block");
+            }else{
+                if(settings.usetotalball){
+                    pw.print("block");
+                } else {
+                    pw.print("none");
+                }
             }
         } else if (name.equals("show_report msg")){
             pw.print(MessageManager.getMessage(lang, SettingsMessages.SEE_A_DETAILED_REPORT_TO_THE_APPLICANT_AFTER_THE_TESTING, null));

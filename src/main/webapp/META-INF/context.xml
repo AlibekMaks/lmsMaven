@@ -5,5 +5,5 @@
  			validationQuery="SELECT 1" testOnBorrow="true" 
 			removeAbandoned="true" removeAbandonedTimeout="600" logAbandoned="true"
 		           username="root" password="root"    driverClassName="com.mysql.jdbc.Driver"
-		               url="jdbc:mysql://127.0.0.1/?characterEncoding=utf8" />
+		               url="jdbc:mysql://127.0.0.1/pifagor?characterEncoding=utf8" />
 </Context>

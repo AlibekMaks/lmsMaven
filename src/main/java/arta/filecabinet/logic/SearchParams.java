@@ -20,6 +20,7 @@ public class SearchParams {
 
     public int recordsCount;
     public int recordNumber;
+    public int subjectStatusID;
 
     public String searchStr = "search";
     public String partNumberStr = "partNumber";
@@ -226,5 +227,11 @@ public class SearchParams {
      */
     public int getPanelRecordNumber(){
         return recordNumber + 1;
+    }
+
+
+    public int getSubjectStatusID(){
+        return subjectStatusID;
+
     }
 }

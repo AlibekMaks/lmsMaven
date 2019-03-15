@@ -10,6 +10,22 @@
          else cat.style.display = "none";
     }
   }
+  function showFirstOrSecond(checkbox_id, first_div_id, second_div_id, show){
+      cb = document.getElementById(checkbox_id);
+      first = document.getElementById(first_div_id);
+      second = document.getElementById(second_div_id);
+      if (!cb.checked) {
+        if (show) {first.style.display = "block";
+        second.style.display="none";}
+        else { first.style.display = "none";
+        second.style.display="none"; }
+      } else {
+        if(show) {first.style.display = "none";
+         second.style.display = "block";}
+         else {first.style.display="block";
+         second.style.display="none"}
+      }
+  }
 </script>
 
 <form action="settings">
@@ -105,7 +121,8 @@
                                     {[recommend_candidates msg]}
                                 </td>
                                 <td width="30%">
-                                    <input type="checkbox" id="recommend_candidates" name="recommend_candidates" {[recommend_candidates value]} size=5 onchange='showOrHide("recommend_candidates", "recommend_candidates_div", true);'  />
+                                    <input type="checkbox" id="recommend_candidates" name="recommend_candidates" {[recommend_candidates value]} size=5
+                                     onchange='showOrHide("recommend_candidates", "recommend_candidates_div", true);'  />
                                 </td>
                             </tr>
                             <tr>
@@ -139,12 +156,31 @@
                                     {[usb label value]}
                                 </td>
                                 <td width="30%">
-                                    <input type="checkbox" name="usb" {[usb value]} size=5 id="usb" onchange='showOrHide("usb", "usb_div", false);' />
+                                    <input type="checkbox" name="usb" {[usb value]} size=5 id="usb"
+
+                                    onchange='showFirstOrSecond("usb","usb_total_div","usb_total_tr",true);'
+                                    />
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan=2>
-                                    <div id='usb_div' style='display: {[usb_div display]};'>
+                                    <div id="usb_total_tr" style='display: {[usb_total_tr display]};'>
+                                       <table border=0 width="100%" class="table"
+                                            <tr>
+                                               <td width="70%">
+                                                    {[usb_total label value]}
+                                               </td>
+                                               <td width="30%">
+                                                    <input type="checkbox" name="usb_total" {[usb_total value]} size=5 id="usb_total" onchange='showOrHide("usb_total", "usb_total_div", true);' />
+                                               </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan=2>
+                                    <div id='usb_total_div' style='display: {[usb_total_div display]};'>
                                     <table border=0 width="100%" class="table">
                                         <tr>
                                             <td width="70%">

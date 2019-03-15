@@ -1,4 +1,4 @@
-<script language="JavaScript">
+﻿<script language="JavaScript">
     function isFormValid(){
         document.getElementById("nameru").value = trim(document.getElementById("nameru").value);
         document.getElementById("namekz").value = trim(document.getElementById("namekz").value);
@@ -51,7 +51,7 @@
                     <td>
                         <table border=0 width="100%" class="table">
                             <tr>
-                                <td width="20%" nowrap>
+                                <td width="40%" nowrap>
                                     {[name kz]}
                                 </td>
                                 <td width=*>
@@ -67,11 +67,27 @@
                                 </td>
                             </tr>
                             <tr>
+                               <td colspan="2">
+                                <div style='display: {[preferred_mark_div display]};'>
+                                    <table border="0" width="100%" class="table">
+                                        <tr>
+                                            <td  nowrap width="40%">
+                                               {[preferred mark]}
+                                           </td>
+                                           <td width=*>
+                                               <input name="preferredMark" id="preferredMark" class="input" value="{[preferred mark value]}">
+                                           </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                               </td>
+                           </tr>
+                            <tr>
                                 <td  nowrap>
-                                    {[preferred mark]}
+                                    {[isArchive]}
                                 </td>
                                 <td width=*>
-                                    <input name="preferredMark" id="preferredMark" class="input" value="{[preferred mark value]}">
+                                    <input type="checkbox" name="isArchive" {[isArchive value]} />
                                 </td>
                             </tr>
                         </table>

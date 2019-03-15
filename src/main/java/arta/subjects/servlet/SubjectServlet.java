@@ -1,19 +1,20 @@
 package arta.subjects.servlet;
 
-import arta.common.logic.util.*;
+import arta.books.logic.Book;
 import arta.common.html.handler.PageGenerator;
-import arta.login.logic.Access;
+import arta.common.logic.util.*;
 import arta.filecabinet.logic.Person;
 import arta.filecabinet.logic.SearchParams;
-import arta.subjects.logic.Subject;
+import arta.login.logic.Access;
+import arta.settings.logic.Settings;
 import arta.subjects.html.SubjectCardMain;
-import arta.books.logic.Book;
+import arta.subjects.logic.Subject;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -39,12 +40,14 @@ public class SubjectServlet extends HttpServlet {
 
             SearchParams params = new SearchParams();
             params.extractParameterValues(request, extractor);
+            Settings settings = new Settings();
 
             Subject subject = new Subject();
             //subject.setName(Languages.ENGLISH, extractor.getRequestString(request.getParameter("nameen")));
             subject.setName(Languages.KAZAKH, extractor.getRequestString(request.getParameter("namekz")));
             subject.setName(Languages.RUSSIAN, extractor.getRequestString(request.getParameter("nameru")));
             subject.setPreferredMark(extractor.getInteger(request.getParameter("preferredMark")));
+            subject.setArchive(request.getParameter("isArchive") != null);
             subject.setSubjectID(extractor.getInteger(request.getParameter("subjectID")));
             subject.setKaz_test_ID(extractor.getInteger(request.getParameter("kaz_test")));
             subject.setRus_test_ID(extractor.getInteger(request.getParameter("rus_test")));
@@ -56,7 +59,7 @@ public class SubjectServlet extends HttpServlet {
                 subject.load();
 
             new PageGenerator().writeHtmlPage(new SubjectCardMain(person, getServletContext(), lang,
-                    subject, params, message, return_link), pw, getServletContext());
+                    subject, params, message, return_link,settings), pw, getServletContext());
 
             pw.flush();
             pw.close();
@@ -72,7 +75,7 @@ public class SubjectServlet extends HttpServlet {
             response.setContentType("text/html; charset=utf-8");
             PrintWriter pw = response.getWriter();
             DataExtractor extractor = new DataExtractor();
-            Message message = null;
+            Message message = new Message();
 
             if (!Access.isUserInRole(Constants.ADMIN, session)){
                 pw.print(Constants.RETURN_TO_MAIN_PAGE);
@@ -89,6 +92,7 @@ public class SubjectServlet extends HttpServlet {
             params.extractParameterValues(request, extractor);
 
             Subject subject = new Subject();
+            Settings settings = new Settings();
 
             if (request.getParameter("option") != null){
                 if (extractor.getInteger(request.getParameter("option")) ==  -1){
@@ -109,7 +113,7 @@ public class SubjectServlet extends HttpServlet {
             }
 
             new PageGenerator().writeHtmlPage(new SubjectCardMain(person, getServletContext(), lang,
-                    subject, params, message, return_link), pw, getServletContext());
+                    subject, params, message, return_link,settings), pw, getServletContext());
 
             pw.flush();
             pw.close();

@@ -52,7 +52,7 @@ public class ConnectionPoolImpl {
         prop.setProperty("user", User.getLogin());
         prop.setProperty("password", User.getPassword());
         Connection con = DriverManager.getConnection("jdbc:mysql://"+ Server.getHost()
-                + ":"+Server.getPort()+"/"+ Server.getSchema(), prop);
+                + ":"+Server.getPort()+"/"+ Server.getSchema() + "?characterEncoding=utf8", prop);
         PooledConnection poolCon = new PooledConnection(con);
         poolCon.hold();
         connections.add(poolCon);
